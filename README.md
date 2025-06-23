@@ -27,17 +27,28 @@ Make sure that `.env` exists in the main directory with `TOGETHER_API_KEY` and `
 1. CodeContests
 ```
 bash scripts/codecontests/run_claude.sh
+# or
+bash scripts/codecontests/run_codex.sh
+```
+To get the evaluation results, run
+```
+uv run python scripts/codecontests/summarize_eval.py
 ```
 
 2. Small repositories
 ```
 bash scripts/small_repos/run_codex.sh
+# or
 bash scripts/small_repos/run_claude.sh
 ```
 
 3. Large repositories
 ```
 bash scripts/large_repos/run_claude.sh
+```
+To get the evaluation results, run
+```
+uv run python scripts/large_repos/summarize_eval.py
 ```
 
 ## Other
