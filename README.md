@@ -43,12 +43,14 @@ bash scripts/small_repos/run_claude.sh
 ```
 
 3. Large repositories
+At the moment, we run the agents locally.
+To get <repo_name>, first run the setup script for large repos above, then check the `large_repos` directory.
 ```
-bash scripts/large_repos/run_claude.sh
+bash scripts/large_repos/run_claude.sh <repo_name>
 ```
 To get the evaluation results, run
 ```
-uv run python scripts/large_repos/summarize_eval.py
+uv run python scripts/large_repos/summarize_eval.py <repo_name>
 ```
 
 ## Other
