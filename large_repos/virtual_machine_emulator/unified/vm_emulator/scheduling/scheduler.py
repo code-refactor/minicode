@@ -180,11 +180,11 @@ class Scheduler(ABC):
                     ready_queue.remove(thread_id)
                     
                     # Update thread state
-                    selected_thread.state = ProcessorState.RUNNING
+                    selected_thread.state = ProcessorState.EXECUTING
                     selected_thread.processor_id = i
                     
                     # Update processor state
-                    processor.state = ProcessorState.RUNNING
+                    processor.state = ProcessorState.EXECUTING
                     processor.current_thread_id = thread_id
                     
                     # Update assignments

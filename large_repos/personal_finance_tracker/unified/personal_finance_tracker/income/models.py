@@ -31,8 +31,8 @@ class SmoothingMethod(str, Enum):
     ROLLING_MEDIAN = "rolling_median"
 
 
-class SmoothingConfig(FinancialConfiguration):
-    """Configuration for income smoothing algorithms extending common financial config."""
+class SmoothingConfig(BaseModel):
+    """Configuration for income smoothing algorithms."""
 
     method: SmoothingMethod = SmoothingMethod.MOVING_AVERAGE
     window_size: int = 3  # Number of months for moving average
@@ -52,7 +52,7 @@ class SmoothingConfig(FinancialConfiguration):
             else:
                 data['target_monthly_income'] = Money.from_string(str(data['target_monthly_income']))
         
-        super().__init__(name="SmoothingConfig", **data)
+        super().__init__(**data)
     
     def get_default_settings(self) -> Dict:
         """Get default configuration settings."""
@@ -182,7 +182,6 @@ class SmoothedIncome(BaseModel):
                     data[field] = Money.from_string(str(data[field]))
         
         super().__init__(**data)
-        self.__init_audit__()
         
         # Set defaults if not provided
         if self.income_deficit is None:

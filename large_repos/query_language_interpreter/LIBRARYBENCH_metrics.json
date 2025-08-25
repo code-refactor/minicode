@@ -1,34 +1,21 @@
 {
-    "total_logprobs": -33235.15657885076,
+    "total_logprobs": -33129.57363040245,
     "total_tokens": 89459,
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/document_analysis/proximity.py": {
-        "logprobs": -1145.4390000756343,
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/policy_enforcement/__init__.py": {
+        "logprobs": -84.508635,
         "metrics": {
-            "loc": 525,
-            "sloc": 294,
-            "lloc": 264,
-            "comments": 46,
-            "multi": 89,
-            "blank": 95,
-            "cyclomatic": 111,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/core/document.py": {
-        "logprobs": -468.75425334487846,
-        "metrics": {
-            "loc": 136,
-            "sloc": 70,
-            "lloc": 122,
-            "comments": 3,
-            "multi": 24,
-            "blank": 33,
-            "cyclomatic": 15,
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },
     "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/ontology/service.py": {
-        "logprobs": -761.2192201162002,
+        "logprobs": -761.6928324719537,
         "metrics": {
             "loc": 252,
             "sloc": 113,
@@ -40,8 +27,112 @@
             "internal_imports": []
         }
     },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/setup.py": {
+        "logprobs": -147.5951851748685,
+        "metrics": {
+            "loc": 15,
+            "sloc": 14,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/ontology/models.py": {
+        "logprobs": -420.43571612866333,
+        "metrics": {
+            "loc": 200,
+            "sloc": 88,
+            "lloc": 109,
+            "comments": 0,
+            "multi": 52,
+            "blank": 52,
+            "cyclomatic": 34,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/query_engine/__init__.py": {
+        "logprobs": -89.3200703,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/anonymization/anonymizer.py": {
+        "logprobs": -2492.154894302608,
+        "metrics": {
+            "loc": 873,
+            "sloc": 491,
+            "lloc": 388,
+            "comments": 107,
+            "multi": 157,
+            "blank": 127,
+            "cyclomatic": 192,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/document_analysis/proximity.py": {
+        "logprobs": -1141.1235059981436,
+        "metrics": {
+            "loc": 525,
+            "sloc": 294,
+            "lloc": 264,
+            "comments": 46,
+            "multi": 89,
+            "blank": 95,
+            "cyclomatic": 111,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/query_engine/__init__.py": {
+        "logprobs": -118.1750099818,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/communication_analysis/__init__.py": {
+        "logprobs": -113.7005374467,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/core/__init__.py": {
+        "logprobs": -113.8497032358,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
     "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/__init__.py": {
-        "logprobs": -87.04997,
+        "logprobs": -86.218212,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -53,60 +144,138 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/data_minimization/__init__.py": {
-        "logprobs": -91.857754484,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/privilege/detector.py": {
+        "logprobs": -1391.4457637649436,
         "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
+            "loc": 587,
+            "sloc": 363,
+            "lloc": 236,
+            "comments": 41,
+            "multi": 81,
+            "blank": 100,
+            "cyclomatic": 94,
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/temporal/models.py": {
-        "logprobs": -546.8119722704896,
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/detector.py": {
+        "logprobs": -1333.338693043859,
         "metrics": {
-            "loc": 182,
-            "sloc": 85,
-            "lloc": 110,
-            "comments": 6,
-            "multi": 36,
-            "blank": 46,
-            "cyclomatic": 42,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/data_minimization/minimizer.py": {
-        "logprobs": -2224.3183943692347,
-        "metrics": {
-            "loc": 652,
-            "sloc": 461,
+            "loc": 446,
+            "sloc": 249,
             "lloc": 188,
-            "comments": 118,
-            "multi": 69,
-            "blank": 85,
-            "cyclomatic": 92,
+            "comments": 38,
+            "multi": 83,
+            "blank": 78,
+            "cyclomatic": 81,
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/communication_analysis/models.py": {
-        "logprobs": -727.6296737503561,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/core/document.py": {
+        "logprobs": -467.677061963796,
         "metrics": {
-            "loc": 411,
-            "sloc": 209,
-            "lloc": 244,
-            "comments": 17,
-            "multi": 54,
-            "blank": 115,
-            "cyclomatic": 71,
+            "loc": 136,
+            "sloc": 70,
+            "lloc": 122,
+            "comments": 3,
+            "multi": 24,
+            "blank": 33,
+            "cyclomatic": 15,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/document_analysis/analyzer.py": {
+        "logprobs": -984.8318305090627,
+        "metrics": {
+            "loc": 356,
+            "sloc": 165,
+            "lloc": 156,
+            "comments": 29,
+            "multi": 82,
+            "blank": 79,
+            "cyclomatic": 61,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/setup.py": {
+        "logprobs": -199.266226677937,
+        "metrics": {
+            "loc": 18,
+            "sloc": 17,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/query_engine/parser.py": {
+        "logprobs": -2527.892009690432,
+        "metrics": {
+            "loc": 808,
+            "sloc": 541,
+            "lloc": 446,
+            "comments": 101,
+            "multi": 26,
+            "blank": 124,
+            "cyclomatic": 233,
             "internal_imports": []
         }
     },
     "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/anonymization/__init__.py": {
-        "logprobs": -84.2811988,
+        "logprobs": -82.7076027,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/communication_analysis/analyzer.py": {
+        "logprobs": -1403.4632904298307,
+        "metrics": {
+            "loc": 612,
+            "sloc": 382,
+            "lloc": 300,
+            "comments": 55,
+            "multi": 63,
+            "blank": 111,
+            "cyclomatic": 140,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/scanner.py": {
+        "logprobs": -772.3828096652251,
+        "metrics": {
+            "loc": 291,
+            "sloc": 172,
+            "lloc": 106,
+            "comments": 20,
+            "multi": 50,
+            "blank": 48,
+            "cyclomatic": 36,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/privilege/models.py": {
+        "logprobs": -559.4738302816047,
+        "metrics": {
+            "loc": 164,
+            "sloc": 89,
+            "lloc": 121,
+            "comments": 0,
+            "multi": 22,
+            "blank": 42,
+            "cyclomatic": 20,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/data_minimization/__init__.py": {
+        "logprobs": -92.56528508,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -119,7 +288,7 @@
         }
     },
     "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/policy_enforcement/policy.py": {
-        "logprobs": -1088.9742726931725,
+        "logprobs": -1066.4757323898557,
         "metrics": {
             "loc": 365,
             "sloc": 208,
@@ -131,21 +300,21 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/scanner.py": {
-        "logprobs": -769.5366221113326,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/temporal/__init__.py": {
+        "logprobs": -108.4376378013,
         "metrics": {
-            "loc": 291,
-            "sloc": 172,
-            "lloc": 106,
-            "comments": 20,
-            "multi": 50,
-            "blank": 48,
-            "cyclomatic": 36,
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },
     "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/core/interpreter.py": {
-        "logprobs": -1492.8299573222766,
+        "logprobs": -1493.4584675352949,
         "metrics": {
             "loc": 590,
             "sloc": 364,
@@ -157,60 +326,8 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/query_engine/__init__.py": {
-        "logprobs": -89.7822442,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/access_logging/__init__.py": {
-        "logprobs": -90.1447926,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/policy_enforcement/__init__.py": {
-        "logprobs": -85.5000332,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/__init__.py": {
-        "logprobs": -109.91737468542,
-        "metrics": {
-            "loc": 3,
-            "sloc": 1,
-            "lloc": 2,
-            "comments": 0,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
     "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/document_analysis/__init__.py": {
-        "logprobs": -122.3621384017,
+        "logprobs": -122.5723395877,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -222,21 +339,21 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/setup.py": {
-        "logprobs": -202.5676055226718,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/ontology/__init__.py": {
+        "logprobs": -129.641429518,
         "metrics": {
-            "loc": 18,
-            "sloc": 17,
-            "lloc": 2,
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
             "comments": 0,
             "multi": 0,
-            "blank": 1,
+            "blank": 0,
             "cyclomatic": 0,
             "internal_imports": []
         }
     },
     "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/core/query.py": {
-        "logprobs": -936.6856195692109,
+        "logprobs": -943.398790063672,
         "metrics": {
             "loc": 230,
             "sloc": 150,
@@ -248,63 +365,11 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/communication_analysis/__init__.py": {
-        "logprobs": -112.9893427195,
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/__init__.py": {
+        "logprobs": -109.23184168539,
         "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/query_engine/parser.py": {
-        "logprobs": -2523.5181563159103,
-        "metrics": {
-            "loc": 808,
-            "sloc": 541,
-            "lloc": 446,
-            "comments": 101,
-            "multi": 26,
-            "blank": 124,
-            "cyclomatic": 233,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/ontology/__init__.py": {
-        "logprobs": -131.5520917678,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/privilege/__init__.py": {
-        "logprobs": -120.784202555,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/setup.py": {
-        "logprobs": -146.5648410419572,
-        "metrics": {
-            "loc": 15,
-            "sloc": 14,
+            "loc": 3,
+            "sloc": 1,
             "lloc": 2,
             "comments": 0,
             "multi": 0,
@@ -313,21 +378,47 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/communication_analysis/analyzer.py": {
-        "logprobs": -1412.2335441780042,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/__init__.py": {
+        "logprobs": -179.980269764665,
         "metrics": {
-            "loc": 612,
-            "sloc": 382,
-            "lloc": 300,
-            "comments": 55,
-            "multi": 63,
-            "blank": 111,
-            "cyclomatic": 140,
+            "loc": 7,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 4,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/patterns.py": {
+        "logprobs": -1054.154126140153,
+        "metrics": {
+            "loc": 261,
+            "sloc": 208,
+            "lloc": 62,
+            "comments": 28,
+            "multi": 7,
+            "blank": 36,
+            "cyclomatic": 17,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/utils/logging.py": {
+        "logprobs": -359.203620744335,
+        "metrics": {
+            "loc": 145,
+            "sloc": 65,
+            "lloc": 57,
+            "comments": 6,
+            "multi": 45,
+            "blank": 29,
+            "cyclomatic": 12,
             "internal_imports": []
         }
     },
     "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/access_logging/logger.py": {
-        "logprobs": -2102.495839767336,
+        "logprobs": -2111.8596864773344,
         "metrics": {
             "loc": 811,
             "sloc": 454,
@@ -339,21 +430,47 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/document_analysis/analyzer.py": {
-        "logprobs": -997.8873034533785,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/temporal/manager.py": {
+        "logprobs": -1260.0320854199128,
         "metrics": {
-            "loc": 356,
-            "sloc": 165,
-            "lloc": 156,
-            "comments": 29,
+            "loc": 516,
+            "sloc": 308,
+            "lloc": 174,
+            "comments": 39,
             "multi": 82,
-            "blank": 79,
-            "cyclomatic": 61,
+            "blank": 85,
+            "cyclomatic": 74,
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/core/__init__.py": {
-        "logprobs": -116.29267484830001,
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/query_engine/engine.py": {
+        "logprobs": -3476.720469746303,
+        "metrics": {
+            "loc": 1044,
+            "sloc": 720,
+            "lloc": 419,
+            "comments": 119,
+            "multi": 74,
+            "blank": 128,
+            "cyclomatic": 198,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/temporal/models.py": {
+        "logprobs": -532.9140156132999,
+        "metrics": {
+            "loc": 182,
+            "sloc": 85,
+            "lloc": 110,
+            "comments": 6,
+            "multi": 36,
+            "blank": 46,
+            "cyclomatic": 42,
+            "internal_imports": []
+        }
+    },
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/privilege/__init__.py": {
+        "logprobs": -120.478368606,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -365,60 +482,21 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/ontology/models.py": {
-        "logprobs": -423.4168890929402,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/communication_analysis/models.py": {
+        "logprobs": -719.5209517646417,
         "metrics": {
-            "loc": 200,
-            "sloc": 88,
-            "lloc": 109,
-            "comments": 0,
-            "multi": 52,
-            "blank": 52,
-            "cyclomatic": 34,
+            "loc": 411,
+            "sloc": 209,
+            "lloc": 244,
+            "comments": 17,
+            "multi": 54,
+            "blank": 115,
+            "cyclomatic": 71,
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/detector.py": {
-        "logprobs": -1339.991338956165,
-        "metrics": {
-            "loc": 446,
-            "sloc": 249,
-            "lloc": 188,
-            "comments": 38,
-            "multi": 83,
-            "blank": 78,
-            "cyclomatic": 81,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/anonymization/anonymizer.py": {
-        "logprobs": -2488.115057599772,
-        "metrics": {
-            "loc": 873,
-            "sloc": 491,
-            "lloc": 388,
-            "comments": 107,
-            "multi": 157,
-            "blank": 127,
-            "cyclomatic": 192,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/privilege/detector.py": {
-        "logprobs": -1398.9508323871257,
-        "metrics": {
-            "loc": 587,
-            "sloc": 363,
-            "lloc": 236,
-            "comments": 41,
-            "multi": 81,
-            "blank": 100,
-            "cyclomatic": 94,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/temporal/__init__.py": {
-        "logprobs": -109.6996630762,
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/access_logging/__init__.py": {
+        "logprobs": -89.9118522,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -430,8 +508,8 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/query_engine/__init__.py": {
-        "logprobs": -119.2970116855,
+    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/utils/__init__.py": {
+        "logprobs": -102.098422242,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -444,7 +522,7 @@
         }
     },
     "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/policy_enforcement/enforcer.py": {
-        "logprobs": -1549.7482011348088,
+        "logprobs": -1553.1021393160377,
         "metrics": {
             "loc": 478,
             "sloc": 267,
@@ -456,94 +534,16 @@
             "internal_imports": []
         }
     },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/temporal/manager.py": {
-        "logprobs": -1269.5868833018742,
+    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/data_minimization/minimizer.py": {
+        "logprobs": -2212.5626779393306,
         "metrics": {
-            "loc": 516,
-            "sloc": 308,
-            "lloc": 174,
-            "comments": 39,
-            "multi": 82,
+            "loc": 652,
+            "sloc": 461,
+            "lloc": 188,
+            "comments": 118,
+            "multi": 69,
             "blank": 85,
-            "cyclomatic": 74,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/__init__.py": {
-        "logprobs": -181.574538299874,
-        "metrics": {
-            "loc": 7,
-            "sloc": 1,
-            "lloc": 2,
-            "comments": 0,
-            "multi": 4,
-            "blank": 2,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/query_engine/engine.py": {
-        "logprobs": -3481.1955741262655,
-        "metrics": {
-            "loc": 1044,
-            "sloc": 720,
-            "lloc": 419,
-            "comments": 119,
-            "multi": 74,
-            "blank": 128,
-            "cyclomatic": 198,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/utils/logging.py": {
-        "logprobs": -361.47602551350536,
-        "metrics": {
-            "loc": 145,
-            "sloc": 65,
-            "lloc": 57,
-            "comments": 6,
-            "multi": 45,
-            "blank": 29,
-            "cyclomatic": 12,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/privilege/models.py": {
-        "logprobs": -565.271171756371,
-        "metrics": {
-            "loc": 164,
-            "sloc": 89,
-            "lloc": 121,
-            "comments": 0,
-            "multi": 22,
-            "blank": 42,
-            "cyclomatic": 20,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_data_privacy_officer/privacy_query_interpreter/pii_detection/patterns.py": {
-        "logprobs": -1055.6914643424998,
-        "metrics": {
-            "loc": 261,
-            "sloc": 208,
-            "lloc": 62,
-            "comments": 28,
-            "multi": 7,
-            "blank": 36,
-            "cyclomatic": 17,
-            "internal_imports": []
-        }
-    },
-    "query_language_interpreter/query_language_interpreter_legal_discovery_specialist/legal_discovery_interpreter/utils/__init__.py": {
-        "logprobs": -101.1618334141,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
+            "cyclomatic": 92,
             "internal_imports": []
         }
     },

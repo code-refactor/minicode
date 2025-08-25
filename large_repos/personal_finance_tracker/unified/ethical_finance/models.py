@@ -1,7 +1,7 @@
 """Common data models for the ethical finance package."""
 
 from typing import Dict, List, Optional, Any, Union
-from datetime import date, datetime
+from datetime import date as date_type, datetime
 from dataclasses import dataclass, field
 from decimal import Decimal
 
@@ -99,7 +99,7 @@ class InvestmentHolding(ValidationMixin, AuditMixin):
     investment_id: str
     shares: float
     purchase_price: Money  # Use Money for precision
-    purchase_date: date
+    purchase_date: date_type
     current_price: Money  # Use Money for precision
     current_value: Money  # Use Money for precision
     
@@ -141,12 +141,12 @@ class InvestmentHolding(ValidationMixin, AuditMixin):
 class Portfolio(BasePortfolio):
     """A collection of investment holdings extending common portfolio functionality."""
     
-    portfolio_id: str
-    holdings: List[Union[InvestmentHolding, Dict[str, Any]]]
-    total_value: Money  # Use Money for precision
-    cash_balance: Money  # Use Money for precision
-    creation_date: date
-    last_updated: date
+    portfolio_id: str = ""
+    holdings: List[Union[InvestmentHolding, Dict[str, Any]]] = field(default_factory=list)
+    total_value: Money = field(default_factory=lambda: Money.from_float(0.0))  # Use Money for precision
+    cash_balance: Money = field(default_factory=lambda: Money.from_float(0.0))  # Use Money for precision
+    creation_date: date_type = field(default_factory=date_type.today)
+    last_updated: date_type = field(default_factory=date_type.today)
     
     def __post_init__(self):
         """Initialize and validate portfolio, converting legacy data and dict holdings to proper objects."""
@@ -280,34 +280,42 @@ class ShareholderResolution:
                 raise ValueError(f"Vote percentages sum to {vote_sum}, expected 1.0")
 
 
-@dataclass
 class Transaction(BaseTransaction):
     """Model representing a personal financial transaction extending common functionality."""
     
-    id: str
-    date: datetime  # Use datetime for consistency with BaseTransaction
-    vendor: str
-    category: str
-    tags: List[str] = field(default_factory=list)
-    
-    def __post_init__(self):
-        """Initialize base transaction and convert date if needed."""
+    def __init__(self, id: str, date: Union[datetime, date_type], amount: Union[Money, float, int, Decimal], description: str, vendor: str, category: str, tags: List[str] = None):
+        """Initialize transaction."""
+        self.id = id
+        self.vendor = vendor
+        
+        # Convert amount to Money if needed
+        if not isinstance(amount, Money):
+            if isinstance(amount, (int, float, Decimal)):
+                self._money_amount = Money.from_float(float(amount))
+            else:
+                self._money_amount = Money.from_string(str(amount))
+        else:
+            self._money_amount = amount
+        
         # Convert date to datetime if needed
-        if isinstance(self.date, date) and not isinstance(self.date, datetime):
-            self.date = datetime.combine(self.date, datetime.min.time())
+        if isinstance(date, date_type) and not isinstance(date, datetime):
+            date = datetime.combine(date, datetime.min.time())
         
         # Initialize base transaction - determine transaction type from amount
-        transaction_type = TransactionType.EXPENSE if float(self.amount.amount) > 0 else TransactionType.INCOME
+        transaction_type = TransactionType.EXPENSE if float(self._money_amount.amount) > 0 else TransactionType.INCOME
         
-        # Call parent constructor
+        # Call parent constructor with numeric amount
         super().__init__(
-            amount=self.amount,
-            date=self.date,
-            description=self.description or f"{self.vendor} - {self.category}",
+            amount=float(self._money_amount.amount),
+            date=date,
+            description=description or f"{vendor} - {category}",
             transaction_type=transaction_type,
-            category=self.category,
-            tags=self.tags
+            category=category,
+            tags=tags or []
         )
+        
+        # After parent init, override amount to be Money object
+        self.amount = self._money_amount
     
     def validate(self) -> bool:
         """Validate transaction according to business rules."""
@@ -347,7 +355,7 @@ class Transaction(BaseTransaction):
 
 
 @dataclass
-class EthicalCriteria(BaseConfiguration):
+class EthicalCriteria:
     """Customizable ethical screening criteria for investments extending common configuration."""
     
     criteria_id: str
@@ -359,9 +367,7 @@ class EthicalCriteria(BaseConfiguration):
     inclusions: List[str] = field(default_factory=list)
     
     def __post_init__(self):
-        """Initialize base configuration and validate criteria."""
-        # Initialize base configuration with criteria_id as name
-        super().__init__(name=self.name)
+        """Validate criteria after initialization."""
         self._validate_criteria_post_init()
     
     def _validate_criteria_post_init(self):

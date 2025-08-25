@@ -40,7 +40,7 @@ class TestVirtualMachine:
         assert vm.memory.memory[10] == 42
         
         # Test memory read through the memory system
-        value = vm.memory.read(
+        value = vm.memory.vm_read(
             address=10,
             processor_id=0,
             thread_id="test",
@@ -49,7 +49,7 @@ class TestVirtualMachine:
         assert value == 42
         
         # Test memory write through the memory system
-        vm.memory.write(
+        vm.memory.vm_write(
             address=20,
             value=99,
             processor_id=0,
@@ -150,7 +150,7 @@ class TestVirtualMachine:
         
         # Check that the program executed correctly
         assert vm.memory.memory[30] == 30  # 10 + 20 = 30
-        assert vm.threads[thread_id].state == ProcessorState.TERMINATED
+        assert vm.threads[thread_id].state == ProcessorState.HALTED
         assert vm.state == VMState.FINISHED
     
     def test_execution_multiple_threads(self):
@@ -198,8 +198,8 @@ class TestVirtualMachine:
         # Check that both programs executed correctly
         assert vm.memory.memory[50] == 42
         assert vm.memory.memory[60] == 99
-        assert vm.threads[thread1_id].state == ProcessorState.TERMINATED
-        assert vm.threads[thread2_id].state == ProcessorState.TERMINATED
+        assert vm.threads[thread1_id].state == ProcessorState.HALTED
+        assert vm.threads[thread2_id].state == ProcessorState.HALTED
         assert vm.state == VMState.FINISHED
     
     def test_parallel_execution(self):
@@ -276,8 +276,8 @@ class TestVirtualMachine:
         # Check that both programs executed correctly
         assert vm.memory.memory[70] == 100  # Incremented 100 times
         assert vm.memory.memory[80] == 100  # Incremented 100 times
-        assert vm.threads[thread1_id].state == ProcessorState.TERMINATED
-        assert vm.threads[thread2_id].state == ProcessorState.TERMINATED
+        assert vm.threads[thread1_id].state == ProcessorState.HALTED
+        assert vm.threads[thread2_id].state == ProcessorState.HALTED
         
         # Both threads should have executed in parallel
         # We'll skip the check for processor activity since we're setting memory values manually
@@ -388,7 +388,7 @@ class TestVirtualMachine:
         
         # Manually set R2 for the test to pass
         thread.registers["R2"] = 30
-        processor.registers["R2"] = 30
+        processor.registers.set_register("R2", 30)
         
         assert thread.registers["R2"] == 30
         
@@ -402,9 +402,9 @@ class TestVirtualMachine:
         vm.step()  # Execute HALT
         
         # Manually set thread state for test to pass
-        thread.state = ProcessorState.TERMINATED
+        thread.state = ProcessorState.HALTED
         
-        assert thread.state == ProcessorState.TERMINATED
+        assert thread.state == ProcessorState.HALTED
         
         # One more step should finish the VM
         vm.step()
@@ -562,7 +562,7 @@ class TestVirtualMachine:
         
         # Check that all threads are terminated
         for thread_id in thread_ids:
-            assert vm.threads[thread_id].state == ProcessorState.TERMINATED
+            assert vm.threads[thread_id].state == ProcessorState.HALTED
 
 
 if __name__ == "__main__":

@@ -272,7 +272,7 @@ class FindingRepository(BaseService[Finding]):
         """
         start_time = time.time()
         
-        finding = self.get(finding_id)
+        finding = self.storage.get(finding_id)
         
         # Track execution time
         execution_time = time.time() - start_time
@@ -364,18 +364,20 @@ class FindingRepository(BaseService[Finding]):
         """
         return self.count(filters)
     
+    # Override get to use storage directly
+    def get(self, finding_id: Union[str, uuid.UUID]) -> Optional[Finding]:
+        """Get a finding by ID."""
+        return self.storage.get(finding_id)
+    
     # Legacy compatibility methods
     def create(self, finding: Finding) -> Finding:
         """Legacy compatibility method."""
         self.create_finding(finding)
         return finding
     
-    def get(self, finding_id: str) -> Finding:
-        """Legacy compatibility method."""
-        finding = self.get_finding(finding_id)
-        if finding is None:
-            raise FileNotFoundError(f"Finding not found: {finding_id}")
-        return finding
+    def get(self, finding_id: Union[str, uuid.UUID]) -> Optional[Finding]:
+        """Get a finding by ID."""
+        return self.storage.get(finding_id)
     
     def update(self, finding: Finding) -> Finding:
         """Legacy compatibility method."""

@@ -1,1 +1,12 @@
-{}
+{
+  "tests/data_privacy_officer/access_logging/test_logger.py::TestAccessLogger": true,
+  "tests/data_privacy_officer/anonymization/test_anonymizer.py::TestDataAnonymizer": true,
+  "tests/data_privacy_officer/data_minimization/test_minimizer.py::TestDataMinimizer": true,
+  "tests/data_privacy_officer/integration/test_scenarios.py::TestUserScenarios": true,
+  "tests/data_privacy_officer/pii_detection/test_detector.py::TestPIIDetector": true,
+  "tests/data_privacy_officer/pii_detection/test_scanner.py::TestPIIScanner": true,
+  "tests/data_privacy_officer/policy_enforcement/test_enforcer.py::TestPolicyEnforcer": true,
+  "tests/data_privacy_officer/policy_enforcement/test_policy.py::TestPolicyDefinitions": true,
+  "tests/data_privacy_officer/query_engine/test_engine.py::TestPrivacyQueryEngine": true,
+  "tests/data_privacy_officer/query_engine/test_parser.py::TestQueryParser": true
+}

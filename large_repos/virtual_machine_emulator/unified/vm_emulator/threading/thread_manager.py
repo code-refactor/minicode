@@ -114,7 +114,7 @@ class ThreadManager:
         thread = self.threads[thread_id]
         
         # Update thread state
-        thread.state = ProcessorState.TERMINATED
+        thread.state = ProcessorState.HALTED
         
         # Remove from ready queue if present
         if thread_id in self.ready_queue:
@@ -331,7 +331,7 @@ class ThreadManager:
         Returns:
             Running thread count
         """
-        return sum(1 for t in self.threads.values() if t.state == ProcessorState.RUNNING)
+        return sum(1 for t in self.threads.values() if t.state == ProcessorState.EXECUTING)
     
     def get_thread_stats(self, thread_id: str) -> Dict[str, Union[int, float, List[int]]]:
         """

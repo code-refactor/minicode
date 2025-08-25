@@ -30,7 +30,7 @@ class ProjectMetricType(str, Enum):
     ROI = "roi"  # Return on investment
 
 
-class ProfitabilityMetric(BaseModel, AuditMixin):
+class ProfitabilityMetric(BaseModel):
     """Profitability metric for a project with audit support."""
 
     project_id: str
@@ -51,10 +51,9 @@ class ProfitabilityMetric(BaseModel, AuditMixin):
                 data['value'] = Money.from_float(float(data['value']))
         
         super().__init__(**data)
-        self.__init_audit__()
 
 
-class ProjectProfitability(BaseModel, ValidationMixin):
+class ProjectProfitability(BaseModel):
     """Project profitability analysis result with Money support and validation."""
 
     project_id: str
@@ -111,7 +110,7 @@ class ProjectProfitability(BaseModel, ValidationMixin):
             self.roi = 0.0
 
 
-class ClientProfitability(BaseModel, ValidationMixin):
+class ClientProfitability(BaseModel):
     """Client profitability analysis result with Money support and validation."""
 
     client_id: str

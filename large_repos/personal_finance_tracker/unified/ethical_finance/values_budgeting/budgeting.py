@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 
 from ethical_finance.models import Transaction
+from common.core.models.money import Money
 
 
 @dataclass
@@ -198,10 +199,19 @@ class ValuesAlignedBudgeting:
         if start_date or end_date:
             filtered_transactions = []
             for tx in transactions:
-                if start_date and tx.date < start_date:
-                    continue
-                if end_date and tx.date > end_date:
-                    continue
+                # Normalize dates for comparison
+                tx_date = tx.date.date() if isinstance(tx.date, datetime) else tx.date
+                
+                if start_date:
+                    compare_start = start_date if isinstance(start_date, date) and not isinstance(start_date, datetime) else start_date.date()
+                    if tx_date < compare_start:
+                        continue
+                
+                if end_date:
+                    compare_end = end_date if isinstance(end_date, date) and not isinstance(end_date, datetime) else end_date.date()
+                    if tx_date > compare_end:
+                        continue
+                        
                 filtered_transactions.append(tx)
         
         # Use actual date range from transactions if not specified
@@ -235,10 +245,10 @@ class ValuesAlignedBudgeting:
         
         # Aggregate spending by alignment
         alignment_spending = {
-            "aligned": 0.0,
-            "neutral": 0.0,
-            "misaligned": 0.0,
-            "uncategorized": 0.0
+            "aligned": Money.zero(),
+            "neutral": Money.zero(),
+            "misaligned": Money.zero(),
+            "uncategorized": Money.zero()
         }
         
         for tx in filtered_transactions:
@@ -261,7 +271,7 @@ class ValuesAlignedBudgeting:
         # Calculate aligned percentage
         aligned_percentage = 0.0
         if total_spending > 0:
-            aligned_percentage = alignment_spending["aligned"] / total_spending
+            aligned_percentage = float(alignment_spending["aligned"].amount) / float(total_spending.amount)
         
         # Identify high impact areas (largest spending in misaligned categories)
         high_impact_misaligned = []
@@ -271,7 +281,7 @@ class ValuesAlignedBudgeting:
                     "category_id": cat_id,
                     "name": self.categories[cat_id].name,
                     "amount": amount,
-                    "percentage": amount / total_spending if total_spending > 0 else 0,
+                    "percentage": float(amount.amount) / float(total_spending.amount) if total_spending > 0 else 0,
                     "impact_level": self.categories[cat_id].impact_level
                 })
         
@@ -300,8 +310,8 @@ class ValuesAlignedBudgeting:
         aligned_categories = [cat for cat_id, cat in self.categories.items() 
                              if cat.alignment == "aligned"]
         for category in aligned_categories:
-            cat_amount = category_spending.get(category.id, 0)
-            cat_percentage = cat_amount / total_spending if total_spending > 0 else 0
+            cat_amount = category_spending.get(category.id, Money.zero())
+            cat_percentage = float(cat_amount.amount) / float(total_spending.amount) if total_spending > 0 else 0
             
             # If spending in this aligned category is very low
             if cat_percentage < 0.05:
@@ -333,7 +343,7 @@ class ValuesAlignedBudgeting:
                 alignment_spending["uncategorized"] * uncategorized_weight
             )
             
-            consistency_score = (weighted_sum / total_spending) * 100
+            consistency_score = (float(weighted_sum.amount) / float(total_spending.amount)) * 100
         
         # Calculate processing time
         processing_time = (time.time() - start_time) * 1000
@@ -514,9 +524,9 @@ class ValuesAlignedBudgeting:
             
             # Calculate totals for this category
             total_amount = sum(tx.amount for tx in transactions)
-            aligned_amount = 0
-            neutral_amount = 0
-            misaligned_amount = 0
+            aligned_amount = Money.zero()
+            neutral_amount = Money.zero()
+            misaligned_amount = Money.zero()
             
             # Count aligned/neutral/misaligned transactions
             for tx in transactions:
@@ -533,7 +543,8 @@ class ValuesAlignedBudgeting:
             # Range from -1.0 (completely misaligned) to 1.0 (completely aligned)
             alignment_score = 0
             if total_amount > 0:
-                alignment_score = (aligned_amount - misaligned_amount) / total_amount
+                alignment_diff = aligned_amount - misaligned_amount
+                alignment_score = float(alignment_diff.amount) / float(total_amount.amount)
             
             # Store category results
             result["category_alignment"][category] = {
@@ -543,8 +554,8 @@ class ValuesAlignedBudgeting:
                 "aligned_amount": aligned_amount,
                 "neutral_amount": neutral_amount,
                 "misaligned_amount": misaligned_amount,
-                "aligned_percentage": (aligned_amount / total_amount * 100) if total_amount > 0 else 0,
-                "misaligned_percentage": (misaligned_amount / total_amount * 100) if total_amount > 0 else 0
+                "aligned_percentage": (float(aligned_amount.amount) / float(total_amount.amount) * 100) if total_amount > 0 else 0,
+                "misaligned_percentage": (float(misaligned_amount.amount) / float(total_amount.amount) * 100) if total_amount > 0 else 0
             }
             
             # Classify as aligned or misaligned overall
@@ -587,7 +598,7 @@ class ValuesAlignedBudgeting:
             weighted_alignment = 0
             if total_spending > 0:
                 for category, data in result["category_alignment"].items():
-                    weight = data["total_amount"] / total_spending
+                    weight = float(data["total_amount"].amount) / float(total_spending.amount)
                     weighted_alignment += data["alignment_score"] * weight
             
             # Combine weighted alignment (want higher) and variance (want lower)
@@ -622,7 +633,12 @@ class ValuesAlignedBudgeting:
         transactions_by_month = {}
         
         for tx in sorted_transactions:
-            if tx.date < start_date or tx.date > end_date:
+            # Normalize dates for comparison
+            tx_date = tx.date.date() if isinstance(tx.date, datetime) else tx.date
+            compare_start = start_date if isinstance(start_date, date) and not isinstance(start_date, datetime) else start_date.date()
+            compare_end = end_date if isinstance(end_date, date) and not isinstance(end_date, datetime) else end_date.date()
+            
+            if tx_date < compare_start or tx_date > compare_end:
                 continue
                 
             # Create a month key (YYYY-MM)
@@ -652,8 +668,8 @@ class ValuesAlignedBudgeting:
             misaligned_count = 0
             neutral_count = 0
             
-            aligned_amount = 0
-            misaligned_amount = 0
+            aligned_amount = Money.zero()
+            misaligned_amount = Money.zero()
             neutral_amount = 0
             total_spent = sum(tx.amount for tx in month_transactions)
             
@@ -677,7 +693,8 @@ class ValuesAlignedBudgeting:
             # Calculate overall alignment score for this month
             alignment_score = 0
             if total_spent > 0:
-                alignment_score = (aligned_amount - misaligned_amount) / total_spent
+                alignment_diff = aligned_amount - misaligned_amount
+                alignment_score = float(alignment_diff.amount) / float(total_spent.amount)
                 
             # Store month analysis
             monthly_alignment[month] = {
@@ -690,8 +707,8 @@ class ValuesAlignedBudgeting:
                 "aligned_percentage": (aligned_count / total_count * 100) if total_count > 0 else 0,
                 "misaligned_percentage": (misaligned_count / total_count * 100) if total_count > 0 else 0,
                 "neutral_percentage": (neutral_count / total_count * 100) if total_count > 0 else 0,
-                "aligned_spending_percentage": (aligned_amount / total_spent * 100) if total_spent > 0 else 0,
-                "misaligned_spending_percentage": (misaligned_amount / total_spent * 100) if total_spent > 0 else 0
+                "aligned_spending_percentage": (float(aligned_amount.amount) / float(total_spent.amount) * 100) if total_spent > 0 else 0,
+                "misaligned_spending_percentage": (float(misaligned_amount.amount) / float(total_spent.amount) * 100) if total_spent > 0 else 0
             }
         
         # Analyze trend over time
@@ -786,7 +803,7 @@ class ValuesAlignedBudgeting:
                             categorized = self.batch_categorize_transactions(last_txs)
                             
                             # Count misaligned spending
-                            misaligned_amount = 0
+                            misaligned_amount = Money.zero()
                             for tx in last_txs:
                                 if tx.id in categorized and categorized[tx.id].alignment_score < -0.3:
                                     misaligned_amount += tx.amount
@@ -880,9 +897,9 @@ class ValuesAlignedBudgeting:
             categorized = self.batch_categorize_transactions(vendor_transactions)
             
             # Calculate alignment metrics
-            aligned_amount = 0
-            misaligned_amount = 0
-            neutral_amount = 0
+            aligned_amount = Money.zero()
+            misaligned_amount = Money.zero()
+            neutral_amount = Money.zero()
             
             # Count alignment categories and collect tags
             all_tags = []
@@ -903,7 +920,8 @@ class ValuesAlignedBudgeting:
             # Calculate overall alignment score for this vendor
             alignment_score = 0
             if total_spent > 0:
-                alignment_score = (aligned_amount - misaligned_amount) / total_spent
+                alignment_diff = aligned_amount - misaligned_amount
+                alignment_score = float(alignment_diff.amount) / float(total_spent.amount)
                 # Ensure we stay within the -1.0 to 1.0 bounds (avoiding floating point errors)
                 alignment_score = max(-1.0, min(1.0, alignment_score))
                 
@@ -964,8 +982,8 @@ class ValuesAlignedBudgeting:
                 "common_tags": common_tags,
                 "value_consistency": value_consistency,
                 "recommendation": recommendation,
-                "aligned_percentage": (aligned_amount / total_spent * 100) if total_spent > 0 else 0,
-                "misaligned_percentage": (misaligned_amount / total_spent * 100) if total_spent > 0 else 0
+                "aligned_percentage": (float(aligned_amount.amount) / float(total_spent.amount) * 100) if total_spent > 0 else 0,
+                "misaligned_percentage": (float(misaligned_amount.amount) / float(total_spent.amount) * 100) if total_spent > 0 else 0
             }
         
         # Create vendor rankings

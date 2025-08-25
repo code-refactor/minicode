@@ -97,8 +97,15 @@ class SecurityInstruction(CommonInstruction):
 class SecurityRegisters:
     """Security-specific register extensions."""
     
-    def __init__(self, base_registers):
+    def __init__(self, base_registers=None, register_count=8):
+        # If no base_registers provided, create a new RegisterFile
+        if base_registers is None:
+            from common.core.registers import RegisterFile
+            base_registers = RegisterFile()
+            # Ensure we have the right number of registers
+            base_registers.general_registers = {f'R{i}': 0 for i in range(register_count)}
         self.base = base_registers
+        self.register_count = register_count
         # Protection and privilege registers
         self.privilege_level = PrivilegeLevel.USER
         self.protection_key = 0
@@ -107,7 +114,7 @@ class SecurityRegisters:
         """Get register value by number or name."""
         if isinstance(reg_spec, int):
             # Numeric register
-            if 0 <= reg_spec < 16:
+            if 0 <= reg_spec < self.register_count:
                 return self.base.get_register(f"R{reg_spec}")
             raise ValueError(f"Invalid register number: {reg_spec}")
         else:
@@ -118,7 +125,7 @@ class SecurityRegisters:
         """Set register value by number or name."""
         if isinstance(reg_spec, int):
             # Numeric register
-            if 0 <= reg_spec < 16:
+            if 0 <= reg_spec < self.register_count:
                 self.base.set_register(f"R{reg_spec}", value)
             else:
                 raise ValueError(f"Invalid register number: {reg_spec}")
@@ -149,12 +156,32 @@ class SecurityRegisters:
         self.base.program_counter = value
     
     @property
+    def program_counter(self) -> int:
+        """Program counter (for ProcessorBase compatibility)."""
+        return self.base.program_counter
+    
+    @program_counter.setter
+    def program_counter(self, value: int) -> None:
+        """Set program counter."""
+        self.base.program_counter = value
+    
+    @property
     def sp(self) -> int:
         """Stack pointer."""
         return self.base.stack_pointer
     
     @sp.setter
     def sp(self, value: int) -> None:
+        """Set stack pointer."""
+        self.base.stack_pointer = value
+    
+    @property
+    def stack_pointer(self) -> int:
+        """Stack pointer (for ProcessorBase compatibility)."""
+        return self.base.stack_pointer
+    
+    @stack_pointer.setter
+    def stack_pointer(self, value: int) -> None:
         """Set stack pointer."""
         self.base.stack_pointer = value
     
@@ -169,6 +196,16 @@ class SecurityRegisters:
         self.base.frame_pointer = value
     
     @property
+    def frame_pointer(self) -> int:
+        """Frame pointer (for ProcessorBase compatibility)."""
+        return self.base.frame_pointer
+    
+    @frame_pointer.setter
+    def frame_pointer(self, value: int) -> None:
+        """Set frame pointer."""
+        self.base.frame_pointer = value
+    
+    @property
     def flags(self) -> int:
         """Flags register."""
         return self.base.flags
@@ -177,6 +214,12 @@ class SecurityRegisters:
     def flags(self, value: int) -> None:
         """Set flags register."""
         self.base.flags = value
+    
+    def reset(self) -> None:
+        """Reset all registers to initial state."""
+        self.base.reset()
+        self.privilege_level = PrivilegeLevel.USER
+        self.protection_key = 0
 
 
 class ControlFlowRecord:
@@ -247,8 +290,8 @@ class CPU(ProcessorBase):
     def __init__(self, memory: Memory):
         super().__init__()
         
-        # Security-specific register extensions
-        self.sec_registers = SecurityRegisters(self.registers)
+        # Replace the base registers with security-enhanced version
+        self.registers = SecurityRegisters(self.registers)
         self.memory = memory
         self.running = False
         self.halted = False
@@ -263,10 +306,21 @@ class CPU(ProcessorBase):
         self.execution_start_time = 0
         self.execution_time = 0
     
+    @property
+    def cycles(self) -> int:
+        """Alias for cycle_count for backward compatibility."""
+        return self.cycle_count
+    
+    @cycles.setter
+    def cycles(self, value: int) -> None:
+        """Set cycle_count for backward compatibility."""
+        self.cycle_count = value
+    
     def reset(self) -> None:
         """Reset the CPU state."""
         super().reset()
-        self.sec_registers = SecurityRegisters(self.registers)
+        # Re-wrap registers with SecurityRegisters after base reset
+        self.registers = SecurityRegisters(self.registers)
         self.running = False
         self.halted = False
         self.control_flow_records = []
@@ -279,16 +333,16 @@ class CPU(ProcessorBase):
         try:
             # We use execute here to enforce DEP
             instr_byte = self.memory.execute(
-                self.sec_registers.ip,
-                {"instruction_pointer": self.sec_registers.ip}
+                self.registers.ip,
+                {"instruction_pointer": self.registers.ip}
             )
-            self.sec_registers.ip += 1
+            self.registers.ip += 1
             return instr_byte
         except MemoryError as e:
             # Check if this is due to a non-executable segment
-            segment = self.memory.find_segment(self.sec_registers.ip)
-            if segment and not segment.check_permission(self.sec_registers.ip, MemoryPermission.EXECUTE):
-                raise SegmentationFault(f"Cannot execute code from non-executable memory at 0x{self.sec_registers.ip:x}")
+            segment = self.memory.find_segment(self.registers.ip)
+            if segment and not segment.check_permission(self.registers.ip, MemoryPermission.EXECUTE):
+                raise SegmentationFault(f"Cannot execute code from non-executable memory at 0x{self.registers.ip:x}")
             else:
                 raise SegmentationFault(f"Failed to fetch instruction: {str(e)}")
     
@@ -297,36 +351,36 @@ class CPU(ProcessorBase):
         try:
             # For operands we use read_word since they don't need to be executable
             word = self.memory.read_word(
-                self.sec_registers.ip,
-                {"instruction_pointer": self.sec_registers.ip}
+                self.registers.ip,
+                {"instruction_pointer": self.registers.ip}
             )
-            self.sec_registers.ip += 4
+            self.registers.ip += 4
             return word
         except MemoryError as e:
             raise SegmentationFault(f"Failed to fetch word: {str(e)}")
     
     def push(self, value: int) -> None:
         """Push a value onto the stack."""
-        self.sec_registers.sp -= 4
+        self.registers.sp -= 4
         try:
             self.memory.write_word(
-                self.sec_registers.sp,
+                self.registers.sp,
                 value,
-                {"instruction_pointer": self.sec_registers.ip}
+                {"instruction_pointer": self.registers.ip}
             )
         except MemoryError as e:
             # Restore SP if push failed
-            self.sec_registers.sp += 4
+            self.registers.sp += 4
             raise SegmentationFault(f"Failed to push value: {str(e)}")
     
     def pop(self) -> int:
         """Pop a value from the stack."""
         try:
             value = self.memory.read_word(
-                self.sec_registers.sp,
-                {"instruction_pointer": self.sec_registers.ip}
+                self.registers.sp,
+                {"instruction_pointer": self.registers.ip}
             )
-            self.sec_registers.sp += 4
+            self.registers.sp += 4
             return value
         except MemoryError as e:
             raise SegmentationFault(f"Failed to pop value: {str(e)}")
@@ -368,23 +422,23 @@ class CPU(ProcessorBase):
     def execute_instruction_by_opcode(self, opcode: int) -> bool:
         """Execute a single instruction with the given opcode."""
         if opcode not in self.INSTRUCTIONS:
-            raise InvalidInstruction(f"0x{opcode:02x}", self.sec_registers.ip)
+            raise InvalidInstruction(f"0x{opcode:02x}", self.registers.ip)
         
         instruction = self.INSTRUCTIONS[opcode]
         
         # Check privilege level for security instructions
         if hasattr(instruction, 'required_privilege'):
-            if self.sec_registers.privilege_level.value < instruction.required_privilege.value:
+            if self.registers.privilege_level.value < instruction.required_privilege.value:
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 1,  # Previous IP value where opcode was fetched
-                    self.sec_registers.ip,      # Current IP value
+                    self.registers.ip - 1,  # Previous IP value where opcode was fetched
+                    self.registers.ip,      # Current IP value
                     "privilege-violation",
                     instruction.name,
                     False
                 )
                 raise PrivilegeViolation(
                     instruction.required_privilege.value,
-                    self.sec_registers.privilege_level.value
+                    self.registers.privilege_level.value
                 )
         
         # Decode and execute the instruction based on type
@@ -408,8 +462,8 @@ class CPU(ProcessorBase):
             # For simplicity, we'll assume reg-reg operations
             dest_reg = self.fetch()
             src_reg = self.fetch()
-            dest_val = self.sec_registers.get_register(dest_reg)
-            src_val = self.sec_registers.get_register(src_reg)
+            dest_val = self.registers.get_register(dest_reg)
+            src_val = self.registers.get_register(src_reg)
             
             result = 0
             if instruction.name == "ADD":
@@ -423,7 +477,7 @@ class CPU(ProcessorBase):
                     raise CPUException("Division by zero")
                 result = (dest_val // src_val) & 0xFFFFFFFF
             
-            self.sec_registers.set_register(dest_reg, result)
+            self.registers.set_register(dest_reg, result)
             
             # Update flags (zero flag example)
             if result == 0:
@@ -440,106 +494,106 @@ class CPU(ProcessorBase):
             if src_type == 0x01:  # Immediate value
                 # Fetch a 32-bit immediate value
                 value = self.fetch_word()
-                self.sec_registers.set_register(dest_reg, value)
+                self.registers.set_register(dest_reg, value)
             elif src_type == 0x02:  # Register value
                 src_reg = self.fetch()
-                value = self.sec_registers.get_register(src_reg)
-                self.sec_registers.set_register(dest_reg, value)
+                value = self.registers.get_register(src_reg)
+                self.registers.set_register(dest_reg, value)
             else:
                 src_reg = src_type  # Backward compatibility
-                value = self.sec_registers.get_register(src_reg)
-                self.sec_registers.set_register(dest_reg, value)
+                value = self.registers.get_register(src_reg)
+                self.registers.set_register(dest_reg, value)
 
         elif instruction.name == "LOAD":
             dest_reg = self.fetch()
             addr_reg = self.fetch()
-            addr = self.sec_registers.get_register(addr_reg)
+            addr = self.registers.get_register(addr_reg)
             try:
                 value = self.memory.read_word(
                     addr,
-                    {"instruction_pointer": self.sec_registers.ip - 2}
+                    {"instruction_pointer": self.registers.ip - 2}
                 )
-                self.sec_registers.set_register(dest_reg, value)
+                self.registers.set_register(dest_reg, value)
             except MemoryError as e:
                 raise SegmentationFault(f"LOAD failed: {str(e)}")
 
         elif instruction.name == "STORE":
             addr_reg = self.fetch()
             src_reg = self.fetch()
-            addr = self.sec_registers.get_register(addr_reg)
-            value = self.sec_registers.get_register(src_reg)
+            addr = self.registers.get_register(addr_reg)
+            value = self.registers.get_register(src_reg)
             try:
                 self.memory.write_word(
                     addr,
                     value,
-                    {"instruction_pointer": self.sec_registers.ip - 2}
+                    {"instruction_pointer": self.registers.ip - 2}
                 )
             except MemoryError as e:
                 raise SegmentationFault(f"STORE failed: {str(e)}")
 
         elif instruction.name == "PUSH":
             reg = self.fetch()
-            value = self.sec_registers.get_register(reg)
+            value = self.registers.get_register(reg)
             self.push(value)
 
         elif instruction.name == "POP":
             reg = self.fetch()
             value = self.pop()
-            self.sec_registers.set_register(reg, value)
+            self.registers.set_register(reg, value)
     
     def _execute_control(self, instruction: SecurityInstruction) -> None:
         """Execute a control flow instruction."""
         if instruction.name == "JMP":
             target_reg = self.fetch()
-            target = self.sec_registers.get_register(target_reg)
+            target = self.registers.get_register(target_reg)
             
             # Record the control flow event
             self.record_control_flow_event(
-                self.sec_registers.ip - 1,  # Where opcode was fetched
+                self.registers.ip - 1,  # Where opcode was fetched
                 target,
                 "jump",
                 instruction.name,
                 True  # Assumed legitimate for now - CFI would validate this
             )
             
-            self.sec_registers.ip = target
+            self.registers.ip = target
         
         elif instruction.name == "JZ":
             target_reg = self.fetch()
-            target = self.sec_registers.get_register(target_reg)
+            target = self.registers.get_register(target_reg)
             
             # Only jump if zero flag is set
             if self.get_flag(Flags.ZERO):
                 # Record the control flow event
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 1,
+                    self.registers.ip - 1,
                     target,
                     "conditional-jump",
                     instruction.name,
                     True
                 )
-                self.sec_registers.ip = target
+                self.registers.ip = target
         
         elif instruction.name == "JNZ":
             target_reg = self.fetch()
-            target = self.sec_registers.get_register(target_reg)
+            target = self.registers.get_register(target_reg)
             
             # Only jump if zero flag is not set
             if not self.get_flag(Flags.ZERO):
                 # Record the control flow event
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 1,
+                    self.registers.ip - 1,
                     target,
                     "conditional-jump",
                     instruction.name,
                     True
                 )
-                self.sec_registers.ip = target
+                self.registers.ip = target
         
         elif instruction.name == "CALL":
             target_reg = self.fetch()
-            target = self.sec_registers.get_register(target_reg)
-            return_addr = self.sec_registers.ip
+            target = self.registers.get_register(target_reg)
+            return_addr = self.registers.ip
             
             # Record return address in shadow stack for control flow integrity
             self.shadow_stack.append(return_addr)
@@ -549,14 +603,14 @@ class CPU(ProcessorBase):
             
             # Record the control flow event
             self.record_control_flow_event(
-                self.sec_registers.ip - 1,
+                self.registers.ip - 1,
                 target,
                 "call",
                 instruction.name,
                 True
             )
             
-            self.sec_registers.ip = target
+            self.registers.ip = target
         
         elif instruction.name == "RET":
             # Pop return address from stack
@@ -570,7 +624,7 @@ class CPU(ProcessorBase):
                     shadow_valid = False
                     # We record this but don't stop execution to allow exploits
                     self.record_control_flow_event(
-                        self.sec_registers.ip - 1,
+                        self.registers.ip - 1,
                         return_addr,
                         "return",
                         instruction.name,
@@ -579,7 +633,7 @@ class CPU(ProcessorBase):
             else:
                 shadow_valid = False
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 1,
+                    self.registers.ip - 1,
                     return_addr,
                     "return",
                     instruction.name,
@@ -588,14 +642,14 @@ class CPU(ProcessorBase):
             
             if shadow_valid:
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 1,
+                    self.registers.ip - 1,
                     return_addr,
                     "return",
                     instruction.name,
                     True
                 )
             
-            self.sec_registers.ip = return_addr
+            self.registers.ip = return_addr
     
     def _execute_system(self, instruction: SecurityInstruction) -> None:
         """Execute a system instruction."""
@@ -603,10 +657,10 @@ class CPU(ProcessorBase):
             syscall_num = self.fetch()
             
             # Record system call for forensic purposes
-            context = {"registers": self.sec_registers.dump_registers()}
+            context = {"registers": self.registers.dump_registers()}
             self.record_control_flow_event(
-                self.sec_registers.ip - 1,
-                self.sec_registers.ip,
+                self.registers.ip - 1,
+                self.registers.ip,
                 "syscall",
                 f"{instruction.name} {syscall_num}",
                 True,
@@ -619,15 +673,15 @@ class CPU(ProcessorBase):
         
         elif instruction.name == "SYSRET":
             # Return from system call - typically adjusts privilege
-            prev_privilege = self.sec_registers.privilege_level
+            prev_privilege = self.registers.privilege_level
             
             # Only lower privilege on return, never elevate
             if prev_privilege != PrivilegeLevel.USER:
-                self.sec_registers.privilege_level = PrivilegeLevel.USER
+                self.registers.privilege_level = PrivilegeLevel.USER
             
             self.record_control_flow_event(
-                self.sec_registers.ip - 1,
-                self.sec_registers.ip,
+                self.registers.ip - 1,
+                self.registers.ip,
                 "sysret",
                 instruction.name,
                 True,
@@ -642,14 +696,14 @@ class CPU(ProcessorBase):
             # This is checked at the beginning of execute_instruction
             
             if 0 <= target_level <= 2:
-                self.sec_registers.privilege_level = PrivilegeLevel(target_level)
+                self.registers.privilege_level = PrivilegeLevel(target_level)
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 2,
-                    self.sec_registers.ip,
+                    self.registers.ip - 2,
+                    self.registers.ip,
                     "privilege-change",
                     instruction.name,
                     True,
-                    {"new_level": self.sec_registers.privilege_level.name}
+                    {"new_level": self.registers.privilege_level.name}
                 )
             else:
                 raise CPUException(f"Invalid privilege level: {target_level}")
@@ -657,18 +711,18 @@ class CPU(ProcessorBase):
         elif instruction.name == "LOWER":
             # Voluntarily lower privilege level
             target_level = self.fetch()
-            current_level = self.sec_registers.privilege_level.value
+            current_level = self.registers.privilege_level.value
             
             # Can only lower privilege, not elevate
             if 0 <= target_level < current_level:
-                self.sec_registers.privilege_level = PrivilegeLevel(target_level)
+                self.registers.privilege_level = PrivilegeLevel(target_level)
                 self.record_control_flow_event(
-                    self.sec_registers.ip - 2,
-                    self.sec_registers.ip,
+                    self.registers.ip - 2,
+                    self.registers.ip,
                     "privilege-change",
                     instruction.name,
                     True,
-                    {"new_level": self.sec_registers.privilege_level.name}
+                    {"new_level": self.registers.privilege_level.name}
                 )
             else:
                 raise PrivilegeViolation(
@@ -693,8 +747,8 @@ class CPU(ProcessorBase):
             
             # Record for forensic purposes
             self.record_control_flow_event(
-                self.sec_registers.ip - 2,
-                self.sec_registers.ip,
+                self.registers.ip - 2,
+                self.registers.ip,
                 "interrupt",
                 f"{instruction.name} {interrupt_num}",
                 True
@@ -755,7 +809,7 @@ class CPU(ProcessorBase):
             self.running = False
             # Record the exception but don't re-raise it to allow exploit demonstration
             self.record_control_flow_event(
-                self.sec_registers.ip,
+                self.registers.ip,
                 0,
                 "exception",
                 str(e),

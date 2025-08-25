@@ -41,21 +41,29 @@ class Finding(BaseEntity, StatusMixin, TaggedMixin):
     
     def __post_init__(self):
         """Initialize mixins and set up status transitions."""
-        StatusMixin.__init__(self)
-        TaggedMixin.__init__(self)
+        # Call parent __post_init__ for BaseEntity UUID handling
+        super().__post_init__()
         
-        # Set initial status
-        self.status = "open"
+        # Initialize mixins only if not already initialized
+        if not hasattr(self, 'valid_transitions'):
+            StatusMixin.__init__(self)
+        if not hasattr(self, 'tags'):
+            TaggedMixin.__init__(self)
+        
+        # Set initial status only if not set
+        if not hasattr(self, 'status') or self.status is None:
+            self.status = "open"
         
         # Define valid status transitions
-        self.valid_transitions = {
-            "open": ["in_progress", "closed", "false_positive"],
-            "in_progress": ["remediated", "open", "closed"],
-            "remediated": ["verified", "open"],
-            "verified": ["closed"],
-            "closed": ["open"],
-            "false_positive": ["open"]
-        }
+        if not hasattr(self, 'valid_transitions'):
+            self.valid_transitions = {
+                "open": ["in_progress", "closed", "false_positive"],
+                "in_progress": ["remediated", "open", "closed"],
+                "remediated": ["verified", "open"],
+                "verified": ["closed"],
+                "closed": ["open"],
+                "false_positive": ["open"]
+            }
     
     def validate_status(self, value: str) -> str:
         """Validate that the status is a known value."""
@@ -149,37 +157,50 @@ class Finding(BaseEntity, StatusMixin, TaggedMixin):
         if 'verification_date' in data and isinstance(data['verification_date'], str):
             data['verification_date'] = datetime.fromisoformat(data['verification_date'])
         
-        # Create instance without calling parent from_dict (to avoid recursion)
-        finding = cls(
-            title=data.get('title', ''),
-            description=data.get('description', ''),
-            affected_systems=data.get('affected_systems', []),
-            discovered_date=data.get('discovered_date', datetime.now()),
-            discovered_by=data.get('discovered_by', ''),
-            severity=data.get('severity', ''),
-            cvss_vector=data.get('cvss_vector'),
-            cvss_score=data.get('cvss_score'),
-            cvss_severity=data.get('cvss_severity'),
-            remediation_plan=data.get('remediation_plan'),
-            remediation_date=data.get('remediation_date'),
-            remediated_by=data.get('remediated_by'),
-            verification_date=data.get('verification_date'),
-            verified_by=data.get('verified_by'),
-            references=data.get('references', []),
-            notes=data.get('notes', []),
-            evidence_ids=data.get('evidence_ids', []),
-            compliance_controls=data.get('compliance_controls', [])
-        )
+        # Extract fields for Finding constructor
+        finding_fields = {
+            'title': data.get('title', ''),
+            'description': data.get('description', ''),
+            'affected_systems': data.get('affected_systems', []),
+            'discovered_date': data.get('discovered_date', datetime.now()),
+            'discovered_by': data.get('discovered_by', ''),
+            'severity': data.get('severity', ''),
+            'cvss_vector': data.get('cvss_vector'),
+            'cvss_score': data.get('cvss_score'),
+            'cvss_severity': data.get('cvss_severity'),
+            'remediation_plan': data.get('remediation_plan'),
+            'remediation_date': data.get('remediation_date'),
+            'remediated_by': data.get('remediated_by'),
+            'verification_date': data.get('verification_date'),
+            'verified_by': data.get('verified_by'),
+            'references': data.get('references', []),
+            'notes': data.get('notes', []),
+            'evidence_ids': data.get('evidence_ids', []),
+            'compliance_controls': data.get('compliance_controls', [])
+        }
         
-        # Set ID if provided
+        # Add BaseEntity fields if present
         if 'id' in data:
-            finding.id = data['id']
+            finding_fields['id'] = data['id']
+        if 'created_at' in data:
+            if isinstance(data['created_at'], str):
+                finding_fields['created_at'] = datetime.fromisoformat(data['created_at'])
+            else:
+                finding_fields['created_at'] = data['created_at']
+        if 'updated_at' in data:
+            if isinstance(data['updated_at'], str):
+                finding_fields['updated_at'] = datetime.fromisoformat(data['updated_at'])
+            else:
+                finding_fields['updated_at'] = data['updated_at']
+        if 'metadata' in data:
+            finding_fields['metadata'] = data['metadata']
         
-        # Set status if provided
-        if 'status' in data:
+        # Create instance with all fields
+        finding = cls(**finding_fields)
+        
+        # Set status and tags after creation
+        if 'status' in data and data['status']:
             finding.status = data['status']
-        
-        # Set tags if provided
         if 'tags' in data and hasattr(finding, 'tags'):
             finding.tags = set(data['tags'])
         

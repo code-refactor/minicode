@@ -34,8 +34,20 @@ class ResearchQuestion(BaseEntity):
     
     def __post_init__(self):
         """Validate required fields after initialization."""
+        # Call parent __post_init__ for BaseEntity UUID handling
+        super().__post_init__()
         if not self.text:
             raise ValueError("Research question text cannot be empty")
+    
+    def update(self, **kwargs) -> 'ResearchQuestion':
+        """Update method that modifies in place."""
+        # Update fields in place
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        # Update the timestamp
+        self.updated_at = datetime.now()
+        return self
 
 
 @dataclass
@@ -93,8 +105,20 @@ class ResearchTask(BaseEntity):
         return super().update(**kwargs)
     
     def update(self, **kwargs) -> 'ResearchTask':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Backward-compatible update method that modifies in place."""
+        # Update fields in place
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        
+        # Auto-set completed_at when status changes to COMPLETED
+        if 'status' in kwargs and kwargs['status'] == TaskStatus.COMPLETED:
+            if self.completed_at is None:
+                self.completed_at = datetime.now()
+        
+        # Update the timestamp
+        self.updated_at = datetime.now()
+        return self
     
     def add_note(self, note: str) -> None:
         """Add a note to the task."""

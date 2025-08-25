@@ -7,6 +7,7 @@ from typing import Dict, List, Optional, Tuple, Union, Set
 import pandas as pd
 from pydantic import BaseModel
 
+from common import Money
 from personal_finance_tracker.models.common import (
     Client,
     Project,
@@ -79,7 +80,13 @@ class ProjectProfiler:
         # Calculate total revenue from invoices
         project_invoices = [i for i in invoices if i.project_id == project.id]
         paid_invoices = [i for i in project_invoices if i.status == "paid"]
-        total_revenue = sum(invoice.amount for invoice in paid_invoices)
+        if paid_invoices:
+            revenue_amounts = [invoice.amount for invoice in paid_invoices]
+            total_revenue = revenue_amounts[0]
+            for amount in revenue_amounts[1:]:
+                total_revenue = total_revenue + amount
+        else:
+            total_revenue = Money.zero()
 
         # Calculate total expenses
         project_expenses = [
@@ -90,7 +97,13 @@ class ProjectProfiler:
                 and t.project_id == project.id
             )
         ]
-        total_expenses = sum(t.amount for t in project_expenses)
+        if project_expenses:
+            expense_amounts = [t.amount for t in project_expenses]
+            total_expenses = expense_amounts[0]
+            for amount in expense_amounts[1:]:
+                total_expenses = total_expenses + amount
+        else:
+            total_expenses = Money.zero()
 
         # Calculate profitability metrics
         total_profit = total_revenue - total_expenses

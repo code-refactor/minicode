@@ -1,16 +1,1 @@
-{
-  "tests/digital_artist": true,
-  "tests/game_developer/asset_optimization/test_chunking.py": true,
-  "tests/game_developer/asset_optimization/test_compressor.py": true,
-  "tests/game_developer/asset_optimization/test_deduplication.py": true,
-  "tests/game_developer/asset_optimization/test_manager.py": true,
-  "tests/game_developer/backup_engine/test_chunking.py": true,
-  "tests/game_developer/backup_engine/test_engine.py": true,
-  "tests/game_developer/backup_engine/test_storage.py": true,
-  "tests/game_developer/backup_engine/test_version_tracker.py": true,
-  "tests/game_developer/feedback_system/test_analysis.py": true,
-  "tests/game_developer/feedback_system/test_manager.py": true,
-  "tests/game_developer/integration/test_game_development_workflow.py": true,
-  "tests/game_developer/milestone_management/test_manager.py": true,
-  "tests/game_developer/performance/test_backup_performance.py": true
-}
+{}

@@ -249,8 +249,8 @@ class VirtualMachine(VMBase):
         )
         
         # Initialize stack pointer to top of stack
-        self.cpu.sec_registers.sp = self.stack_segment.base_address + self.stack_segment.size - 4
-        self.cpu.sec_registers.bp = self.cpu.sec_registers.sp
+        self.cpu.registers.sp = self.stack_segment.base_address + self.stack_segment.size - 4
+        self.cpu.registers.bp = self.cpu.registers.sp
     
     def _apply_memory_protections(self) -> None:
         """Apply configured memory protections."""
@@ -299,7 +299,7 @@ class VirtualMachine(VMBase):
         self.program_loaded = True
 
         # Set instruction pointer to entry point
-        self.cpu.sec_registers.ip = entry_point
+        self.cpu.registers.ip = entry_point
 
         # Log program load
         self.forensic_log.log_system_event(
@@ -399,7 +399,7 @@ class VirtualMachine(VMBase):
         self.forensic_log.log_system_event(
             "execution_start",
             {
-                "entry_point": self.cpu.sec_registers.ip,
+                "entry_point": self.cpu.registers.ip,
                 "max_instructions": max_instructions,
             }
         )
@@ -423,7 +423,7 @@ class VirtualMachine(VMBase):
                 {
                     "exception_type": type(e).__name__,
                     "message": str(e),
-                    "instruction_pointer": self.cpu.sec_registers.ip,
+                    "instruction_pointer": self.cpu.registers.ip,
                 }
             )
         
@@ -479,7 +479,7 @@ class VirtualMachine(VMBase):
             success=success,
             cycles=self.cpu.cycle_count,
             execution_time=self.cpu.execution_time,
-            cpu_state=self.cpu.sec_registers.dump_registers(),
+            cpu_state=self.cpu.registers.dump_registers(),
             control_flow_events=control_flow_events,
             protection_events=protection_events,
         )
@@ -609,8 +609,8 @@ class VirtualMachine(VMBase):
         self.program_entry_point = 0
         
         # Reset stack pointer
-        self.cpu.sec_registers.sp = self.stack_segment.base_address + self.stack_segment.size - 4
-        self.cpu.sec_registers.bp = self.cpu.sec_registers.sp
+        self.cpu.registers.sp = self.stack_segment.base_address + self.stack_segment.size - 4
+        self.cpu.registers.bp = self.cpu.registers.sp
         
         # Reset VM state
         self.state = VMState.IDLE

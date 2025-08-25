@@ -110,8 +110,15 @@ class Money:
         """Create zero money in specified currency."""
         return cls(Decimal('0'), currency)
     
-    def __add__(self, other: 'Money') -> 'Money':
-        """Add two Money objects (must have same currency)."""
+    def __add__(self, other: Union['Money', int, float]) -> 'Money':
+        """Add two Money objects or add a number to Money."""
+        if isinstance(other, (int, float)):
+            # Support sum() which starts with 0
+            if other == 0:
+                return self
+            # Otherwise add as Money
+            return Money(self.amount + Decimal(str(other)), self.currency)
+        
         if not isinstance(other, Money):
             raise TypeError(f"Cannot add Money and {type(other)}")
         
@@ -119,6 +126,14 @@ class Money:
             raise ValueError(f"Cannot add {self.currency.value} and {other.currency.value}")
         
         return Money(self.amount + other.amount, self.currency)
+    
+    def __radd__(self, other: Union['Money', int, float]) -> 'Money':
+        """Support reverse addition for Money (especially for sum())."""
+        if isinstance(other, (int, float)):
+            if other == 0:
+                return self
+            return Money(Decimal(str(other)) + self.amount, self.currency)
+        return self.__add__(other)
     
     def __sub__(self, other: 'Money') -> 'Money':
         """Subtract two Money objects (must have same currency)."""
@@ -171,13 +186,20 @@ class Money:
         return Money(abs(self.amount), self.currency)
     
     def __eq__(self, other: object) -> bool:
-        """Check equality with another Money object."""
+        """Check equality with another Money object or numeric value."""
+        if isinstance(other, (int, float)):
+            # Compare with numeric value (assumes same currency)
+            return float(self.amount) == other
         if not isinstance(other, Money):
             return False
         return self.amount == other.amount and self.currency == other.currency
     
-    def __lt__(self, other: 'Money') -> bool:
-        """Less than comparison (must have same currency)."""
+    def __lt__(self, other: Union['Money', int, float]) -> bool:
+        """Less than comparison."""
+        if isinstance(other, (int, float)):
+            # Compare with numeric value (assumes same currency)
+            return float(self.amount) < other
+        
         if not isinstance(other, Money):
             raise TypeError(f"Cannot compare Money and {type(other)}")
         
@@ -186,16 +208,22 @@ class Money:
         
         return self.amount < other.amount
     
-    def __le__(self, other: 'Money') -> bool:
+    def __le__(self, other: Union['Money', int, float]) -> bool:
         """Less than or equal comparison."""
+        if isinstance(other, (int, float)):
+            return float(self.amount) <= other
         return self.__eq__(other) or self.__lt__(other)
     
-    def __gt__(self, other: 'Money') -> bool:
+    def __gt__(self, other: Union['Money', int, float]) -> bool:
         """Greater than comparison."""
+        if isinstance(other, (int, float)):
+            return float(self.amount) > other
         return not self.__le__(other)
     
-    def __ge__(self, other: 'Money') -> bool:
+    def __ge__(self, other: Union['Money', int, float]) -> bool:
         """Greater than or equal comparison."""
+        if isinstance(other, (int, float)):
+            return float(self.amount) >= other
         return not self.__lt__(other)
     
     def __hash__(self) -> int:

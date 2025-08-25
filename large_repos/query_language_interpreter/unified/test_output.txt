@@ -574,4 +574,4 @@ ERROR tests/legal_discovery_specialist/test_privilege/test_detector.py
 ERROR tests/legal_discovery_specialist/test_privilege/test_models.py
 ERROR tests/legal_discovery_specialist/test_temporal/test_manager.py
 ERROR tests/legal_discovery_specialist/test_temporal/test_models.py
-======================== 8 warnings, 24 errors in 1.06s ========================
+======================== 8 warnings, 24 errors in 1.12s ========================

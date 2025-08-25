@@ -578,7 +578,7 @@ class RemediationTracker(BaseService[RemediationTask]):
         # Convert sort direction to storage format
         storage_sort_by = f"-{sort_by}" if reverse else sort_by
         
-        return self.list(
+        return self.storage.list(
             filters=filters,
             sort_by=storage_sort_by,
             limit=limit,

@@ -59,7 +59,7 @@ class Thread:
     
     def is_running(self) -> bool:
         """Check if thread is running."""
-        return self.state == ProcessorState.RUNNING
+        return self.state == ProcessorState.EXECUTING
     
     def is_waiting(self) -> bool:
         """Check if thread is waiting."""
@@ -67,11 +67,11 @@ class Thread:
     
     def is_blocked(self) -> bool:
         """Check if thread is blocked."""
-        return self.state == ProcessorState.BLOCKED
+        return self.state == ProcessorState.WAITING  # BLOCKED maps to WAITING
     
     def is_terminated(self) -> bool:
         """Check if thread is terminated."""
-        return self.state == ProcessorState.TERMINATED
+        return self.state == ProcessorState.HALTED  # TERMINATED maps to HALTED
     
     def calculate_cpu_usage(self, total_cycles: int) -> float:
         """

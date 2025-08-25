@@ -21,6 +21,8 @@ from .core import (
     # Essential models
     Money,
     Currency,
+    sum_money,
+    average_money,
     Period,
     PeriodType,
     BaseTransaction,
@@ -84,7 +86,9 @@ __all__ = [
     
     # Essential models
     "Money",
-    "Currency", 
+    "Currency",
+    "sum_money",
+    "average_money", 
     "Period",
     "PeriodType",
     "BaseTransaction",

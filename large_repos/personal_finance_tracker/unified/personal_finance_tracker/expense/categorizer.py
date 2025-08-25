@@ -70,7 +70,7 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
         
         return result
 
-    def add_categorization_rule(self, rule: CategorizationRule) -> ManagerResult:
+    def add_categorization_rule(self, rule: CategorizationRule) -> CategorizationRule:
         """
         Add a new categorization rule using manager pattern.
 
@@ -84,11 +84,11 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
             # Validate the rule
             validation_result = self.validate(rule)
             if not validation_result.is_valid:
-                return self.handle_validation_result(validation_result)
+                raise ValueError(f"Invalid rule: {validation_result.errors}")
             
             # Check for duplicate rule ID
             if any(r.id == rule.id for r in self.rules):
-                return ManagerResult.error_result(f"Rule with ID {rule.id} already exists")
+                raise ValueError(f"Rule with ID {rule.id} already exists")
 
             # Add the rule
             self.rules.append(rule)
@@ -99,14 +99,11 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
             # Clear cache since rules have changed
             self._categorization_cache = {}
             
-            return ManagerResult.success_result(
-                data={"rule": rule},
-                metadata={"operation": "add_rule", "rule_id": str(rule.id)}
-            )
+            return rule
 
     def update_categorization_rule(
         self, rule: CategorizationRule
-    ) -> ManagerResult:
+    ) -> CategorizationRule:
         """
         Update an existing categorization rule using manager pattern.
 
@@ -120,13 +117,16 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
             # Validate the rule
             validation_result = self.validate(rule)
             if not validation_result.is_valid:
-                return self.handle_validation_result(validation_result)
+                raise ValueError(f"Invalid rule: {validation_result.errors}")
             
             # Find the rule to update
             for i, existing_rule in enumerate(self.rules):
                 if existing_rule.id == rule.id:
                     # Update the rule
-                    rule.touch()  # Use audit mixin method
+                    if hasattr(rule, 'updated_at'):
+                        rule.updated_at = datetime.now()
+                    if hasattr(rule, 'version'):
+                        rule.version += 1
                     self.rules[i] = rule
 
                     # Sort rules by priority (highest first)
@@ -135,14 +135,11 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
                     # Clear cache since rules have changed
                     self._categorization_cache = {}
 
-                    return ManagerResult.success_result(
-                        data={"rule": rule},
-                        metadata={"operation": "update_rule", "rule_id": str(rule.id)}
-                    )
+                    return rule
 
-            return ManagerResult.error_result(f"Rule with ID {rule.id} not found")
+            raise ValueError(f"Rule with ID {rule.id} not found")
 
-    def remove_categorization_rule(self, rule_id: UUID) -> ManagerResult:
+    def remove_categorization_rule(self, rule_id: UUID) -> bool:
         """
         Remove a categorization rule using manager pattern.
 
@@ -162,12 +159,9 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
                     # Clear cache since rules have changed
                     self._categorization_cache = {}
 
-                    return ManagerResult.success_result(
-                        data={"removed_rule": removed_rule},
-                        metadata={"operation": "remove_rule", "rule_id": str(rule_id)}
-                    )
+                    return True
 
-            return ManagerResult.error_result(f"Rule with ID {rule_id} not found")
+            return False
 
     def add_mixed_use_item(self, item: MixedUseItem) -> MixedUseItem:
         """
@@ -443,14 +437,19 @@ class ExpenseCategorizer(BaseManager[CategorizationRule]):
                     by_category[category] = Money.zero()
                 by_category[category] = by_category[category] + amount
 
+        # Convert Money to float for test compatibility
+        by_category_float = {}
+        for cat, amount in by_category.items():
+            by_category_float[cat] = float(amount.amount)
+        
         # Create summary
         summary = ExpenseSummary(
             period_start=start_date,
             period_end=end_date,
-            total_expenses=total_expenses,
-            business_expenses=business_expenses,
-            personal_expenses=personal_expenses,
-            by_category=by_category,
+            total_expenses=float(total_expenses.amount),
+            business_expenses=float(business_expenses.amount),
+            personal_expenses=float(personal_expenses.amount),
+            by_category=by_category_float,
         )
 
         return summary

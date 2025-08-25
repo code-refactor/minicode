@@ -1,242 +1,48 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+platform linux -- Python 3.13.0, pytest-8.4.1, pluggy-1.6.0
 rootdir: /home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified
 configfile: pyproject.toml
 plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
-collected 50 items / 14 errors
+collected 194 items
 
-tests/game_developer/feedback_system/test_database.py ........           [ 16%]
-tests/game_developer/performance/test_playtest_performance.py sssss      [ 26%]
-tests/game_developer/platform_config/test_manager.py ...........         [ 48%]
-tests/game_developer/playtest_recorder/test_analysis.py ........         [ 64%]
-tests/game_developer/playtest_recorder/test_recorder.py .........        [ 82%]
+tests/digital_artist/test_asset_tracker.py .....                         [  2%]
+tests/digital_artist/test_backup_engine.py ......                        [  5%]
+tests/digital_artist/test_element_extraction.py ........                 [  9%]
+tests/digital_artist/test_integration.py .....                           [ 12%]
+tests/digital_artist/test_timeline_manager.py .....                      [ 14%]
+tests/digital_artist/test_visual_diff.py .......                         [ 18%]
+tests/digital_artist/test_workspace_capture.py ......                    [ 21%]
+tests/game_developer/asset_optimization/test_chunking.py .......         [ 25%]
+tests/game_developer/asset_optimization/test_compressor.py .......       [ 28%]
+tests/game_developer/asset_optimization/test_deduplication.py .......    [ 32%]
+tests/game_developer/asset_optimization/test_manager.py ........         [ 36%]
+tests/game_developer/backup_engine/test_chunking.py .....                [ 39%]
+tests/game_developer/backup_engine/test_engine.py ......                 [ 42%]
+tests/game_developer/backup_engine/test_storage.py .........             [ 46%]
+tests/game_developer/backup_engine/test_version_tracker.py ..........    [ 52%]
+tests/game_developer/feedback_system/test_analysis.py .......            [ 55%]
+tests/game_developer/feedback_system/test_database.py ........           [ 59%]
+tests/game_developer/feedback_system/test_manager.py ............        [ 65%]
+tests/game_developer/integration/test_game_development_workflow.py ....  [ 68%]
+tests/game_developer/milestone_management/test_manager.py .............  [ 74%]
+tests/game_developer/performance/test_backup_performance.py sssssss      [ 78%]
+tests/game_developer/performance/test_playtest_performance.py sssss      [ 80%]
+tests/game_developer/platform_config/test_manager.py ...........         [ 86%]
+tests/game_developer/playtest_recorder/test_analysis.py ........         [ 90%]
+tests/game_developer/playtest_recorder/test_recorder.py .........        [ 95%]
 tests/game_developer/playtest_recorder/test_storage.py .........         [100%]
 
-==================================== ERRORS ====================================
-____________________ ERROR collecting tests/digital_artist _____________________
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-<frozen importlib._bootstrap>:1387: in _gcd_import
-    ???
-<frozen importlib._bootstrap>:1360: in _find_and_load
-    ???
-<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
-    ???
-<frozen importlib._bootstrap>:935: in _load_unlocked
-    ???
-/home/justinchiu/.local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
-    exec(co, module.__dict__)
-tests/digital_artist/conftest.py:13: in <module>
-    import trimesh
-E   ModuleNotFoundError: No module named 'trimesh'
-__ ERROR collecting tests/game_developer/asset_optimization/test_chunking.py ___
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/asset_optimization/test_chunking.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/asset_optimization/test_chunking.py:13: in <module>
-    from gamevault.asset_optimization.chunking import (AssetChunker,
-gamevault/asset_optimization/__init__.py:12: in <module>
-    from gamevault.asset_optimization.compressor import (AssetCompressor,
-gamevault/asset_optimization/compressor.py:10: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_ ERROR collecting tests/game_developer/asset_optimization/test_compressor.py __
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/asset_optimization/test_compressor.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/asset_optimization/test_compressor.py:11: in <module>
-    from gamevault.asset_optimization.compressor import (AssetCompressor,
-gamevault/asset_optimization/__init__.py:12: in <module>
-    from gamevault.asset_optimization.compressor import (AssetCompressor,
-gamevault/asset_optimization/compressor.py:10: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_ ERROR collecting tests/game_developer/asset_optimization/test_deduplication.py _
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/asset_optimization/test_deduplication.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/asset_optimization/test_deduplication.py:7: in <module>
-    from gamevault.asset_optimization.deduplication import (AssetDeduplicator,
-gamevault/asset_optimization/__init__.py:12: in <module>
-    from gamevault.asset_optimization.compressor import (AssetCompressor,
-gamevault/asset_optimization/compressor.py:10: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-___ ERROR collecting tests/game_developer/asset_optimization/test_manager.py ___
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/asset_optimization/test_manager.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/asset_optimization/test_manager.py:12: in <module>
-    from gamevault.asset_optimization.manager import AssetOptimizationManager
-gamevault/asset_optimization/__init__.py:12: in <module>
-    from gamevault.asset_optimization.compressor import (AssetCompressor,
-gamevault/asset_optimization/compressor.py:10: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_____ ERROR collecting tests/game_developer/backup_engine/test_chunking.py _____
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/backup_engine/test_chunking.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/backup_engine/test_chunking.py:11: in <module>
-    from gamevault.backup_engine.chunker import (ChunkingStrategy, FixedSizeChunker,
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-______ ERROR collecting tests/game_developer/backup_engine/test_engine.py ______
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/backup_engine/test_engine.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/backup_engine/test_engine.py:12: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_____ ERROR collecting tests/game_developer/backup_engine/test_storage.py ______
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/backup_engine/test_storage.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/backup_engine/test_storage.py:11: in <module>
-    from gamevault.backup_engine.storage import StorageManager
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_ ERROR collecting tests/game_developer/backup_engine/test_version_tracker.py __
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/backup_engine/test_version_tracker.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/backup_engine/test_version_tracker.py:12: in <module>
-    from gamevault.backup_engine.version_tracker import VersionTracker
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-____ ERROR collecting tests/game_developer/feedback_system/test_analysis.py ____
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/feedback_system/test_analysis.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/feedback_system/test_analysis.py:10: in <module>
-    from gamevault.feedback_system.analysis import FeedbackAnalysis
-gamevault/feedback_system/__init__.py:10: in <module>
-    from gamevault.feedback_system.manager import FeedbackManager
-gamevault/feedback_system/manager.py:13: in <module>
-    from gamevault.backup_engine.version_tracker import VersionTracker
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-____ ERROR collecting tests/game_developer/feedback_system/test_manager.py _____
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/feedback_system/test_manager.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/feedback_system/test_manager.py:11: in <module>
-    from gamevault.backup_engine.version_tracker import VersionTracker
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_ ERROR collecting tests/game_developer/integration/test_game_development_workflow.py _
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/integration/test_game_development_workflow.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/integration/test_game_development_workflow.py:14: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-__ ERROR collecting tests/game_developer/milestone_management/test_manager.py __
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/milestone_management/test_manager.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/milestone_management/test_manager.py:13: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
-_ ERROR collecting tests/game_developer/performance/test_backup_performance.py _
-ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/tests/game_developer/performance/test_backup_performance.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/game_developer/performance/test_backup_performance.py:17: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/__init__.py:11: in <module>
-    from gamevault.backup_engine.engine import BackupEngine
-gamevault/backup_engine/engine.py:11: in <module>
-    import bsdiff4
-E   ModuleNotFoundError: No module named 'bsdiff4'
 =============================== warnings summary ===============================
-../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
-  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+.venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+.venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+  /home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/.venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
     warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+.venv/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py:298
+  /home/justinchiu/code/python/minicode/large_repos/incremental_backup_system/unified/.venv/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py:298: PydanticDeprecatedSince20: `json_encoders` is deprecated. See https://docs.pydantic.dev/2.11/concepts/serialization/#custom-serializers for alternatives. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 --------------------------------- JSON report ----------------------------------
 report saved to: report.json
-=========================== short test summary info ============================
-ERROR tests/digital_artist - ModuleNotFoundError: No module named 'trimesh'
-ERROR tests/game_developer/asset_optimization/test_chunking.py
-ERROR tests/game_developer/asset_optimization/test_compressor.py
-ERROR tests/game_developer/asset_optimization/test_deduplication.py
-ERROR tests/game_developer/asset_optimization/test_manager.py
-ERROR tests/game_developer/backup_engine/test_chunking.py
-ERROR tests/game_developer/backup_engine/test_engine.py
-ERROR tests/game_developer/backup_engine/test_storage.py
-ERROR tests/game_developer/backup_engine/test_version_tracker.py
-ERROR tests/game_developer/feedback_system/test_analysis.py
-ERROR tests/game_developer/feedback_system/test_manager.py
-ERROR tests/game_developer/integration/test_game_development_workflow.py
-ERROR tests/game_developer/milestone_management/test_manager.py
-ERROR tests/game_developer/performance/test_backup_performance.py
-============= 45 passed, 5 skipped, 1 warning, 14 errors in 2.39s ==============
+================= 182 passed, 12 skipped, 3 warnings in 5.66s ==================

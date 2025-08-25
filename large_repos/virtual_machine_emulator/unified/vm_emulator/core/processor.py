@@ -239,7 +239,7 @@ class Processor(ProcessorBase):
             if instruction.opcode == "HALT":
                 # Stop the current thread
                 side_effects["halt"] = True
-                self.state = ProcessorState.TERMINATED
+                self.state = ProcessorState.HALTED
             
             elif instruction.opcode == "YIELD":
                 # Voluntarily yield the processor

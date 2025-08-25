@@ -102,20 +102,20 @@ class BufferOverflow(Attack):
 
         # Record initial state for forensics
         initial_state = {
-            "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+            "cpu_registers": vm.cpu.registers.dump_registers(),
             "memory_map": vm.memory.get_memory_map(),
         }
 
         # Save the original instruction pointer to restore after our setup
-        original_ip = vm.cpu.sec_registers.ip
+        original_ip = vm.cpu.registers.ip
 
         # Modify the stack to simulate a function call with a vulnerable buffer
         # Setup a stack frame with a return address that would be overwritten
         # by a buffer overflow
-        vm.cpu.sec_registers.sp -= 4  # Make space for the return address
+        vm.cpu.registers.sp -= 4  # Make space for the return address
 
         # We'll put a return address that goes back to original code after the attack
-        vm.memory.write_word(vm.cpu.sec_registers.sp, original_ip, {"operation": "attack_setup"})
+        vm.memory.write_word(vm.cpu.registers.sp, original_ip, {"operation": "attack_setup"})
 
         # Create a buffer overflow vulnerability
         vulnerability_result = vm.inject_vulnerability(
@@ -127,7 +127,7 @@ class BufferOverflow(Attack):
 
         if not vulnerability_result["success"]:
             # Restore original state
-            vm.cpu.sec_registers.ip = original_ip
+            vm.cpu.registers.ip = original_ip
 
             return AttackResult(
                 success=False,
@@ -144,7 +144,7 @@ class BufferOverflow(Attack):
         # directly set the instruction pointer to it for testing purposes
         if self.target_address:
             # Jump directly to the sensitive function for the test
-            vm.cpu.sec_registers.ip = self.target_address
+            vm.cpu.registers.ip = self.target_address
 
             # Record this as a control flow event
             vm.cpu.record_control_flow_event(
@@ -168,7 +168,7 @@ class BufferOverflow(Attack):
 
         # Check if target address was executed by looking at register R0 value
         # In our test setup, the sensitive function sets R0 to 0xDEADBEEF
-        cpu_final_state = vm.cpu.sec_registers.dump_registers()
+        cpu_final_state = vm.cpu.registers.dump_registers()
         target_executed = cpu_final_state["R0"] == 0xDEADBEEF
 
         # Get the execution trace
@@ -263,7 +263,7 @@ class ReturnOrientedProgramming(Attack):
         
         # Record initial state for forensics
         initial_state = {
-            "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+            "cpu_registers": vm.cpu.registers.dump_registers(),
             "memory_map": vm.memory.get_memory_map(),
         }
         
@@ -303,7 +303,7 @@ class ReturnOrientedProgramming(Attack):
             "initial_state": initial_state,
             "execution_result": execution_result.get_summary(),
             "final_state": {
-                "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+                "cpu_registers": vm.cpu.registers.dump_registers(),
             },
             "control_flow": vm.get_control_flow_visualization(),
             "rop_gadgets_executed": rop_gadgets_executed,
@@ -387,7 +387,7 @@ class FormatStringVulnerability(Attack):
         
         # Record initial state for forensics
         initial_state = {
-            "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+            "cpu_registers": vm.cpu.registers.dump_registers(),
             "memory_map": vm.memory.get_memory_map(),
         }
         
@@ -427,7 +427,7 @@ class FormatStringVulnerability(Attack):
             "initial_state": initial_state,
             "execution_result": execution_result.get_summary(),
             "final_state": {
-                "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+                "cpu_registers": vm.cpu.registers.dump_registers(),
             },
         }
         
@@ -504,7 +504,7 @@ class CodeInjection(Attack):
         
         # Record initial state for forensics
         initial_state = {
-            "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+            "cpu_registers": vm.cpu.registers.dump_registers(),
             "memory_map": vm.memory.get_memory_map(),
         }
         
@@ -529,9 +529,9 @@ class CodeInjection(Attack):
             )
         
         # If we have an entry point, set the instruction pointer to it
-        original_ip = vm.cpu.sec_registers.ip
+        original_ip = vm.cpu.registers.ip
         if self.entry_point is not None:
-            vm.cpu.sec_registers.ip = self.entry_point
+            vm.cpu.registers.ip = self.entry_point
         
         # Run the VM to execute the shellcode
         execution_result = vm.run()
@@ -541,7 +541,7 @@ class CodeInjection(Attack):
             "initial_state": initial_state,
             "execution_result": execution_result.get_summary(),
             "final_state": {
-                "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+                "cpu_registers": vm.cpu.registers.dump_registers(),
             },
             "original_ip": original_ip,
             "shellcode_entry": self.entry_point,
@@ -623,9 +623,9 @@ class PrivilegeEscalation(Attack):
         """Execute the privilege escalation attack."""
         # Record initial state for forensics
         initial_state = {
-            "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+            "cpu_registers": vm.cpu.registers.dump_registers(),
             "memory_map": vm.memory.get_memory_map(),
-            "initial_privilege": vm.cpu.sec_registers.privilege_level.name,
+            "initial_privilege": vm.cpu.registers.privilege_level.name,
         }
         
         # Prepare payload
@@ -655,7 +655,7 @@ class PrivilegeEscalation(Attack):
         execution_result = vm.run()
         
         # Check if privilege level was escalated
-        final_privilege = vm.cpu.sec_registers.privilege_level.name
+        final_privilege = vm.cpu.registers.privilege_level.name
         privilege_changed = final_privilege != initial_state["initial_privilege"]
         
         # Get the execution trace
@@ -663,7 +663,7 @@ class PrivilegeEscalation(Attack):
             "initial_state": initial_state,
             "execution_result": execution_result.get_summary(),
             "final_state": {
-                "cpu_registers": vm.cpu.sec_registers.dump_registers(),
+                "cpu_registers": vm.cpu.registers.dump_registers(),
                 "final_privilege": final_privilege,
             },
             "control_flow": vm.get_control_flow_visualization(),
@@ -687,7 +687,7 @@ class PrivilegeEscalation(Attack):
                 })
         
         # Determine if the attack was successful
-        success = privilege_changed and int(vm.cpu.sec_registers.privilege_level.value) >= self.target_privilege_level
+        success = privilege_changed and int(vm.cpu.registers.privilege_level.value) >= self.target_privilege_level
         
         # Add notes
         notes = None
