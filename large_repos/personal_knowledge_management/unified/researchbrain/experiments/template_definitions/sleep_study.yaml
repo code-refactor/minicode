@@ -1,0 +1,34 @@
+name: Sleep Study
+description: Template for sleep research studies
+fields:
+- name: title
+  type: string
+  description: Study title
+  required: true
+- name: hypothesis
+  type: string
+  description: Study hypothesis
+  required: true
+- name: sleep_measurement
+  type: string
+  description: Method of sleep measurement
+  required: true
+- name: duration
+  type: string
+  description: Study duration
+  required: true
+- name: participants
+  type: string
+  description: Study participants
+  required: true
+output_format:
+  title: '{{ title }}'
+  hypothesis: '{{ hypothesis }}'
+  methodology: "# Sleep Study Protocol\n                \n## Measurement Method\n\
+    {{ sleep_measurement }}\n\n## Study Duration\n{{ duration }}\n\n## Participants\n\
+    {{ participants }}\n                "
+  variables:
+    sleep_measurement: '{{ sleep_measurement }}'
+    duration: '{{ duration }}'
+    participants: '{{ participants }}'
+  status: planned

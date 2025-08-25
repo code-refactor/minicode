@@ -1,0 +1,16 @@
+setuptools
+pytest
+pytest-json-report
+pytest-cov
+nltk
+textstat
+spacy
+pydantic
+pydantic>=2.0.0
+memory-profiler
+
+[dev]
+pytest
+pytest-json-report
+ruff
+pyright

@@ -1,0 +1,1 @@
+"""Temporal management module for handling legal timeframes and statutory deadlines."""

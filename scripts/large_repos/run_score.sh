@@ -1,4 +1,4 @@
-source .env
+#source .env
 
 # must be run from the unified project's parent directory
 

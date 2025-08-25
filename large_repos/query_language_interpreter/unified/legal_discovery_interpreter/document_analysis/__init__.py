@@ -1,0 +1,1 @@
+"""Document analysis framework for text indexing, proximity detection, and content analysis."""

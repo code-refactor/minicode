@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unified-incremental_backup_system"
+version = "0.1.0"
+description = "Unified libraries for incremental_backup_system with original package names preserved"
+requires-python = ">=3.10"
+dependencies = ["setuptools", "pytest", "pytest-json-report", "pytest-cov", "pillow", "numpy", "pydantic", "trimesh", "matplotlib", "psutil", "pydantic>=2.0.0", "sqlalchemy>=2.0.0", "pytest>=7.0.0", "pytest-json-report>=1.0.0", "numpy>=1.22.0", "xxhash>=3.0.0", "pyzstd>=0.15.0", "bsdiff4>=1.2.0"]
+
+[tool.setuptools]
+packages = ["common", "gamevault", "creative_vault"]

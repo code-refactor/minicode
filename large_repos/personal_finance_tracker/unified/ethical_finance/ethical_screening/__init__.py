@@ -1,0 +1,1 @@
+"""Ethical Screening Framework for investments based on ESG criteria."""

@@ -1,0 +1,185 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 107 items
+
+tests/db_admin/backup_compression/test_compression_analyzer.py ......    [  5%]
+tests/db_admin/db_file_recognition/test_detector.py ......               [ 11%]
+tests/db_admin/index_efficiency/test_index_analyzer.py ........          [ 18%]
+tests/db_admin/interfaces/test_api.py .......                            [ 25%]
+tests/db_admin/tablespace_fragmentation/test_fragmentation_analyzer.py . [ 26%]
+.......                                                                  [ 32%]
+tests/db_admin/transaction_log_analysis/test_log_analyzer.py .....F      [ 38%]
+tests/db_admin/utils/test_file_utils.py .....                            [ 42%]
+tests/security_auditor/test_audit.py ............                        [ 54%]
+tests/security_auditor/test_custody.py ..........                        [ 63%]
+tests/security_auditor/test_detection.py .............                   [ 75%]
+tests/security_auditor/test_differential.py ........                     [ 83%]
+tests/security_auditor/test_reporting.py ............                    [ 94%]
+tests/security_auditor/test_scanner.py ......                            [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_analyze_logs _______________________________
+
+mock_database_files = [DatabaseFile(path='/var/lib/mysql/mydatabase/users.ibd', engine=<DatabaseEngine.MYSQL: 'mysql'>, category=<FileCatego...ay=1048576.0, access_frequency=110.7, is_compressed=False, metadata={'collection': 'users', 'database': 'myapp'}), ...]
+
+    def test_analyze_logs(mock_database_files):
+        """Test full log analysis workflow."""
+        analyzer = TransactionLogAnalyzer()
+    
+        # Filter log files
+        log_files = [f for f in mock_database_files if f.category == FileCategory.LOG]
+        assert len(log_files) > 0
+    
+        # Create sample historical sizes
+        now = datetime.now()
+        historical_sizes = {}
+    
+        for log_file in log_files:
+            # Assume linear growth for test
+            historical_sizes[log_file.path] = [
+                (now - timedelta(days=5), int(log_file.size_bytes * 0.5)),
+                (now - timedelta(days=4), int(log_file.size_bytes * 0.6)),
+                (now - timedelta(days=3), int(log_file.size_bytes * 0.7)),
+                (now - timedelta(days=2), int(log_file.size_bytes * 0.8)),
+                (now - timedelta(days=1), int(log_file.size_bytes * 0.9)),
+                (now, log_file.size_bytes),
+            ]
+    
+        # Sample operation frequencies
+        operation_frequencies = {
+            "mysql": {
+                "INSERT": [1000, 1200, 1400, 1600, 1800, 2000],
+                "UPDATE": [500, 600, 700, 800, 900, 1000],
+            },
+            "postgresql": {
+                "INSERT": [800, 1000, 1200, 1400, 1600, 1800],
+                "UPDATE": [400, 500, 600, 700, 800, 900],
+            }
+        }
+    
+        # Run analysis
+        analysis_result = analyzer.analyze_logs(
+            log_files=log_files,
+            historical_sizes=historical_sizes,
+            operation_frequencies=operation_frequencies
+        )
+    
+        # Check result
+        assert analysis_result.scan_status == ScanStatus.COMPLETED
+        assert analysis_result.total_log_size_bytes > 0
+>       assert analysis_result.growth_rate_bytes_per_day > 0
+E       AssertionError: assert -7130316.8 > 0
+E        +  where -7130316.8 = LogAnalysisResult(timestamp=datetime.datetime(2025, 8, 25, 2, 49, 6, 292500), analysis_duration_seconds=0.001201, scan...resql_INDEX CREATION': <LogGrowthCorrelation.NONE: 'none'>, 'postgresql_REINDEX': <LogGrowthCorrelation.NONE: 'none'>}).growth_rate_bytes_per_day
+
+tests/db_admin/transaction_log_analysis/test_log_analyzer.py:216: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  file_system_analyzer_db_admin.utils.file_utils:file_utils.py:63 Error getting stats for /var/lib/mysql/mysql-bin.000001: [Errno 2] No such file or directory: '/var/lib/mysql/mysql-bin.000001'
+WARNING  file_system_analyzer_db_admin.utils.file_utils:file_utils.py:63 Error getting stats for /var/lib/postgresql/data/pg_wal/000000010000000A00000001: [Errno 2] No such file or directory: '/var/lib/postgresql/data/pg_wal/000000010000000A00000001'
+=============================== warnings summary ===============================
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/db_admin/index_efficiency/test_index_analyzer.py::test_calculate_space_performance_ratio
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/tests/db_admin/index_efficiency/test_index_analyzer.py:54: PydanticDeprecatedSince20: The `copy` method is deprecated; use `model_copy` instead. See the docstring of `BaseModel.copy` for details about how to handle `include` and `exclude`. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    idx_without_perf = mock_indexes[0].copy()
+
+tests/db_admin/interfaces/test_api.py::test_analyze_database_files
+tests/db_admin/interfaces/test_api.py::test_analyze_transaction_logs
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_tablespace_fragmentation
+tests/db_admin/interfaces/test_api.py::test_analyze_backup_compression
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/interfaces/export.py:51: PydanticDeprecatedSince20: The `json` method is deprecated; use `model_dump_json` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    return json.loads(data.json())
+
+tests/db_admin/interfaces/test_api.py::test_analyze_database_files
+tests/db_admin/interfaces/test_api.py::test_analyze_database_files
+tests/db_admin/interfaces/test_api.py::test_comprehensive_analysis
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/interfaces/api.py:193: PydanticDeprecatedSince20: The `json` method is deprecated; use `model_dump_json` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    result_dict = json.loads(analysis_result.json())
+
+tests/db_admin/interfaces/test_api.py::test_analyze_transaction_logs
+tests/db_admin/interfaces/test_api.py::test_analyze_transaction_logs
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/tests/db_admin/interfaces/test_api.py:82: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    log_files = [f.dict() for f in mock_database_files if f.category == FileCategory.LOG]
+
+tests/db_admin/interfaces/test_api.py::test_analyze_transaction_logs
+tests/db_admin/interfaces/test_api.py::test_comprehensive_analysis
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/interfaces/api.py:259: PydanticDeprecatedSince20: The `json` method is deprecated; use `model_dump_json` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    result_dict = json.loads(analysis_result.json())
+
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/tests/db_admin/interfaces/test_api.py:111: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    indexes = [idx.dict() for idx in mock_indexes]
+
+tests/db_admin/interfaces/test_api.py::test_analyze_index_efficiency
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/interfaces/api.py:322: PydanticDeprecatedSince20: The `json` method is deprecated; use `model_dump_json` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    result_dict = json.loads(analysis_result.json())
+
+tests/db_admin/interfaces/test_api.py::test_analyze_tablespace_fragmentation
+tests/db_admin/interfaces/test_api.py::test_analyze_tablespace_fragmentation
+tests/db_admin/interfaces/test_api.py::test_analyze_tablespace_fragmentation
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/tests/db_admin/interfaces/test_api.py:143: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    tablespaces = [ts.dict() for ts in mock_tablespaces]
+
+tests/db_admin/interfaces/test_api.py::test_analyze_tablespace_fragmentation
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/interfaces/api.py:385: PydanticDeprecatedSince20: The `json` method is deprecated; use `model_dump_json` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    result_dict = json.loads(analysis_result.json())
+
+tests/db_admin/interfaces/test_api.py::test_analyze_backup_compression
+tests/db_admin/interfaces/test_api.py::test_comprehensive_analysis
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/interfaces/api.py:445: PydanticDeprecatedSince20: The `json` method is deprecated; use `model_dump_json` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    result_dict = json.loads(analysis_result.json())
+
+tests/db_admin/transaction_log_analysis/test_log_analyzer.py::test_detect_growth_pattern
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/transaction_log_analysis/log_analyzer.py:259: RuntimeWarning: divide by zero encountered in scalar divide
+    linear_r2 = 1 - (np.sum(linear_residuals**2) / np.sum((sizes_array - np.mean(sizes_array))**2))
+
+tests/db_admin/transaction_log_analysis/test_log_analyzer.py::test_detect_growth_pattern
+  /home/justinchiu/code/python/minicode/large_repos/file_system_analyzer/unified/file_system_analyzer_db_admin/transaction_log_analysis/log_analyzer.py:272: RuntimeWarning: divide by zero encountered in scalar divide
+    exp_r2 = 1 - (np.sum(exp_residuals**2) / np.sum((sizes_array[valid_indices] - np.mean(sizes_array[valid_indices]))**2))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report.json
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                                                                               Stmts   Miss  Cover
+------------------------------------------------------------------------------------------------------
+file_system_analyzer_db_admin/__init__.py                                              1      0   100%
+file_system_analyzer_db_admin/backup_compression/__init__.py                           0      0   100%
+file_system_analyzer_db_admin/backup_compression/compression_analyzer.py             302     43    86%
+file_system_analyzer_db_admin/db_file_recognition/__init__.py                          0      0   100%
+file_system_analyzer_db_admin/db_file_recognition/detector.py                        140     35    75%
+file_system_analyzer_db_admin/db_file_recognition/file_patterns.py                    20      0   100%
+file_system_analyzer_db_admin/index_efficiency/__init__.py                             0      0   100%
+file_system_analyzer_db_admin/index_efficiency/index_analyzer.py                     272     37    86%
+file_system_analyzer_db_admin/interfaces/__init__.py                                   0      0   100%
+file_system_analyzer_db_admin/interfaces/api.py                                      218     53    76%
+file_system_analyzer_db_admin/interfaces/export.py                                   175    126    28%
+file_system_analyzer_db_admin/interfaces/filesystem.py                               108     88    19%
+file_system_analyzer_db_admin/main.py                                                104    104     0%
+file_system_analyzer_db_admin/tablespace_fragmentation/__init__.py                     0      0   100%
+file_system_analyzer_db_admin/tablespace_fragmentation/fragmentation_analyzer.py     237     17    93%
+file_system_analyzer_db_admin/transaction_log_analysis/__init__.py                     0      0   100%
+file_system_analyzer_db_admin/transaction_log_analysis/log_analyzer.py               251     27    89%
+file_system_analyzer_db_admin/utils/__init__.py                                        0      0   100%
+file_system_analyzer_db_admin/utils/file_utils.py                                    157     77    51%
+file_system_analyzer_db_admin/utils/types.py                                          63      0   100%
+------------------------------------------------------------------------------------------------------
+TOTAL                                                                               2048    607    70%
+=========================== short test summary info ============================
+FAILED tests/db_admin/transaction_log_analysis/test_log_analyzer.py::test_analyze_logs
+================== 1 failed, 106 passed, 32 warnings in 5.03s ==================

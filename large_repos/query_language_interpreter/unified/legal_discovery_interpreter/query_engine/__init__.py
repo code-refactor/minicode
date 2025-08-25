@@ -1,0 +1,1 @@
+"""Query engine for executing legal discovery searches with specialized extensions."""

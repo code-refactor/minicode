@@ -1,0 +1,3 @@
+common
+text_editor
+writer_text_editor

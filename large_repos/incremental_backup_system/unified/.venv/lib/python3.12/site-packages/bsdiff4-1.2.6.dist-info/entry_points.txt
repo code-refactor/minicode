@@ -1,0 +1,3 @@
+[console_scripts]
+bsdiff4 = bsdiff4.cli:main_bsdiff4
+bspatch4 = bsdiff4.cli:main_bspatch4

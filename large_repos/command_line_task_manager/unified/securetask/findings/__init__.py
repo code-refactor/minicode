@@ -1,0 +1,1 @@
+"""Security Finding Management module for tracking vulnerability details."""

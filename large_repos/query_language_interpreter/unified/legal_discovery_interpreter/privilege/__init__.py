@@ -1,0 +1,1 @@
+"""Privilege protection module for detecting attorney-client communications and work product."""

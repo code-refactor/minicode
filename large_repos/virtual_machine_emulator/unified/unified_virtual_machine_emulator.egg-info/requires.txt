@@ -1,0 +1,8 @@
+setuptools
+pytest
+pytest-json-report
+pytest-cov
+
+[test]
+pytest
+pytest-json-report

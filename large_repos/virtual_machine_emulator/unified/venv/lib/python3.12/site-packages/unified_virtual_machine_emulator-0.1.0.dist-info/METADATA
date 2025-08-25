@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: unified-virtual_machine_emulator
+Version: 0.1.0
+Summary: Unified libraries for virtual_machine_emulator with original package names preserved
+Requires-Python: >=3.10
+Requires-Dist: setuptools
+Requires-Dist: pytest
+Requires-Dist: pytest-json-report
+Requires-Dist: pytest-cov
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-json-report; extra == "test"
+Dynamic: requires-python

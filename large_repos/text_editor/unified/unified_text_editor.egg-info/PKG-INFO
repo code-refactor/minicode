@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: unified-text_editor
+Version: 0.1.0
+Summary: Unified libraries for text_editor with original package names preserved
+Requires-Python: >=3.10
+Requires-Dist: setuptools
+Requires-Dist: pytest
+Requires-Dist: pytest-json-report
+Requires-Dist: pytest-cov
+Requires-Dist: nltk
+Requires-Dist: textstat
+Requires-Dist: spacy
+Requires-Dist: pydantic
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: memory-profiler
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-json-report; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: pyright; extra == "dev"
+Dynamic: requires-python

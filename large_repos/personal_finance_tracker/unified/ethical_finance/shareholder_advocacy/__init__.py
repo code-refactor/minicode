@@ -1,0 +1,1 @@
+"""Shareholder Advocacy Tracker for monitoring corporate governance."""

@@ -1,0 +1,41 @@
+name: Longitudinal Aging Study
+description: Template for longitudinal studies of aging populations
+fields:
+- name: title
+  type: string
+  description: Study title
+  required: true
+- name: hypothesis
+  type: string
+  description: Study hypothesis
+  required: true
+- name: cohort
+  type: string
+  description: Participant cohort details
+  required: true
+- name: follow_up_period
+  type: string
+  description: Follow-up period and frequency
+  required: true
+- name: measures
+  type: string
+  description: Key outcome measures
+  required: true
+- name: analysis_approach
+  type: string
+  description: Statistical analysis approach
+  required: false
+  default: Mixed-effects modeling for longitudinal data
+output_format:
+  title: '{{ title }}'
+  hypothesis: '{{ hypothesis }}'
+  methodology: "# Longitudinal Aging Study Protocol\n\n## Participant Cohort\n{{ cohort\
+    \ }}\n\n## Follow-up Protocol\n{{ follow_up_period }}\n\n## Outcome Measures\n\
+    {{ measures }}\n\n## Analysis Approach\n{{ analysis_approach }}\n            \
+    \    "
+  variables:
+    cohort: '{{ cohort }}'
+    follow_up: '{{ follow_up_period }}'
+    measures: '{{ measures }}'
+    analysis: '{{ analysis_approach }}'
+  status: planned

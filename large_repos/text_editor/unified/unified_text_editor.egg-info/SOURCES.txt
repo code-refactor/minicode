@@ -1,0 +1,17 @@
+pyproject.toml
+setup.py
+common/__init__.py
+text_editor/__init__.py
+unified_text_editor.egg-info/PKG-INFO
+unified_text_editor.egg-info/SOURCES.txt
+unified_text_editor.egg-info/dependency_links.txt
+unified_text_editor.egg-info/requires.txt
+unified_text_editor.egg-info/top_level.txt
+writer_text_editor/__init__.py
+writer_text_editor/client.py
+writer_text_editor/document.py
+writer_text_editor/focus.py
+writer_text_editor/narrative.py
+writer_text_editor/navigation.py
+writer_text_editor/revision.py
+writer_text_editor/statistics.py

@@ -1,0 +1,74 @@
+name: Molecular Biology Experiment
+description: Template for molecular biology laboratory experiments
+fields:
+- name: title
+  type: string
+  description: Title of the experiment
+  required: true
+- name: hypothesis
+  type: string
+  description: Main hypothesis being tested
+  required: true
+- name: cell_line
+  type: string
+  description: Cell lines or model organisms used
+  required: true
+- name: reagents
+  type: string
+  description: Key reagents and materials
+  required: true
+- name: techniques
+  type: string
+  description: Techniques used (PCR, Western Blot, CRISPR, etc.)
+  required: true
+- name: controls
+  type: string
+  description: Positive and negative controls
+  required: true
+- name: protocol
+  type: string
+  description: Detailed experimental protocol
+  required: true
+- name: analysis
+  type: string
+  description: Data analysis methods
+  required: true
+output_format:
+  title: '{{ title }}'
+  hypothesis: '{{ hypothesis }}'
+  methodology: '# Molecular Biology Experiment Protocol
+
+
+    ## Materials
+
+    Cell Line/Model: {{ cell_line }}
+
+
+    ## Reagents
+
+    {{ reagents }}
+
+
+    ## Techniques
+
+    {{ techniques }}
+
+
+    ## Controls
+
+    {{ controls }}
+
+
+    ## Protocol
+
+    {{ protocol }}
+
+
+    ## Analysis
+
+    {{ analysis }}'
+  variables:
+    cell_line: '{{ cell_line }}'
+    techniques: '{{ techniques }}'
+    controls: '{{ controls }}'
+  status: planned

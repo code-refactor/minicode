@@ -1,0 +1,9 @@
+{
+  "tests/mobile_developer": true,
+  "tests/ml_engineer/feature_store/test_lineage.py::TestLineageTracker::test_delete_node": true,
+  "tests/ml_engineer/feature_store/test_store.py::TestFeatureStore::test_get_feature_batch": true,
+  "tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_max_versions_limit": true,
+  "tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_get_version": true,
+  "tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_get_value": true,
+  "tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_get_versions_at": true
+}

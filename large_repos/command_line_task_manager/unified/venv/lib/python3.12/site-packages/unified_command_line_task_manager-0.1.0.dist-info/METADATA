@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: unified-command_line_task_manager
+Version: 0.1.0
+Summary: Unified libraries for command_line_task_manager with original package names preserved
+Requires-Python: >=3.10
+Requires-Dist: setuptools
+Requires-Dist: pytest
+Requires-Dist: pytest-json-report
+Requires-Dist: pytest-cov
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: typing-extensions>=4.0.0
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: pytest-json-report>=1.5.0
+Requires-Dist: pybtex
+Requires-Dist: cryptography>=41.0.0
+Requires-Dist: pycryptodome>=3.18.0
+Requires-Dist: python-jose>=3.3.0
+Requires-Dist: jinja2>=3.0.0
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pyright; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-benchmark>=4.0.0; extra == "dev"
+Requires-Dist: pytest-json-report>=1.5.0; extra == "dev"
+Dynamic: requires-python

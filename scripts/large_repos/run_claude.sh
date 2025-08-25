@@ -31,9 +31,9 @@ pytest tests/ --json-report --json-report-file=report_original.json --continue-o
 
 echo "Following the instructions in REFACTOR.md..."
 # Run Claude Code and tell it to follow instructions
-time claude --dangerously-skip-permissions -p "Follow the instructions in REFACTOR.md"
-time claude --dangerously-skip-permissions -p "Follow the instructions in REFACTOR.md. Be sure to complete the migrations."
-time claude --dangerously-skip-permissions -p "Follow the instructions in REFACTOR.md. Be sure to complete the migrations."
+time claude --model claude-opus-4-1-20250805 --dangerously-skip-permissions -p "Follow the instructions in REFACTOR.md"
+time claude --model claude-opus-4-1-20250805 --dangerously-skip-permissions -p "Follow the instructions in REFACTOR.md. Be sure to complete the migrations."
+time claude --model claude-opus-4-1-20250805 --dangerously-skip-permissions -p "Follow the instructions in REFACTOR.md. Be sure to complete the migrations."
 
 # Ensure pytest results are collected post-refactor
 pytest tests/ --json-report --json-report-file=report.json --continue-on-collection-errors > test_output.txt 2>&1

@@ -1,0 +1,69 @@
+name: Behavioral Experiment
+description: Template for behavioral experiments with human or animal subjects
+fields:
+- name: title
+  type: string
+  description: Title of the experiment
+  required: true
+- name: hypothesis
+  type: string
+  description: Main hypothesis being tested
+  required: true
+- name: participants
+  type: string
+  description: Description of participants or subjects
+  required: true
+- name: independent_variables
+  type: string
+  description: Independent variables being manipulated
+  required: true
+- name: dependent_variables
+  type: string
+  description: Dependent variables being measured
+  required: true
+- name: control_condition
+  type: string
+  description: Description of control condition
+  required: false
+- name: procedure
+  type: string
+  description: Step-by-step experimental procedure
+  required: true
+- name: analysis_plan
+  type: string
+  description: Statistical analysis plan
+  required: false
+  default: To be determined based on initial results.
+output_format:
+  title: '{{ title }}'
+  hypothesis: '{{ hypothesis }}'
+  methodology: '# Behavioral Experiment Methodology
+
+
+    ## Participants
+
+    {{ participants }}
+
+
+    ## Design
+
+    Independent Variables: {{ independent_variables }}
+
+    Dependent Variables: {{ dependent_variables }}
+
+    {% if control_condition %}Control Condition: {{ control_condition }}{% endif %}
+
+
+    ## Procedure
+
+    {{ procedure }}
+
+
+    ## Analysis Plan
+
+    {{ analysis_plan }}'
+  variables:
+    participants: '{{ participants }}'
+    independent_vars: '{{ independent_variables }}'
+    dependent_vars: '{{ dependent_variables }}'
+  status: planned

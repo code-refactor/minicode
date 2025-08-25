@@ -1,0 +1,84 @@
+name: Neuroimaging Experiment
+description: Template for fMRI, EEG, or other neuroimaging experiments
+fields:
+- name: title
+  type: string
+  description: Title of the experiment
+  required: true
+- name: hypothesis
+  type: string
+  description: Main hypothesis being tested
+  required: true
+- name: imaging_modality
+  type: string
+  description: Imaging modality (fMRI, EEG, MEG, etc.)
+  required: true
+- name: participants
+  type: string
+  description: Description of participants
+  required: true
+- name: task_design
+  type: string
+  description: Detailed description of experimental task
+  required: true
+- name: regions_of_interest
+  type: string
+  description: Brain regions of primary interest
+  required: false
+- name: acquisition_parameters
+  type: string
+  description: Technical parameters for data acquisition
+  required: true
+- name: preprocessing
+  type: string
+  description: Data preprocessing pipeline
+  required: true
+- name: analysis_plan
+  type: string
+  description: Data analysis approach
+  required: true
+output_format:
+  title: '{{ title }}'
+  hypothesis: '{{ hypothesis }}'
+  methodology: '# Neuroimaging Experiment Methodology
+
+
+    ## Imaging Modality
+
+    {{ imaging_modality }}
+
+
+    ## Participants
+
+    {{ participants }}
+
+
+    ## Task Design
+
+    {{ task_design }}
+
+
+    {% if regions_of_interest %}## Regions of Interest
+
+    {{ regions_of_interest }}{% endif %}
+
+
+    ## Acquisition Parameters
+
+    {{ acquisition_parameters }}
+
+
+    ## Preprocessing
+
+    {{ preprocessing }}
+
+
+    ## Analysis Plan
+
+    {{ analysis_plan }}'
+  variables:
+    modality: '{{ imaging_modality }}'
+    participants: '{{ participants }}'
+    roi: '{% if regions_of_interest %}{{ regions_of_interest }}{% else %}Not specified{%
+      endif %}'
+  status: planned

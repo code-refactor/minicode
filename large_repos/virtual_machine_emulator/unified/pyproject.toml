@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unified-virtual_machine_emulator"
+version = "0.1.0"
+description = "Unified libraries for virtual_machine_emulator with original package names preserved"
+requires-python = ">=3.10"
+dependencies = ["setuptools", "pytest", "pytest-json-report", "pytest-cov"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-json-report"]
+
+[tool.setuptools]
+packages = ["common", "vm_emulator", "secure_vm"]
+
+[tool.pytest]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+python_classes = "Test*"
+
+[tool.ruff]
+line-length = 88
+target-version = "py37"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = []
+
+[tool.pyright]
+include = ["vm_emulator"]
+exclude = ["**/__pycache__"]
+reportMissingImports = true
+reportMissingTypeStubs = false

@@ -1,0 +1,13 @@
+pyproject.toml
+setup.py
+common/__init__.py
+legal_discovery_interpreter/__init__.py
+legal_discovery_interpreter/service_registry.py
+privacy_query_interpreter/__init__.py
+privacy_query_interpreter/example_usage.py
+privacy_query_interpreter/service_registry.py
+unified_query_language_interpreter.egg-info/PKG-INFO
+unified_query_language_interpreter.egg-info/SOURCES.txt
+unified_query_language_interpreter.egg-info/dependency_links.txt
+unified_query_language_interpreter.egg-info/requires.txt
+unified_query_language_interpreter.egg-info/top_level.txt

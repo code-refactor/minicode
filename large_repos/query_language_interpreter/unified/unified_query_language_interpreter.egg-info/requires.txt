@@ -1,0 +1,13 @@
+setuptools
+pytest
+pytest-json-report
+pytest-cov
+pydantic>=2.0.0
+cryptography>=40.0.0
+regex>=2022.0.0
+pandas>=2.0.0
+sqlparse>=0.4.4
+pytest>=7.0.0
+pytest-json-report>=1.5.0
+python-dateutil>=2.8.2
+nltk>=3.8.1

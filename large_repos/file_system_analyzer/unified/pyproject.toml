@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unified-file_system_analyzer"
+version = "0.1.0"
+description = "Unified libraries for file_system_analyzer with original package names preserved"
+requires-python = ">=3.10"
+dependencies = ["setuptools", "pytest", "pytest-json-report", "pytest-cov", "pydantic>=2.0.0", "cryptography>=40.0.0", "xxhash>=3.0.0", "python-magic>=0.4.24", "pytz", "numpy>=1.20.0", "pandas>=1.3.0", "matplotlib>=3.4.0", "psutil>=5.8.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0", "pytest-json-report>=1.5.0", "ruff>=0.0.240", "pyright>=1.1.300"]
+
+[tool.setuptools]
+packages = ["common", "file_system_analyzer_db_admin", "file_system_analyzer"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+fixable = ["A", "B", "C", "D", "E", "F", "I"]
+ignore = []
+
+[tool.pyright]
+include = ["file_system_analyzer_db_admin", "tests"]
+exclude = ["**/__pycache__"]
+pythonVersion = "3.8"
+typeCheckingMode = "basic"
+
+[tool.pytest]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "--cov=file_system_analyzer_db_admin"

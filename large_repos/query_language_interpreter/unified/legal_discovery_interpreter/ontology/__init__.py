@@ -1,0 +1,1 @@
+"""Legal term ontology integration module for mapping common concepts to specialized terminology."""

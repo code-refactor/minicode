@@ -1,0 +1,75 @@
+name: Computational Modeling Experiment
+description: Template for computational or simulation-based experiments
+fields:
+- name: title
+  type: string
+  description: Title of the experiment
+  required: true
+- name: hypothesis
+  type: string
+  description: Main hypothesis being tested
+  required: true
+- name: model_type
+  type: string
+  description: Type of computational model
+  required: true
+- name: parameters
+  type: string
+  description: Key model parameters
+  required: true
+- name: input_data
+  type: string
+  description: Description of input data
+  required: false
+- name: algorithm
+  type: string
+  description: Algorithm or computational approach
+  required: true
+- name: validation
+  type: string
+  description: Validation and testing approach
+  required: true
+- name: software
+  type: string
+  description: Software and computing resources
+  required: true
+output_format:
+  title: '{{ title }}'
+  hypothesis: '{{ hypothesis }}'
+  methodology: '# Computational Modeling Methodology
+
+
+    ## Model Type
+
+    {{ model_type }}
+
+
+    ## Parameters
+
+    {{ parameters }}
+
+
+    {% if input_data %}## Input Data
+
+    {{ input_data }}{% endif %}
+
+
+    ## Algorithm
+
+    {{ algorithm }}
+
+
+    ## Validation Approach
+
+    {{ validation }}
+
+
+    ## Software & Computing Resources
+
+    {{ software }}'
+  variables:
+    model_type: '{{ model_type }}'
+    parameters: '{{ parameters }}'
+    algorithm: '{{ algorithm }}'
+    software: '{{ software }}'
+  status: planned
