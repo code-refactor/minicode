@@ -1,0 +1,649 @@
+{
+    "total_logprobs": -65387.32901009003,
+    "total_tokens": 175802,
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/__init__.py": {
+        "logprobs": -130.258360372275,
+        "metrics": {
+            "loc": 7,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 4,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/resource_management/__init__.py": {
+        "logprobs": -108.82599160000001,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/dependency_tracking/graph.py": {
+        "logprobs": -1533.4547499211142,
+        "metrics": {
+            "loc": 499,
+            "sloc": 327,
+            "lloc": 285,
+            "comments": 52,
+            "multi": 8,
+            "blank": 100,
+            "cyclomatic": 102,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/failure_resilience/checkpoint_manager.py": {
+        "logprobs": -2133.515319498284,
+        "metrics": {
+            "loc": 749,
+            "sloc": 491,
+            "lloc": 371,
+            "comments": 113,
+            "multi": 0,
+            "blank": 137,
+            "cyclomatic": 111,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/scheduling/deadline_scheduler.py": {
+        "logprobs": -2703.050716289139,
+        "metrics": {
+            "loc": 521,
+            "sloc": 299,
+            "lloc": 253,
+            "comments": 81,
+            "multi": 60,
+            "blank": 90,
+            "cyclomatic": 173,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/job_management/scheduler.py": {
+        "logprobs": -3684.566342972943,
+        "metrics": {
+            "loc": 1218,
+            "sloc": 826,
+            "lloc": 690,
+            "comments": 153,
+            "multi": 0,
+            "blank": 224,
+            "cyclomatic": 323,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/failure_resilience/failure_detector.py": {
+        "logprobs": -1928.5875162150003,
+        "metrics": {
+            "loc": 899,
+            "sloc": 639,
+            "lloc": 455,
+            "comments": 117,
+            "multi": 4,
+            "blank": 158,
+            "cyclomatic": 170,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/resource_management/resource_partitioner.py": {
+        "logprobs": -1743.4902238084276,
+        "metrics": {
+            "loc": 515,
+            "sloc": 257,
+            "lloc": 200,
+            "comments": 52,
+            "multi": 111,
+            "blank": 96,
+            "cyclomatic": 77,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/core/interfaces.py": {
+        "logprobs": -768.8606035540379,
+        "metrics": {
+            "loc": 307,
+            "sloc": 79,
+            "lloc": 93,
+            "comments": 0,
+            "multi": 151,
+            "blank": 70,
+            "cyclomatic": 31,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/scheduling/__init__.py": {
+        "logprobs": -103.3753034,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/node_specialization/specialization_manager.py": {
+        "logprobs": -2017.5188254777272,
+        "metrics": {
+            "loc": 427,
+            "sloc": 247,
+            "lloc": 192,
+            "comments": 60,
+            "multi": 50,
+            "blank": 72,
+            "cyclomatic": 88,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/utils/__init__.py": {
+        "logprobs": -101.70156176,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/models/resource_forecast.py": {
+        "logprobs": -985.5511408440814,
+        "metrics": {
+            "loc": 224,
+            "sloc": 150,
+            "lloc": 194,
+            "comments": 22,
+            "multi": 0,
+            "blank": 51,
+            "cyclomatic": 48,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/scenario_management/evaluator.py": {
+        "logprobs": -2212.0372411470157,
+        "metrics": {
+            "loc": 766,
+            "sloc": 553,
+            "lloc": 446,
+            "comments": 114,
+            "multi": 0,
+            "blank": 121,
+            "cyclomatic": 157,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/resource_forecasting/forecaster.py": {
+        "logprobs": -3166.6618937410967,
+        "metrics": {
+            "loc": 917,
+            "sloc": 652,
+            "lloc": 418,
+            "comments": 144,
+            "multi": 0,
+            "blank": 144,
+            "cyclomatic": 159,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/progressive_result/__init__.py": {
+        "logprobs": -128.6307389,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/resource_forecasting/data_collector.py": {
+        "logprobs": -2132.0966531614745,
+        "metrics": {
+            "loc": 701,
+            "sloc": 478,
+            "lloc": 282,
+            "comments": 86,
+            "multi": 4,
+            "blank": 125,
+            "cyclomatic": 123,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/scenario_management/priority_manager.py": {
+        "logprobs": -2291.349324977069,
+        "metrics": {
+            "loc": 717,
+            "sloc": 383,
+            "lloc": 274,
+            "comments": 87,
+            "multi": 119,
+            "blank": 134,
+            "cyclomatic": 87,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/scenario_management/comparator.py": {
+        "logprobs": -1870.141030530063,
+        "metrics": {
+            "loc": 620,
+            "sloc": 407,
+            "lloc": 349,
+            "comments": 92,
+            "multi": 0,
+            "blank": 129,
+            "cyclomatic": 120,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/progressive_result/progressive_renderer.py": {
+        "logprobs": -1103.218015528254,
+        "metrics": {
+            "loc": 290,
+            "sloc": 138,
+            "lloc": 118,
+            "comments": 44,
+            "multi": 50,
+            "blank": 61,
+            "cyclomatic": 45,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/models/utils.py": {
+        "logprobs": -461.5808965554435,
+        "metrics": {
+            "loc": 134,
+            "sloc": 81,
+            "lloc": 117,
+            "comments": 2,
+            "multi": 0,
+            "blank": 35,
+            "cyclomatic": 35,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/core/manager.py": {
+        "logprobs": -7893.102612921461,
+        "metrics": {
+            "loc": 2389,
+            "sloc": 1521,
+            "lloc": 1029,
+            "comments": 300,
+            "multi": 197,
+            "blank": 376,
+            "cyclomatic": 553,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/__init__.py": {
+        "logprobs": -114.44034639721,
+        "metrics": {
+            "loc": 3,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/dependency_tracking/tracker.py": {
+        "logprobs": -2430.6193579484916,
+        "metrics": {
+            "loc": 734,
+            "sloc": 476,
+            "lloc": 386,
+            "comments": 100,
+            "multi": 4,
+            "blank": 138,
+            "cyclomatic": 178,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/job_management/queue.py": {
+        "logprobs": -1661.768522136763,
+        "metrics": {
+            "loc": 527,
+            "sloc": 331,
+            "lloc": 327,
+            "comments": 77,
+            "multi": 0,
+            "blank": 118,
+            "cyclomatic": 97,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/job_management/reservation.py": {
+        "logprobs": -1412.3915278416919,
+        "metrics": {
+            "loc": 1095,
+            "sloc": 814,
+            "lloc": 614,
+            "comments": 69,
+            "multi": 0,
+            "blank": 170,
+            "cyclomatic": 228,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/scenario_management/__init__.py": {
+        "logprobs": -299.82754735170465,
+        "metrics": {
+            "loc": 36,
+            "sloc": 28,
+            "lloc": 5,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/models/scenario.py": {
+        "logprobs": -1086.3994086585483,
+        "metrics": {
+            "loc": 221,
+            "sloc": 146,
+            "lloc": 215,
+            "comments": 24,
+            "multi": 6,
+            "blank": 46,
+            "cyclomatic": 62,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/energy_optimization/__init__.py": {
+        "logprobs": -114.5875921,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/setup.py": {
+        "logprobs": -101.937778074231,
+        "metrics": {
+            "loc": 11,
+            "sloc": 10,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/setup.py": {
+        "logprobs": -69.663533683087,
+        "metrics": {
+            "loc": 4,
+            "sloc": 3,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/dependency_tracking/__init__.py": {
+        "logprobs": -260.648720063975,
+        "metrics": {
+            "loc": 48,
+            "sloc": 43,
+            "lloc": 5,
+            "comments": 3,
+            "multi": 0,
+            "blank": 4,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/failure_resilience/__init__.py": {
+        "logprobs": -305.415909941758,
+        "metrics": {
+            "loc": 50,
+            "sloc": 45,
+            "lloc": 5,
+            "comments": 3,
+            "multi": 0,
+            "blank": 4,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/node_specialization/__init__.py": {
+        "logprobs": -114.3464191,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/models/simulation.py": {
+        "logprobs": -807.2519691791753,
+        "metrics": {
+            "loc": 276,
+            "sloc": 192,
+            "lloc": 260,
+            "comments": 4,
+            "multi": 0,
+            "blank": 60,
+            "cyclomatic": 63,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/initialization_example.py": {
+        "logprobs": -1689.51713541075,
+        "metrics": {
+            "loc": 397,
+            "sloc": 309,
+            "lloc": 137,
+            "comments": 27,
+            "multi": 7,
+            "blank": 48,
+            "cyclomatic": 39,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/job_management/__init__.py": {
+        "logprobs": -324.3873328604278,
+        "metrics": {
+            "loc": 60,
+            "sloc": 55,
+            "lloc": 5,
+            "comments": 3,
+            "multi": 0,
+            "blank": 4,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/scheduling/deadline_scheduler_fixed.py": {
+        "logprobs": -1685.5270774165454,
+        "metrics": {
+            "loc": 378,
+            "sloc": 205,
+            "lloc": 156,
+            "comments": 48,
+            "multi": 60,
+            "blank": 72,
+            "cyclomatic": 83,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/failure_resilience/resilience_coordinator.py": {
+        "logprobs": -2135.7901164753894,
+        "metrics": {
+            "loc": 855,
+            "sloc": 607,
+            "lloc": 358,
+            "comments": 106,
+            "multi": 0,
+            "blank": 132,
+            "cyclomatic": 118,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/resource_forecasting/optimizer.py": {
+        "logprobs": -1954.4065457657048,
+        "metrics": {
+            "loc": 662,
+            "sloc": 479,
+            "lloc": 332,
+            "comments": 99,
+            "multi": 0,
+            "blank": 107,
+            "cyclomatic": 86,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/dependency_tracking/workflow.py": {
+        "logprobs": -1814.5328661494918,
+        "metrics": {
+            "loc": 925,
+            "sloc": 653,
+            "lloc": 482,
+            "comments": 92,
+            "multi": 4,
+            "blank": 165,
+            "cyclomatic": 179,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/models/checkpoint.py": {
+        "logprobs": -1063.4452424769327,
+        "metrics": {
+            "loc": 259,
+            "sloc": 168,
+            "lloc": 206,
+            "comments": 30,
+            "multi": 0,
+            "blank": 58,
+            "cyclomatic": 54,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/core/models.py": {
+        "logprobs": -1050.6945882205746,
+        "metrics": {
+            "loc": 231,
+            "sloc": 149,
+            "lloc": 252,
+            "comments": 9,
+            "multi": 0,
+            "blank": 57,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/core/__init__.py": {
+        "logprobs": -105.51277611,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/utils/logging.py": {
+        "logprobs": -1199.3821113299896,
+        "metrics": {
+            "loc": 672,
+            "sloc": 279,
+            "lloc": 186,
+            "comments": 3,
+            "multi": 262,
+            "blank": 122,
+            "cyclomatic": 68,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_render_farm_manager/render_farm_manager/energy_optimization/energy_optimizer.py": {
+        "logprobs": -2065.956881710201,
+        "metrics": {
+            "loc": 556,
+            "sloc": 287,
+            "lloc": 216,
+            "comments": 88,
+            "multi": 97,
+            "blank": 97,
+            "cyclomatic": 104,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/resource_forecasting/__init__.py": {
+        "logprobs": -250.76542979651893,
+        "metrics": {
+            "loc": 48,
+            "sloc": 42,
+            "lloc": 6,
+            "comments": 4,
+            "multi": 0,
+            "blank": 5,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/resource_forecasting/reporter.py": {
+        "logprobs": -1643.0751687932086,
+        "metrics": {
+            "loc": 882,
+            "sloc": 700,
+            "lloc": 344,
+            "comments": 50,
+            "multi": 0,
+            "blank": 131,
+            "cyclomatic": 133,
+            "internal_imports": []
+        }
+    },
+    "concurrent_task_scheduler/concurrent_task_scheduler_scientific_computing/concurrent_task_scheduler/models/__init__.py": {
+        "logprobs": -423.46204192274007,
+        "metrics": {
+            "loc": 104,
+            "sloc": 97,
+            "lloc": 7,
+            "comments": 5,
+            "multi": 0,
+            "blank": 6,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 20941,
+    "total_sloc": 13648,
+    "total_lloc": 10286,
+    "total_comments": 2363,
+    "total_multi": 1203,
+    "total_blank": 3675,
+    "total_cyclomatic": 3921,
+    "total_internal_imports": 0
+}

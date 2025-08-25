@@ -1,4 +1,7 @@
 {
+  "tests/academic_researcher/citations/test_parser_edge_cases.py::TestCitationParserEdgeCases": true,
+  "tests/academic_researcher/citations/test_parsers.py::TestCitationParsers": true,
+  "tests/academic_researcher/test_citation_accuracy.py::TestCitationAccuracy": true,
   "tests/academic_researcher/citations/test_parser_edge_cases.py": true,
   "tests/academic_researcher/citations/test_parsers.py": true,
   "tests/academic_researcher/test_citation_accuracy.py": true,

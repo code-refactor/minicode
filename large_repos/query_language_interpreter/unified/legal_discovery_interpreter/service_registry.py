@@ -116,9 +116,8 @@ class LegalServiceRegistry:
         """Initialize the ontology service."""
         service_config = ServiceConfig(
             service_name="ontology_service",
-            service_type="service",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "service"}
         )
         
         # Validate configuration
@@ -141,9 +140,8 @@ class LegalServiceRegistry:
         """Initialize the document analyzer service."""
         service_config = ServiceConfig(
             service_name="document_analyzer",
-            service_type="analyzer",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "analyzer"}
         )
         
         # Validate configuration
@@ -166,9 +164,8 @@ class LegalServiceRegistry:
         """Initialize the communication analyzer service."""
         service_config = ServiceConfig(
             service_name="communication_analyzer",
-            service_type="analyzer",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "analyzer"}
         )
         
         # Validate configuration
@@ -190,9 +187,8 @@ class LegalServiceRegistry:
         """Initialize the privilege detector service."""
         service_config = ServiceConfig(
             service_name="privilege_detector",
-            service_type="detector",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "detector"}
         )
         
         # Validate configuration

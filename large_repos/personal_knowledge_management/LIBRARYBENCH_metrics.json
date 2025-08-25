@@ -1,0 +1,220 @@
+{
+    "total_logprobs": -21541.93567512926,
+    "total_tokens": 78501,
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/grants/export.py": {
+        "logprobs": -907.3872283002539,
+        "metrics": {
+            "loc": 265,
+            "sloc": 154,
+            "lloc": 71,
+            "comments": 18,
+            "multi": 36,
+            "blank": 58,
+            "cyclomatic": 24,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/core/storage.py": {
+        "logprobs": -2162.76272165452,
+        "metrics": {
+            "loc": 922,
+            "sloc": 481,
+            "lloc": 483,
+            "comments": 99,
+            "multi": 163,
+            "blank": 186,
+            "cyclomatic": 186,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/__main__.py": {
+        "logprobs": -114.436700077265,
+        "metrics": {
+            "loc": 6,
+            "sloc": 3,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/setup.py": {
+        "logprobs": -256.46272383720856,
+        "metrics": {
+            "loc": 44,
+            "sloc": 41,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_product_manager/productmind/stakeholder_insights/manager.py": {
+        "logprobs": -1677.736662140011,
+        "metrics": {
+            "loc": 970,
+            "sloc": 573,
+            "lloc": 402,
+            "comments": 67,
+            "multi": 168,
+            "blank": 169,
+            "cyclomatic": 134,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_product_manager/productmind/prioritization/framework.py": {
+        "logprobs": -1854.8549381522416,
+        "metrics": {
+            "loc": 840,
+            "sloc": 476,
+            "lloc": 378,
+            "comments": 88,
+            "multi": 132,
+            "blank": 153,
+            "cyclomatic": 141,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_product_manager/productmind/models.py": {
+        "logprobs": -829.5563684566953,
+        "metrics": {
+            "loc": 238,
+            "sloc": 183,
+            "lloc": 333,
+            "comments": 0,
+            "multi": 3,
+            "blank": 35,
+            "cyclomatic": 17,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/citations/parsers.py": {
+        "logprobs": -1266.8530257869922,
+        "metrics": {
+            "loc": 354,
+            "sloc": 239,
+            "lloc": 240,
+            "comments": 45,
+            "multi": 24,
+            "blank": 60,
+            "cyclomatic": 119,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/core/brain.py": {
+        "logprobs": -3413.3237392069273,
+        "metrics": {
+            "loc": 1664,
+            "sloc": 906,
+            "lloc": 770,
+            "comments": 131,
+            "multi": 289,
+            "blank": 339,
+            "cyclomatic": 323,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_product_manager/productmind/competitive_analysis/system.py": {
+        "logprobs": -1602.116453707071,
+        "metrics": {
+            "loc": 851,
+            "sloc": 470,
+            "lloc": 366,
+            "comments": 63,
+            "multi": 156,
+            "blank": 164,
+            "cyclomatic": 161,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/core/models.py": {
+        "logprobs": -1031.924950129516,
+        "metrics": {
+            "loc": 232,
+            "sloc": 161,
+            "lloc": 268,
+            "comments": 38,
+            "multi": 0,
+            "blank": 52,
+            "cyclomatic": 28,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/citations/formatters.py": {
+        "logprobs": -640.1563533235317,
+        "metrics": {
+            "loc": 627,
+            "sloc": 406,
+            "lloc": 420,
+            "comments": 42,
+            "multi": 62,
+            "blank": 116,
+            "cyclomatic": 164,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_product_manager/productmind/decision_registry/registry.py": {
+        "logprobs": -1508.005233524849,
+        "metrics": {
+            "loc": 841,
+            "sloc": 545,
+            "lloc": 390,
+            "comments": 42,
+            "multi": 126,
+            "blank": 130,
+            "cyclomatic": 127,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_product_manager/productmind/feedback_analysis/engine.py": {
+        "logprobs": -1640.5021337868627,
+        "metrics": {
+            "loc": 723,
+            "sloc": 403,
+            "lloc": 353,
+            "comments": 54,
+            "multi": 133,
+            "blank": 136,
+            "cyclomatic": 129,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/cli.py": {
+        "logprobs": -1837.6146805630199,
+        "metrics": {
+            "loc": 1239,
+            "sloc": 890,
+            "lloc": 727,
+            "comments": 69,
+            "multi": 44,
+            "blank": 239,
+            "cyclomatic": 241,
+            "internal_imports": []
+        }
+    },
+    "personal_knowledge_management/personal_knowledge_management_academic_researcher/researchbrain/experiments/templates.py": {
+        "logprobs": -798.241762482292,
+        "metrics": {
+            "loc": 488,
+            "sloc": 391,
+            "lloc": 89,
+            "comments": 13,
+            "multi": 24,
+            "blank": 58,
+            "cyclomatic": 29,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 10304,
+    "total_sloc": 6322,
+    "total_lloc": 5298,
+    "total_comments": 769,
+    "total_multi": 1360,
+    "total_blank": 1899,
+    "total_cyclomatic": 1823,
+    "total_internal_imports": 0
+}

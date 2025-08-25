@@ -1,0 +1,324 @@
+{
+    "total_logprobs": -27204.057551857954,
+    "total_tokens": 89562,
+    "unified/productmind/decision_registry/registry.py": {
+        "logprobs": -1832.2187262199957,
+        "metrics": {
+            "loc": 825,
+            "sloc": 529,
+            "lloc": 379,
+            "comments": 46,
+            "multi": 131,
+            "blank": 124,
+            "cyclomatic": 117,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/utils.py": {
+        "logprobs": -736.2430172650386,
+        "metrics": {
+            "loc": 368,
+            "sloc": 161,
+            "lloc": 162,
+            "comments": 16,
+            "multi": 105,
+            "blank": 86,
+            "cyclomatic": 72,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/citations/parsers.py": {
+        "logprobs": -1255.835112363043,
+        "metrics": {
+            "loc": 354,
+            "sloc": 239,
+            "lloc": 240,
+            "comments": 45,
+            "multi": 24,
+            "blank": 60,
+            "cyclomatic": 119,
+            "internal_imports": []
+        }
+    },
+    "unified/productmind/prioritization/framework.py": {
+        "logprobs": -2201.4777936908013,
+        "metrics": {
+            "loc": 860,
+            "sloc": 479,
+            "lloc": 391,
+            "comments": 98,
+            "multi": 142,
+            "blank": 154,
+            "cyclomatic": 146,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/citations/formatters.py": {
+        "logprobs": -636.7195637956063,
+        "metrics": {
+            "loc": 627,
+            "sloc": 406,
+            "lloc": 420,
+            "comments": 42,
+            "multi": 62,
+            "blank": 116,
+            "cyclomatic": 164,
+            "internal_imports": []
+        }
+    },
+    "unified/productmind/stakeholder_insights/manager.py": {
+        "logprobs": -1869.929337261343,
+        "metrics": {
+            "loc": 938,
+            "sloc": 547,
+            "lloc": 391,
+            "comments": 61,
+            "multi": 179,
+            "blank": 161,
+            "cyclomatic": 135,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/grants/export.py": {
+        "logprobs": -908.4746358766592,
+        "metrics": {
+            "loc": 265,
+            "sloc": 154,
+            "lloc": 71,
+            "comments": 18,
+            "multi": 36,
+            "blank": 58,
+            "cyclomatic": 24,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/interfaces.py": {
+        "logprobs": -610.4429897627222,
+        "metrics": {
+            "loc": 432,
+            "sloc": 113,
+            "lloc": 155,
+            "comments": 0,
+            "multi": 197,
+            "blank": 111,
+            "cyclomatic": 50,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/storage.py": {
+        "logprobs": -1027.807571115431,
+        "metrics": {
+            "loc": 541,
+            "sloc": 290,
+            "lloc": 304,
+            "comments": 36,
+            "multi": 88,
+            "blank": 116,
+            "cyclomatic": 98,
+            "internal_imports": []
+        }
+    },
+    "unified/productmind/feedback_analysis/engine.py": {
+        "logprobs": -2198.8297515484664,
+        "metrics": {
+            "loc": 754,
+            "sloc": 405,
+            "lloc": 367,
+            "comments": 68,
+            "multi": 148,
+            "blank": 141,
+            "cyclomatic": 138,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/experiments/templates.py": {
+        "logprobs": -795.8027739399023,
+        "metrics": {
+            "loc": 488,
+            "sloc": 391,
+            "lloc": 89,
+            "comments": 13,
+            "multi": 24,
+            "blank": 58,
+            "cyclomatic": 29,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/models.py": {
+        "logprobs": -303.81953549728865,
+        "metrics": {
+            "loc": 144,
+            "sloc": 76,
+            "lloc": 114,
+            "comments": 0,
+            "multi": 0,
+            "blank": 41,
+            "cyclomatic": 37,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/core/brain.py": {
+        "logprobs": -3402.803653338902,
+        "metrics": {
+            "loc": 1664,
+            "sloc": 906,
+            "lloc": 770,
+            "comments": 131,
+            "multi": 289,
+            "blank": 339,
+            "cyclomatic": 323,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/core/storage.py": {
+        "logprobs": -2258.744236193618,
+        "metrics": {
+            "loc": 852,
+            "sloc": 446,
+            "lloc": 451,
+            "comments": 82,
+            "multi": 172,
+            "blank": 161,
+            "cyclomatic": 174,
+            "internal_imports": []
+        }
+    },
+    "unified/setup.py": {
+        "logprobs": -207.92626232149001,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/__init__.py": {
+        "logprobs": -124.82029259375,
+        "metrics": {
+            "loc": 5,
+            "sloc": 2,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/enums.py": {
+        "logprobs": -361.6621266784188,
+        "metrics": {
+            "loc": 99,
+            "sloc": 63,
+            "lloc": 73,
+            "comments": 0,
+            "multi": 0,
+            "blank": 26,
+            "cyclomatic": 12,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/core/models.py": {
+        "logprobs": -1064.8841152714792,
+        "metrics": {
+            "loc": 226,
+            "sloc": 157,
+            "lloc": 259,
+            "comments": 38,
+            "multi": 0,
+            "blank": 51,
+            "cyclomatic": 26,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/cli.py": {
+        "logprobs": -1841.1578660142527,
+        "metrics": {
+            "loc": 1239,
+            "sloc": 890,
+            "lloc": 727,
+            "comments": 69,
+            "multi": 44,
+            "blank": 239,
+            "cyclomatic": 241,
+            "internal_imports": []
+        }
+    },
+    "unified/productmind/competitive_analysis/system.py": {
+        "logprobs": -1865.5502524772298,
+        "metrics": {
+            "loc": 827,
+            "sloc": 447,
+            "lloc": 358,
+            "comments": 61,
+            "multi": 165,
+            "blank": 159,
+            "cyclomatic": 161,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/exceptions.py": {
+        "logprobs": -250.7229228884239,
+        "metrics": {
+            "loc": 93,
+            "sloc": 45,
+            "lloc": 63,
+            "comments": 0,
+            "multi": 0,
+            "blank": 33,
+            "cyclomatic": 28,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/__init__.py": {
+        "logprobs": -428.123803770958,
+        "metrics": {
+            "loc": 132,
+            "sloc": 124,
+            "lloc": 8,
+            "comments": 6,
+            "multi": 0,
+            "blank": 7,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/productmind/models.py": {
+        "logprobs": -904.8165127487584,
+        "metrics": {
+            "loc": 194,
+            "sloc": 144,
+            "lloc": 262,
+            "comments": 1,
+            "multi": 3,
+            "blank": 32,
+            "cyclomatic": 15,
+            "internal_imports": []
+        }
+    },
+    "unified/researchbrain/__main__.py": {
+        "logprobs": -115.244699224372,
+        "metrics": {
+            "loc": 6,
+            "sloc": 3,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 11942,
+    "total_sloc": 7025,
+    "total_lloc": 6063,
+    "total_comments": 831,
+    "total_multi": 1809,
+    "total_blank": 2278,
+    "total_cyclomatic": 2109,
+    "total_internal_imports": 0
+}

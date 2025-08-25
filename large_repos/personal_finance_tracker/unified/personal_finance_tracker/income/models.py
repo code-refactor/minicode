@@ -153,7 +153,7 @@ class RevenueForecast(BaseModel, ValidationMixin):
         super().__init__(**data)
 
 
-class SmoothedIncome(BaseModel, AuditMixin):
+class SmoothedIncome(BaseModel):
     """Smoothed income calculation result with Money support and audit trail."""
 
     period_start: datetime
@@ -162,11 +162,11 @@ class SmoothedIncome(BaseModel, AuditMixin):
     smoothed_income: Money  # Use Money for precision
     method: SmoothingMethod
     configuration: SmoothingConfig
-    income_deficit: Money = None  # When actual < smoothed
-    income_surplus: Money = None  # When actual > smoothed
+    income_deficit: Optional[Money] = None  # When actual < smoothed
+    income_surplus: Optional[Money] = None  # When actual > smoothed
     notes: Optional[str] = None
     
-    # Audit fields from mixin
+    # Audit fields
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
     version: int = 1

@@ -37,9 +37,8 @@ class DocumentAnalyzer(BaseAnalyzerService):
         if config is None:
             config = ServiceConfig(
                 service_name="document_analyzer",
-                service_type="analyzer",
                 enabled=True,
-                config={}
+                config={"service_type": "analyzer"}
             )
         
         super().__init__(config)

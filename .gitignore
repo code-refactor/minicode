@@ -1,6 +1,9 @@
 .env
 __pycache__/
 *.egg-info/
+*.pyc
 
 codecontests/
 large_repos/
+
+

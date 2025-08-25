@@ -113,9 +113,8 @@ class PrivacyServiceRegistry:
         """Initialize the PII detector service."""
         service_config = ServiceConfig(
             service_name="pii_detector",
-            service_type="detector",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "detector"}
         )
         
         # Set default configuration values
@@ -170,9 +169,8 @@ class PrivacyServiceRegistry:
         """Initialize the data anonymizer service."""
         service_config = ServiceConfig(
             service_name="data_anonymizer",
-            service_type="analyzer",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "analyzer"}
         )
         
         # Configuration is optional for anonymizer
@@ -202,9 +200,8 @@ class PrivacyServiceRegistry:
         """Initialize the policy enforcer service."""
         service_config = ServiceConfig(
             service_name="policy_enforcer",
-            service_type="enforcer",
             enabled=config.get("enabled", True),
-            config=config
+            config={**config, "service_type": "enforcer"}
         )
         
         # Configuration is optional for enforcer

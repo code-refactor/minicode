@@ -1,0 +1,519 @@
+{
+    "total_logprobs": -39092.55803870661,
+    "total_tokens": 124506,
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/patterns/__init__.py": {
+        "logprobs": -100.0393535,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/memory/cache.py": {
+        "logprobs": -1311.9622053927196,
+        "metrics": {
+            "loc": 758,
+            "sloc": 342,
+            "lloc": 352,
+            "comments": 77,
+            "multi": 188,
+            "blank": 166,
+            "cyclomatic": 93,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/synchronization/primitives.py": {
+        "logprobs": -1202.238036048885,
+        "metrics": {
+            "loc": 935,
+            "sloc": 463,
+            "lloc": 357,
+            "comments": 68,
+            "multi": 216,
+            "blank": 184,
+            "cyclomatic": 109,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/debug_vm.py": {
+        "logprobs": -462.42902407058864,
+        "metrics": {
+            "loc": 53,
+            "sloc": 37,
+            "lloc": 27,
+            "comments": 13,
+            "multi": 0,
+            "blank": 9,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/vm.py": {
+        "logprobs": -2539.646161478901,
+        "metrics": {
+            "loc": 878,
+            "sloc": 526,
+            "lloc": 379,
+            "comments": 134,
+            "multi": 79,
+            "blank": 152,
+            "cyclomatic": 129,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/memory/coherence.py": {
+        "logprobs": -2188.9339836952963,
+        "metrics": {
+            "loc": 978,
+            "sloc": 552,
+            "lloc": 413,
+            "comments": 109,
+            "multi": 150,
+            "blank": 174,
+            "cyclomatic": 172,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/__init__.py": {
+        "logprobs": -188.6063865219,
+        "metrics": {
+            "loc": 10,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 7,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/memory.py": {
+        "logprobs": -1278.6535819531898,
+        "metrics": {
+            "loc": 440,
+            "sloc": 315,
+            "lloc": 271,
+            "comments": 23,
+            "multi": 5,
+            "blank": 71,
+            "cyclomatic": 99,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/memory.py": {
+        "logprobs": -461.2087384953515,
+        "metrics": {
+            "loc": 215,
+            "sloc": 108,
+            "lloc": 76,
+            "comments": 7,
+            "multi": 58,
+            "blank": 41,
+            "cyclomatic": 33,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/synchronization/manager.py": {
+        "logprobs": -974.8393907726711,
+        "metrics": {
+            "loc": 787,
+            "sloc": 399,
+            "lloc": 273,
+            "comments": 49,
+            "multi": 194,
+            "blank": 143,
+            "cyclomatic": 100,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/race.py": {
+        "logprobs": -1473.0223544822657,
+        "metrics": {
+            "loc": 562,
+            "sloc": 328,
+            "lloc": 253,
+            "comments": 69,
+            "multi": 79,
+            "blank": 94,
+            "cyclomatic": 123,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/emulator.py": {
+        "logprobs": -1910.7784588018446,
+        "metrics": {
+            "loc": 662,
+            "sloc": 454,
+            "lloc": 316,
+            "comments": 56,
+            "multi": 23,
+            "blank": 113,
+            "cyclomatic": 89,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/cpu.py": {
+        "logprobs": -1830.4007386273386,
+        "metrics": {
+            "loc": 688,
+            "sloc": 501,
+            "lloc": 366,
+            "comments": 75,
+            "multi": 5,
+            "blank": 108,
+            "cyclomatic": 105,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/__init__.py": {
+        "logprobs": -107.200673,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/latency.py": {
+        "logprobs": -1223.2011668609819,
+        "metrics": {
+            "loc": 722,
+            "sloc": 389,
+            "lloc": 280,
+            "comments": 63,
+            "multi": 152,
+            "blank": 129,
+            "cyclomatic": 90,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/metrics/__init__.py": {
+        "logprobs": -89.4306191,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/visualization.py": {
+        "logprobs": -1832.3244350095292,
+        "metrics": {
+            "loc": 506,
+            "sloc": 333,
+            "lloc": 259,
+            "comments": 35,
+            "multi": 43,
+            "blank": 90,
+            "cyclomatic": 104,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/scenarios.py": {
+        "logprobs": -2903.2578180425776,
+        "metrics": {
+            "loc": 813,
+            "sloc": 512,
+            "lloc": 256,
+            "comments": 263,
+            "multi": 30,
+            "blank": 175,
+            "cyclomatic": 54,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/memory/patterns.py": {
+        "logprobs": -1794.7553065580514,
+        "metrics": {
+            "loc": 875,
+            "sloc": 448,
+            "lloc": 391,
+            "comments": 108,
+            "multi": 148,
+            "blank": 186,
+            "cyclomatic": 156,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/program.py": {
+        "logprobs": -405.82279537203146,
+        "metrics": {
+            "loc": 172,
+            "sloc": 75,
+            "lloc": 73,
+            "comments": 0,
+            "multi": 62,
+            "blank": 32,
+            "cyclomatic": 17,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/state.py": {
+        "logprobs": -1328.3070378934567,
+        "metrics": {
+            "loc": 480,
+            "sloc": 294,
+            "lloc": 215,
+            "comments": 38,
+            "multi": 60,
+            "blank": 82,
+            "cyclomatic": 82,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/visualization/__init__.py": {
+        "logprobs": -99.5961611,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/patterns/algorithms.py": {
+        "logprobs": -1781.6861709200564,
+        "metrics": {
+            "loc": 957,
+            "sloc": 499,
+            "lloc": 269,
+            "comments": 127,
+            "multi": 189,
+            "blank": 153,
+            "cyclomatic": 63,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/scheduling/scheduler.py": {
+        "logprobs": -1884.2980776317884,
+        "metrics": {
+            "loc": 975,
+            "sloc": 431,
+            "lloc": 357,
+            "comments": 96,
+            "multi": 256,
+            "blank": 186,
+            "cyclomatic": 160,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/processor.py": {
+        "logprobs": -1077.8236613067666,
+        "metrics": {
+            "loc": 255,
+            "sloc": 156,
+            "lloc": 172,
+            "comments": 53,
+            "multi": 10,
+            "blank": 41,
+            "cyclomatic": 55,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/visualization/trace.py": {
+        "logprobs": -1254.9893444399672,
+        "metrics": {
+            "loc": 866,
+            "sloc": 504,
+            "lloc": 340,
+            "comments": 77,
+            "multi": 144,
+            "blank": 146,
+            "cyclomatic": 117,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/threading/__init__.py": {
+        "logprobs": -89.28541630000001,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/metrics/performance.py": {
+        "logprobs": -1305.2924944461856,
+        "metrics": {
+            "loc": 654,
+            "sloc": 340,
+            "lloc": 312,
+            "comments": 50,
+            "multi": 141,
+            "blank": 125,
+            "cyclomatic": 96,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_security_researcher/src/secure_vm/attacks.py": {
+        "logprobs": -2566.8024533444586,
+        "metrics": {
+            "loc": 818,
+            "sloc": 525,
+            "lloc": 344,
+            "comments": 118,
+            "multi": 42,
+            "blank": 131,
+            "cyclomatic": 125,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/threading/thread.py": {
+        "logprobs": -562.2009703854103,
+        "metrics": {
+            "loc": 172,
+            "sloc": 95,
+            "lloc": 103,
+            "comments": 11,
+            "multi": 36,
+            "blank": 30,
+            "cyclomatic": 19,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/scheduling/__init__.py": {
+        "logprobs": -96.096237521,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/setup.py": {
+        "logprobs": -159.798262833344,
+        "metrics": {
+            "loc": 12,
+            "sloc": 11,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/debug_run.py": {
+        "logprobs": -419.6980593786468,
+        "metrics": {
+            "loc": 64,
+            "sloc": 41,
+            "lloc": 31,
+            "comments": 17,
+            "multi": 0,
+            "blank": 12,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/memory/__init__.py": {
+        "logprobs": -94.2566826,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/__init__.py": {
+        "logprobs": -110.73716726082,
+        "metrics": {
+            "loc": 3,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/core/instruction.py": {
+        "logprobs": -394.98200983432315,
+        "metrics": {
+            "loc": 115,
+            "sloc": 84,
+            "lloc": 62,
+            "comments": 43,
+            "multi": 0,
+            "blank": 20,
+            "cyclomatic": 11,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/debug_sched.py": {
+        "logprobs": -406.9292279022196,
+        "metrics": {
+            "loc": 52,
+            "sloc": 37,
+            "lloc": 27,
+            "comments": 11,
+            "multi": 0,
+            "blank": 9,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/synchronization/__init__.py": {
+        "logprobs": -87.339417389933,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "virtual_machine_emulator/virtual_machine_emulator_parallel_researcher/vm_emulator/threading/thread_manager.py": {
+        "logprobs": -1093.6879584341148,
+        "metrics": {
+            "loc": 536,
+            "sloc": 236,
+            "lloc": 199,
+            "comments": 38,
+            "multi": 151,
+            "blank": 111,
+            "cyclomatic": 72,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 16021,
+    "total_sloc": 9037,
+    "total_lloc": 6787,
+    "total_comments": 1828,
+    "total_multi": 2468,
+    "total_blank": 2917,
+    "total_cyclomatic": 2273,
+    "total_internal_imports": 0
+}

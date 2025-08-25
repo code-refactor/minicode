@@ -1,0 +1,623 @@
+{
+    "total_logprobs": -36918.835766620425,
+    "total_tokens": 116520,
+    "unified/common/utils/types.py": {
+        "logprobs": -973.4330309911348,
+        "metrics": {
+            "loc": 617,
+            "sloc": 299,
+            "lloc": 346,
+            "comments": 25,
+            "multi": 120,
+            "blank": 139,
+            "cyclomatic": 135,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/storage.py": {
+        "logprobs": -500.69076074830673,
+        "metrics": {
+            "loc": 298,
+            "sloc": 198,
+            "lloc": 234,
+            "comments": 5,
+            "multi": 0,
+            "blank": 64,
+            "cyclomatic": 81,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/core/vector.py": {
+        "logprobs": -445.37872775362746,
+        "metrics": {
+            "loc": 210,
+            "sloc": 75,
+            "lloc": 97,
+            "comments": 0,
+            "multi": 76,
+            "blank": 50,
+            "cyclomatic": 40,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/core/__init__.py": {
+        "logprobs": -106.6332577647485,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/batch/processor.py": {
+        "logprobs": -1338.8957508619726,
+        "metrics": {
+            "loc": 619,
+            "sloc": 349,
+            "lloc": 219,
+            "comments": 48,
+            "multi": 123,
+            "blank": 98,
+            "cyclomatic": 76,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/compression/type_compressor.py": {
+        "logprobs": -1003.9749056727715,
+        "metrics": {
+            "loc": 491,
+            "sloc": 258,
+            "lloc": 284,
+            "comments": 79,
+            "multi": 38,
+            "blank": 95,
+            "cyclomatic": 101,
+            "internal_imports": []
+        }
+    },
+    "unified/common/__init__.py": {
+        "logprobs": -156.797752689673,
+        "metrics": {
+            "loc": 31,
+            "sloc": 18,
+            "lloc": 10,
+            "comments": 8,
+            "multi": 0,
+            "blank": 8,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/__init__.py": {
+        "logprobs": -259.7510890283361,
+        "metrics": {
+            "loc": 23,
+            "sloc": 14,
+            "lloc": 8,
+            "comments": 0,
+            "multi": 6,
+            "blank": 3,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/schema/schema_manager.py": {
+        "logprobs": -1758.4501567180228,
+        "metrics": {
+            "loc": NaN,
+            "sloc": NaN,
+            "lloc": NaN,
+            "comments": NaN,
+            "multi": NaN,
+            "blank": NaN,
+            "cyclomatic": NaN,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/feature_store/version.py": {
+        "logprobs": -1137.1833217371734,
+        "metrics": {
+            "loc": 477,
+            "sloc": 237,
+            "lloc": 149,
+            "comments": 25,
+            "multi": 139,
+            "blank": 73,
+            "cyclomatic": 56,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/batch/__init__.py": {
+        "logprobs": -102.8736960966,
+        "metrics": {
+            "loc": 5,
+            "sloc": 4,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/indexing/approximate_nn.py": {
+        "logprobs": -1158.495513674991,
+        "metrics": {
+            "loc": 392,
+            "sloc": 161,
+            "lloc": 162,
+            "comments": 32,
+            "multi": 114,
+            "blank": 83,
+            "cyclomatic": 72,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/transform/operations.py": {
+        "logprobs": -852.0366620347121,
+        "metrics": {
+            "loc": 733,
+            "sloc": 309,
+            "lloc": 328,
+            "comments": 43,
+            "multi": 230,
+            "blank": 151,
+            "cyclomatic": 171,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/feature_store/store.py": {
+        "logprobs": -2099.4131550776046,
+        "metrics": {
+            "loc": 818,
+            "sloc": 439,
+            "lloc": 306,
+            "comments": 65,
+            "multi": 181,
+            "blank": 133,
+            "cyclomatic": 106,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/sync/change_tracker.py": {
+        "logprobs": -1089.0175717764687,
+        "metrics": {
+            "loc": 301,
+            "sloc": 162,
+            "lloc": 135,
+            "comments": 25,
+            "multi": 67,
+            "blank": 49,
+            "cyclomatic": 47,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/feature_store/lineage.py": {
+        "logprobs": -1188.0319394121084,
+        "metrics": {
+            "loc": 583,
+            "sloc": 269,
+            "lloc": 236,
+            "comments": 39,
+            "multi": 164,
+            "blank": 111,
+            "cyclomatic": 73,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/__init__.py": {
+        "logprobs": -562.3277162254956,
+        "metrics": {
+            "loc": 47,
+            "sloc": 22,
+            "lloc": 11,
+            "comments": 8,
+            "multi": 7,
+            "blank": 10,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/core/distance.py": {
+        "logprobs": -418.1459194304671,
+        "metrics": {
+            "loc": 218,
+            "sloc": 58,
+            "lloc": 61,
+            "comments": 4,
+            "multi": 93,
+            "blank": 63,
+            "cyclomatic": 24,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/experiment/__init__.py": {
+        "logprobs": -131.3743268877547,
+        "metrics": {
+            "loc": 6,
+            "sloc": 5,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/sync/sync_protocol.py": {
+        "logprobs": -2676.975772815755,
+        "metrics": {
+            "loc": NaN,
+            "sloc": NaN,
+            "lloc": NaN,
+            "comments": NaN,
+            "multi": NaN,
+            "blank": NaN,
+            "cyclomatic": NaN,
+            "internal_imports": []
+        }
+    },
+    "unified/common/query/executor.py": {
+        "logprobs": -1107.814061285564,
+        "metrics": {
+            "loc": 578,
+            "sloc": 357,
+            "lloc": 372,
+            "comments": 39,
+            "multi": 24,
+            "blank": 125,
+            "cyclomatic": 154,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/transform/pipeline.py": {
+        "logprobs": -766.4308745532429,
+        "metrics": {
+            "loc": 425,
+            "sloc": 170,
+            "lloc": 175,
+            "comments": 16,
+            "multi": 146,
+            "blank": 85,
+            "cyclomatic": 52,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/db/schema.py": {
+        "logprobs": -705.1389180864774,
+        "metrics": {
+            "loc": 172,
+            "sloc": 112,
+            "lloc": 121,
+            "comments": 13,
+            "multi": 7,
+            "blank": 28,
+            "cyclomatic": 53,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/sync/conflict_resolution.py": {
+        "logprobs": -1205.940653050711,
+        "metrics": {
+            "loc": NaN,
+            "sloc": NaN,
+            "lloc": NaN,
+            "comments": NaN,
+            "multi": NaN,
+            "blank": NaN,
+            "cyclomatic": NaN,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/feature_store/__init__.py": {
+        "logprobs": -132.672709476039,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/transaction.py": {
+        "logprobs": -651.1670915428698,
+        "metrics": {
+            "loc": 373,
+            "sloc": 199,
+            "lloc": 230,
+            "comments": 15,
+            "multi": 65,
+            "blank": 78,
+            "cyclomatic": 68,
+            "internal_imports": []
+        }
+    },
+    "unified/common/utils/validation.py": {
+        "logprobs": -735.6139813266868,
+        "metrics": {
+            "loc": 705,
+            "sloc": 307,
+            "lloc": 302,
+            "comments": 15,
+            "multi": 223,
+            "blank": 155,
+            "cyclomatic": 101,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/power/power_manager.py": {
+        "logprobs": -1267.5797915487617,
+        "metrics": {
+            "loc": 462,
+            "sloc": 244,
+            "lloc": 237,
+            "comments": 53,
+            "multi": 88,
+            "blank": 87,
+            "cyclomatic": 80,
+            "internal_imports": []
+        }
+    },
+    "unified/setup.py": {
+        "logprobs": -193.13980903867,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/index.py": {
+        "logprobs": -666.2267664689571,
+        "metrics": {
+            "loc": 415,
+            "sloc": 269,
+            "lloc": 287,
+            "comments": 9,
+            "multi": 16,
+            "blank": 83,
+            "cyclomatic": 94,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/db/database.py": {
+        "logprobs": -1516.8591240698408,
+        "metrics": {
+            "loc": 434,
+            "sloc": 219,
+            "lloc": 224,
+            "comments": 42,
+            "multi": 81,
+            "blank": 78,
+            "cyclomatic": 88,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/__init__.py": {
+        "logprobs": -97.22136520000001,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 0,
+            "comments": 1,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/sync/manual_sync.py": {
+        "logprobs": -408.91312077533865,
+        "metrics": {
+            "loc": 93,
+            "sloc": 45,
+            "lloc": 38,
+            "comments": 12,
+            "multi": 21,
+            "blank": 15,
+            "cyclomatic": 10,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/indexing/index.py": {
+        "logprobs": -1124.3893866535188,
+        "metrics": {
+            "loc": 388,
+            "sloc": 164,
+            "lloc": 185,
+            "comments": 17,
+            "multi": 124,
+            "blank": 77,
+            "cyclomatic": 63,
+            "internal_imports": []
+        }
+    },
+    "unified/common/query/interface.py": {
+        "logprobs": -496.86327076179145,
+        "metrics": {
+            "loc": 315,
+            "sloc": 144,
+            "lloc": 172,
+            "comments": 3,
+            "multi": 93,
+            "blank": 67,
+            "cyclomatic": 37,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/transform/__init__.py": {
+        "logprobs": -135.94926334192,
+        "metrics": {
+            "loc": 15,
+            "sloc": 14,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/exceptions/__init__.py": {
+        "logprobs": -237.13440807146333,
+        "metrics": {
+            "loc": 56,
+            "sloc": 51,
+            "lloc": 3,
+            "comments": 3,
+            "multi": 0,
+            "blank": 4,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/utils/threading.py": {
+        "logprobs": -1061.0615617715762,
+        "metrics": {
+            "loc": 714,
+            "sloc": 336,
+            "lloc": 372,
+            "comments": 19,
+            "multi": 190,
+            "blank": 150,
+            "cyclomatic": 96,
+            "internal_imports": []
+        }
+    },
+    "unified/common/exceptions/base.py": {
+        "logprobs": -935.1968291346133,
+        "metrics": {
+            "loc": 508,
+            "sloc": 294,
+            "lloc": 319,
+            "comments": 23,
+            "multi": 31,
+            "blank": 119,
+            "cyclomatic": 103,
+            "internal_imports": []
+        }
+    },
+    "unified/common/utils/__init__.py": {
+        "logprobs": -263.3467808436837,
+        "metrics": {
+            "loc": 45,
+            "sloc": 40,
+            "lloc": 5,
+            "comments": 3,
+            "multi": 0,
+            "blank": 4,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/vectordb/indexing/__init__.py": {
+        "logprobs": -127.4628866194727,
+        "metrics": {
+            "loc": 7,
+            "sloc": 6,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/query/__init__.py": {
+        "logprobs": -151.38821865283,
+        "metrics": {
+            "loc": 16,
+            "sloc": 13,
+            "lloc": 5,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/query/filters.py": {
+        "logprobs": -690.9361315499149,
+        "metrics": {
+            "loc": 515,
+            "sloc": 382,
+            "lloc": 315,
+            "comments": 27,
+            "multi": 0,
+            "blank": 83,
+            "cyclomatic": 130,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/schema.py": {
+        "logprobs": -681.575011101846,
+        "metrics": {
+            "loc": 358,
+            "sloc": 238,
+            "lloc": 257,
+            "comments": 17,
+            "multi": 0,
+            "blank": 76,
+            "cyclomatic": 121,
+            "internal_imports": []
+        }
+    },
+    "unified/syncdb/client.py": {
+        "logprobs": -2191.5948783280396,
+        "metrics": {
+            "loc": 780,
+            "sloc": 356,
+            "lloc": 283,
+            "comments": 71,
+            "multi": 199,
+            "blank": 153,
+            "cyclomatic": 76,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/version.py": {
+        "logprobs": -667.5057392632763,
+        "metrics": {
+            "loc": 353,
+            "sloc": 184,
+            "lloc": 180,
+            "comments": 17,
+            "multi": 72,
+            "blank": 74,
+            "cyclomatic": 59,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/serialization.py": {
+        "logprobs": -739.8321067055921,
+        "metrics": {
+            "loc": 586,
+            "sloc": 421,
+            "lloc": 420,
+            "comments": 33,
+            "multi": 16,
+            "blank": 94,
+            "cyclomatic": 154,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 14210,
+    "total_sloc": 7466,
+    "total_lloc": 7107,
+    "total_comments": 854,
+    "total_multi": 2754,
+    "total_blank": 2774,
+    "total_cyclomatic": 2521,
+    "total_internal_imports": 0
+}

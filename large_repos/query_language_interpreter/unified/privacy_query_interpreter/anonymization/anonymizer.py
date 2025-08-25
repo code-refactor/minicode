@@ -63,9 +63,9 @@ class DataAnonymizer(BaseAnalyzerService):
         if config is None:
             config = ServiceConfig(
                 service_name="data_anonymizer",
-                service_type="analyzer",
                 enabled=True,
                 config={
+                    "service_type": "analyzer",
                     "hmac_key_provided": hmac_key is not None,
                     "pii_detector_provided": pii_detector is not None,
                     "pseudonym_salt_provided": pseudonym_salt is not None

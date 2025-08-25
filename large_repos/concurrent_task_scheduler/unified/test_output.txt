@@ -1,0 +1,106 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode/large_repos/concurrent_task_scheduler/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 358 items
+
+tests/render_farm_manager/integration/test_audit_logging.py ...          [  0%]
+tests/render_farm_manager/integration/test_circular_dependency_patch.py . [  1%]
+                                                                         [  1%]
+tests/render_farm_manager/integration/test_energy_modes.py ..            [  1%]
+tests/render_farm_manager/integration/test_energy_modes_fixed.py .       [  1%]
+tests/render_farm_manager/integration/test_error_recovery.py ...         [  2%]
+tests/render_farm_manager/integration/test_error_recovery_fixed.py .     [  3%]
+tests/render_farm_manager/integration/test_error_recovery_fixed_complete.py . [  3%]
+.                                                                        [  3%]
+tests/render_farm_manager/integration/test_error_recovery_fixed_full.py . [  3%]
+..                                                                       [  4%]
+tests/render_farm_manager/integration/test_fault_tolerance.py .          [  4%]
+tests/render_farm_manager/integration/test_fault_tolerance_fixed.py .    [  5%]
+tests/render_farm_manager/integration/test_job_dependencies.py ...       [  5%]
+tests/render_farm_manager/integration/test_job_dependencies_fixed.py ..  [  6%]
+tests/render_farm_manager/integration/test_job_dependencies_fixed_direct.py . [  6%]
+..                                                                       [  7%]
+tests/render_farm_manager/integration/test_job_dependencies_fixed_direct_complete.py . [  7%]
+.                                                                        [  7%]
+tests/render_farm_manager/integration/test_job_dependencies_fixed_full.py . [  8%]
+..                                                                       [  8%]
+tests/render_farm_manager/integration/test_job_dependencies_scheduling_patch.py . [  8%]
+                                                                         [  8%]
+tests/render_farm_manager/integration/test_job_dependencies_simple.py .. [  9%]
+                                                                         [  9%]
+tests/render_farm_manager/integration/test_job_dependencies_simple_fixed.py . [  9%]
+.                                                                        [ 10%]
+tests/render_farm_manager/integration/test_job_dependencies_simple_patched.py . [ 10%]
+.                                                                        [ 10%]
+tests/render_farm_manager/integration/test_job_dependencies_with_monkey_patch.py . [ 10%]
+                                                                         [ 10%]
+tests/render_farm_manager/integration/test_job_dependencies_with_monkey_patch_all.py . [ 11%]
+..                                                                       [ 11%]
+tests/render_farm_manager/integration/test_priority_inheritance_patch.py . [ 12%]
+                                                                         [ 12%]
+tests/render_farm_manager/integration/test_render_farm_manager.py ...... [ 13%]
+......                                                                   [ 15%]
+tests/render_farm_manager/performance/test_performance.py ...            [ 16%]
+tests/render_farm_manager/unit/test_deadline_scheduler.py ...........    [ 19%]
+tests/render_farm_manager/unit/test_deadline_scheduler_fixed.py .        [ 19%]
+tests/render_farm_manager/unit/test_deadline_scheduler_full.py .         [ 19%]
+tests/render_farm_manager/unit/test_energy_optimizer.py ...........      [ 22%]
+tests/render_farm_manager/unit/test_node_specialization.py ...........   [ 25%]
+tests/render_farm_manager/unit/test_progressive_renderer.py ............ [ 29%]
+                                                                         [ 29%]
+tests/render_farm_manager/unit/test_resource_borrowing.py ..             [ 29%]
+tests/render_farm_manager/unit/test_resource_borrowing_fixed.py ..       [ 30%]
+tests/render_farm_manager/unit/test_resource_partitioner.py ..........   [ 33%]
+tests/scientific_computing/dependency_tracking/test_dependency_tracker.py . [ 33%]
+................................                                         [ 42%]
+tests/scientific_computing/failure_resilience/test_checkpoint_manager.py . [ 42%]
+......x..x.                                                              [ 45%]
+tests/scientific_computing/failure_resilience/test_failure_detector.py . [ 46%]
+...................                                                      [ 51%]
+tests/scientific_computing/failure_resilience/test_failure_resilience.py . [ 51%]
+......................x                                                  [ 58%]
+tests/scientific_computing/failure_resilience/test_resilience_coordinator.py . [ 58%]
+............Xx                                                           [ 62%]
+tests/scientific_computing/job_management/test_long_running_job_manager.py . [ 62%]
+..................                                                       [ 67%]
+tests/scientific_computing/resource_forecasting/test_data_collector.py . [ 67%]
+.......                                                                  [ 69%]
+tests/scientific_computing/resource_forecasting/test_forecaster.py ..... [ 71%]
+..                                                                       [ 71%]
+tests/scientific_computing/resource_forecasting/test_optimizer.py ...... [ 73%]
+..                                                                       [ 74%]
+tests/scientific_computing/resource_forecasting/test_reporter.py ......  [ 75%]
+tests/scientific_computing/scenario_management/test_advanced_priority_management.py . [ 75%]
+................                                                         [ 80%]
+tests/scientific_computing/scenario_management/test_comparator.py ...... [ 82%]
+...                                                                      [ 82%]
+tests/scientific_computing/scenario_management/test_evaluator.py ....... [ 84%]
+.                                                                        [ 85%]
+tests/scientific_computing/scenario_management/test_priority_manager.py . [ 85%]
+..........                                                               [ 88%]
+tests/scientific_computing/scenario_management/test_scenario_management_integration.py . [ 88%]
+...                                                                      [ 89%]
+tests/scientific_computing/scenario_management/test_scenario_model.py .. [ 89%]
+...............                                                          [ 94%]
+tests/scientific_computing/test_full_system_integration.py ....          [ 95%]
+tests/scientific_computing/test_priority_manager.py .............        [ 98%]
+tests/scientific_computing/test_scenario_management_integration.py ....  [100%]
+
+=============================== warnings summary ===============================
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/scientific_computing/resource_forecasting/test_data_collector.py: 5 warnings
+tests/scientific_computing/resource_forecasting/test_forecaster.py: 21 warnings
+tests/scientific_computing/resource_forecasting/test_optimizer.py: 5 warnings
+tests/scientific_computing/resource_forecasting/test_reporter.py: 25 warnings
+  /home/justinchiu/code/python/minicode/large_repos/concurrent_task_scheduler/unified/concurrent_task_scheduler/resource_forecasting/data_collector.py:466: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+    aggregated = df.resample(freq).agg(agg_dict)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report.json
+=========== 353 passed, 4 xfailed, 1 xpassed, 57 warnings in 18.49s ============

@@ -1,0 +1,47 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode-orig/large_repos/in_memory_database/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 308 items
+
+tests/ml_engineer/batch/test_processor.py .........                      [  2%]
+tests/ml_engineer/core/test_distance.py ........                         [  5%]
+tests/ml_engineer/core/test_vector.py ............                       [  9%]
+tests/ml_engineer/experiment/test_ab_test.py ...................         [ 15%]
+tests/ml_engineer/feature_store/test_lineage.py ................         [ 20%]
+tests/ml_engineer/feature_store/test_store.py .............              [ 25%]
+tests/ml_engineer/feature_store/test_version.py ................         [ 30%]
+tests/ml_engineer/indexing/test_approximate_nn.py .........              [ 33%]
+tests/ml_engineer/indexing/test_vector_index.py ...........              [ 36%]
+tests/ml_engineer/performance/test_benchmarks.py ......                  [ 38%]
+tests/ml_engineer/transform/test_operations.py .....................     [ 45%]
+tests/ml_engineer/transform/test_pipeline.py ............                [ 49%]
+tests/mobile_developer/integration/test_sync_workflow.py .........       [ 52%]
+tests/mobile_developer/performance/test_conflict_resolution.py ..        [ 52%]
+tests/mobile_developer/performance/test_performance.py ................. [ 58%]
+..                                                                       [ 59%]
+tests/mobile_developer/unit/test_change_tracker.py ...................   [ 65%]
+tests/mobile_developer/unit/test_compression.py ..............           [ 69%]
+tests/mobile_developer/unit/test_conflict_resolution.py ................ [ 75%]
+...                                                                      [ 75%]
+tests/mobile_developer/unit/test_database.py ................            [ 81%]
+tests/mobile_developer/unit/test_power_manager.py ..................     [ 87%]
+tests/mobile_developer/unit/test_schema_manager.py ..................... [ 93%]
+                                                                         [ 93%]
+tests/mobile_developer/unit/test_sync_protocol.py ...................    [100%]
+
+=============================== warnings summary ===============================
+tests/ml_engineer/feature_store/test_lineage.py::TestLineageNode::test_created_at
+  /home/justinchiu/code/python/minicode-orig/large_repos/in_memory_database/unified/vectordb/feature_store/lineage.py:57: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    return datetime.utcfromtimestamp(self.timestamp).replace(microsecond=0)
+
+tests/ml_engineer/feature_store/test_version.py::TestVersion::test_created_at
+tests/ml_engineer/feature_store/test_version.py::TestVersion::test_string_representation
+  /home/justinchiu/code/python/minicode-orig/large_repos/in_memory_database/unified/vectordb/feature_store/version.py:53: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    return datetime.utcfromtimestamp(self.timestamp).replace(microsecond=0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report_original.json
+======================= 308 passed, 3 warnings in 3.60s ========================

@@ -40,9 +40,8 @@ class OntologyService(BaseService):
         if config is None:
             config = ServiceConfig(
                 service_name="ontology_service",
-                service_type="service",
                 enabled=True,
-                config={}
+                config={"service_type": "service"}
             )
         
         super().__init__(config)

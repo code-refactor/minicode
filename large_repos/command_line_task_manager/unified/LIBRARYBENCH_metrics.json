@@ -1,0 +1,753 @@
+{
+    "total_logprobs": -44437.76435118717,
+    "total_tokens": 156546,
+    "unified/researchtrack/bibliography/storage.py": {
+        "logprobs": -514.2243888631513,
+        "metrics": {
+            "loc": 317,
+            "sloc": 115,
+            "lloc": 124,
+            "comments": 3,
+            "multi": 121,
+            "blank": 76,
+            "cyclomatic": 50,
+            "internal_imports": []
+        }
+    },
+    "unified/common/__init__.py": {
+        "logprobs": -102.6749577807,
+        "metrics": {
+            "loc": 5,
+            "sloc": 2,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/__init__.py": {
+        "logprobs": -439.807168811143,
+        "metrics": {
+            "loc": 128,
+            "sloc": 117,
+            "lloc": 7,
+            "comments": 5,
+            "multi": 0,
+            "blank": 10,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/dataset_versioning/service.py": {
+        "logprobs": -1902.2294063139814,
+        "metrics": {
+            "loc": 1248,
+            "sloc": 502,
+            "lloc": 379,
+            "comments": 45,
+            "multi": 463,
+            "blank": 237,
+            "cyclomatic": 155,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/bibliography/importer.py": {
+        "logprobs": -1234.10216347373,
+        "metrics": {
+            "loc": 784,
+            "sloc": 537,
+            "lloc": 310,
+            "comments": 53,
+            "multi": 69,
+            "blank": 122,
+            "cyclomatic": 138,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/bibliography/models.py": {
+        "logprobs": -618.4193536238697,
+        "metrics": {
+            "loc": 243,
+            "sloc": 138,
+            "lloc": 194,
+            "comments": 20,
+            "multi": 24,
+            "blank": 53,
+            "cyclomatic": 50,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/experiment_tracking/service.py": {
+        "logprobs": -1438.588833055248,
+        "metrics": {
+            "loc": 846,
+            "sloc": 344,
+            "lloc": 285,
+            "comments": 46,
+            "multi": 288,
+            "blank": 173,
+            "cyclomatic": 120,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/task_management/models.py": {
+        "logprobs": -659.921855173778,
+        "metrics": {
+            "loc": 188,
+            "sloc": 116,
+            "lloc": 164,
+            "comments": 14,
+            "multi": 0,
+            "blank": 38,
+            "cyclomatic": 40,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/environment/__init__.py": {
+        "logprobs": -196.1075015165982,
+        "metrics": {
+            "loc": 26,
+            "sloc": 25,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/findings/repository.py": {
+        "logprobs": -1118.9958428243651,
+        "metrics": {
+            "loc": 397,
+            "sloc": 191,
+            "lloc": 207,
+            "comments": 36,
+            "multi": 61,
+            "blank": 93,
+            "cyclomatic": 67,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/utils/validation.py": {
+        "logprobs": -381.529535744053,
+        "metrics": {
+            "loc": 82,
+            "sloc": 34,
+            "lloc": 35,
+            "comments": 0,
+            "multi": 22,
+            "blank": 22,
+            "cyclomatic": 11,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/bibliography/service.py": {
+        "logprobs": -1474.707457349842,
+        "metrics": {
+            "loc": 954,
+            "sloc": 421,
+            "lloc": 271,
+            "comments": 31,
+            "multi": 338,
+            "blank": 163,
+            "cyclomatic": 99,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/reporting/__init__.py": {
+        "logprobs": -104.6203876987,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/validation.py": {
+        "logprobs": -524.9296153000985,
+        "metrics": {
+            "loc": 368,
+            "sloc": 267,
+            "lloc": 168,
+            "comments": 4,
+            "multi": 0,
+            "blank": 74,
+            "cyclomatic": 77,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/findings/__init__.py": {
+        "logprobs": -106.4457859697,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/compliance/repository.py": {
+        "logprobs": -1601.5851176715116,
+        "metrics": {
+            "loc": 818,
+            "sloc": 357,
+            "lloc": 331,
+            "comments": 76,
+            "multi": 190,
+            "blank": 182,
+            "cyclomatic": 106,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/evidence/vault.py": {
+        "logprobs": -2084.169013047373,
+        "metrics": {
+            "loc": 715,
+            "sloc": 361,
+            "lloc": 315,
+            "comments": 75,
+            "multi": 114,
+            "blank": 153,
+            "cyclomatic": 114,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/experiment_tracking/models.py": {
+        "logprobs": -494.50257992307667,
+        "metrics": {
+            "loc": 209,
+            "sloc": 138,
+            "lloc": 186,
+            "comments": 4,
+            "multi": 5,
+            "blank": 45,
+            "cyclomatic": 58,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/remediation/workflow.py": {
+        "logprobs": -1544.6714273834955,
+        "metrics": {
+            "loc": 618,
+            "sloc": 398,
+            "lloc": 284,
+            "comments": 60,
+            "multi": 59,
+            "blank": 106,
+            "cyclomatic": 127,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/dataset_versioning/__init__.py": {
+        "logprobs": -708.2550795367999,
+        "metrics": {
+            "loc": 208,
+            "sloc": 82,
+            "lloc": 41,
+            "comments": 5,
+            "multi": 85,
+            "blank": 36,
+            "cyclomatic": 12,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/environment/service.py": {
+        "logprobs": -2262.3376459221518,
+        "metrics": {
+            "loc": 1568,
+            "sloc": 803,
+            "lloc": 476,
+            "comments": 70,
+            "multi": 452,
+            "blank": 242,
+            "cyclomatic": 206,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/export/formatter.py": {
+        "logprobs": -538.023882004618,
+        "metrics": {
+            "loc": 232,
+            "sloc": 99,
+            "lloc": 97,
+            "comments": 15,
+            "multi": 63,
+            "blank": 54,
+            "cyclomatic": 36,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/service.py": {
+        "logprobs": -578.0365062275185,
+        "metrics": {
+            "loc": 261,
+            "sloc": 151,
+            "lloc": 171,
+            "comments": 14,
+            "multi": 6,
+            "blank": 60,
+            "cyclomatic": 62,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/task_management/__init__.py": {
+        "logprobs": -224.284065935115,
+        "metrics": {
+            "loc": 11,
+            "sloc": 3,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 6,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/task_management/service.py": {
+        "logprobs": -1421.939109421511,
+        "metrics": {
+            "loc": 1382,
+            "sloc": 456,
+            "lloc": 395,
+            "comments": 71,
+            "multi": 570,
+            "blank": 288,
+            "cyclomatic": 155,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/cvss/calculator.py": {
+        "logprobs": -1122.0214275222518,
+        "metrics": {
+            "loc": 643,
+            "sloc": 373,
+            "lloc": 297,
+            "comments": 74,
+            "multi": 89,
+            "blank": 122,
+            "cyclomatic": 126,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/environment/storage.py": {
+        "logprobs": -505.1625074811999,
+        "metrics": {
+            "loc": 258,
+            "sloc": 101,
+            "lloc": 107,
+            "comments": 8,
+            "multi": 85,
+            "blank": 62,
+            "cyclomatic": 39,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/environment/models.py": {
+        "logprobs": -736.3597820097787,
+        "metrics": {
+            "loc": 308,
+            "sloc": 163,
+            "lloc": 224,
+            "comments": 17,
+            "multi": 43,
+            "blank": 68,
+            "cyclomatic": 41,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/reporting/generator.py": {
+        "logprobs": -2437.539341357476,
+        "metrics": {
+            "loc": 1533,
+            "sloc": 1029,
+            "lloc": 307,
+            "comments": 53,
+            "multi": 169,
+            "blank": 279,
+            "cyclomatic": 81,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/dataset_versioning/storage.py": {
+        "logprobs": -1071.780665313049,
+        "metrics": {
+            "loc": 713,
+            "sloc": 284,
+            "lloc": 295,
+            "comments": 30,
+            "multi": 236,
+            "blank": 162,
+            "cyclomatic": 103,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/export/storage.py": {
+        "logprobs": -300.5985957769711,
+        "metrics": {
+            "loc": 105,
+            "sloc": 45,
+            "lloc": 42,
+            "comments": 0,
+            "multi": 33,
+            "blank": 25,
+            "cyclomatic": 16,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/compliance/frameworks.py": {
+        "logprobs": -1126.4032111453132,
+        "metrics": {
+            "loc": 657,
+            "sloc": 312,
+            "lloc": 310,
+            "comments": 48,
+            "multi": 138,
+            "blank": 146,
+            "cyclomatic": 126,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/task_management/storage.py": {
+        "logprobs": -500.53551374743535,
+        "metrics": {
+            "loc": 307,
+            "sloc": 143,
+            "lloc": 128,
+            "comments": 9,
+            "multi": 88,
+            "blank": 65,
+            "cyclomatic": 65,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/export/__init__.py": {
+        "logprobs": -311.5590979829553,
+        "metrics": {
+            "loc": 30,
+            "sloc": 19,
+            "lloc": 6,
+            "comments": 4,
+            "multi": 5,
+            "blank": 6,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/utils/__init__.py": {
+        "logprobs": -97.6742385305,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/findings/models.py": {
+        "logprobs": -886.6396632180773,
+        "metrics": {
+            "loc": 302,
+            "sloc": 179,
+            "lloc": 152,
+            "comments": 16,
+            "multi": 54,
+            "blank": 47,
+            "cyclomatic": 48,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/__init__.py": {
+        "logprobs": -193.610543271907,
+        "metrics": {
+            "loc": 9,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 6,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/cvss/__init__.py": {
+        "logprobs": -84.7795034884,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/setup.py": {
+        "logprobs": -212.52977544281,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/remediation/__init__.py": {
+        "logprobs": -99.994059607,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/models.py": {
+        "logprobs": -668.452791142786,
+        "metrics": {
+            "loc": 242,
+            "sloc": 146,
+            "lloc": 197,
+            "comments": 11,
+            "multi": 0,
+            "blank": 53,
+            "cyclomatic": 69,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/utils/crypto.py": {
+        "logprobs": -344.70920418903256,
+        "metrics": {
+            "loc": 116,
+            "sloc": 42,
+            "lloc": 42,
+            "comments": 0,
+            "multi": 47,
+            "blank": 26,
+            "cyclomatic": 11,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/experiment_tracking/__init__.py": {
+        "logprobs": -246.9335554439046,
+        "metrics": {
+            "loc": 31,
+            "sloc": 20,
+            "lloc": 6,
+            "comments": 4,
+            "multi": 5,
+            "blank": 6,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/experiment_tracking/storage.py": {
+        "logprobs": -547.4706619754857,
+        "metrics": {
+            "loc": 428,
+            "sloc": 174,
+            "lloc": 177,
+            "comments": 18,
+            "multi": 134,
+            "blank": 100,
+            "cyclomatic": 74,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/evidence/__init__.py": {
+        "logprobs": -104.676566828,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/experiment_tracking/visualizer.py": {
+        "logprobs": -1479.3575516655508,
+        "metrics": {
+            "loc": 666,
+            "sloc": 398,
+            "lloc": 316,
+            "comments": 46,
+            "multi": 81,
+            "blank": 140,
+            "cyclomatic": 116,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/bibliography/__init__.py": {
+        "logprobs": -168.418101397808,
+        "metrics": {
+            "loc": 26,
+            "sloc": 25,
+            "lloc": 6,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/evidence/models.py": {
+        "logprobs": -858.4736125931513,
+        "metrics": {
+            "loc": 254,
+            "sloc": 160,
+            "lloc": 145,
+            "comments": 20,
+            "multi": 25,
+            "blank": 47,
+            "cyclomatic": 53,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/export/service.py": {
+        "logprobs": -579.9043087028151,
+        "metrics": {
+            "loc": 165,
+            "sloc": 120,
+            "lloc": 85,
+            "comments": 3,
+            "multi": 0,
+            "blank": 27,
+            "cyclomatic": 35,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/reporting/redaction.py": {
+        "logprobs": -1242.4300961986412,
+        "metrics": {
+            "loc": 433,
+            "sloc": 246,
+            "lloc": 129,
+            "comments": 44,
+            "multi": 74,
+            "blank": 69,
+            "cyclomatic": 47,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/bibliography/formatter.py": {
+        "logprobs": -1479.4701346782003,
+        "metrics": {
+            "loc": 953,
+            "sloc": 656,
+            "lloc": 692,
+            "comments": 57,
+            "multi": 40,
+            "blank": 178,
+            "cyclomatic": 361,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/utils.py": {
+        "logprobs": -650.6645414889745,
+        "metrics": {
+            "loc": 322,
+            "sloc": 210,
+            "lloc": 230,
+            "comments": 13,
+            "multi": 0,
+            "blank": 77,
+            "cyclomatic": 75,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/compliance/__init__.py": {
+        "logprobs": -108.640442843,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/export/models.py": {
+        "logprobs": -506.05660137205007,
+        "metrics": {
+            "loc": 133,
+            "sloc": 81,
+            "lloc": 125,
+            "comments": 6,
+            "multi": 0,
+            "blank": 35,
+            "cyclomatic": 34,
+            "internal_imports": []
+        }
+    },
+    "unified/securetask/remediation/tracker.py": {
+        "logprobs": -2050.7117863459125,
+        "metrics": {
+            "loc": 728,
+            "sloc": 362,
+            "lloc": 329,
+            "comments": 75,
+            "multi": 120,
+            "blank": 155,
+            "cyclomatic": 116,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/storage.py": {
+        "logprobs": -609.6628576979444,
+        "metrics": {
+            "loc": 425,
+            "sloc": 285,
+            "lloc": 304,
+            "comments": 20,
+            "multi": 0,
+            "blank": 82,
+            "cyclomatic": 105,
+            "internal_imports": []
+        }
+    },
+    "unified/researchtrack/dataset_versioning/models.py": {
+        "logprobs": -829.4349301566642,
+        "metrics": {
+            "loc": 302,
+            "sloc": 178,
+            "lloc": 245,
+            "comments": 35,
+            "multi": 21,
+            "blank": 61,
+            "cyclomatic": 51,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 21713,
+    "total_sloc": 11417,
+    "total_lloc": 9358,
+    "total_comments": 1258,
+    "total_multi": 4429,
+    "total_blank": 4274,
+    "total_cyclomatic": 3475,
+    "total_internal_imports": 0
+}

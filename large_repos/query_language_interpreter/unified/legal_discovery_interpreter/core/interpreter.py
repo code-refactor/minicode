@@ -35,13 +35,25 @@ from .query import (
 from .document import DocumentCollection, Document
 
 
+from pydantic import Field
+
 class LegalExecutionContext(ExecutionContext):
     """Extended execution context for legal discovery queries."""
     
+    # Legal-specific fields
+    document_collection: Optional[Any] = Field(None, description="Collection of documents to search")
+    expand_terms_func: Optional[Callable] = Field(None, description="Function for term expansion")
+    calculate_proximity_func: Optional[Callable] = Field(None, description="Function for proximity calculation")
+    analyze_communication_func: Optional[Callable] = Field(None, description="Function for communication analysis")
+    resolve_timeframe_func: Optional[Callable] = Field(None, description="Function for timeframe resolution")
+    detect_privilege_func: Optional[Callable] = Field(None, description="Function for privilege detection")
+    privilege_status: Dict[str, str] = Field(default_factory=dict, description="Document privilege status")
+    highlighting: Dict[str, List[Dict[str, Any]]] = Field(default_factory=dict, description="Query highlighting")
+    
     def __init__(
         self,
-        query_id: str,
         document_collection: DocumentCollection,
+        query_id: Optional[str] = None,
         user_id: Optional[str] = None,
         user_context: Optional[Dict[str, Any]] = None,
         expand_terms_func: Optional[Callable] = None,
@@ -53,8 +65,8 @@ class LegalExecutionContext(ExecutionContext):
         """Initialize the legal execution context.
         
         Args:
-            query_id: Unique identifier for the query
             document_collection: Collection of documents to search
+            query_id: Unique identifier for the query (generated if not provided)
             user_id: ID of the user executing the query
             user_context: User context information
             expand_terms_func: Function for expanding terms using legal ontology
@@ -63,23 +75,22 @@ class LegalExecutionContext(ExecutionContext):
             resolve_timeframe_func: Function for resolving legal timeframes
             detect_privilege_func: Function for detecting privileged content
         """
+        # Generate query_id if not provided
+        if query_id is None:
+            import uuid
+            query_id = str(uuid.uuid4())
+            
         super().__init__(
             query_id=query_id,
             user_id=user_id,
-            user_context=user_context or {}
+            user_context=user_context or {},
+            document_collection=document_collection,
+            expand_terms_func=expand_terms_func,
+            calculate_proximity_func=calculate_proximity_func,
+            analyze_communication_func=analyze_communication_func,
+            resolve_timeframe_func=resolve_timeframe_func,
+            detect_privilege_func=detect_privilege_func
         )
-        
-        # Legal-specific context
-        self.document_collection = document_collection
-        self.expand_terms_func = expand_terms_func
-        self.calculate_proximity_func = calculate_proximity_func
-        self.analyze_communication_func = analyze_communication_func
-        self.resolve_timeframe_func = resolve_timeframe_func
-        self.detect_privilege_func = detect_privilege_func
-        
-        # Legal-specific runtime state
-        self.privilege_status: Dict[str, str] = {}
-        self.highlighting: Dict[str, List[Dict[str, Any]]] = {}
 
 
 # Backward compatibility alias
@@ -757,16 +768,45 @@ class LegalQueryEngine(BaseQueryEngine):
         query_upper = query_string.upper()
         
         if "CONTAINS" in query_upper:
-            parsed['clauses'].append({
-                'type': 'full_text',
-                'operator': 'CONTAINS'
-            })
+            # Extract the field and search term from CONTAINS(field, 'term')
+            import re
+            match = re.search(r'CONTAINS\s*\(\s*(\w+)\s*,\s*["\']([^"\']+)["\']\s*\)', query_string, re.IGNORECASE)
+            if match:
+                field = match.group(1)
+                search_term = match.group(2)
+                parsed['clauses'].append({
+                    'type': 'full_text',
+                    'operator': 'CONTAINS',
+                    'field': field,
+                    'value': search_term
+                })
+                # Convert to LegalDiscoveryQuery format
+                parsed['query_type'] = 'FULL_TEXT'
+                parsed['search_term'] = search_term
+                parsed['field_restrictions'] = [field] if field != 'content' else None
         
         if "NEAR" in query_upper:
-            parsed['clauses'].append({
-                'type': 'proximity',
-                'operator': 'NEAR'
-            })
+            # Extract terms and distance from NEAR('term1', 'term2', distance, 'unit')
+            import re
+            match = re.search(r'NEAR\s*\(\s*["\']([^"\']+)["\']\s*,\s*["\']([^"\']+)["\']\s*,\s*(\d+)\s*,\s*["\'](\w+)["\']\s*\)', query_string, re.IGNORECASE)
+            if match:
+                term1 = match.group(1)
+                term2 = match.group(2)
+                distance = int(match.group(3))
+                unit = match.group(4)
+                parsed['clauses'].append({
+                    'type': 'proximity',
+                    'operator': 'NEAR',
+                    'terms': [term1, term2],
+                    'distance': distance,
+                    'unit': unit
+                })
+                # Convert to LegalDiscoveryQuery format
+                parsed['query_type'] = 'PROXIMITY'
+                parsed['primary_term'] = term1
+                parsed['secondary_term'] = term2
+                parsed['distance'] = distance
+                parsed['unit'] = unit
         
         if "PRIVILEGE" in query_upper:
             parsed['clauses'].append({
@@ -813,18 +853,30 @@ class LegalQueryEngine(BaseQueryEngine):
             
             if clause_type == 'full_text':
                 # Create a basic full text query
-                clauses.append(FullTextQuery(
-                    terms=[parsed_query.get('query_string', '')],
-                    expand_terms=True
-                ))
+                # Use the extracted search term if available, otherwise use the value from clause
+                search_term = parsed_query.get('search_term') or clause_info.get('value', '')
+                if search_term:
+                    clauses.append(FullTextQuery(
+                        terms=[search_term],
+                        expand_terms=True
+                    ))
             elif clause_type == 'proximity':
                 # Create a basic proximity query
-                clauses.append(ProximityQuery(
-                    terms=[parsed_query.get('query_string', '')],
-                    distance=10,
-                    unit="WORDS",
-                    expand_terms=True
-                ))
+                # Use extracted values from parsed query
+                terms = clause_info.get('terms', [])
+                if not terms and parsed_query.get('primary_term'):
+                    terms = [parsed_query.get('primary_term'), parsed_query.get('secondary_term', '')]
+                
+                distance = clause_info.get('distance') or parsed_query.get('distance', 10)
+                unit = clause_info.get('unit') or parsed_query.get('unit', 'WORDS')
+                
+                if terms and len(terms) >= 2:
+                    clauses.append(ProximityQuery(
+                        terms=terms[:2],  # Take first two terms
+                        distance=distance,
+                        unit=unit,
+                        expand_terms=True
+                    ))
             elif clause_type == 'privilege':
                 # Create a basic privilege query
                 clauses.append(PrivilegeQuery(

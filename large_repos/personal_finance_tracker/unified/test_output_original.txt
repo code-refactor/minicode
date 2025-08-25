@@ -1,0 +1,125 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 153 items
+
+tests/freelancer/expense/test_categorizer.py ............                [  7%]
+tests/freelancer/income/test_income_manager.py ...........               [ 15%]
+tests/freelancer/integration/test_categorization_recovery.py ..          [ 16%]
+tests/freelancer/integration/test_categorization_recovery_mocks.py ..    [ 17%]
+tests/freelancer/integration/test_categorization_recovery_simplified.py . [ 18%]
+.                                                                        [ 18%]
+tests/freelancer/integration/test_expense_tax_integration.py ..          [ 20%]
+tests/freelancer/integration/test_integration_mocks.py ....              [ 22%]
+tests/freelancer/integration/test_multi_year_projects.py ....            [ 25%]
+tests/freelancer/integration/test_quarterly_tax_mocks.py ...             [ 27%]
+tests/freelancer/integration/test_quarterly_tax_preparation.py ...       [ 29%]
+tests/freelancer/integration/test_quarterly_tax_preparation_mock.py .    [ 30%]
+tests/freelancer/integration/test_quarterly_tax_preparation_simplified.py . [ 30%]
+..                                                                       [ 32%]
+tests/freelancer/integration/test_year_over_year_comparison.py ....      [ 34%]
+tests/freelancer/integration/test_year_over_year_mocks.py ....           [ 37%]
+tests/freelancer/integration/test_year_over_year_simple.py ....          [ 39%]
+tests/freelancer/integration/test_year_over_year_simplified.py ....      [ 42%]
+tests/freelancer/project/test_profitability_analyzer.py ........         [ 47%]
+tests/freelancer/projection/test_financial_projector.py ........         [ 52%]
+tests/freelancer/tax/test_tax_manager_simple.py .....                    [ 56%]
+tests/freelancer/test_main.py .                                          [ 56%]
+tests/socially_responsible_investor/test_ethical_screening/test_ethical_criteria_customization.py . [ 57%]
+..                                                                       [ 58%]
+tests/socially_responsible_investor/test_ethical_screening/test_screening.py . [ 59%]
+..........                                                               [ 66%]
+tests/socially_responsible_investor/test_impact_measurement/test_impact.py . [ 66%]
+..........                                                               [ 73%]
+tests/socially_responsible_investor/test_impact_measurement/test_impact_attribution.py . [ 73%]
+..                                                                       [ 75%]
+tests/socially_responsible_investor/test_portfolio_analysis/test_advanced_analysis.py . [ 75%]
+..                                                                       [ 77%]
+tests/socially_responsible_investor/test_portfolio_analysis/test_analysis.py . [ 77%]
+.........                                                                [ 83%]
+tests/socially_responsible_investor/test_shareholder_advocacy/test_advocacy.py . [ 84%]
+.........                                                                [ 90%]
+tests/socially_responsible_investor/test_values_budgeting/test_budgeting.py . [ 90%]
+...........                                                              [ 98%]
+tests/socially_responsible_investor/test_values_budgeting/test_personal_values_alignment.py . [ 98%]
+..                                                                       [100%]
+
+=============================== warnings summary ===============================
+personal_finance_tracker/models/common.py:81
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/models/common.py:81: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("business_use_percentage")
+
+personal_finance_tracker/models/common.py:129
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/models/common.py:129: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("duration_minutes", always=True)
+
+personal_finance_tracker/expense/models.py:39
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/expense/models.py:39: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("business_use_percentage")
+
+personal_finance_tracker/expense/models.py:102
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/expense/models.py:102: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("business_use_percentage")
+
+personal_finance_tracker/expense/models.py:123
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/expense/models.py:123: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("confidence_score")
+
+personal_finance_tracker/expense/models.py:130
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/expense/models.py:130: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("business_use_percentage")
+
+personal_finance_tracker/income/models.py:36
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/income/models.py:36: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("window_size")
+
+personal_finance_tracker/income/models.py:43
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/income/models.py:43: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("alpha")
+
+personal_finance_tracker/income/models.py:50
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/income/models.py:50: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("percentile")
+
+personal_finance_tracker/income/models.py:57
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/income/models.py:57: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("emergency_buffer_months")
+
+personal_finance_tracker/income/models.py:64
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/income/models.py:64: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("confidence_interval")
+
+personal_finance_tracker/tax/models.py:50
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/tax/models.py:50: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("rates")
+
+personal_finance_tracker/tax/models.py:77
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/tax/models.py:77: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("effective_rate", "marginal_rate")
+
+personal_finance_tracker/tax/models.py:124
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/tax/models.py:124: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("effective_tax_rate")
+
+personal_finance_tracker/project/models.py:51
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/project/models.py:51: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("effective_hourly_rate", "profit_margin", "roi", pre=True, always=True)
+
+personal_finance_tracker/projection/models.py:40
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/projection/models.py:40: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("probability")
+
+personal_finance_tracker/projection/models.py:77
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/projection/models.py:77: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("confidence_interval")
+
+personal_finance_tracker/projection/models.py:99
+  /home/justinchiu/code/python/minicode-orig/large_repos/personal_finance_tracker/unified/personal_finance_tracker/projection/models.py:99: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("confidence_level")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report_original.json
+======================= 153 passed, 18 warnings in 1.09s =======================

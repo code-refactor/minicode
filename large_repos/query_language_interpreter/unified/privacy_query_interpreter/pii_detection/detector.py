@@ -68,9 +68,9 @@ class PIIDetector(BaseDetectorService):
         if config is None:
             config = ServiceConfig(
                 service_name="pii_detector",
-                service_type="detector",
                 enabled=True,
                 config={
+                    "service_type": "detector",
                     "confidence_threshold": confidence_threshold,
                     "max_sample_size": max_sample_size
                 }

@@ -1,0 +1,753 @@
+{
+    "total_logprobs": -51097.529034264386,
+    "total_tokens": 147563,
+    "unified/personal_finance_tracker/tax/tax_manager.py": {
+        "logprobs": -2018.0935928845586,
+        "metrics": {
+            "loc": 810,
+            "sloc": 467,
+            "lloc": 230,
+            "comments": 90,
+            "multi": 132,
+            "blank": 132,
+            "cyclomatic": 90,
+            "internal_imports": []
+        }
+    },
+    "unified/common/patterns/results.py": {
+        "logprobs": -1120.0293517473417,
+        "metrics": {
+            "loc": 713,
+            "sloc": 455,
+            "lloc": 312,
+            "comments": 13,
+            "multi": 94,
+            "blank": 115,
+            "cyclomatic": 112,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/formatting/data.py": {
+        "logprobs": -1072.573732181539,
+        "metrics": {
+            "loc": 648,
+            "sloc": 406,
+            "lloc": 341,
+            "comments": 28,
+            "multi": 98,
+            "blank": 112,
+            "cyclomatic": 120,
+            "internal_imports": []
+        }
+    },
+    "unified/common/__init__.py": {
+        "logprobs": -631.1132503217976,
+        "metrics": {
+            "loc": 137,
+            "sloc": 102,
+            "lloc": 7,
+            "comments": 21,
+            "multi": 9,
+            "blank": 22,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/shareholder_advocacy/advocacy.py": {
+        "logprobs": -1508.8156758444184,
+        "metrics": {
+            "loc": 547,
+            "sloc": 350,
+            "lloc": 286,
+            "comments": 61,
+            "multi": 52,
+            "blank": 93,
+            "cyclomatic": 131,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/project/models.py": {
+        "logprobs": -811.7633771524347,
+        "metrics": {
+            "loc": 165,
+            "sloc": 113,
+            "lloc": 160,
+            "comments": 24,
+            "multi": 0,
+            "blank": 34,
+            "cyclomatic": 42,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/models/base.py": {
+        "logprobs": -786.8442120886166,
+        "metrics": {
+            "loc": 331,
+            "sloc": 155,
+            "lloc": 193,
+            "comments": 1,
+            "multi": 79,
+            "blank": 70,
+            "cyclomatic": 62,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/calculations/scoring.py": {
+        "logprobs": -1260.0262300315542,
+        "metrics": {
+            "loc": 590,
+            "sloc": 336,
+            "lloc": 285,
+            "comments": 48,
+            "multi": 86,
+            "blank": 119,
+            "cyclomatic": 96,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/processing/__init__.py": {
+        "logprobs": -474.81345922286124,
+        "metrics": {
+            "loc": 79,
+            "sloc": 63,
+            "lloc": 5,
+            "comments": 6,
+            "multi": 6,
+            "blank": 7,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/validation/__init__.py": {
+        "logprobs": -350.50770049721996,
+        "metrics": {
+            "loc": 75,
+            "sloc": 62,
+            "lloc": 4,
+            "comments": 4,
+            "multi": 6,
+            "blank": 5,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/projection/financial_projector.py": {
+        "logprobs": -1819.1714849498635,
+        "metrics": {
+            "loc": 674,
+            "sloc": 452,
+            "lloc": 251,
+            "comments": 84,
+            "multi": 62,
+            "blank": 85,
+            "cyclomatic": 95,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/models/__init__.py": {
+        "logprobs": -111.53707176,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/__init__.py": {
+        "logprobs": -1296.2025464152143,
+        "metrics": {
+            "loc": 211,
+            "sloc": 184,
+            "lloc": 6,
+            "comments": 20,
+            "multi": 6,
+            "blank": 16,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/shareholder_advocacy/__init__.py": {
+        "logprobs": -114.8953912944,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/project/profitability_analyzer.py": {
+        "logprobs": -1189.8179233795997,
+        "metrics": {
+            "loc": 516,
+            "sloc": 324,
+            "lloc": 147,
+            "comments": 48,
+            "multi": 71,
+            "blank": 76,
+            "cyclomatic": 97,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/impact_measurement/__init__.py": {
+        "logprobs": -107.23108233264,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/formatting/currency.py": {
+        "logprobs": -1107.595352623825,
+        "metrics": {
+            "loc": 463,
+            "sloc": 266,
+            "lloc": 233,
+            "comments": 46,
+            "multi": 79,
+            "blank": 82,
+            "cyclomatic": 70,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/models.py": {
+        "logprobs": -1859.3929599046724,
+        "metrics": {
+            "loc": 464,
+            "sloc": 321,
+            "lloc": 373,
+            "comments": 45,
+            "multi": 0,
+            "blank": 78,
+            "cyclomatic": 117,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/models/common.py": {
+        "logprobs": -998.819189868162,
+        "metrics": {
+            "loc": 333,
+            "sloc": 231,
+            "lloc": 333,
+            "comments": 32,
+            "multi": 0,
+            "blank": 65,
+            "cyclomatic": 92,
+            "internal_imports": []
+        }
+    },
+    "unified/setup.py": {
+        "logprobs": -194.45585037514,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/validation/constraints.py": {
+        "logprobs": -911.234451700437,
+        "metrics": {
+            "loc": 554,
+            "sloc": 391,
+            "lloc": 265,
+            "comments": 11,
+            "multi": 35,
+            "blank": 95,
+            "cyclomatic": 141,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/impact_measurement/impact.py": {
+        "logprobs": -2000.9325092993245,
+        "metrics": {
+            "loc": 710,
+            "sloc": 441,
+            "lloc": 281,
+            "comments": 90,
+            "multi": 76,
+            "blank": 123,
+            "cyclomatic": 96,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/formatting/__init__.py": {
+        "logprobs": -458.89082387390687,
+        "metrics": {
+            "loc": 95,
+            "sloc": 79,
+            "lloc": 5,
+            "comments": 6,
+            "multi": 6,
+            "blank": 7,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/project/__init__.py": {
+        "logprobs": -147.56046774,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/income/__init__.py": {
+        "logprobs": -152.84583264,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/projection/__init__.py": {
+        "logprobs": -146.85441814200001,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/tax/models.py": {
+        "logprobs": -792.878026308908,
+        "metrics": {
+            "loc": 154,
+            "sloc": 109,
+            "lloc": 166,
+            "comments": 12,
+            "multi": 0,
+            "blank": 32,
+            "cyclomatic": 36,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/calculations/__init__.py": {
+        "logprobs": -515.0513244759474,
+        "metrics": {
+            "loc": 143,
+            "sloc": 124,
+            "lloc": 6,
+            "comments": 8,
+            "multi": 6,
+            "blank": 9,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/income/income_manager.py": {
+        "logprobs": -1816.1833974348076,
+        "metrics": {
+            "loc": 519,
+            "sloc": 304,
+            "lloc": 210,
+            "comments": 54,
+            "multi": 64,
+            "blank": 91,
+            "cyclomatic": 78,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/ethical_screening/__init__.py": {
+        "logprobs": -110.6762733964,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/calculations/statistics.py": {
+        "logprobs": -911.2437006567068,
+        "metrics": {
+            "loc": 579,
+            "sloc": 247,
+            "lloc": 243,
+            "comments": 19,
+            "multi": 162,
+            "blank": 156,
+            "cyclomatic": 100,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/__init__.py": {
+        "logprobs": -122.6264352457,
+        "metrics": {
+            "loc": 3,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/models/money.py": {
+        "logprobs": -816.7493281023525,
+        "metrics": {
+            "loc": 403,
+            "sloc": 193,
+            "lloc": 215,
+            "comments": 16,
+            "multi": 85,
+            "blank": 89,
+            "cyclomatic": 81,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/expense/models.py": {
+        "logprobs": -903.3270888914756,
+        "metrics": {
+            "loc": 232,
+            "sloc": 159,
+            "lloc": 211,
+            "comments": 25,
+            "multi": 0,
+            "blank": 46,
+            "cyclomatic": 79,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/tax/__init__.py": {
+        "logprobs": -144.2652159998,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/income/models.py": {
+        "logprobs": -889.9262635696663,
+        "metrics": {
+            "loc": 191,
+            "sloc": 140,
+            "lloc": 165,
+            "comments": 23,
+            "multi": 0,
+            "blank": 32,
+            "cyclomatic": 66,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/portfolio_analysis/analysis.py": {
+        "logprobs": -2757.537649742155,
+        "metrics": {
+            "loc": 1051,
+            "sloc": 664,
+            "lloc": 457,
+            "comments": 144,
+            "multi": 82,
+            "blank": 179,
+            "cyclomatic": 147,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/models/__init__.py": {
+        "logprobs": -354.35201265059294,
+        "metrics": {
+            "loc": 56,
+            "sloc": 45,
+            "lloc": 5,
+            "comments": 3,
+            "multi": 6,
+            "blank": 5,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/patterns/__init__.py": {
+        "logprobs": -434.00955224463013,
+        "metrics": {
+            "loc": 77,
+            "sloc": 61,
+            "lloc": 5,
+            "comments": 6,
+            "multi": 6,
+            "blank": 7,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/processing/performance.py": {
+        "logprobs": -1323.4087097158313,
+        "metrics": {
+            "loc": 582,
+            "sloc": 340,
+            "lloc": 307,
+            "comments": 30,
+            "multi": 91,
+            "blank": 109,
+            "cyclomatic": 98,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/portfolio_analysis/__init__.py": {
+        "logprobs": -105.81722227339999,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/__init__.py": {
+        "logprobs": -143.96048162244,
+        "metrics": {
+            "loc": 7,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 4,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/values_budgeting/budgeting.py": {
+        "logprobs": -3304.038451386287,
+        "metrics": {
+            "loc": 1141,
+            "sloc": 772,
+            "lloc": 515,
+            "comments": 133,
+            "multi": 68,
+            "blank": 179,
+            "cyclomatic": 218,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/formatting/dates.py": {
+        "logprobs": -1053.9701761518854,
+        "metrics": {
+            "loc": 589,
+            "sloc": 350,
+            "lloc": 326,
+            "comments": 48,
+            "multi": 100,
+            "blank": 104,
+            "cyclomatic": 123,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/projection/models.py": {
+        "logprobs": -570.5084618389701,
+        "metrics": {
+            "loc": 144,
+            "sloc": 99,
+            "lloc": 174,
+            "comments": 12,
+            "multi": 0,
+            "blank": 32,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/models/time_period.py": {
+        "logprobs": -934.7094996009907,
+        "metrics": {
+            "loc": 597,
+            "sloc": 259,
+            "lloc": 288,
+            "comments": 22,
+            "multi": 185,
+            "blank": 129,
+            "cyclomatic": 97,
+            "internal_imports": []
+        }
+    },
+    "unified/common/patterns/managers.py": {
+        "logprobs": -1262.4343020999704,
+        "metrics": {
+            "loc": 682,
+            "sloc": 320,
+            "lloc": 320,
+            "comments": 28,
+            "multi": 175,
+            "blank": 146,
+            "cyclomatic": 100,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/calculations/financial.py": {
+        "logprobs": -788.2933105594285,
+        "metrics": {
+            "loc": 535,
+            "sloc": 216,
+            "lloc": 186,
+            "comments": 15,
+            "multi": 174,
+            "blank": 133,
+            "cyclomatic": 50,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/validation/validators.py": {
+        "logprobs": -942.4628507112127,
+        "metrics": {
+            "loc": 606,
+            "sloc": 279,
+            "lloc": 241,
+            "comments": 20,
+            "multi": 167,
+            "blank": 134,
+            "cyclomatic": 115,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/calculations/aggregation.py": {
+        "logprobs": -1151.5405197581508,
+        "metrics": {
+            "loc": 584,
+            "sloc": 347,
+            "lloc": 304,
+            "comments": 36,
+            "multi": 82,
+            "blank": 119,
+            "cyclomatic": 119,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/expense/__init__.py": {
+        "logprobs": -150.09661309,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/personal_finance_tracker/expense/categorizer.py": {
+        "logprobs": -1390.3828155370572,
+        "metrics": {
+            "loc": 561,
+            "sloc": 313,
+            "lloc": 210,
+            "comments": 58,
+            "multi": 91,
+            "blank": 98,
+            "cyclomatic": 72,
+            "internal_imports": []
+        }
+    },
+    "unified/common/patterns/config.py": {
+        "logprobs": -1308.9708547454545,
+        "metrics": {
+            "loc": 668,
+            "sloc": 375,
+            "lloc": 335,
+            "comments": 30,
+            "multi": 95,
+            "blank": 141,
+            "cyclomatic": 128,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/ethical_screening/screening.py": {
+        "logprobs": -1273.1603453121804,
+        "metrics": {
+            "loc": 460,
+            "sloc": 260,
+            "lloc": 207,
+            "comments": 46,
+            "multi": 63,
+            "blank": 90,
+            "cyclomatic": 73,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/processing/caching.py": {
+        "logprobs": -1078.5267429441776,
+        "metrics": {
+            "loc": 609,
+            "sloc": 353,
+            "lloc": 359,
+            "comments": 35,
+            "multi": 64,
+            "blank": 121,
+            "cyclomatic": 102,
+            "internal_imports": []
+        }
+    },
+    "unified/ethical_finance/values_budgeting/__init__.py": {
+        "logprobs": -121.855584644,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/processing/batch.py": {
+        "logprobs": -972.547885282291,
+        "metrics": {
+            "loc": 547,
+            "sloc": 311,
+            "lloc": 285,
+            "comments": 16,
+            "multi": 106,
+            "blank": 98,
+            "cyclomatic": 79,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 19875,
+    "total_sloc": 11848,
+    "total_lloc": 9474,
+    "total_comments": 1517,
+    "total_multi": 2793,
+    "total_blank": 3624,
+    "total_cyclomatic": 3349,
+    "total_internal_imports": 0
+}

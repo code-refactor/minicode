@@ -861,6 +861,34 @@ class QueryParser(BaseQueryParser):
                 })
         
         return functions
+    
+    def validate_query(self, parsed_query: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
+        """Validate a parsed query structure.
+        
+        Args:
+            parsed_query: Dictionary containing parsed query components
+            
+        Returns:
+            Tuple of (is_valid, error_message)
+        """
+        # Basic validation - ensure required fields are present
+        if not parsed_query:
+            return False, "Empty query"
+            
+        if "type" not in parsed_query:
+            return False, "Query type not specified"
+            
+        # Check for privacy function usage if needed
+        if parsed_query.get("privacy_functions"):
+            for func in parsed_query["privacy_functions"]:
+                if func.get("name") and func["name"] not in [f.value for f in PrivacyFunction]:
+                    return False, f"Unknown privacy function: {func['name']}"
+        
+        # Validate table references
+        if "tables" in parsed_query and not parsed_query["tables"]:
+            return False, "No tables specified in query"
+            
+        return True, None
 
 
 # Create an alias for backward compatibility

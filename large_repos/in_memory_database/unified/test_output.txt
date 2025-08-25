@@ -1,0 +1,269 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode/large_repos/in_memory_database/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 152 items / 1 error
+
+tests/ml_engineer/batch/test_processor.py .........                      [  5%]
+tests/ml_engineer/core/test_distance.py ........                         [ 11%]
+tests/ml_engineer/core/test_vector.py ............                       [ 19%]
+tests/ml_engineer/experiment/test_ab_test.py ...................         [ 31%]
+tests/ml_engineer/feature_store/test_lineage.py ..............F.         [ 42%]
+tests/ml_engineer/feature_store/test_store.py ....F........              [ 50%]
+tests/ml_engineer/feature_store/test_version.py .......FFF..F...         [ 61%]
+tests/ml_engineer/indexing/test_approximate_nn.py .........              [ 67%]
+tests/ml_engineer/indexing/test_vector_index.py ...........              [ 74%]
+tests/ml_engineer/performance/test_benchmarks.py ......                  [ 78%]
+tests/ml_engineer/transform/test_operations.py .....................     [ 92%]
+tests/ml_engineer/transform/test_pipeline.py ............                [100%]
+
+==================================== ERRORS ====================================
+___________________ ERROR collecting tests/mobile_developer ____________________
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/home/justinchiu/.local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/mobile_developer/conftest.py:8: in <module>
+    from syncdb.db.schema import DatabaseSchema, TableSchema, Column
+syncdb/__init__.py:17: in <module>
+    from syncdb.client import SyncClient, SyncServer
+syncdb/client.py:15: in <module>
+    from .sync.sync_protocol import (
+E     File "/home/justinchiu/code/python/minicode/large_repos/in_memory_database/unified/syncdb/sync/sync_protocol.py", line 283
+E       def process_sync_request(self, request_json: str) -> Optional[str]:
+E   IndentationError: unexpected indent
+=================================== FAILURES ===================================
+_____________________ TestLineageTracker.test_delete_node ______________________
+
+self = <tests.ml_engineer.feature_store.test_lineage.TestLineageTracker object at 0x7a0a2fe04c50>
+
+    def test_delete_node(self):
+        """Test deleting nodes."""
+        # Delete a node without cascade
+        assert "feature3" in self.tracker._nodes
+        assert "transform3" in self.tracker._nodes
+    
+        self.tracker.delete_node("feature3")
+    
+        assert "feature3" not in self.tracker._nodes
+        assert "transform3" in self.tracker._nodes  # Parent should still exist
+        assert "feature3" not in self.tracker.get_node("transform3").children  # Reference should be removed
+    
+        # Delete a node with cascade
+        deleted = self.tracker.delete_node("feature1", cascade=True)
+    
+        # Should delete feature1, transform2, feature2, and transform3
+        assert deleted == 4
+>       assert "feature1" not in self.tracker._nodes
+E       AssertionError: assert 'feature1' not in {'feature1': <vectordb.feature_store.lineage.LineageNode object at 0x7a0a2f9b41d0>, 'feature2': <vectordb.feature_stor...eNode object at 0x7a0a2f9b40b0>, 'source2': <vectordb.feature_store.lineage.LineageNode object at 0x7a0a2f9b4110>, ...}
+E        +  where {'feature1': <vectordb.feature_store.lineage.LineageNode object at 0x7a0a2f9b41d0>, 'feature2': <vectordb.feature_stor...eNode object at 0x7a0a2f9b40b0>, 'source2': <vectordb.feature_store.lineage.LineageNode object at 0x7a0a2f9b4110>, ...} = <vectordb.feature_store.lineage.LineageTracker object at 0x7a0a2f9b4050>._nodes
+E        +    where <vectordb.feature_store.lineage.LineageTracker object at 0x7a0a2f9b4050> = <tests.ml_engineer.feature_store.test_lineage.TestLineageTracker object at 0x7a0a2fe04c50>.tracker
+
+tests/ml_engineer/feature_store/test_lineage.py:487: AssertionError
+___________________ TestFeatureStore.test_get_feature_batch ____________________
+
+self = <tests.ml_engineer.feature_store.test_store.TestFeatureStore object at 0x7a0a2fe045c0>
+
+    def test_get_feature_batch(self):
+        """Test batch retrieval of features."""
+        # Get multiple features in batch
+        results = self.store.get_feature_batch(
+            entity_ids=["entity1", "entity2"],
+            feature_names=["scalar_feature", "vector_feature"]
+        )
+    
+        # Check results
+        assert "entity1" in results
+        assert "entity2" in results
+        assert "scalar_feature" in results["entity1"]
+        assert "vector_feature" in results["entity1"]
+        assert "scalar_feature" in results["entity2"]
+        assert "vector_feature" in results["entity2"]
+    
+        # The value depends on whether test_get_feature has run before this test
+        # Accept either the original value (42) or the updated value (142)
+        assert results["entity1"]["scalar_feature"] in [42, 142]
+        assert results["entity2"]["scalar_feature"] == 24
+        assert isinstance(results["entity1"]["vector_feature"], Vector)
+        assert isinstance(results["entity2"]["vector_feature"], Vector)
+    
+        # Test with specific versions
+        # Add a new version for testing
+        self.store.set_feature(
+            entity_id="entity1",
+            feature_name="scalar_feature",
+            value=142
+        )
+    
+        # Get specific versions
+        results = self.store.get_feature_batch(
+            entity_ids=["entity1", "entity2"],
+            feature_names=["scalar_feature"],
+            version_ids={
+                "entity1": {
+                    "scalar_feature": self.store._version_manager._versions["entity1"]["scalar_feature"][1].version_id
+                }
+            }
+        )
+    
+        # For entity1, should get the original value (42), not the new value (142)
+>       assert results["entity1"]["scalar_feature"] == 42
+E       assert 142 == 42
+
+tests/ml_engineer/feature_store/test_store.py:252: AssertionError
+__________________ TestVersionManager.test_max_versions_limit __________________
+
+self = <tests.ml_engineer.feature_store.test_version.TestVersionManager object at 0x7a0a2fc281a0>
+
+    def test_max_versions_limit(self):
+        """Test max versions limit."""
+        manager = VersionManager(max_versions_per_feature=2)
+    
+        # Add 3 versions (should keep only the 2 most recent)
+        for i in range(3):
+            manager.add_version(
+                entity_id="entity1",
+                feature_name="feature1",
+                value=f"value_{i}"
+            )
+    
+        # Check that only 2 versions are kept
+        versions = manager._versions["entity1"]["feature1"]
+        assert len(versions) == 2
+    
+        # The most recent versions should be kept (value_1 and value_2)
+>       assert versions[0].value == "value_2"
+E       AssertionError: assert 'value_1' == 'value_2'
+E         
+E         - value_2
+E         ?       ^
+E         + value_1
+E         ?       ^
+
+tests/ml_engineer/feature_store/test_version.py:204: AssertionError
+_____________________ TestVersionManager.test_get_version ______________________
+
+self = <tests.ml_engineer.feature_store.test_version.TestVersionManager object at 0x7a0a2fc28380>
+
+    def test_get_version(self):
+        """Test getting versions by different identifiers."""
+        # Get by version ID
+        version0 = self.manager._versions[self.entity_id][self.feature_name][2]  # Oldest version
+        version_id = version0.version_id
+    
+        retrieved = self.manager.get_version(
+            entity_id=self.entity_id,
+            feature_name=self.feature_name,
+            version_id=version_id
+        )
+    
+        assert retrieved == version0
+    
+        # Get by version number (0 is most recent)
+        most_recent = self.manager.get_version(
+            entity_id=self.entity_id,
+            feature_name=self.feature_name,
+            version_number=0
+        )
+>       assert most_recent.value == "value_2"
+               ^^^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'value'
+
+tests/ml_engineer/feature_store/test_version.py:227: AttributeError
+______________________ TestVersionManager.test_get_value _______________________
+
+self = <tests.ml_engineer.feature_store.test_version.TestVersionManager object at 0x7a0a2fc28560>
+
+    def test_get_value(self):
+        """Test getting feature values."""
+        # Most recent value
+        value = self.manager.get_value(
+            entity_id=self.entity_id,
+            feature_name=self.feature_name
+        )
+        assert value == "value_2"
+    
+        # Value by version number
+        value = self.manager.get_value(
+            entity_id=self.entity_id,
+            feature_name=self.feature_name,
+            version_number=1
+        )
+>       assert value == "value_1"
+E       AssertionError: assert 'value_0' == 'value_1'
+E         
+E         - value_1
+E         ?       ^
+E         + value_0
+E         ?       ^
+
+tests/ml_engineer/feature_store/test_version.py:290: AssertionError
+___________________ TestVersionManager.test_get_versions_at ____________________
+
+self = <tests.ml_engineer.feature_store.test_version.TestVersionManager object at 0x7a0a2fc28b00>
+
+    def test_get_versions_at(self):
+        """Test getting multiple feature versions at a timestamp."""
+        # Add another feature
+        self.manager.add_version(
+            entity_id=self.entity_id,
+            feature_name="another_feature",
+            value="another_value",
+            timestamp=time.time() - 7200  # 2 hours ago
+        )
+    
+        self.manager.add_version(
+            entity_id=self.entity_id,
+            feature_name="another_feature",
+            value="another_value_new",
+            timestamp=time.time()  # Now
+        )
+    
+        # Get versions at a specific time (1.5 hours ago)
+        timestamp = time.time() - 5400
+    
+        versions = self.manager.get_versions_at(
+            entity_id=self.entity_id,
+            feature_names=["test_feature", "another_feature"],
+            timestamp=timestamp
+        )
+    
+        # We should get at least one feature version back
+>       assert len(versions) >= 1
+E       assert 0 >= 1
+E        +  where 0 = len({})
+
+tests/ml_engineer/feature_store/test_version.py:401: AssertionError
+=============================== warnings summary ===============================
+tests/ml_engineer/feature_store/test_lineage.py::TestLineageNode::test_created_at
+  /home/justinchiu/code/python/minicode/large_repos/in_memory_database/unified/vectordb/feature_store/lineage.py:62: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    return datetime.utcfromtimestamp(self.timestamp).replace(microsecond=0)
+
+tests/ml_engineer/feature_store/test_version.py::TestVersion::test_created_at
+tests/ml_engineer/feature_store/test_version.py::TestVersion::test_string_representation
+tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_max_versions_limit
+  /home/justinchiu/code/python/minicode/large_repos/in_memory_database/unified/vectordb/feature_store/version.py:55: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    return datetime.utcfromtimestamp(self.timestamp).replace(microsecond=0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report.json
+=========================== short test summary info ============================
+FAILED tests/ml_engineer/feature_store/test_lineage.py::TestLineageTracker::test_delete_node
+FAILED tests/ml_engineer/feature_store/test_store.py::TestFeatureStore::test_get_feature_batch
+FAILED tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_max_versions_limit
+FAILED tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_get_version
+FAILED tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_get_value
+FAILED tests/ml_engineer/feature_store/test_version.py::TestVersionManager::test_get_versions_at
+ERROR tests/mobile_developer -   File "/home/justinchiu/code/python/minicode/...
+============== 6 failed, 146 passed, 4 warnings, 1 error in 0.85s ==============

@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode/large_repos/text_editor/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 199 items
+
+tests/student/test_core.py ...................................           [ 17%]
+tests/student/test_customization.py .....................                [ 28%]
+tests/student/test_features.py ...........                               [ 33%]
+tests/student/test_interview.py ...................                      [ 43%]
+tests/student/test_learning.py ................                          [ 51%]
+tests/student/test_study.py ...................                          [ 60%]
+tests/writer/test_client.py .......                                      [ 64%]
+tests/writer/test_document.py ...                                        [ 65%]
+tests/writer/test_focus.py .............                                 [ 72%]
+tests/writer/test_narrative.py .........                                 [ 76%]
+tests/writer/test_navigation.py ....................                     [ 86%]
+tests/writer/test_revision.py ..............                             [ 93%]
+tests/writer/test_statistics.py ............                             [100%]
+
+=============================== warnings summary ===============================
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+text_editor/interview/models.py:33
+  /home/justinchiu/code/python/minicode/large_repos/text_editor/unified/text_editor/interview/models.py:33: PytestCollectionWarning: cannot collect test class 'TestCase' because it has a __init__ constructor (from: tests/student/test_interview.py)
+    class TestCase(BaseModel):
+
+text_editor/interview/models.py:116
+  /home/justinchiu/code/python/minicode/large_repos/text_editor/unified/text_editor/interview/models.py:116: PytestCollectionWarning: cannot collect test class 'TestResult' because it has a __init__ constructor (from: tests/student/test_interview.py)
+    class TestResult(BaseModel):
+
+tests/student/test_customization.py::TestCustomizationManager::test_experiment_lifecycle
+tests/student/test_customization.py::TestCustomizationManager::test_experiment_lifecycle
+tests/student/test_customization.py::TestCustomizationPlayground::test_experiment_lifecycle
+  /home/justinchiu/code/python/minicode/large_repos/text_editor/unified/text_editor/customization/manager.py:281: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    "component": component.dict(),
+
+tests/student/test_interview.py::TestInterviewManager::test_submit_solution
+tests/student/test_interview.py::TestInterviewManager::test_submit_solution
+tests/student/test_interview.py::TestInterviewManager::test_submit_solution
+tests/student/test_interview.py::TestInterviewManager::test_submit_solution
+tests/student/test_interview.py::TestInterviewManager::test_submit_solution
+  /home/justinchiu/code/python/minicode/large_repos/text_editor/unified/text_editor/interview/manager.py:186: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    "test_results": [result.dict() for result in results]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report.json
+======================= 199 passed, 15 warnings in 8.82s =======================

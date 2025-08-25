@@ -64,7 +64,7 @@ class ExpenseCategory(str, Enum):
     OTHER = "other"
 
 
-class AccountBalance(BaseModel, AuditMixin):
+class AccountBalance(BaseModel):
     """Account balance model with audit trail."""
 
     account_id: str
@@ -87,10 +87,9 @@ class AccountBalance(BaseModel, AuditMixin):
                 data['balance'] = Money.from_string(str(data['balance']))
         
         super().__init__(**data)
-        self.__init_audit__()
 
 
-class Transaction(BaseModel, ValidationMixin, AuditMixin):
+class Transaction(BaseModel):
     """Transaction model extending common transaction functionality."""
 
     id: UUID = Field(default_factory=uuid4)
@@ -122,7 +121,6 @@ class Transaction(BaseModel, ValidationMixin, AuditMixin):
                 data['amount'] = Money.from_string(str(data['amount']))
         
         super().__init__(**data)
-        self.__init_audit__()
 
     @validator("business_use_percentage")
     def validate_business_percentage(cls, v):
@@ -164,7 +162,7 @@ class Client(BaseModel):
     active: bool = True
 
 
-class Project(BaseModel, AuditMixin):
+class Project(BaseModel):
     """Project model with audit trail and Money support."""
 
     id: str
@@ -194,7 +192,6 @@ class Project(BaseModel, AuditMixin):
                     data[field] = Money.from_string(str(data[field]))
         
         super().__init__(**data)
-        self.__init_audit__()
 
 
 class TimeEntry(BaseModel):
@@ -224,7 +221,7 @@ class TimeEntry(BaseModel):
         return None
 
 
-class Invoice(BaseModel, AuditMixin):
+class Invoice(BaseModel):
     """Invoice model with audit trail and Money support."""
 
     id: str
@@ -252,10 +249,9 @@ class Invoice(BaseModel, AuditMixin):
                 data['amount'] = Money.from_string(str(data['amount']))
         
         super().__init__(**data)
-        self.__init_audit__()
 
 
-class TaxPayment(BaseModel, AuditMixin):
+class TaxPayment(BaseModel):
     """Tax payment model with audit trail and Money support."""
 
     id: UUID = Field(default_factory=uuid4)
@@ -281,7 +277,6 @@ class TaxPayment(BaseModel, AuditMixin):
                 data['amount'] = Money.from_string(str(data['amount']))
         
         super().__init__(**data)
-        self.__init_audit__()
 
 
 class TaxRate(BaseModel):
@@ -305,7 +300,7 @@ class TaxRate(BaseModel):
         super().__init__(**data)
 
 
-class TaxDeduction(BaseModel, AuditMixin):
+class TaxDeduction(BaseModel):
     """Tax deduction model with audit trail and Money support."""
 
     id: UUID = Field(default_factory=uuid4)
@@ -330,4 +325,3 @@ class TaxDeduction(BaseModel, AuditMixin):
                 data['amount'] = Money.from_string(str(data['amount']))
         
         super().__init__(**data)
-        self.__init_audit__()

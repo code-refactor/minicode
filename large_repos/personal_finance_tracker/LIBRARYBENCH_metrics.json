@@ -1,0 +1,428 @@
+{
+    "total_logprobs": -24139.44754518781,
+    "total_tokens": 63721,
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/values_budgeting/budgeting.py": {
+        "logprobs": -3318.8508610003323,
+        "metrics": {
+            "loc": 1141,
+            "sloc": 772,
+            "lloc": 515,
+            "comments": 133,
+            "multi": 68,
+            "blank": 179,
+            "cyclomatic": 218,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/income/income_manager.py": {
+        "logprobs": -1359.2040492055198,
+        "metrics": {
+            "loc": 460,
+            "sloc": 260,
+            "lloc": 177,
+            "comments": 53,
+            "multi": 62,
+            "blank": 80,
+            "cyclomatic": 71,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/values_budgeting/__init__.py": {
+        "logprobs": -118.2611049676,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/impact_measurement/__init__.py": {
+        "logprobs": -109.3247174325,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/projection/financial_projector.py": {
+        "logprobs": -1806.42881562913,
+        "metrics": {
+            "loc": 674,
+            "sloc": 452,
+            "lloc": 251,
+            "comments": 84,
+            "multi": 62,
+            "blank": 85,
+            "cyclomatic": 95,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/expense/__init__.py": {
+        "logprobs": -150.73974134,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/project/__init__.py": {
+        "logprobs": -147.15665146,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/portfolio_analysis/__init__.py": {
+        "logprobs": -105.7172639678,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/project/models.py": {
+        "logprobs": -484.32563739358403,
+        "metrics": {
+            "loc": 114,
+            "sloc": 78,
+            "lloc": 125,
+            "comments": 6,
+            "multi": 0,
+            "blank": 27,
+            "cyclomatic": 22,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/shareholder_advocacy/advocacy.py": {
+        "logprobs": -1508.350482288781,
+        "metrics": {
+            "loc": 547,
+            "sloc": 350,
+            "lloc": 286,
+            "comments": 61,
+            "multi": 52,
+            "blank": 93,
+            "cyclomatic": 131,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/__init__.py": {
+        "logprobs": -144.51563968164,
+        "metrics": {
+            "loc": 7,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 4,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/models.py": {
+        "logprobs": -995.3066190202159,
+        "metrics": {
+            "loc": 211,
+            "sloc": 143,
+            "lloc": 222,
+            "comments": 13,
+            "multi": 0,
+            "blank": 41,
+            "cyclomatic": 55,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/income/__init__.py": {
+        "logprobs": -153.135407649,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/project/profitability_analyzer.py": {
+        "logprobs": -1058.7630575678775,
+        "metrics": {
+            "loc": 512,
+            "sloc": 321,
+            "lloc": 144,
+            "comments": 43,
+            "multi": 71,
+            "blank": 76,
+            "cyclomatic": 96,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/__init__.py": {
+        "logprobs": -121.87890799227,
+        "metrics": {
+            "loc": 3,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/impact_measurement/impact.py": {
+        "logprobs": -2008.7676820923807,
+        "metrics": {
+            "loc": 710,
+            "sloc": 441,
+            "lloc": 281,
+            "comments": 90,
+            "multi": 76,
+            "blank": 123,
+            "cyclomatic": 96,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/models/__init__.py": {
+        "logprobs": -110.07303295,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/projection/__init__.py": {
+        "logprobs": -145.720496933,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/tax/__init__.py": {
+        "logprobs": -141.96040900065,
+        "metrics": {
+            "loc": 5,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 4,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/models/common.py": {
+        "logprobs": -509.59098307931333,
+        "metrics": {
+            "loc": 191,
+            "sloc": 136,
+            "lloc": 222,
+            "comments": 4,
+            "multi": 0,
+            "blank": 40,
+            "cyclomatic": 30,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/setup.py": {
+        "logprobs": -129.2066201678815,
+        "metrics": {
+            "loc": 15,
+            "sloc": 14,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/projection/models.py": {
+        "logprobs": -575.2956675609602,
+        "metrics": {
+            "loc": 144,
+            "sloc": 99,
+            "lloc": 174,
+            "comments": 12,
+            "multi": 0,
+            "blank": 32,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/shareholder_advocacy/__init__.py": {
+        "logprobs": -114.8325904364,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/income/models.py": {
+        "logprobs": -467.71254844176036,
+        "metrics": {
+            "loc": 95,
+            "sloc": 65,
+            "lloc": 100,
+            "comments": 11,
+            "multi": 0,
+            "blank": 20,
+            "cyclomatic": 19,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/expense/categorizer.py": {
+        "logprobs": -956.9304161870114,
+        "metrics": {
+            "loc": 500,
+            "sloc": 268,
+            "lloc": 179,
+            "comments": 51,
+            "multi": 91,
+            "blank": 89,
+            "cyclomatic": 59,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/tax/models.py": {
+        "logprobs": -587.0375996617752,
+        "metrics": {
+            "loc": 129,
+            "sloc": 89,
+            "lloc": 152,
+            "comments": 10,
+            "multi": 0,
+            "blank": 29,
+            "cyclomatic": 31,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/tax/tax_manager.py": {
+        "logprobs": -2012.5504610802593,
+        "metrics": {
+            "loc": 810,
+            "sloc": 467,
+            "lloc": 230,
+            "comments": 90,
+            "multi": 132,
+            "blank": 132,
+            "cyclomatic": 90,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/portfolio_analysis/analysis.py": {
+        "logprobs": -2756.0949393418778,
+        "metrics": {
+            "loc": 1051,
+            "sloc": 664,
+            "lloc": 457,
+            "comments": 144,
+            "multi": 82,
+            "blank": 179,
+            "cyclomatic": 147,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/setup.py": {
+        "logprobs": -100.8717874271937,
+        "metrics": {
+            "loc": 14,
+            "sloc": 13,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_freelancer/personal_finance_tracker/expense/models.py": {
+        "logprobs": -562.4026260812408,
+        "metrics": {
+            "loc": 160,
+            "sloc": 106,
+            "lloc": 160,
+            "comments": 13,
+            "multi": 0,
+            "blank": 34,
+            "cyclomatic": 51,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/ethical_screening/screening.py": {
+        "logprobs": -1264.8184719678552,
+        "metrics": {
+            "loc": 460,
+            "sloc": 260,
+            "lloc": 207,
+            "comments": 46,
+            "multi": 63,
+            "blank": 90,
+            "cyclomatic": 73,
+            "internal_imports": []
+        }
+    },
+    "personal_finance_tracker/personal_finance_tracker_socially_responsible_investor/ethical_finance/ethical_screening/__init__.py": {
+        "logprobs": -113.622256182,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "total_loc": 7979,
+    "total_sloc": 5000,
+    "total_lloc": 3901,
+    "total_comments": 864,
+    "total_multi": 783,
+    "total_blank": 1359,
+    "total_cyclomatic": 1311,
+    "total_internal_imports": 0
+}

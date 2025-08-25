@@ -91,12 +91,8 @@ class AccessLogger:
         self.last_entry_hash = None
 
         # Set up logging using common utilities
-        self.logger = get_logger(
-            name="privacy_access_logger",
-            level=LogLevel.INFO,
-            log_file=log_file,
-            structured=True
-        )
+        self.logger = get_logger("privacy_access_logger")
+        self.logger.setLevel(LogLevel.INFO.value)
 
         # Initialize HMAC key
         if hmac_key:
@@ -769,18 +765,13 @@ class AccessLogger:
         # Rotate log if needed
         self._check_rotation()
         
-        # Write the entry as JSON
-        entry_json = json.dumps(entry, indent=2, default=str)
+        # Write the entry as JSON to the file
+        with open(self.log_file, 'a') as f:
+            json.dump(entry, f, default=str)
+            f.write('\n')
         
-        # Create structured log entry
-        structured_entry = {
-            "message": "Privacy access logged",
-            "level": LogLevel.INFO.value,
-            "metadata": entry
-        }
-        
-        # Use the structured logger
-        self.logger.info(structured_entry)
+        # Also log to Python logger for debugging
+        self.logger.info(f"Access logged: {entry.get('access_type', 'unknown')} by {entry.get('user_id', 'unknown')}")
     
     def _check_rotation(self) -> None:
         """Check if log rotation is needed and rotate if so."""

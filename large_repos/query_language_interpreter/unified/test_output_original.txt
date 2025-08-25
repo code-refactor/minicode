@@ -1,0 +1,117 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 186 items / 3 errors
+
+tests/data_privacy_officer/access_logging/test_logger.py ...........     [  5%]
+tests/data_privacy_officer/anonymization/test_anonymizer.py ............ [ 12%]
+....                                                                     [ 14%]
+tests/data_privacy_officer/data_minimization/test_minimizer.py ......... [ 19%]
+...                                                                      [ 20%]
+tests/data_privacy_officer/pii_detection/test_detector.py ...........    [ 26%]
+tests/data_privacy_officer/pii_detection/test_scanner.py .........       [ 31%]
+tests/data_privacy_officer/policy_enforcement/test_enforcer.py ......... [ 36%]
+                                                                         [ 36%]
+tests/data_privacy_officer/policy_enforcement/test_policy.py ........... [ 42%]
+.                                                                        [ 43%]
+tests/legal_discovery_specialist/test_communication_analysis/test_analyzer.py . [ 43%]
+.......                                                                  [ 47%]
+tests/legal_discovery_specialist/test_communication_analysis/test_models.py . [ 47%]
+......                                                                   [ 51%]
+tests/legal_discovery_specialist/test_core/test_document.py .....        [ 53%]
+tests/legal_discovery_specialist/test_core/test_interpreter.py .......   [ 57%]
+tests/legal_discovery_specialist/test_core/test_query.py .............   [ 64%]
+tests/legal_discovery_specialist/test_document_analysis/test_analyzer.py . [ 65%]
+.........                                                                [ 69%]
+tests/legal_discovery_specialist/test_document_analysis/test_proximity.py . [ 70%]
+........                                                                 [ 74%]
+tests/legal_discovery_specialist/test_integration/test_integration.py .. [ 75%]
+.....                                                                    [ 78%]
+tests/legal_discovery_specialist/test_ontology/test_models.py ....       [ 80%]
+tests/legal_discovery_specialist/test_ontology/test_service.py ......    [ 83%]
+tests/legal_discovery_specialist/test_privilege/test_detector.py ....... [ 87%]
+.....                                                                    [ 90%]
+tests/legal_discovery_specialist/test_privilege/test_models.py ....      [ 92%]
+tests/legal_discovery_specialist/test_temporal/test_manager.py ......... [ 97%]
+                                                                         [ 97%]
+tests/legal_discovery_specialist/test_temporal/test_models.py .....      [100%]
+
+==================================== ERRORS ====================================
+__ ERROR collecting tests/data_privacy_officer/integration/test_scenarios.py ___
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/tests/data_privacy_officer/integration/test_scenarios.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/data_privacy_officer/integration/test_scenarios.py:21: in <module>
+    from privacy_query_interpreter.query_engine.engine import PrivacyQueryEngine
+privacy_query_interpreter/query_engine/engine.py:29: in <module>
+    from privacy_query_interpreter.query_engine.parser import (
+privacy_query_interpreter/query_engine/parser.py:7: in <module>
+    import sqlparse
+E   ModuleNotFoundError: No module named 'sqlparse'
+___ ERROR collecting tests/data_privacy_officer/query_engine/test_engine.py ____
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/tests/data_privacy_officer/query_engine/test_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/data_privacy_officer/query_engine/test_engine.py:14: in <module>
+    from privacy_query_interpreter.query_engine.engine import PrivacyQueryEngine, QueryStatus
+privacy_query_interpreter/query_engine/engine.py:29: in <module>
+    from privacy_query_interpreter.query_engine.parser import (
+privacy_query_interpreter/query_engine/parser.py:7: in <module>
+    import sqlparse
+E   ModuleNotFoundError: No module named 'sqlparse'
+___ ERROR collecting tests/data_privacy_officer/query_engine/test_parser.py ____
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/tests/data_privacy_officer/query_engine/test_parser.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/data_privacy_officer/query_engine/test_parser.py:5: in <module>
+    from privacy_query_interpreter.query_engine.parser import (
+privacy_query_interpreter/query_engine/parser.py:7: in <module>
+    import sqlparse
+E   ModuleNotFoundError: No module named 'sqlparse'
+=============================== warnings summary ===============================
+privacy_query_interpreter/policy_enforcement/policy.py:60
+  /home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/privacy_query_interpreter/policy_enforcement/policy.py:60: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @root_validator(skip_on_failure=True)
+
+privacy_query_interpreter/policy_enforcement/policy.py:112
+  /home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/privacy_query_interpreter/policy_enforcement/policy.py:112: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("prohibited_joins", pre=True)
+
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: 14 warnings
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/data_privacy_officer/policy_enforcement/test_policy.py::TestPolicyDefinitions::test_data_policy_to_dict
+tests/data_privacy_officer/policy_enforcement/test_policy.py::TestPolicyDefinitions::test_policy_set_to_dict
+  /home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/privacy_query_interpreter/policy_enforcement/policy.py:135: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    return self.dict(exclude_none=True)
+
+tests/legal_discovery_specialist/test_ontology/test_service.py::test_load_ontology_from_file
+  /home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/legal_discovery_interpreter/ontology/service.py:49: PydanticDeprecatedSince20: The `parse_obj` method is deprecated; use `model_validate` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    ontology = LegalOntology.parse_obj(ontology_data)
+
+tests/legal_discovery_specialist/test_privilege/test_detector.py::test_generate_privilege_log
+tests/legal_discovery_specialist/test_privilege/test_detector.py::test_generate_privilege_log
+tests/legal_discovery_specialist/test_privilege/test_detector.py::test_generate_privilege_log
+  /home/justinchiu/code/python/minicode-orig/large_repos/query_language_interpreter/unified/legal_discovery_interpreter/privilege/detector.py:566: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    log['entries'][doc_id] = result.dict()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report_original.json
+=========================== short test summary info ============================
+ERROR tests/data_privacy_officer/integration/test_scenarios.py
+ERROR tests/data_privacy_officer/query_engine/test_engine.py
+ERROR tests/data_privacy_officer/query_engine/test_parser.py
+================== 186 passed, 22 warnings, 3 errors in 1.46s ==================

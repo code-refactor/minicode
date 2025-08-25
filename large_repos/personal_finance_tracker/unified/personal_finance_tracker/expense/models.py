@@ -22,7 +22,7 @@ from common import (
 from personal_finance_tracker.models.common import ExpenseCategory, Transaction
 
 
-class CategorizationRule(BaseModel, ValidationMixin, AuditMixin):
+class CategorizationRule(BaseModel):
     """Rule for expense categorization with validation and audit support."""
 
     id: UUID = Field(default_factory=uuid4)
@@ -60,7 +60,6 @@ class CategorizationRule(BaseModel, ValidationMixin, AuditMixin):
                     data[field] = Money.from_string(str(data[field]))
         
         super().__init__(**data)
-        self.__init_audit__()
 
     @validator("business_use_percentage")
     def validate_percentage(cls, v):
@@ -132,7 +131,6 @@ class MixedUseItem(BaseModel, ValidationMixin, AuditMixin):
     
     def __init__(self, **data):
         super().__init__(**data)
-        self.__init_audit__()
 
     @validator("business_use_percentage")
     def validate_percentage(cls, v):

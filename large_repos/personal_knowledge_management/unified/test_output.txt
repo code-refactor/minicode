@@ -1,0 +1,419 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode/large_repos/personal_knowledge_management/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 236 items / 3 errors
+
+tests/academic_researcher/citations/test_formatter_edge_cases.py ....... [  2%]
+....                                                                     [  4%]
+tests/academic_researcher/citations/test_formatters.py ...........       [  9%]
+tests/academic_researcher/core/test_brain.py .............               [ 14%]
+tests/academic_researcher/core/test_models.py ................           [ 21%]
+tests/academic_researcher/core/test_storage.py ...............           [ 27%]
+tests/academic_researcher/experiments/test_template_functions.py .....   [ 30%]
+tests/academic_researcher/experiments/test_templates.py ......           [ 32%]
+tests/academic_researcher/grants/test_export.py ....                     [ 34%]
+tests/academic_researcher/grants/test_export_functions.py .....          [ 36%]
+tests/academic_researcher/test_bidirectional_linking.py ........         [ 39%]
+tests/academic_researcher/test_cli.py ......                             [ 42%]
+tests/academic_researcher/test_collaboration.py ...........              [ 47%]
+tests/academic_researcher/test_experiment_templates.py ............      [ 52%]
+tests/academic_researcher/test_grant_proposals.py ..........             [ 56%]
+tests/academic_researcher/test_main.py ..                                [ 57%]
+tests/academic_researcher/test_performance_optimized.py ..F              [ 58%]
+tests/academic_researcher/test_research_questions.py ........            [ 61%]
+tests/academic_researcher/test_workflows.py F....                        [ 63%]
+tests/product_manager/competitive_analysis/test_system.py .............. [ 69%]
+.....                                                                    [ 72%]
+tests/product_manager/decision_registry/test_registry.py ..............  [ 77%]
+tests/product_manager/feedback_analysis/test_engine.py ................. [ 85%]
+                                                                         [ 85%]
+tests/product_manager/prioritization/test_framework.py ...............   [ 91%]
+tests/product_manager/stakeholder_insights/test_manager.py ............. [ 97%]
+.......                                                                  [100%]
+
+==================================== ERRORS ====================================
+_ ERROR collecting tests/academic_researcher/citations/test_parser_edge_cases.py _
+ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/personal_knowledge_management/unified/tests/academic_researcher/citations/test_parser_edge_cases.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/academic_researcher/citations/test_parser_edge_cases.py:9: in <module>
+    import pypdf
+E   ModuleNotFoundError: No module named 'pypdf'
+_____ ERROR collecting tests/academic_researcher/citations/test_parsers.py _____
+ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/personal_knowledge_management/unified/tests/academic_researcher/citations/test_parsers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/academic_researcher/citations/test_parsers.py:9: in <module>
+    from researchbrain.citations.parsers import (
+researchbrain/citations/parsers.py:7: in <module>
+    import bibtexparser
+E   ModuleNotFoundError: No module named 'bibtexparser'
+_____ ERROR collecting tests/academic_researcher/test_citation_accuracy.py _____
+ImportError while importing test module '/home/justinchiu/code/python/minicode/large_repos/personal_knowledge_management/unified/tests/academic_researcher/test_citation_accuracy.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/academic_researcher/test_citation_accuracy.py:11: in <module>
+    from researchbrain.citations.parsers import parse_bibtex_file, parse_ris_file
+researchbrain/citations/parsers.py:7: in <module>
+    import bibtexparser
+E   ModuleNotFoundError: No module named 'bibtexparser'
+=================================== FAILURES ===================================
+______________ TestOptimizedPerformance.test_citation_processing _______________
+
+self = <tests.academic_researcher.test_performance_optimized.TestOptimizedPerformance object at 0x73f32cb092b0>
+temp_data_dir = '/tmp/tmp0pm9c8kt'
+tmp_path = PosixPath('/tmp/pytest-of-justinchiu/pytest-28/test_citation_processing0')
+
+    def test_citation_processing(self, temp_data_dir, tmp_path):
+        """Test citation processing with a few papers."""
+        brain = ResearchBrain(temp_data_dir)
+    
+        # Create just a few test bibtex files
+        files_to_create = 5  # Reduced from 100 to 5
+        file_paths = []
+    
+        for i in range(files_to_create):
+            file_path = tmp_path / f"citation_{i}.bib"
+            with open(file_path, "w") as f:
+                f.write(f"""
+                @article{{test{i}2023,
+                  title={{Test Paper Title {i}}},
+                  author={{Test Author and Another Author}},
+                  journal={{Test Journal}},
+                  year={{2023}},
+                  volume={{1}},
+                  number={{1}},
+                  pages={{1--10}}
+                }}
+                """)
+            file_paths.append(file_path)
+    
+        # Measure time
+        start_time = time.time()
+    
+        for file_path in file_paths:
+>           brain.import_paper(file_path)
+
+tests/academic_researcher/test_performance_optimized.py:217: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+researchbrain/core/brain.py:453: in import_paper
+    from researchbrain.citations.parsers import (
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Citation parsing utilities for ResearchBrain."""
+    
+    import re
+    from pathlib import Path
+    from typing import Any, Dict, List, Optional
+    
+>   import bibtexparser
+E   ModuleNotFoundError: No module named 'bibtexparser'
+
+researchbrain/citations/parsers.py:7: ModuleNotFoundError
+________ TestUserWorkflows.test_workflow_paper_import_to_note_creation _________
+
+self = <tests.academic_researcher.test_workflows.TestUserWorkflows object at 0x73f32cb0b6e0>
+brain = <researchbrain.core.brain.ResearchBrain object at 0x73f311879340>
+tmp_path = PosixPath('/tmp/pytest-of-justinchiu/pytest-28/test_workflow_paper_import_to_0')
+
+        def test_workflow_paper_import_to_note_creation(self, brain, tmp_path):
+            """Test workflow: paper import -> citation linking -> note creation."""
+            # Create a mock BibTeX file
+            bibtex_path = tmp_path / "test_paper.bib"
+            with open(bibtex_path, "w") as f:
+                f.write("""
+    @article{smith2023neuroscience,
+      title={Advances in Neuroscience Research},
+      author={Smith, John and Doe, Jane},
+      journal={Journal of Neuroscience},
+      volume={42},
+      number={3},
+      pages={123-145},
+      year={2023},
+      publisher={Neuroscience Publishers},
+      doi={10.1234/neuro.2023.42.3.123}
+    }
+                """)
+    
+            # Import the paper
+>           citation_id = brain.import_paper(bibtex_path)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/academic_researcher/test_workflows.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+researchbrain/core/brain.py:453: in import_paper
+    from researchbrain.citations.parsers import (
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Citation parsing utilities for ResearchBrain."""
+    
+    import re
+    from pathlib import Path
+    from typing import Any, Dict, List, Optional
+    
+>   import bibtexparser
+E   ModuleNotFoundError: No module named 'bibtexparser'
+
+researchbrain/citations/parsers.py:7: ModuleNotFoundError
+=============================== warnings summary ===============================
+tests/academic_researcher/test_experiment_templates.py::TestExperimentTemplates::test_experiment_status_updates
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `datetime` - serialized value may not be as expected [input_value='2023-06-01', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/academic_researcher/test_experiment_templates.py::TestExperimentTemplates::test_experiment_status_updates
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `datetime` - serialized value may not be as expected [input_value='2023-06-01', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `datetime` - serialized value may not be as expected [input_value='2023-08-15', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/decision_registry/test_registry.py::TestDecisionRegistry::test_link_related_decisions
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='15f2792c-9f84-4283-9079-7d7e8d27e31a', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/decision_registry/test_registry.py::TestDecisionRegistry::test_link_related_decisions
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='029d9365-3eb6-4c53-b3d4-94f357b9e910', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/decision_registry/test_registry.py::TestDecisionRegistry::test_build_decision_graph
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='d2bb79bc-f9be-495b-a68a-5a03e49b7935', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/decision_registry/test_registry.py::TestDecisionRegistry::test_build_decision_graph
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='820131f7-a9fd-4cb8-bf93-0775d0b5b062', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_cluster_feedback_kmeans
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('defde63c-f1ae-4706-84da-312022c984aa'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_cluster_feedback_kmeans
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('c078f23e-df77-4b92-88a9-21896c2088c1'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_cluster_feedback_dbscan
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('ea8a1b7d-60be-4d84-b822-f4fbd5ca8d85'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_cluster_feedback_dbscan
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('16cd6b95-7a1b-4f7d-b746-dad730eed0ba'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_cluster_feedback_dbscan
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('0442dbd7-096c-4a32-8d47-7f832ff3a062'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_cluster_feedback_dbscan
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('5c028615-b057-474a-a23f-c0d8b60e7746'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_get_cluster
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('e8654c46-6cd1-4e19-b537-fc1e880aacaf'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_get_cluster
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('2af72cb2-14bb-470a-b08d-7a4b3d59f183'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_get_all_clusters
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('7cd4c0a4-4d00-4dcf-b21b-186632baed3f'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_get_all_clusters
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('ec8c61fd-a703-47e1-abc9-d57c69dff5b5'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_get_feedback_by_cluster
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('5b324d3f-1d69-438c-8637-c5e3ccd19329'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_get_feedback_by_cluster
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('bc227572-2cf9-4826-8c05-3d9e687c6777'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/sklearn/base.py:1365: ConvergenceWarning: Number of distinct clusters (2) found smaller than n_clusters (5). Possibly due to duplicate points in X.
+    return fit_method(estimator, *args, **kwargs)
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('f9428f6c-b7e7-46e7-b33e-cf7f5674ff7c'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/feedback_analysis/test_engine.py::TestFeedbackAnalysisEngine::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=UUID('b1f8f72f-a5aa-4df3-bcb9-05ce69f2d2c0'), input_type=UUID])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_map_strategic_alignment
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ddcb3153-62ad-4764-a5a2-5e876e1ac63c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='4ba79c69-ab8e-4fa0-8fd8-d5cf9d3f4e38', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='47dd32a3-6c77-4826-b3dd-f9e10b7395d7', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_calculate_strategic_score
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3f3f71df-bb2d-44dc-803d-5707600c7536', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='504031c5-7608-46f4-8745-5ddd1a69562c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a8bdaae3-881c-4c5a-907e-40ab20e83b83', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_prioritize_features_weighted
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='51d4a45a-7c91-4990-bbd6-4ba105bcef59', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='5587d2c7-17ab-4759-babc-b222dd79d625', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_prioritize_features_other_models
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b3e4f0c-2be1-4b16-8319-05a8f8db2062', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='93ab1230-5ab9-479b-817a-538f708d8696', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b973433-9109-4ff5-b0ea-1485018ed6e4', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='421df0a2-c8f4-413d-b23c-47112763260d', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a44ff958-2341-4eb7-9365-f39915a2f130', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b973433-9109-4ff5-b0ea-1485018ed6e4', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='421df0a2-c8f4-413d-b23c-47112763260d', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a44ff958-2341-4eb7-9365-f39915a2f130', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b973433-9109-4ff5-b0ea-1485018ed6e4', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a44ff958-2341-4eb7-9365-f39915a2f130', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b973433-9109-4ff5-b0ea-1485018ed6e4', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='421df0a2-c8f4-413d-b23c-47112763260d', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b973433-9109-4ff5-b0ea-1485018ed6e4', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a44ff958-2341-4eb7-9365-f39915a2f130', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='421df0a2-c8f4-413d-b23c-47112763260d', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a44ff958-2341-4eb7-9365-f39915a2f130', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+tests/product_manager/prioritization/test_framework.py::TestPrioritizationFramework::test_performance_with_large_dataset
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='ba028028-2c41-430b-b44b-9a26ff59fb1b', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='6f9e1f9b-f326-4b92-adb0-b8e2e7b7438c', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='3b973433-9109-4ff5-b0ea-1485018ed6e4', input_type=str])
+    PydanticSerializationUnexpectedValue(Expected `uuid` - serialized value may not be as expected [input_value='a44ff958-2341-4eb7-9365-f39915a2f130', input_type=str])
+    return self.__pydantic_serializer__.to_python(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report.json
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                                                         Stmts   Miss  Cover   Missing
+------------------------------------------------------------------------------------------
+researchbrain/__init__.py                                        0      0   100%
+researchbrain/__main__.py                                        3      1    67%   6
+researchbrain/citations/__init__.py                              0      0   100%
+researchbrain/citations/formatters.py                          371     60    84%   19, 101, 153, 192, 197-201, 207, 217, 254, 258, 263-267, 273, 283, 315, 329, 331, 337, 383, 385-389, 397, 429, 438-442, 444-448, 456, 477, 479, 481, 483, 485, 487, 513-514, 561-574, 606
+researchbrain/citations/parsers.py                             225    221     2%   8-354
+researchbrain/cli.py                                           692    515    26%   239, 241, 243, 247, 249, 253, 265-267, 289-401, 411-530, 540-670, 681-682, 685-701, 705-717, 720-732, 735-782, 785-810, 833-1032, 1042-1073, 1091-1198, 1208-1235, 1239
+researchbrain/collaboration/__init__.py                          0      0   100%
+researchbrain/core/__init__.py                                   0      0   100%
+researchbrain/core/brain.py                                    711    237    67%   48, 51, 54, 57, 60, 66, 70, 74-75, 81, 85-105, 113-123, 127-141, 145-146, 150-158, 165-173, 213, 245, 255-289, 295-303, 306-310, 332, 343-353, 357-359, 363-365, 400, 457-487, 543, 674, 713, 728, 757, 812, 817, 854, 858, 872, 882, 1011, 1033-1036, 1064, 1085, 1106, 1129, 1152-1154, 1169-1170, 1208, 1226-1231, 1250, 1252, 1254, 1274, 1323, 1331, 1367-1378, 1396, 1429, 1458-1479, 1488-1541, 1554, 1562-1563, 1585-1586, 1616-1664
+researchbrain/core/models.py                                   157      0   100%
+researchbrain/core/storage.py                                  411    203    51%   80, 85, 87, 130-131, 172-174, 189, 196-201, 209-226, 234-280, 290-337, 381-382, 400-401, 414-442, 457-458, 473, 515, 572-575, 581-582, 607, 620, 647-650, 656-657, 668-699, 712-750, 766-767, 784-807, 818-819, 828-830, 843-852
+researchbrain/experiments/__init__.py                            0      0   100%
+researchbrain/experiments/template_definitions/__init__.py       0      0   100%
+researchbrain/experiments/templates.py                          76     11    86%   24-26, 42-43, 53-54, 70, 78-79, 127-130
+researchbrain/grants/__init__.py                                 0      0   100%
+researchbrain/grants/export.py                                  63      1    98%   251
+researchbrain/notes/__init__.py                                  0      0   100%
+researchbrain/research/__init__.py                               0      0   100%
+------------------------------------------------------------------------------------------
+TOTAL                                                         2709   1249    54%
+=========================== short test summary info ============================
+FAILED tests/academic_researcher/test_performance_optimized.py::TestOptimizedPerformance::test_citation_processing
+FAILED tests/academic_researcher/test_workflows.py::TestUserWorkflows::test_workflow_paper_import_to_note_creation
+ERROR tests/academic_researcher/citations/test_parser_edge_cases.py
+ERROR tests/academic_researcher/citations/test_parsers.py
+ERROR tests/academic_researcher/test_citation_accuracy.py
+============ 2 failed, 234 passed, 37 warnings, 3 errors in 11.53s =============

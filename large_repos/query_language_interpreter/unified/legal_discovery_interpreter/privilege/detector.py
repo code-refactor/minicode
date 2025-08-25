@@ -44,9 +44,8 @@ class PrivilegeDetector(BaseDetectorService):
         if config is None:
             config = ServiceConfig(
                 service_name="privilege_detector",
-                service_type="detector",
                 enabled=True,
-                config={}
+                config={"service_type": "detector"}
             )
         
         super().__init__(config)
@@ -56,8 +55,10 @@ class PrivilegeDetector(BaseDetectorService):
         self.attorneys: Dict[str, Attorney] = {}
         self.privilege_log = PrivilegeLog()
         
-        # Initialize default indicators (will be called during initialization)
+        # Initialize default indicators
         self._indicators_initialized = False
+        self._initialize_default_indicators()
+        self._indicators_initialized = True
     
     def _initialize_default_indicators(self) -> None:
         """Initialize default privilege indicators."""

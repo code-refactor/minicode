@@ -1,28 +1,34 @@
 """Base models and common fields for the unified library."""
 
 from datetime import datetime
-from typing import Optional, Set
+from typing import Any, Optional, Set
 from uuid import UUID, uuid4
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict, field_serializer
 
 
 class BaseEntity(BaseModel):
     """Base class for all entities in the system."""
     
+    model_config = ConfigDict()
+    
     id: UUID = Field(default_factory=uuid4)
     created_at: datetime = Field(default_factory=datetime.now)
     updated_at: datetime = Field(default_factory=datetime.now)
     
+    @field_serializer('id')
+    def serialize_id(self, value: UUID) -> str:
+        """Serialize UUID to string."""
+        return str(value)
+    
+    @field_serializer('created_at', 'updated_at')
+    def serialize_datetime(self, value: datetime) -> str:
+        """Serialize datetime to ISO format string."""
+        return value.isoformat()
+    
     def update(self) -> None:
         """Update the last modified timestamp."""
         self.updated_at = datetime.now()
-    
-    class Config:
-        json_encoders = {
-            UUID: str,
-            datetime: lambda v: v.isoformat()
-        }
 
 
 class TaggableEntity(BaseEntity):
@@ -49,6 +55,11 @@ class LinkableEntity(BaseEntity):
     """Base class for entities that can be linked to others."""
     
     related_ids: Set[UUID] = Field(default_factory=set)
+    
+    @field_serializer('related_ids')
+    def serialize_related_ids(self, value: Set[UUID]) -> list[str]:
+        """Serialize UUID set to list of strings."""
+        return [str(uid) for uid in value]
     
     def add_link(self, entity_id: UUID) -> None:
         """Add a link to another entity."""
@@ -82,6 +93,16 @@ class HierarchicalEntity(LinkableEntity):
     parent_id: Optional[UUID] = None
     child_ids: Set[UUID] = Field(default_factory=set)
     
+    @field_serializer('parent_id')
+    def serialize_parent_id(self, value: Optional[UUID]) -> Optional[str]:
+        """Serialize parent UUID to string."""
+        return str(value) if value else None
+    
+    @field_serializer('child_ids')
+    def serialize_child_ids(self, value: Set[UUID]) -> list[str]:
+        """Serialize child UUID set to list of strings."""
+        return [str(uid) for uid in value]
+    
     def add_child(self, child_id: UUID) -> None:
         """Add a child entity."""
         self.child_ids.add(child_id)
@@ -111,6 +132,11 @@ class VersionedEntity(BaseEntity):
     
     version: int = 1
     previous_version_id: Optional[UUID] = None
+    
+    @field_serializer('previous_version_id')
+    def serialize_previous_version_id(self, value: Optional[UUID]) -> Optional[str]:
+        """Serialize previous version UUID to string."""
+        return str(value) if value else None
     
     def increment_version(self) -> None:
         """Increment the version number."""

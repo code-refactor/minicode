@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode-orig/large_repos/virtual_machine_emulator/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 210 items
+
+tests/parallel_researcher/core/test_race.py ............                 [  5%]
+tests/parallel_researcher/core/test_vm.py ...........                    [ 10%]
+tests/parallel_researcher/memory/test_coherence.py ..................... [ 20%]
+.........                                                                [ 25%]
+tests/parallel_researcher/patterns/test_algorithms.py .................. [ 33%]
+.                                                                        [ 34%]
+tests/parallel_researcher/scheduling/test_scheduler.py ................. [ 42%]
+........                                                                 [ 46%]
+tests/parallel_researcher/synchronization/test_primitives.py ........... [ 51%]
+.................                                                        [ 59%]
+tests/security_researcher/test_attacks.py ...........                    [ 64%]
+tests/security_researcher/test_cpu.py ...................                [ 73%]
+tests/security_researcher/test_emulator.py .............                 [ 80%]
+tests/security_researcher/test_integration.py ......                     [ 82%]
+tests/security_researcher/test_memory.py ..................              [ 91%]
+tests/security_researcher/test_scenarios.py .......                      [ 94%]
+tests/security_researcher/test_simple.py .                               [ 95%]
+tests/security_researcher/test_visualization.py ..........               [100%]Test suite completed with status: 0
+
+
+--------------------------------- JSON report ----------------------------------
+report saved to: report_original.json
+============================= 210 passed in 0.43s ==============================

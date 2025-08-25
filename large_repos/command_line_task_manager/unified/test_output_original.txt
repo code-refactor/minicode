@@ -1,0 +1,182 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified
+configfile: pyproject.toml
+plugins: metadata-3.1.1, cov-6.2.1, json-report-1.5.0
+collected 365 items / 8 errors
+
+tests/researcher/bibliography/test_models.py .................           [  4%]
+tests/researcher/dataset_versioning/test_models.py ...............       [  8%]
+tests/researcher/dataset_versioning/test_service.py .................... [ 14%]
+                                                                         [ 14%]
+tests/researcher/dataset_versioning/test_storage.py ............         [ 17%]
+tests/researcher/environment/test_models.py .............                [ 21%]
+tests/researcher/environment/test_service.py .................           [ 25%]
+tests/researcher/environment/test_storage.py ........                    [ 27%]
+tests/researcher/experiment_tracking/test_models.py ..........           [ 30%]
+tests/researcher/experiment_tracking/test_service.py ................... [ 35%]
+..                                                                       [ 36%]
+tests/researcher/experiment_tracking/test_storage.py ................... [ 41%]
+.....                                                                    [ 43%]
+tests/researcher/experiment_tracking/test_visualizer.py ..........       [ 45%]
+tests/researcher/export/test_formatter.py ...........                    [ 48%]
+tests/researcher/export/test_models.py .........                         [ 51%]
+tests/researcher/export/test_service.py ..........                       [ 53%]
+tests/researcher/export/test_storage.py ........                         [ 56%]
+tests/researcher/performance/test_dataset_versioning_performance.py .... [ 57%]
+.                                                                        [ 57%]
+tests/researcher/performance/test_environment_performance.py .....       [ 58%]
+tests/researcher/performance/test_experiment_tracking_performance.py ... [ 59%]
+.                                                                        [ 60%]
+tests/researcher/performance/test_export_performance.py ....             [ 61%]
+tests/researcher/performance/test_task_management_performance.py ....    [ 62%]
+tests/researcher/task_management/test_models.py .............            [ 65%]
+tests/researcher/task_management/test_service.py ...................     [ 70%]
+tests/researcher/task_management/test_storage.py ...............         [ 75%]
+tests/security_analyst/compliance/test_compliance.py ..........          [ 77%]
+tests/security_analyst/cvss/test_cvss.py ........                        [ 80%]
+tests/security_analyst/evidence/test_evidence.py ..........              [ 82%]
+tests/security_analyst/findings/test_findings.py ........                [ 84%]
+tests/security_analyst/remediation/test_remediation.py ............      [ 88%]
+tests/security_analyst/reporting/test_redaction.py ........              [ 90%]
+tests/security_analyst/reporting/test_reporting.py ..........            [ 93%]
+tests/security_analyst/test_integration.py ...                           [ 93%]
+tests/security_analyst/test_stress.py ......                             [ 95%]
+tests/security_analyst/utils/test_crypto.py .........                    [ 98%]
+tests/security_analyst/utils/test_validation.py .......                  [100%]
+
+==================================== ERRORS ====================================
+_______ ERROR collecting tests/researcher/bibliography/test_formatter.py _______
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/bibliography/test_formatter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/bibliography/test_formatter.py:5: in <module>
+    from researchtrack.bibliography.formatter import ReferenceFormatter
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+_______ ERROR collecting tests/researcher/bibliography/test_importer.py ________
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/bibliography/test_importer.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/bibliography/test_importer.py:6: in <module>
+    from researchtrack.bibliography.importer import BibliographyImporter
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+________ ERROR collecting tests/researcher/bibliography/test_service.py ________
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/bibliography/test_service.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/bibliography/test_service.py:13: in <module>
+    from researchtrack.bibliography.service import BibliographyService
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+________ ERROR collecting tests/researcher/bibliography/test_storage.py ________
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/bibliography/test_storage.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/bibliography/test_storage.py:12: in <module>
+    from researchtrack.bibliography.storage import InMemoryBibliographyStorage
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+___ ERROR collecting tests/researcher/integration/test_multitask_workflow.py ___
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/integration/test_multitask_workflow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/integration/test_multitask_workflow.py:13: in <module>
+    from researchtrack.bibliography import BibliographyService, InMemoryBibliographyStorage
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+___ ERROR collecting tests/researcher/integration/test_research_workflow.py ____
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/integration/test_research_workflow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/integration/test_research_workflow.py:13: in <module>
+    from researchtrack.bibliography import BibliographyService, InMemoryBibliographyStorage
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+_ ERROR collecting tests/researcher/performance/test_bibliography_performance.py _
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/performance/test_bibliography_performance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/performance/test_bibliography_performance.py:14: in <module>
+    from researchtrack.bibliography.service import BibliographyService
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+_ ERROR collecting tests/researcher/performance/test_integration_performance.py _
+ImportError while importing test module '/home/justinchiu/code/python/minicode-orig/large_repos/command_line_task_manager/unified/tests/researcher/performance/test_integration_performance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/researcher/performance/test_integration_performance.py:15: in <module>
+    from researchtrack.bibliography import BibliographyService, InMemoryBibliographyStorage
+researchtrack/bibliography/__init__.py:2: in <module>
+    from .importer import BibliographyImporter
+researchtrack/bibliography/importer.py:8: in <module>
+    import pybtex.database
+E   ModuleNotFoundError: No module named 'pybtex'
+=============================== warnings summary ===============================
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_fields.py:198
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_fields.py:198: UserWarning: Field name "schema" in "Dataset" shadows an attribute in parent "BaseModel"
+    warnings.warn(
+
+../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_fields.py:198
+  /home/justinchiu/.local/lib/python3.12/site-packages/pydantic/_internal/_fields.py:198: UserWarning: Field name "schema" in "DatasetVersion" shadows an attribute in parent "BaseModel"
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: report_original.json
+=========================== short test summary info ============================
+ERROR tests/researcher/bibliography/test_formatter.py
+ERROR tests/researcher/bibliography/test_importer.py
+ERROR tests/researcher/bibliography/test_service.py
+ERROR tests/researcher/bibliography/test_storage.py
+ERROR tests/researcher/integration/test_multitask_workflow.py
+ERROR tests/researcher/integration/test_research_workflow.py
+ERROR tests/researcher/performance/test_bibliography_performance.py
+ERROR tests/researcher/performance/test_integration_performance.py
+================== 365 passed, 2 warnings, 8 errors in 10.32s ==================

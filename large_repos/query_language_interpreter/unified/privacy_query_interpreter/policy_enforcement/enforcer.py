@@ -46,9 +46,9 @@ class PolicyEnforcer(BaseEnforcerService):
         if config is None:
             config = ServiceConfig(
                 service_name="policy_enforcer",
-                service_type="enforcer",
                 enabled=True,
                 config={
+                    "service_type": "enforcer",
                     "policies_count": len(policies.policies) if policies else 0,
                     "pii_detector_available": pii_detector is not None,
                     "access_logger_available": access_logger is not None,
@@ -634,3 +634,49 @@ class PolicyEnforcer(BaseEnforcerService):
                 pass
         
         return False  # Policy doesn't apply
+    
+    async def check_compliance(
+        self,
+        context: ExecutionContext
+    ) -> Dict[str, Any]:
+        """Check compliance status for the current execution context.
+        
+        Args:
+            context: The execution context to check
+            
+        Returns:
+            Dictionary containing compliance status and details
+        """
+        # Extract user context from execution context
+        user_context = context.metadata.get("user_context", {})
+        
+        # Check all active policies
+        violations = []
+        warnings = []
+        applied_policies = []
+        
+        for policy in self.policies.policies:
+            if self._matches_policy_conditions(policy, user_context):
+                applied_policies.append(policy.name)
+                
+                # Check for violations based on policy action
+                if policy.action == PolicyAction.DENY:
+                    violations.append({
+                        "policy": policy.name,
+                        "type": policy.policy_type.value,
+                        "description": policy.description or f"Policy {policy.name} violation"
+                    })
+                elif policy.action == PolicyAction.ALERT:
+                    warnings.append({
+                        "policy": policy.name,
+                        "type": policy.policy_type.value,
+                        "description": policy.description or f"Policy {policy.name} warning"
+                    })
+        
+        return {
+            "compliant": len(violations) == 0,
+            "violations": violations,
+            "warnings": warnings,
+            "applied_policies": applied_policies,
+            "timestamp": time.time()
+        }
