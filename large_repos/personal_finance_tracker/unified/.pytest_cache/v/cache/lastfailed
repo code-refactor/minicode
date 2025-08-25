@@ -44,16 +44,5 @@
   "tests/freelancer/project/test_profitability_analyzer.py::TestProjectProfiler::test_analyze_client_profitability": true,
   "tests/freelancer/project/test_profitability_analyzer.py::TestProjectProfiler::test_analyze_all_projects": true,
   "tests/freelancer/project/test_profitability_analyzer.py::TestProjectProfiler::test_generate_trend_analysis": true,
-  "tests/freelancer/project/test_profitability_analyzer.py::TestProjectProfiler::test_analyze_large_project_set": true,
-  "tests/freelancer/expense/test_categorizer.py::TestExpenseCategorizer": true,
-  "tests/freelancer/integration/test_categorization_recovery.py::TestCategorizationRecovery": true,
-  "tests/freelancer/integration/test_categorization_recovery_mocks.py::TestCategorizationRecoveryMocks": true,
-  "tests/freelancer/integration/test_categorization_recovery_simplified.py::TestCategorizationRecoverySimplified": true,
-  "tests/freelancer/integration/test_expense_tax_integration.py::TestExpenseTaxIntegration": true,
-  "tests/freelancer/integration/test_integration_mocks.py::TestIntegrationWithMocks": true,
-  "tests/freelancer/integration/test_multi_year_projects.py::TestMultiYearProjects": true,
-  "tests/freelancer/integration/test_quarterly_tax_preparation_mock.py::TestQuarterlyTaxPreparationMock": true,
-  "tests/freelancer/integration/test_year_over_year_mocks.py::TestYearOverYearComparison": true,
-  "tests/freelancer/project/test_profitability_analyzer.py::TestProjectProfiler": true,
-  "tests/freelancer/tax/test_tax_manager_simple.py::TestTaxManagerSimple": true
+  "tests/freelancer/project/test_profitability_analyzer.py::TestProjectProfiler::test_analyze_large_project_set": true
 }

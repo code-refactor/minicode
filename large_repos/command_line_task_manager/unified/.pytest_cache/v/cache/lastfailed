@@ -48,5 +48,13 @@
   "tests/security_analyst/test_stress.py::test_large_findings_repository": true,
   "tests/security_analyst/test_stress.py::test_large_remediation_tracking": true,
   "tests/security_analyst/test_stress.py::test_large_compliance_framework": true,
-  "tests/security_analyst/test_stress.py::test_large_report_generation": true
+  "tests/security_analyst/test_stress.py::test_large_report_generation": true,
+  "tests/researcher/bibliography/test_formatter.py": true,
+  "tests/researcher/bibliography/test_importer.py": true,
+  "tests/researcher/bibliography/test_service.py": true,
+  "tests/researcher/bibliography/test_storage.py": true,
+  "tests/researcher/integration/test_multitask_workflow.py": true,
+  "tests/researcher/integration/test_research_workflow.py": true,
+  "tests/researcher/performance/test_bibliography_performance.py": true,
+  "tests/researcher/performance/test_integration_performance.py": true
 }

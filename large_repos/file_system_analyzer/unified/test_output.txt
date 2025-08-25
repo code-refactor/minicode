@@ -11,7 +11,7 @@ tests/db_admin/index_efficiency/test_index_analyzer.py ........          [ 18%]
 tests/db_admin/interfaces/test_api.py .......                            [ 25%]
 tests/db_admin/tablespace_fragmentation/test_fragmentation_analyzer.py . [ 26%]
 .......                                                                  [ 32%]
-tests/db_admin/transaction_log_analysis/test_log_analyzer.py .....F      [ 38%]
+tests/db_admin/transaction_log_analysis/test_log_analyzer.py ......      [ 38%]
 tests/db_admin/utils/test_file_utils.py .....                            [ 42%]
 tests/security_auditor/test_audit.py ............                        [ 54%]
 tests/security_auditor/test_custody.py ..........                        [ 63%]
@@ -20,64 +20,6 @@ tests/security_auditor/test_differential.py ........                     [ 83%]
 tests/security_auditor/test_reporting.py ............                    [ 94%]
 tests/security_auditor/test_scanner.py ......                            [100%]
 
-=================================== FAILURES ===================================
-______________________________ test_analyze_logs _______________________________
-
-mock_database_files = [DatabaseFile(path='/var/lib/mysql/mydatabase/users.ibd', engine=<DatabaseEngine.MYSQL: 'mysql'>, category=<FileCatego...ay=1048576.0, access_frequency=110.7, is_compressed=False, metadata={'collection': 'users', 'database': 'myapp'}), ...]
-
-    def test_analyze_logs(mock_database_files):
-        """Test full log analysis workflow."""
-        analyzer = TransactionLogAnalyzer()
-    
-        # Filter log files
-        log_files = [f for f in mock_database_files if f.category == FileCategory.LOG]
-        assert len(log_files) > 0
-    
-        # Create sample historical sizes
-        now = datetime.now()
-        historical_sizes = {}
-    
-        for log_file in log_files:
-            # Assume linear growth for test
-            historical_sizes[log_file.path] = [
-                (now - timedelta(days=5), int(log_file.size_bytes * 0.5)),
-                (now - timedelta(days=4), int(log_file.size_bytes * 0.6)),
-                (now - timedelta(days=3), int(log_file.size_bytes * 0.7)),
-                (now - timedelta(days=2), int(log_file.size_bytes * 0.8)),
-                (now - timedelta(days=1), int(log_file.size_bytes * 0.9)),
-                (now, log_file.size_bytes),
-            ]
-    
-        # Sample operation frequencies
-        operation_frequencies = {
-            "mysql": {
-                "INSERT": [1000, 1200, 1400, 1600, 1800, 2000],
-                "UPDATE": [500, 600, 700, 800, 900, 1000],
-            },
-            "postgresql": {
-                "INSERT": [800, 1000, 1200, 1400, 1600, 1800],
-                "UPDATE": [400, 500, 600, 700, 800, 900],
-            }
-        }
-    
-        # Run analysis
-        analysis_result = analyzer.analyze_logs(
-            log_files=log_files,
-            historical_sizes=historical_sizes,
-            operation_frequencies=operation_frequencies
-        )
-    
-        # Check result
-        assert analysis_result.scan_status == ScanStatus.COMPLETED
-        assert analysis_result.total_log_size_bytes > 0
->       assert analysis_result.growth_rate_bytes_per_day > 0
-E       AssertionError: assert -7130316.8 > 0
-E        +  where -7130316.8 = LogAnalysisResult(timestamp=datetime.datetime(2025, 8, 25, 2, 49, 6, 292500), analysis_duration_seconds=0.001201, scan...resql_INDEX CREATION': <LogGrowthCorrelation.NONE: 'none'>, 'postgresql_REINDEX': <LogGrowthCorrelation.NONE: 'none'>}).growth_rate_bytes_per_day
-
-tests/db_admin/transaction_log_analysis/test_log_analyzer.py:216: AssertionError
------------------------------- Captured log call -------------------------------
-WARNING  file_system_analyzer_db_admin.utils.file_utils:file_utils.py:63 Error getting stats for /var/lib/mysql/mysql-bin.000001: [Errno 2] No such file or directory: '/var/lib/mysql/mysql-bin.000001'
-WARNING  file_system_analyzer_db_admin.utils.file_utils:file_utils.py:63 Error getting stats for /var/lib/postgresql/data/pg_wal/000000010000000A00000001: [Errno 2] No such file or directory: '/var/lib/postgresql/data/pg_wal/000000010000000A00000001'
 =============================== warnings summary ===============================
 ../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
 ../../../../../../.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
@@ -174,12 +116,10 @@ file_system_analyzer_db_admin/main.py                                           
 file_system_analyzer_db_admin/tablespace_fragmentation/__init__.py                     0      0   100%
 file_system_analyzer_db_admin/tablespace_fragmentation/fragmentation_analyzer.py     237     17    93%
 file_system_analyzer_db_admin/transaction_log_analysis/__init__.py                     0      0   100%
-file_system_analyzer_db_admin/transaction_log_analysis/log_analyzer.py               251     27    89%
+file_system_analyzer_db_admin/transaction_log_analysis/log_analyzer.py               264     25    91%
 file_system_analyzer_db_admin/utils/__init__.py                                        0      0   100%
 file_system_analyzer_db_admin/utils/file_utils.py                                    157     77    51%
 file_system_analyzer_db_admin/utils/types.py                                          63      0   100%
 ------------------------------------------------------------------------------------------------------
-TOTAL                                                                               2048    607    70%
-=========================== short test summary info ============================
-FAILED tests/db_admin/transaction_log_analysis/test_log_analyzer.py::test_analyze_logs
-================== 1 failed, 106 passed, 32 warnings in 5.03s ==================
+TOTAL                                                                               2061    605    71%
+======================= 107 passed, 32 warnings in 5.15s =======================

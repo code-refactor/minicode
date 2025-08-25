@@ -1,1 +1,7 @@
-{}
+{
+  "tests/academic_researcher/citations/test_parser_edge_cases.py": true,
+  "tests/academic_researcher/citations/test_parsers.py": true,
+  "tests/academic_researcher/test_citation_accuracy.py": true,
+  "tests/academic_researcher/test_performance_optimized.py::TestOptimizedPerformance::test_citation_processing": true,
+  "tests/academic_researcher/test_workflows.py::TestUserWorkflows::test_workflow_paper_import_to_note_creation": true
+}

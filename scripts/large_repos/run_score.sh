@@ -16,6 +16,8 @@ if [ ! -d "large_repos/$directory" ]; then
 fi
 
 echo "Running scoring script on refactored repository..."
+mkdir -p results/large_repos/$directory
+
 uv run python -m minicode.score_large_repos --directory "large_repos/$directory/unified" --enable_logprobs > results/large_repos/$directory/score_unified.txt
 uv run python -m minicode.score_large_repos --directory "large_repos/$directory" --enable_logprobs  --skip_unified > results/large_repos/$directory/score_original.txt
 
