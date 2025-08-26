@@ -149,7 +149,21 @@ class EncryptedFindingStorage(StorageInterface[Finding]):
         # Apply filters if provided
         if filters:
             for key, value in filters.items():
-                findings = [f for f in findings if getattr(f, key, None) == value]
+                filtered = []
+                for f in findings:
+                    field_value = getattr(f, key, None)
+                    # Handle set membership check
+                    if isinstance(field_value, set):
+                        if value in field_value:
+                            filtered.append(f)
+                    # Handle list membership check
+                    elif isinstance(field_value, list):
+                        if value in field_value:
+                            filtered.append(f)
+                    # Simple equality check for other types
+                    elif field_value == value:
+                        filtered.append(f)
+                findings = filtered
         
         # Sort if requested
         if sort_by:
@@ -345,7 +359,7 @@ class FindingRepository(BaseService[Finding]):
         # Convert sort direction to storage format
         storage_sort_by = f"-{sort_by}" if reverse else sort_by
         
-        return self.list(
+        return super().list(
             filters=filters,
             sort_by=storage_sort_by,
             limit=limit,
@@ -362,12 +376,7 @@ class FindingRepository(BaseService[Finding]):
         Returns:
             Number of findings matching criteria
         """
-        return self.count(filters)
-    
-    # Override get to use storage directly
-    def get(self, finding_id: Union[str, uuid.UUID]) -> Optional[Finding]:
-        """Get a finding by ID."""
-        return self.storage.get(finding_id)
+        return super().count(filters)
     
     # Legacy compatibility methods
     def create(self, finding: Finding) -> Finding:
@@ -377,7 +386,10 @@ class FindingRepository(BaseService[Finding]):
     
     def get(self, finding_id: Union[str, uuid.UUID]) -> Optional[Finding]:
         """Get a finding by ID."""
-        return self.storage.get(finding_id)
+        finding = self.storage.get(finding_id)
+        if finding is None:
+            raise FileNotFoundError(f"Finding not found: {finding_id}")
+        return finding
     
     def update(self, finding: Finding) -> Finding:
         """Legacy compatibility method."""
@@ -396,4 +408,4 @@ class FindingRepository(BaseService[Finding]):
     
     def count(self, filters: Optional[Dict[str, Any]] = None) -> int:
         """Legacy compatibility method."""
-        return self.count_findings(filters)
+        return super().count(filters)

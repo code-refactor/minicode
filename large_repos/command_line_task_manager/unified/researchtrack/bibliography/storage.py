@@ -204,7 +204,9 @@ class InMemoryBibliographyStorage(BibliographyStorageInterface):
         self._link_storage = InMemoryStorage(TaskReferenceLink)
     
     def create_reference(self, reference: Reference) -> str:
-        return self._reference_storage.create(reference)
+        # Create returns string but reference.id is UUID, return the reference's ID
+        self._reference_storage.create(reference)
+        return reference.id
     
     def get_reference(self, reference_id: str) -> Optional[Reference]:
         return self._reference_storage.get(reference_id)

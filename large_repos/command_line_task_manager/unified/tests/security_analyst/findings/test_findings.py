@@ -268,9 +268,12 @@ def test_finding_crypto_integrity(temp_dir):
     with open(file_path, "wb") as f:
         f.write(tampered_data)
     
+    # Create a new repository instance to bypass cache
+    repo2 = FindingRepository(temp_dir, crypto_manager)
+    
     # Attempt to read should fail due to integrity check
     with pytest.raises(ValueError, match="Integrity verification failed"):
-        repo.get(finding.id)
+        repo2.get(finding.id)
 
 
 def test_finding_performance_benchmark(temp_dir):

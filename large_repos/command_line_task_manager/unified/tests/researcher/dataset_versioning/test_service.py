@@ -387,7 +387,7 @@ class TestDatasetVersioningService:
         
         # Since we're creating versions very quickly in the test,
         # the "latest" might be determined by timestamp microseconds
-        assert latest.id in {v1_id, v2_id, v3_id}
+        assert str(latest.id) in {v1_id, v2_id, v3_id}
         
         # Delete a version
         delete_result = self.service.delete_dataset_version(v2_id)
@@ -547,7 +547,7 @@ class TestDatasetVersioningService:
         )
         
         assert len(transformations) == 1
-        assert transformations[0].id == transformation_id
+        assert str(transformations[0].id) == transformation_id
     
     def test_link_task_to_dataset_version(self):
         # Test linking a task to a dataset version
@@ -638,11 +638,11 @@ class TestDatasetVersioningService:
         # Query links
         task_versions = self.service.get_dataset_versions_by_task(self.task_id1)
         assert len(task_versions) == 1
-        assert task_versions[0].id == version_id
+        assert str(task_versions[0].id) == version_id
         
         task_links = self.service.get_links_by_task(self.task_id1)
         assert len(task_links) == 1
-        assert task_links[0].id == link_id1
+        assert str(task_links[0].id) == link_id1
         
         version_tasks = self.service.get_tasks_by_dataset_version(version_id)
         assert len(version_tasks) == 2
@@ -712,20 +712,20 @@ class TestDatasetVersioningService:
         
         # Check v3 entry
         v3_entry = lineage[str(v3_id)]
-        assert v3_entry["version"].id == v3_id
+        assert str(v3_entry["version"].id) == v3_id
         assert len(v3_entry["input_transformations"]) == 1
-        assert v3_entry["input_transformations"][0].id == t2_id
+        assert str(v3_entry["input_transformations"][0].id) == t2_id
         
         # Check v2 entry
         v2_entry = lineage[str(v2_id)]
-        assert v2_entry["version"].id == v2_id
+        assert str(v2_entry["version"].id) == v2_id
         assert len(v2_entry["input_transformations"]) == 1
-        assert v2_entry["input_transformations"][0].id == t1_id
+        assert str(v2_entry["input_transformations"][0].id) == t1_id
         assert len(v2_entry["output_transformations"]) == 1
-        assert v2_entry["output_transformations"][0].id == t2_id
+        assert str(v2_entry["output_transformations"][0].id) == t2_id
         
         # Check v1 entry
         v1_entry = lineage[str(v1_id)]
-        assert v1_entry["version"].id == v1_id
+        assert str(v1_entry["version"].id) == v1_id
         assert len(v1_entry["output_transformations"]) == 1
-        assert v1_entry["output_transformations"][0].id == t1_id
+        assert str(v1_entry["output_transformations"][0].id) == t1_id

@@ -71,7 +71,7 @@ class ImpactMeasurementEngine:
         benchmark_comparison = {}
         
         # Process environmental metrics
-        metrics["carbon_intensity"] = investment.carbon_footprint / investment.market_cap * 1e9  # tons CO2 per $B
+        metrics["carbon_intensity"] = investment.carbon_footprint / float(investment.market_cap.amount) * 1e9  # tons CO2 per $B
         normalized_metrics["carbon_intensity"] = self._normalize_metric("carbon_intensity", metrics["carbon_intensity"])
         benchmark_comparison["carbon_intensity"] = self._compare_to_benchmark("carbon_intensity", metrics["carbon_intensity"])
         
@@ -130,7 +130,7 @@ class ImpactMeasurementEngine:
         # Calculate the weight of each investment in the portfolio
         total_value = portfolio.total_value
         weights = {
-            holding.investment_id: holding.current_value / total_value
+            holding.investment_id: float(holding.current_value.amount) / float(total_value.amount)
             for holding in portfolio.holdings
         }
         
@@ -495,7 +495,7 @@ class ImpactMeasurementEngine:
                 continue
                 
             # Calculate weight of this investment in the portfolio
-            weight = holding.current_value / total_portfolio_value
+            weight = float(holding.current_value.amount) / float(total_portfolio_value.amount)
             investment_weights[investment_id] = weight
             
             # Get investment impact data
@@ -504,7 +504,7 @@ class ImpactMeasurementEngine:
             # Calculate attribution percentage (how much of the company's impact is attributable to the portfolio)
             investment = investments[investment_id]
             company_value = investment.market_cap
-            attribution_percentage = (holding.current_value / company_value) * 100 if company_value > 0 else 0
+            attribution_percentage = (float(holding.current_value.amount) / float(company_value.amount)) * 100 if company_value.amount > 0 else 0
             
             # Calculate absolute impact contribution to the portfolio
             investment_impact = {}
@@ -524,7 +524,7 @@ class ImpactMeasurementEngine:
         # Calculate impact per dollar invested
         impact_per_dollar = {}
         for metric, total_value in aggregate_impact.items():
-            impact_per_dollar[metric] = total_value / total_portfolio_value if total_portfolio_value > 0 else 0
+            impact_per_dollar[metric] = total_value / float(total_portfolio_value.amount) if total_portfolio_value.amount > 0 else 0
         
         # Compile the final result
         result = {

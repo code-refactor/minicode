@@ -181,7 +181,9 @@ class InMemoryEnvironmentStorage(EnvironmentStorageInterface):
         self._link_storage = InMemoryStorage(TaskEnvironmentLink)
     
     def create_environment(self, environment: EnvironmentSnapshot) -> str:
-        return self._environment_storage.create(environment)
+        self._environment_storage.create(environment)
+        # Return the environment's ID (convert UUID to string if needed)
+        return environment.id if isinstance(environment.id, str) else str(environment.id)
     
     def get_environment(self, environment_id: str) -> Optional[EnvironmentSnapshot]:
         return self._environment_storage.get(environment_id)
@@ -221,7 +223,9 @@ class InMemoryEnvironmentStorage(EnvironmentStorageInterface):
         return environments
     
     def create_task_environment_link(self, link: TaskEnvironmentLink) -> str:
-        return self._link_storage.create(link)
+        self._link_storage.create(link)
+        # Return the link's ID (convert UUID to string if needed)
+        return link.id if isinstance(link.id, str) else str(link.id)
     
     def get_task_environment_link(self, link_id: str) -> Optional[TaskEnvironmentLink]:
         return self._link_storage.get(link_id)

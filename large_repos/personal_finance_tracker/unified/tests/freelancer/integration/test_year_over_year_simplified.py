@@ -85,8 +85,8 @@ class TestYearOverYearSimplified:
         # Verify income increased
         assert total_2022 > total_2021
         
-        # Calculate growth rate
-        growth_rate = (total_2022 - total_2021) / total_2021
+        # Calculate growth rate - convert Money to float for division
+        growth_rate = float((total_2022 - total_2021).amount) / float(total_2021.amount)
         assert growth_rate > 0
     
     def test_expense_comparison_across_years(self):

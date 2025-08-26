@@ -135,15 +135,27 @@ class SecurityRegisters:
     
     def dump_registers(self) -> Dict[str, int]:
         """Get a snapshot of all register values."""
-        result = self.base.get_all_registers()
+        # Check if base has get_all_registers method
+        if hasattr(self.base, 'get_all_registers'):
+            result = self.base.get_all_registers()
+        else:
+            # Base might be another SecurityRegisters, get values manually
+            result = {}
+            for i in range(self.register_count):
+                result[f"R{i}"] = self.get_register(i)
+        
         result.update({
             "IP": self.ip,  # Alias for PC
-            "SP": self.base.stack_pointer,
-            "BP": self.base.frame_pointer, # Alias for FP
+            "SP": self.sp,
+            "BP": self.bp,  # Alias for FP
             "PRIV": self.privilege_level.value,
             "PKEY": self.protection_key,
         })
         return result
+    
+    def get_all_registers(self) -> Dict[str, int]:
+        """Get all register values (for compatibility)."""
+        return self.dump_registers()
     
     @property
     def ip(self) -> int:
@@ -318,9 +330,11 @@ class CPU(ProcessorBase):
     
     def reset(self) -> None:
         """Reset the CPU state."""
+        # First reset the base state
         super().reset()
-        # Re-wrap registers with SecurityRegisters after base reset
-        self.registers = SecurityRegisters(self.registers)
+        # Now wrap with SecurityRegisters if not already wrapped
+        if not isinstance(self.registers, SecurityRegisters):
+            self.registers = SecurityRegisters(self.registers)
         self.running = False
         self.halted = False
         self.control_flow_records = []

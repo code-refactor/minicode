@@ -74,7 +74,7 @@ class TestRoundRobinScheduler:
         scheduler = RoundRobinScheduler(num_processors=2, time_slice=3)
         
         # Create a test thread
-        thread = create_test_thread("thread1", state=ProcessorState.RUNNING)
+        thread = create_test_thread("thread1", state=ProcessorState.EXECUTING)
         
         # First two cycles, should not preempt
         assert not scheduler.should_preempt(thread, [], 0)
@@ -111,9 +111,9 @@ class TestRoundRobinScheduler:
         
         # Check processors
         assert processors[0].current_thread_id == "thread1"
-        assert processors[0].state == ProcessorState.RUNNING
+        assert processors[0].state == ProcessorState.EXECUTING
         assert processors[1].current_thread_id == "thread2"
-        assert processors[1].state == ProcessorState.RUNNING
+        assert processors[1].state == ProcessorState.EXECUTING
         
         # Check remaining queue
         assert new_queue == ["thread3"]
@@ -189,7 +189,7 @@ class TestPriorityScheduler:
         
         # Create a running thread with NORMAL priority
         running_thread = create_test_thread(
-            "running", priority=ThreadPriority.NORMAL, state=ProcessorState.RUNNING
+            "running", priority=ThreadPriority.NORMAL, state=ProcessorState.EXECUTING
         )
         
         # Create a higher priority waiting thread
@@ -214,7 +214,7 @@ class TestPriorityScheduler:
         
         # Create a running thread with LOW priority
         running_thread = create_test_thread(
-            "running", priority=ThreadPriority.LOW, state=ProcessorState.RUNNING
+            "running", priority=ThreadPriority.LOW, state=ProcessorState.EXECUTING
         )
         
         # Create a higher priority waiting thread
@@ -323,7 +323,7 @@ class TestMultiLevelFeedbackQueueScheduler:
         )
         
         # Create a test thread
-        thread = create_test_thread("thread1", state=ProcessorState.RUNNING)
+        thread = create_test_thread("thread1", state=ProcessorState.EXECUTING)
         
         # Assign thread to highest priority queue
         scheduler.thread_queue["thread1"] = 0

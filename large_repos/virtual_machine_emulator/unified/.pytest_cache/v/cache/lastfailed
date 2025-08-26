@@ -1,18 +1,1 @@
-{
-  "tests/parallel_researcher/core/test_vm.py::TestVirtualMachine::test_context_switching": true,
-  "tests/parallel_researcher/scheduling/test_scheduler.py::TestRoundRobinScheduler::test_should_preempt": true,
-  "tests/parallel_researcher/scheduling/test_scheduler.py::TestRoundRobinScheduler::test_schedule": true,
-  "tests/parallel_researcher/scheduling/test_scheduler.py::TestPriorityScheduler::test_preemptive_scheduling": true,
-  "tests/parallel_researcher/scheduling/test_scheduler.py::TestPriorityScheduler::test_non_preemptive_scheduling": true,
-  "tests/parallel_researcher/scheduling/test_scheduler.py::TestMultiLevelFeedbackQueueScheduler::test_queue_demotion": true,
-  "tests/security_researcher/test_emulator.py::test_vm_load_program": true,
-  "tests/security_researcher/test_emulator.py::test_vm_reset": true,
-  "tests/security_researcher/test_memory.py::test_memory_aslr": true,
-  "tests/security_researcher/test_visualization.py::test_forensic_analyzer_execution_analysis": true,
-  "tests/security_researcher/test_integration.py::test_multiple_attack_vectors": true,
-  "tests/security_researcher/test_scenarios.py::test_buffer_overflow_scenario": true,
-  "tests/security_researcher/test_scenarios.py::test_return_oriented_programming_scenario": true,
-  "tests/security_researcher/test_scenarios.py::test_format_string_scenario": true,
-  "tests/security_researcher/test_scenarios.py::test_privilege_escalation_scenario": true,
-  "tests/security_researcher/test_scenarios.py::test_compare_protection_strategies": true
-}
+{}

@@ -727,7 +727,9 @@ def test_status_update_template(temp_dir):
         severity="low",
         cvss_vector="CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
         cvss_score=3.7,
-        remediation_plan="Updated the load balancer configuration to only allow TLS 1.2 and above."
+        remediation_plan="Updated the load balancer configuration to only allow TLS 1.2 and above.",
+        remediated_by="ops_team",  # Required for remediated status
+        remediation_date=datetime.now() - timedelta(days=5)
     )
     findings.append(finding3)
     
@@ -1149,6 +1151,7 @@ def test_report_formats_rendering(temp_dir):
         discovered_by="test_user",
         status="open",
         severity="high",
+        cvss_vector="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
         cvss_score=8.5
     )
     

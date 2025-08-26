@@ -595,7 +595,7 @@ class RemediationTracker(BaseService[RemediationTask]):
         Returns:
             Number of tasks matching criteria
         """
-        return self.count(filters)
+        return super().count(filters)
     
     def get_remediation_metrics(self) -> Dict[str, Any]:
         """

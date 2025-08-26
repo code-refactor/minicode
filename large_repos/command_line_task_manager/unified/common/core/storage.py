@@ -207,8 +207,20 @@ class InMemoryStorage(StorageInterface[T]):
                             match = False
                             break
                 else:
-                    # Simple equality check
-                    if field_value != value:
+                    # Handle set membership check
+                    if isinstance(field_value, set):
+                        # Check if value is in the set
+                        if value not in field_value:
+                            match = False
+                            break
+                    # Handle list membership check
+                    elif isinstance(field_value, list):
+                        # Check if value is in the list
+                        if value not in field_value:
+                            match = False
+                            break
+                    # Simple equality check for other types
+                    elif field_value != value:
                         match = False
                         break
             

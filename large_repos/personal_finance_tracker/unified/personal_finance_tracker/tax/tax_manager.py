@@ -501,19 +501,27 @@ class TaxManager:
         # Calculate safe harbor amount (simplified)
         safe_harbor = ytd_liability * 0.225  # 90% of annual tax / 4
         
+        # Ensure all values are floats (not Money objects) for backward compatibility
+        payment_amount_float = float(payment_amount.amount) if hasattr(payment_amount, 'amount') else float(payment_amount)
+        safe_harbor_float = float(safe_harbor.amount) if hasattr(safe_harbor, 'amount') else float(safe_harbor)
+        ytd_liability_float = float(ytd_liability.amount) if hasattr(ytd_liability, 'amount') else float(ytd_liability)
+        ytd_federal_tax_float = float(ytd_federal_tax.amount) if hasattr(ytd_federal_tax, 'amount') else float(ytd_federal_tax)
+        ytd_se_tax_float = float(ytd_se_tax.amount) if hasattr(ytd_se_tax, 'amount') else float(ytd_se_tax)
+        prior_payments_float = float(prior_payments.amount) if hasattr(prior_payments, 'amount') else float(prior_payments)
+        
         # Create estimated payment object with federal tax component for test compatibility
         payment = EstimatedPayment(
             tax_year=tax_year,
             quarter=quarter,
             jurisdiction=TaxJurisdiction.FEDERAL,
             due_date=quarter_info.due_date,
-            payment_amount=max(0, payment_amount),
-            minimum_required=max(0, min(payment_amount, safe_harbor)),
-            safe_harbor_amount=safe_harbor,
-            year_to_date_liability=ytd_liability,
-            previous_payments=prior_payments,
-            federal_tax=ytd_federal_tax * (quarter/4),
-            self_employment_tax=ytd_se_tax * (quarter/4),
+            payment_amount=max(0, payment_amount_float),
+            minimum_required=max(0, min(payment_amount_float, safe_harbor_float)),
+            safe_harbor_amount=safe_harbor_float,
+            year_to_date_liability=ytd_liability_float,
+            previous_payments=prior_payments_float,
+            federal_tax=ytd_federal_tax_float * (quarter/4),
+            self_employment_tax=ytd_se_tax_float * (quarter/4),
             notes=f"Estimated Q{quarter} tax payment for {tax_year}",
         )
         

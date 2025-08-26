@@ -1,21 +1,21 @@
 {
-    "total_logprobs": -36354.658518224904,
+    "total_logprobs": -36376.75216840912,
     "total_tokens": 91598,
-    "unified/gamevault/backup_engine/storage.py": {
-        "logprobs": -1048.0831988967052,
+    "unified/common/models/file_info.py": {
+        "logprobs": -322.28021115713653,
         "metrics": {
-            "loc": 261,
-            "sloc": 76,
-            "lloc": 89,
-            "comments": 25,
-            "multi": 96,
-            "blank": 64,
-            "cyclomatic": 20,
+            "loc": 69,
+            "sloc": 48,
+            "lloc": 49,
+            "comments": 3,
+            "multi": 0,
+            "blank": 13,
+            "cyclomatic": 13,
             "internal_imports": []
         }
     },
     "unified/gamevault/backup_engine/chunker.py": {
-        "logprobs": -665.7543009481279,
+        "logprobs": -665.7343303012279,
         "metrics": {
             "loc": 220,
             "sloc": 78,
@@ -27,172 +27,107 @@
             "internal_imports": []
         }
     },
-    "unified/common/storage/deduplicator.py": {
-        "logprobs": -461.0240210896726,
+    "unified/common/utils/hashing.py": {
+        "logprobs": -257.48517973981717,
         "metrics": {
-            "loc": 185,
-            "sloc": 79,
-            "lloc": 89,
+            "loc": 69,
+            "sloc": 24,
+            "lloc": 28,
             "comments": 2,
-            "multi": 62,
-            "blank": 40,
-            "cyclomatic": 39,
+            "multi": 26,
+            "blank": 17,
+            "cyclomatic": 7,
             "internal_imports": []
         }
     },
-    "unified/gamevault/asset_optimization/chunking.py": {
-        "logprobs": -1169.1709921755562,
+    "unified/common/chunking/factory.py": {
+        "logprobs": -437.0654797774218,
         "metrics": {
-            "loc": 434,
-            "sloc": 161,
-            "lloc": 186,
-            "comments": 38,
-            "multi": 140,
-            "blank": 100,
-            "cyclomatic": 85,
+            "loc": 121,
+            "sloc": 62,
+            "lloc": 45,
+            "comments": 11,
+            "multi": 28,
+            "blank": 23,
+            "cyclomatic": 16,
             "internal_imports": []
         }
     },
-    "unified/creative_vault/utils.py": {
-        "logprobs": -1002.6793763950257,
+    "unified/creative_vault/timeline/timeline_manager.py": {
+        "logprobs": -1693.8197923413504,
         "metrics": {
-            "loc": 213,
-            "sloc": 98,
-            "lloc": 88,
-            "comments": 18,
-            "multi": 45,
-            "blank": 51,
-            "cyclomatic": 21,
+            "loc": 547,
+            "sloc": 276,
+            "lloc": 260,
+            "comments": 66,
+            "multi": 93,
+            "blank": 111,
+            "cyclomatic": 66,
             "internal_imports": []
         }
     },
-    "unified/gamevault/__init__.py": {
-        "logprobs": -182.89021104545,
+    "unified/gamevault/backup_engine/__init__.py": {
+        "logprobs": -249.21467297826462,
         "metrics": {
-            "loc": 8,
-            "sloc": 1,
-            "lloc": 2,
+            "loc": 23,
+            "sloc": 15,
+            "lloc": 6,
             "comments": 0,
             "multi": 5,
-            "blank": 2,
+            "blank": 3,
             "cyclomatic": 0,
             "internal_imports": []
         }
     },
-    "unified/common/__init__.py": {
-        "logprobs": -86.899073,
+    "unified/gamevault/platform_config/__init__.py": {
+        "logprobs": -205.999182230359,
         "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 0,
-            "comments": 1,
-            "multi": 0,
-            "blank": 0,
+            "loc": 12,
+            "sloc": 4,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
             "cyclomatic": 0,
             "internal_imports": []
         }
     },
-    "unified/creative_vault/interfaces.py": {
-        "logprobs": -745.9616451131423,
+    "unified/gamevault/milestone_management/manager.py": {
+        "logprobs": -1070.4878294654511,
         "metrics": {
-            "loc": 307,
-            "sloc": 110,
-            "lloc": 84,
-            "comments": 1,
-            "multi": 127,
-            "blank": 64,
-            "cyclomatic": 27,
+            "loc": 462,
+            "sloc": 252,
+            "lloc": 153,
+            "comments": 31,
+            "multi": 101,
+            "blank": 78,
+            "cyclomatic": 56,
             "internal_imports": []
         }
     },
-    "unified/creative_vault/backup_engine/incremental_backup.py": {
-        "logprobs": -1542.7169258511797,
+    "unified/gamevault/models.py": {
+        "logprobs": -702.3875103810758,
         "metrics": {
-            "loc": 392,
-            "sloc": 212,
-            "lloc": 208,
-            "comments": 36,
-            "multi": 59,
-            "blank": 85,
-            "cyclomatic": 55,
-            "internal_imports": []
-        }
-    },
-    "unified/common/versioning/version_dag.py": {
-        "logprobs": -457.25160489881335,
-        "metrics": {
-            "loc": 253,
-            "sloc": 104,
+            "loc": 107,
+            "sloc": 72,
             "lloc": 121,
-            "comments": 13,
-            "multi": 78,
+            "comments": 0,
+            "multi": 4,
+            "blank": 24,
+            "cyclomatic": 7,
+            "internal_imports": []
+        }
+    },
+    "unified/common/chunking/strategies.py": {
+        "logprobs": -574.0776724573673,
+        "metrics": {
+            "loc": 230,
+            "sloc": 78,
+            "lloc": 96,
+            "comments": 17,
+            "multi": 80,
             "blank": 56,
-            "cyclomatic": 47,
-            "internal_imports": []
-        }
-    },
-    "unified/creative_vault/asset_tracker/reference_tracker.py": {
-        "logprobs": -1661.8429132716067,
-        "metrics": {
-            "loc": 673,
-            "sloc": 333,
-            "lloc": 297,
-            "comments": 73,
-            "multi": 118,
-            "blank": 146,
-            "cyclomatic": 98,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/platform_config/manager.py": {
-        "logprobs": -1519.270893763706,
-        "metrics": {
-            "loc": 805,
-            "sloc": 518,
-            "lloc": 290,
-            "comments": 38,
-            "multi": 126,
-            "blank": 123,
-            "cyclomatic": 113,
-            "internal_imports": []
-        }
-    },
-    "unified/common/models/__init__.py": {
-        "logprobs": -136.91160965634,
-        "metrics": {
-            "loc": 7,
-            "sloc": 4,
-            "lloc": 5,
-            "comments": 0,
-            "multi": 0,
-            "blank": 2,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "unified/setup.py": {
-        "logprobs": -220.97100402441,
-        "metrics": {
-            "loc": 9,
-            "sloc": 8,
-            "lloc": 2,
-            "comments": 0,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "unified/common/storage/__init__.py": {
-        "logprobs": -148.76409235790953,
-        "metrics": {
-            "loc": 7,
-            "sloc": 4,
-            "lloc": 5,
-            "comments": 0,
-            "multi": 0,
-            "blank": 2,
-            "cyclomatic": 0,
+            "cyclomatic": 32,
             "internal_imports": []
         }
     },
@@ -209,307 +144,21 @@
             "internal_imports": []
         }
     },
-    "unified/common/utils/hashing.py": {
-        "logprobs": -259.28071600168386,
+    "unified/gamevault/backup_engine/storage.py": {
+        "logprobs": -1056.0774363957712,
         "metrics": {
-            "loc": 69,
-            "sloc": 24,
-            "lloc": 28,
-            "comments": 2,
-            "multi": 26,
-            "blank": 17,
-            "cyclomatic": 7,
-            "internal_imports": []
-        }
-    },
-    "unified/common/chunking/factory.py": {
-        "logprobs": -439.2698014202517,
-        "metrics": {
-            "loc": 121,
-            "sloc": 62,
-            "lloc": 45,
-            "comments": 11,
-            "multi": 28,
-            "blank": 23,
-            "cyclomatic": 16,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/platform_config/__init__.py": {
-        "logprobs": -204.071251828977,
-        "metrics": {
-            "loc": 12,
-            "sloc": 4,
-            "lloc": 3,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "unified/common/utils/time_utils.py": {
-        "logprobs": -166.64931479331125,
-        "metrics": {
-            "loc": 50,
-            "sloc": 16,
-            "lloc": 20,
-            "comments": 0,
-            "multi": 21,
-            "blank": 12,
-            "cyclomatic": 5,
-            "internal_imports": []
-        }
-    },
-    "unified/common/models/snapshot.py": {
-        "logprobs": -378.11198753506113,
-        "metrics": {
-            "loc": 113,
+            "loc": 261,
             "sloc": 76,
-            "lloc": 87,
-            "comments": 4,
-            "multi": 0,
-            "blank": 22,
-            "cyclomatic": 27,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/asset_optimization/compressor.py": {
-        "logprobs": -740.9537097118647,
-        "metrics": {
-            "loc": 246,
-            "sloc": 50,
-            "lloc": 71,
-            "comments": 12,
-            "multi": 121,
-            "blank": 63,
-            "cyclomatic": 32,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/backup_engine/version_tracker.py": {
-        "logprobs": -733.7058631206475,
-        "metrics": {
-            "loc": 371,
-            "sloc": 159,
-            "lloc": 151,
-            "comments": 21,
-            "multi": 111,
-            "blank": 80,
-            "cyclomatic": 46,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/feedback_system/database.py": {
-        "logprobs": -872.142155796397,
-        "metrics": {
-            "loc": 538,
-            "sloc": 304,
-            "lloc": 201,
-            "comments": 43,
-            "multi": 93,
-            "blank": 98,
-            "cyclomatic": 66,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/backup_engine/__init__.py": {
-        "logprobs": -253.98795122399213,
-        "metrics": {
-            "loc": 23,
-            "sloc": 15,
-            "lloc": 6,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/feedback_system/manager.py": {
-        "logprobs": -837.1113591110543,
-        "metrics": {
-            "loc": 399,
-            "sloc": 171,
-            "lloc": 108,
-            "comments": 13,
-            "multi": 146,
-            "blank": 69,
-            "cyclomatic": 44,
-            "internal_imports": []
-        }
-    },
-    "unified/creative_vault/timeline/timeline_manager.py": {
-        "logprobs": -1686.0115721685593,
-        "metrics": {
-            "loc": 547,
-            "sloc": 276,
-            "lloc": 260,
-            "comments": 66,
-            "multi": 93,
-            "blank": 111,
-            "cyclomatic": 66,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/backup_engine/engine.py": {
-        "logprobs": -1268.3264432964875,
-        "metrics": {
-            "loc": 402,
-            "sloc": 195,
-            "lloc": 150,
-            "comments": 38,
-            "multi": 91,
-            "blank": 78,
-            "cyclomatic": 44,
-            "internal_imports": []
-        }
-    },
-    "unified/common/versioning/version_manager.py": {
-        "logprobs": -453.097587256577,
-        "metrics": {
-            "loc": 193,
-            "sloc": 75,
-            "lloc": 81,
-            "comments": 4,
-            "multi": 69,
-            "blank": 42,
-            "cyclomatic": 26,
-            "internal_imports": []
-        }
-    },
-    "unified/common/core/interfaces.py": {
-        "logprobs": -429.87395119013115,
-        "metrics": {
-            "loc": 168,
-            "sloc": 90,
-            "lloc": 123,
-            "comments": 0,
-            "multi": 4,
-            "blank": 41,
-            "cyclomatic": 40,
-            "internal_imports": []
-        }
-    },
-    "unified/common/compression/compressor.py": {
-        "logprobs": -483.42379895826866,
-        "metrics": {
-            "loc": 218,
-            "sloc": 98,
-            "lloc": 122,
-            "comments": 11,
-            "multi": 50,
-            "blank": 45,
-            "cyclomatic": 42,
-            "internal_imports": []
-        }
-    },
-    "unified/common/compression/delta.py": {
-        "logprobs": -536.1546494000015,
-        "metrics": {
-            "loc": 245,
-            "sloc": 113,
-            "lloc": 134,
-            "comments": 14,
-            "multi": 67,
-            "blank": 49,
-            "cyclomatic": 38,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/models.py": {
-        "logprobs": -705.5258148590281,
-        "metrics": {
-            "loc": 107,
-            "sloc": 72,
-            "lloc": 121,
-            "comments": 0,
-            "multi": 4,
-            "blank": 24,
-            "cyclomatic": 7,
-            "internal_imports": []
-        }
-    },
-    "unified/common/utils/__init__.py": {
-        "logprobs": -218.65309231793196,
-        "metrics": {
-            "loc": 43,
-            "sloc": 40,
-            "lloc": 6,
-            "comments": 0,
-            "multi": 0,
-            "blank": 2,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/milestone_management/manager.py": {
-        "logprobs": -1065.037532001861,
-        "metrics": {
-            "loc": 462,
-            "sloc": 252,
-            "lloc": 153,
-            "comments": 31,
-            "multi": 101,
-            "blank": 78,
-            "cyclomatic": 56,
-            "internal_imports": []
-        }
-    },
-    "unified/common/versioning/snapshot_manager.py": {
-        "logprobs": -787.7421946563995,
-        "metrics": {
-            "loc": 256,
-            "sloc": 119,
-            "lloc": 109,
-            "comments": 18,
-            "multi": 62,
-            "blank": 55,
-            "cyclomatic": 35,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/milestone_management/__init__.py": {
-        "logprobs": -191.6456851081095,
-        "metrics": {
-            "loc": 12,
-            "sloc": 4,
-            "lloc": 3,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "unified/common/storage/content_store.py": {
-        "logprobs": -394.67530044301236,
-        "metrics": {
-            "loc": 171,
-            "sloc": 64,
-            "lloc": 71,
-            "comments": 8,
-            "multi": 58,
-            "blank": 39,
-            "cyclomatic": 16,
-            "internal_imports": []
-        }
-    },
-    "unified/common/chunking/__init__.py": {
-        "logprobs": -151.484631505118,
-        "metrics": {
-            "loc": 15,
-            "sloc": 12,
-            "lloc": 4,
-            "comments": 0,
-            "multi": 0,
-            "blank": 2,
-            "cyclomatic": 0,
+            "lloc": 89,
+            "comments": 25,
+            "multi": 96,
+            "blank": 64,
+            "cyclomatic": 20,
             "internal_imports": []
         }
     },
     "unified/gamevault/utils.py": {
-        "logprobs": -662.1065093059282,
+        "logprobs": -662.6958652181827,
         "metrics": {
             "loc": 185,
             "sloc": 53,
@@ -521,129 +170,25 @@
             "internal_imports": []
         }
     },
-    "unified/common/chunking/strategies.py": {
-        "logprobs": -579.4486599174461,
+    "unified/gamevault/asset_optimization/chunking.py": {
+        "logprobs": -1170.528498951277,
         "metrics": {
-            "loc": 230,
-            "sloc": 78,
-            "lloc": 96,
-            "comments": 17,
-            "multi": 80,
-            "blank": 56,
-            "cyclomatic": 32,
+            "loc": 434,
+            "sloc": 161,
+            "lloc": 186,
+            "comments": 38,
+            "multi": 140,
+            "blank": 100,
+            "cyclomatic": 85,
             "internal_imports": []
         }
     },
-    "unified/common/models/file_info.py": {
-        "logprobs": -321.6579117126619,
+    "unified/gamevault/milestone_management/__init__.py": {
+        "logprobs": -192.6113354150905,
         "metrics": {
-            "loc": 69,
-            "sloc": 48,
-            "lloc": 49,
-            "comments": 3,
-            "multi": 0,
-            "blank": 13,
-            "cyclomatic": 13,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/asset_optimization/manager.py": {
-        "logprobs": -1273.4621614211442,
-        "metrics": {
-            "loc": 330,
-            "sloc": 168,
-            "lloc": 116,
-            "comments": 43,
-            "multi": 64,
-            "blank": 59,
-            "cyclomatic": 36,
-            "internal_imports": []
-        }
-    },
-    "unified/creative_vault/visual_diff/diff_generator.py": {
-        "logprobs": -1086.701141463174,
-        "metrics": {
-            "loc": 441,
-            "sloc": 232,
-            "lloc": 193,
-            "comments": 50,
-            "multi": 76,
-            "blank": 86,
-            "cyclomatic": 57,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/asset_optimization/deduplication.py": {
-        "logprobs": -747.4641316183604,
-        "metrics": {
-            "loc": 317,
-            "sloc": 142,
-            "lloc": 140,
-            "comments": 22,
-            "multi": 84,
-            "blank": 69,
-            "cyclomatic": 49,
-            "internal_imports": []
-        }
-    },
-    "unified/creative_vault/__main__.py": {
-        "logprobs": -1083.7542924843056,
-        "metrics": {
-            "loc": 343,
-            "sloc": 194,
-            "lloc": 145,
-            "comments": 21,
-            "multi": 55,
-            "blank": 72,
-            "cyclomatic": 30,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/config.py": {
-        "logprobs": -603.5546912570443,
-        "metrics": {
-            "loc": 114,
-            "sloc": 65,
-            "lloc": 31,
-            "comments": 23,
-            "multi": 16,
-            "blank": 23,
-            "cyclomatic": 3,
-            "internal_imports": []
-        }
-    },
-    "unified/common/utils/filesystem.py": {
-        "logprobs": -453.35189182566444,
-        "metrics": {
-            "loc": 150,
-            "sloc": 67,
-            "lloc": 71,
-            "comments": 13,
-            "multi": 35,
-            "blank": 34,
-            "cyclomatic": 27,
-            "internal_imports": []
-        }
-    },
-    "unified/common/models/version.py": {
-        "logprobs": -257.93677163462604,
-        "metrics": {
-            "loc": 51,
-            "sloc": 35,
-            "lloc": 41,
-            "comments": 0,
-            "multi": 0,
-            "blank": 9,
-            "cyclomatic": 9,
-            "internal_imports": []
-        }
-    },
-    "unified/gamevault/feedback_system/__init__.py": {
-        "logprobs": -210.2163565576166,
-        "metrics": {
-            "loc": 16,
-            "sloc": 8,
-            "lloc": 5,
+            "loc": 12,
+            "sloc": 4,
+            "lloc": 3,
             "comments": 0,
             "multi": 5,
             "blank": 3,
@@ -651,60 +196,21 @@
             "internal_imports": []
         }
     },
-    "unified/creative_vault/workspace_capture/environment_capture.py": {
-        "logprobs": -1296.8661484390893,
+    "unified/common/versioning/version_manager.py": {
+        "logprobs": -456.8888933514366,
         "metrics": {
-            "loc": 640,
-            "sloc": 417,
-            "lloc": 260,
-            "comments": 60,
-            "multi": 67,
-            "blank": 99,
-            "cyclomatic": 77,
-            "internal_imports": []
-        }
-    },
-    "unified/common/storage/backend.py": {
-        "logprobs": -396.8544709295272,
-        "metrics": {
-            "loc": 176,
-            "sloc": 67,
-            "lloc": 80,
-            "comments": 7,
-            "multi": 62,
-            "blank": 40,
+            "loc": 193,
+            "sloc": 75,
+            "lloc": 81,
+            "comments": 4,
+            "multi": 69,
+            "blank": 42,
             "cyclomatic": 26,
             "internal_imports": []
         }
     },
-    "unified/creative_vault/element_extraction/extractor.py": {
-        "logprobs": -1101.4060498650601,
-        "metrics": {
-            "loc": 620,
-            "sloc": 346,
-            "lloc": 266,
-            "comments": 75,
-            "multi": 78,
-            "blank": 119,
-            "cyclomatic": 108,
-            "internal_imports": []
-        }
-    },
-    "unified/common/compression/__init__.py": {
-        "logprobs": -128.437140554041,
-        "metrics": {
-            "loc": 6,
-            "sloc": 3,
-            "lloc": 4,
-            "comments": 0,
-            "multi": 0,
-            "blank": 2,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
     "unified/gamevault/asset_optimization/__init__.py": {
-        "logprobs": -293.6120718116217,
+        "logprobs": -291.83671913952725,
         "metrics": {
             "loc": 37,
             "sloc": 29,
@@ -716,8 +222,34 @@
             "internal_imports": []
         }
     },
-    "unified/common/versioning/__init__.py": {
-        "logprobs": -148.529651279711,
+    "unified/common/versioning/version_dag.py": {
+        "logprobs": -458.801499301124,
+        "metrics": {
+            "loc": 253,
+            "sloc": 104,
+            "lloc": 121,
+            "comments": 13,
+            "multi": 78,
+            "blank": 56,
+            "cyclomatic": 47,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/element_extraction/extractor.py": {
+        "logprobs": -1099.421065936165,
+        "metrics": {
+            "loc": 620,
+            "sloc": 346,
+            "lloc": 266,
+            "comments": 75,
+            "multi": 78,
+            "blank": 119,
+            "cyclomatic": 108,
+            "internal_imports": []
+        }
+    },
+    "unified/common/storage/__init__.py": {
+        "logprobs": -150.3317117105699,
         "metrics": {
             "loc": 7,
             "sloc": 4,
@@ -729,8 +261,34 @@
             "internal_imports": []
         }
     },
+    "unified/common/utils/filesystem.py": {
+        "logprobs": -451.0755019078854,
+        "metrics": {
+            "loc": 150,
+            "sloc": 67,
+            "lloc": 71,
+            "comments": 13,
+            "multi": 35,
+            "blank": 34,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "unified/common/compression/delta.py": {
+        "logprobs": -540.4403239410121,
+        "metrics": {
+            "loc": 245,
+            "sloc": 113,
+            "lloc": 134,
+            "comments": 14,
+            "multi": 67,
+            "blank": 49,
+            "cyclomatic": 38,
+            "internal_imports": []
+        }
+    },
     "unified/common/utils/serialization.py": {
-        "logprobs": -220.90047621899865,
+        "logprobs": -224.75447154069448,
         "metrics": {
             "loc": 72,
             "sloc": 22,
@@ -742,8 +300,398 @@
             "internal_imports": []
         }
     },
+    "unified/gamevault/asset_optimization/manager.py": {
+        "logprobs": -1276.5579749092972,
+        "metrics": {
+            "loc": 330,
+            "sloc": 168,
+            "lloc": 116,
+            "comments": 43,
+            "multi": 64,
+            "blank": 59,
+            "cyclomatic": 36,
+            "internal_imports": []
+        }
+    },
+    "unified/common/chunking/__init__.py": {
+        "logprobs": -151.4494210467527,
+        "metrics": {
+            "loc": 15,
+            "sloc": 12,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/utils/time_utils.py": {
+        "logprobs": -171.61917067873213,
+        "metrics": {
+            "loc": 50,
+            "sloc": 16,
+            "lloc": 20,
+            "comments": 0,
+            "multi": 21,
+            "blank": 12,
+            "cyclomatic": 5,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/visual_diff/diff_generator.py": {
+        "logprobs": -1088.3060696834464,
+        "metrics": {
+            "loc": 441,
+            "sloc": 232,
+            "lloc": 193,
+            "comments": 50,
+            "multi": 76,
+            "blank": 86,
+            "cyclomatic": 57,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/config.py": {
+        "logprobs": -601.8528252822813,
+        "metrics": {
+            "loc": 114,
+            "sloc": 65,
+            "lloc": 31,
+            "comments": 23,
+            "multi": 16,
+            "blank": 23,
+            "cyclomatic": 3,
+            "internal_imports": []
+        }
+    },
+    "unified/common/versioning/__init__.py": {
+        "logprobs": -148.617667855406,
+        "metrics": {
+            "loc": 7,
+            "sloc": 4,
+            "lloc": 5,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/setup.py": {
+        "logprobs": -223.95978298853,
+        "metrics": {
+            "loc": 9,
+            "sloc": 8,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/backup_engine/version_tracker.py": {
+        "logprobs": -738.3347908889822,
+        "metrics": {
+            "loc": 371,
+            "sloc": 159,
+            "lloc": 151,
+            "comments": 21,
+            "multi": 111,
+            "blank": 80,
+            "cyclomatic": 46,
+            "internal_imports": []
+        }
+    },
+    "unified/common/utils/__init__.py": {
+        "logprobs": -224.3445621907498,
+        "metrics": {
+            "loc": 43,
+            "sloc": 40,
+            "lloc": 6,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/backup_engine/engine.py": {
+        "logprobs": -1264.2022675550782,
+        "metrics": {
+            "loc": 402,
+            "sloc": 195,
+            "lloc": 150,
+            "comments": 38,
+            "multi": 91,
+            "blank": 78,
+            "cyclomatic": 44,
+            "internal_imports": []
+        }
+    },
+    "unified/common/models/snapshot.py": {
+        "logprobs": -379.6533128639018,
+        "metrics": {
+            "loc": 113,
+            "sloc": 76,
+            "lloc": 87,
+            "comments": 4,
+            "multi": 0,
+            "blank": 22,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "unified/common/storage/deduplicator.py": {
+        "logprobs": -458.33340395714305,
+        "metrics": {
+            "loc": 185,
+            "sloc": 79,
+            "lloc": 89,
+            "comments": 2,
+            "multi": 62,
+            "blank": 40,
+            "cyclomatic": 39,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/backup_engine/incremental_backup.py": {
+        "logprobs": -1539.6385292010007,
+        "metrics": {
+            "loc": 392,
+            "sloc": 212,
+            "lloc": 208,
+            "comments": 36,
+            "multi": 59,
+            "blank": 85,
+            "cyclomatic": 55,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/asset_optimization/deduplication.py": {
+        "logprobs": -746.6962817399182,
+        "metrics": {
+            "loc": 317,
+            "sloc": 142,
+            "lloc": 140,
+            "comments": 22,
+            "multi": 84,
+            "blank": 69,
+            "cyclomatic": 49,
+            "internal_imports": []
+        }
+    },
+    "unified/common/compression/__init__.py": {
+        "logprobs": -128.100429301185,
+        "metrics": {
+            "loc": 6,
+            "sloc": 3,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/common/storage/backend.py": {
+        "logprobs": -393.69538129238947,
+        "metrics": {
+            "loc": 176,
+            "sloc": 67,
+            "lloc": 80,
+            "comments": 7,
+            "multi": 62,
+            "blank": 40,
+            "cyclomatic": 26,
+            "internal_imports": []
+        }
+    },
+    "unified/common/core/interfaces.py": {
+        "logprobs": -426.34706863424407,
+        "metrics": {
+            "loc": 168,
+            "sloc": 90,
+            "lloc": 123,
+            "comments": 0,
+            "multi": 4,
+            "blank": 41,
+            "cyclomatic": 40,
+            "internal_imports": []
+        }
+    },
+    "unified/common/storage/content_store.py": {
+        "logprobs": -389.9832143925408,
+        "metrics": {
+            "loc": 171,
+            "sloc": 64,
+            "lloc": 71,
+            "comments": 8,
+            "multi": 58,
+            "blank": 39,
+            "cyclomatic": 16,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/__init__.py": {
+        "logprobs": -180.702686770536,
+        "metrics": {
+            "loc": 8,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 5,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/utils.py": {
+        "logprobs": -999.3426855677851,
+        "metrics": {
+            "loc": 213,
+            "sloc": 98,
+            "lloc": 88,
+            "comments": 18,
+            "multi": 45,
+            "blank": 51,
+            "cyclomatic": 21,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/platform_config/manager.py": {
+        "logprobs": -1521.7665446945398,
+        "metrics": {
+            "loc": 805,
+            "sloc": 518,
+            "lloc": 290,
+            "comments": 38,
+            "multi": 126,
+            "blank": 123,
+            "cyclomatic": 113,
+            "internal_imports": []
+        }
+    },
+    "unified/common/models/__init__.py": {
+        "logprobs": -135.213113564308,
+        "metrics": {
+            "loc": 7,
+            "sloc": 4,
+            "lloc": 5,
+            "comments": 0,
+            "multi": 0,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/interfaces.py": {
+        "logprobs": -746.0831413476802,
+        "metrics": {
+            "loc": 307,
+            "sloc": 110,
+            "lloc": 84,
+            "comments": 1,
+            "multi": 127,
+            "blank": 64,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "unified/common/models/version.py": {
+        "logprobs": -254.55873049197245,
+        "metrics": {
+            "loc": 51,
+            "sloc": 35,
+            "lloc": 41,
+            "comments": 0,
+            "multi": 0,
+            "blank": 9,
+            "cyclomatic": 9,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/asset_optimization/compressor.py": {
+        "logprobs": -745.9544644601862,
+        "metrics": {
+            "loc": 246,
+            "sloc": 50,
+            "lloc": 71,
+            "comments": 12,
+            "multi": 121,
+            "blank": 63,
+            "cyclomatic": 32,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/feedback_system/manager.py": {
+        "logprobs": -834.6987385032352,
+        "metrics": {
+            "loc": 399,
+            "sloc": 171,
+            "lloc": 108,
+            "comments": 13,
+            "multi": 146,
+            "blank": 69,
+            "cyclomatic": 44,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/__main__.py": {
+        "logprobs": -1082.3930487857742,
+        "metrics": {
+            "loc": 343,
+            "sloc": 194,
+            "lloc": 145,
+            "comments": 21,
+            "multi": 55,
+            "blank": 72,
+            "cyclomatic": 30,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/workspace_capture/environment_capture.py": {
+        "logprobs": -1293.328944267963,
+        "metrics": {
+            "loc": 640,
+            "sloc": 417,
+            "lloc": 260,
+            "comments": 60,
+            "multi": 67,
+            "blank": 99,
+            "cyclomatic": 77,
+            "internal_imports": []
+        }
+    },
+    "unified/common/compression/compressor.py": {
+        "logprobs": -480.4317187849568,
+        "metrics": {
+            "loc": 218,
+            "sloc": 98,
+            "lloc": 122,
+            "comments": 11,
+            "multi": 50,
+            "blank": 45,
+            "cyclomatic": 42,
+            "internal_imports": []
+        }
+    },
+    "unified/common/__init__.py": {
+        "logprobs": -85.5169276,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 0,
+            "comments": 1,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
     "unified/gamevault/feedback_system/analysis.py": {
-        "logprobs": -1083.2302688365146,
+        "logprobs": -1094.7397497886218,
         "metrics": {
             "loc": 339,
             "sloc": 187,
@@ -752,6 +700,58 @@
             "multi": 66,
             "blank": 61,
             "cyclomatic": 53,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/feedback_system/database.py": {
+        "logprobs": -876.5034885529118,
+        "metrics": {
+            "loc": 538,
+            "sloc": 304,
+            "lloc": 201,
+            "comments": 43,
+            "multi": 93,
+            "blank": 98,
+            "cyclomatic": 66,
+            "internal_imports": []
+        }
+    },
+    "unified/common/versioning/snapshot_manager.py": {
+        "logprobs": -787.7002805190359,
+        "metrics": {
+            "loc": 256,
+            "sloc": 119,
+            "lloc": 109,
+            "comments": 18,
+            "multi": 62,
+            "blank": 55,
+            "cyclomatic": 35,
+            "internal_imports": []
+        }
+    },
+    "unified/creative_vault/asset_tracker/reference_tracker.py": {
+        "logprobs": -1664.674685544059,
+        "metrics": {
+            "loc": 673,
+            "sloc": 333,
+            "lloc": 297,
+            "comments": 73,
+            "multi": 118,
+            "blank": 146,
+            "cyclomatic": 98,
+            "internal_imports": []
+        }
+    },
+    "unified/gamevault/feedback_system/__init__.py": {
+        "logprobs": -209.39638616575104,
+        "metrics": {
+            "loc": 16,
+            "sloc": 8,
+            "lloc": 5,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },

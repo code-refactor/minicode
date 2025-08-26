@@ -291,7 +291,7 @@ def test_memory_aslr():
     memory = Memory(enable_aslr=True, aslr_entropy=8)
     
     segment1 = MemorySegment(base_address=0x1000, size=0x1000, name="code")
-    segment2 = MemorySegment(base_address=0x2000, size=0x1000, name="code")
+    segment2 = MemorySegment(base_address=0x4000, size=0x1000, name="code")
     
     # Add segments with ASLR
     actual_segment1 = memory.add_segment(segment1, apply_aslr=True)
@@ -299,12 +299,12 @@ def test_memory_aslr():
     
     # Segments with the same name should receive the same offset
     offset = actual_segment1.base_address - 0x1000
-    assert actual_segment2.base_address == 0x2000 + offset
+    assert actual_segment2.base_address == 0x4000 + offset
     
-    # Non-randomized segment
-    segment3 = MemorySegment(base_address=0x3000, size=0x1000, name="fixed")
+    # Non-randomized segment (placed far enough to avoid overlap)
+    segment3 = MemorySegment(base_address=0x8000, size=0x1000, name="fixed")
     actual_segment3 = memory.add_segment(segment3, apply_aslr=False)
-    assert actual_segment3.base_address == 0x3000
+    assert actual_segment3.base_address == 0x8000
 
 
 def test_memory_protection_log():

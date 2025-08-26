@@ -96,7 +96,7 @@ class PortfolioAnalysisSystem:
                 sector = investment.sector
                 
                 # Calculate sector weight
-                weight = holding.current_value / total_value
+                weight = float(holding.current_value.amount) / float(total_value.amount)
                 
                 if sector in sector_breakdown:
                     sector_breakdown[sector] += weight
@@ -112,7 +112,7 @@ class PortfolioAnalysisSystem:
                 industry = investment.industry
                 
                 # Calculate industry weight
-                weight = holding.current_value / total_value
+                weight = float(holding.current_value.amount) / float(total_value.amount)
                 
                 if industry in industry_breakdown:
                     industry_breakdown[industry] += weight
@@ -138,7 +138,7 @@ class PortfolioAnalysisSystem:
             investment_id = holding.investment_id
             if investment_id in investments:
                 investment = investments[investment_id]
-                weight = holding.current_value / total_value
+                weight = float(holding.current_value.amount) / float(total_value.amount)
                 
                 # Map positive practices to themes
                 for practice in investment.positive_practices:
@@ -156,7 +156,7 @@ class PortfolioAnalysisSystem:
         # Identify top holdings
         top_holdings = []
         for holding in portfolio.holdings:
-            weight = holding.current_value / total_value
+            weight = float(holding.current_value.amount) / float(total_value.amount)
             top_holdings.append((holding.investment_id, weight))
         
         # Sort by weight descending
@@ -195,7 +195,7 @@ class PortfolioAnalysisSystem:
                     value_passing += holding.current_value
             
             ethical_alignment["holdings_passing_percentage"] = holdings_passing / len(portfolio.holdings) if portfolio.holdings else 0
-            ethical_alignment["value_passing_percentage"] = value_passing / total_value if total_value > 0 else 0
+            ethical_alignment["value_passing_percentage"] = float(value_passing.amount) / float(total_value.amount) if total_value > 0 else 0
             
             # Calculate average ESG scores weighted by holding value
             weighted_env_score = 0.0
@@ -207,7 +207,7 @@ class PortfolioAnalysisSystem:
                 investment_id = holding.investment_id
                 if investment_id in investments and investment_id in screening_results:
                     investment = investments[investment_id]
-                    weight = holding.current_value / total_value
+                    weight = float(holding.current_value.amount) / float(total_value.amount)
                     
                     weighted_env_score += investment.esg_ratings.environmental * weight
                     weighted_social_score += investment.esg_ratings.social * weight
@@ -465,7 +465,7 @@ class PortfolioAnalysisSystem:
                     holdings_to_reduce.append({
                         "investment_id": investment_id,
                         "name": investment.name,
-                        "current_weight": holding.current_value / portfolio.total_value,
+                        "current_weight": float(holding.current_value.amount) / float(portfolio.total_value.amount),
                         "reduction_reason": reduction_reason,
                         "esg_score": ethical_score,
                         "return_percentage": return_pct
@@ -771,7 +771,7 @@ class PortfolioAnalysisSystem:
                 continue
                 
             investment = investments[investment_id]
-            holding_weight = holding.current_value / total_portfolio_value
+            holding_weight = float(holding.current_value.amount) / float(total_portfolio_value.amount)
             
             # Check positive practices for theme alignment
             for practice in investment.positive_practices:
@@ -946,7 +946,7 @@ class PortfolioAnalysisSystem:
                 continue
                 
             investment = investments[investment_id]
-            weight = holding.current_value / total_portfolio_value
+            weight = float(holding.current_value.amount) / float(total_portfolio_value.amount)
             
             # Get ESG score
             esg_score = investment.esg_ratings.overall
@@ -1034,7 +1034,7 @@ class PortfolioAnalysisSystem:
                 continue
                 
             investment = investments[investment_id]
-            weight = holding.current_value / total_value
+            weight = float(holding.current_value.amount) / float(total_value.amount)
             
             # Weighted ESG scores
             environmental_score += investment.esg_ratings.environmental * weight

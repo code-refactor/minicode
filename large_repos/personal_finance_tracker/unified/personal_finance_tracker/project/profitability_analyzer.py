@@ -108,9 +108,13 @@ class ProjectProfiler:
         # Calculate profitability metrics
         total_profit = total_revenue - total_expenses
 
-        # Avoid division by zero
-        effective_hourly_rate = total_revenue / max(total_hours, 0.01)
-        profit_margin = 100 * total_profit / max(total_revenue, 0.01)
+        # Avoid division by zero - convert to float for backward compatibility
+        effective_hourly_rate = float((total_revenue / max(total_hours, 0.01)).amount)
+        # Calculate profit margin as a percentage (float)
+        if total_revenue.is_positive():
+            profit_margin = 100 * float(total_profit.amount) / float(total_revenue.amount)
+        else:
+            profit_margin = 0.0
         # Calculate ROI using Money arithmetic
         if total_expenses.is_positive():
             roi = float(total_profit.amount) / float(total_expenses.amount) * 100
@@ -142,12 +146,12 @@ class ProjectProfiler:
                 ProfitabilityMetric(
                     project_id=project.id,
                     metric_type=ProjectMetricType.HOURLY_RATE,
-                    value=float(effective_hourly_rate.amount),  # Convert to float
+                    value=effective_hourly_rate,  # Already float
                 ),
                 ProfitabilityMetric(
                     project_id=project.id,
                     metric_type=ProjectMetricType.TOTAL_PROFIT,
-                    value=total_profit,  # Keep as Money
+                    value=float(total_profit.amount),  # Convert to float
                 ),
                 ProfitabilityMetric(
                     project_id=project.id,
@@ -230,8 +234,12 @@ class ProjectProfiler:
         total_profit = sum(p.total_profit for p in project_analyses)
 
         # Calculate averages
-        avg_hourly_rate = total_revenue / max(total_hours, 0.01)
-        avg_profit_margin = 100 * total_profit / max(total_revenue, 0.01)
+        avg_hourly_rate = float((total_revenue / max(total_hours, 0.01)).amount)
+        # Calculate average profit margin as a percentage (float)
+        if total_revenue.is_positive():
+            avg_profit_margin = 100 * float(total_profit.amount) / float(total_revenue.amount)
+        else:
+            avg_profit_margin = 0.0
 
         # Calculate average invoice payment time
         client_invoices = [
@@ -444,13 +452,27 @@ class ProjectProfiler:
                 if entry.duration_minutes is not None
             )
 
-            total_revenue = sum(invoice.amount for invoice in period_invoices)
+            # Calculate revenue with proper Money handling for empty list
+            if period_invoices:
+                revenue_amounts = [invoice.amount for invoice in period_invoices]
+                total_revenue = revenue_amounts[0]
+                for amount in revenue_amounts[1:]:
+                    total_revenue = total_revenue + amount
+            else:
+                total_revenue = Money.zero()
 
-            total_expenses = sum(
+            # Calculate expenses with proper Money handling for empty list
+            expense_list = [
                 t.amount
                 for t in period_transactions
                 if t.transaction_type == TransactionType.EXPENSE
-            )
+            ]
+            if expense_list:
+                total_expenses = expense_list[0]
+                for amount in expense_list[1:]:
+                    total_expenses = total_expenses + amount
+            else:
+                total_expenses = Money.zero()
 
             total_profit = total_revenue - total_expenses
 
@@ -458,13 +480,19 @@ class ProjectProfiler:
             metric_value = 0.0
 
             if metric_type == ProjectMetricType.HOURLY_RATE:
-                metric_value = total_revenue / max(total_hours, 0.01)
+                metric_value = float((total_revenue / max(total_hours, 0.01)).amount)
             elif metric_type == ProjectMetricType.TOTAL_PROFIT:
-                metric_value = total_profit
+                metric_value = float(total_profit.amount)
             elif metric_type == ProjectMetricType.PROFIT_MARGIN:
-                metric_value = 100 * total_profit / max(total_revenue, 0.01)
+                if total_revenue.is_positive():
+                    metric_value = 100 * float(total_profit.amount) / float(total_revenue.amount)
+                else:
+                    metric_value = 0.0
             elif metric_type == ProjectMetricType.ROI:
-                metric_value = total_profit / max(total_expenses, 0.01)
+                if total_expenses.is_positive():
+                    metric_value = float(total_profit.amount) / float(total_expenses.amount)
+                else:
+                    metric_value = 0.0
 
             # Add data point
             data_point = TrendPoint(

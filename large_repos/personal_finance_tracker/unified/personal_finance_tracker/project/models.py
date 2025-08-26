@@ -65,7 +65,7 @@ class ProjectProfitability(BaseModel):
     total_revenue: Money  # Use Money for precision
     total_expenses: Money  # Use Money for precision
     total_profit: Money  # Use Money for precision
-    effective_hourly_rate: Money  # Use Money for precision
+    effective_hourly_rate: float  # Keep as float for backward compatibility
     profit_margin: float  # Percentage
     roi: float  # Return on investment
     is_completed: bool
@@ -73,8 +73,8 @@ class ProjectProfitability(BaseModel):
     metrics: List[ProfitabilityMetric] = Field(default_factory=list)
     
     def __init__(self, **data):
-        # Handle legacy float values by converting to Money
-        money_fields = ['total_revenue', 'total_expenses', 'total_profit', 'effective_hourly_rate']
+        # Handle legacy float values by converting to Money (except effective_hourly_rate)
+        money_fields = ['total_revenue', 'total_expenses', 'total_profit']
         for field in money_fields:
             if field in data and not isinstance(data[field], Money):
                 if isinstance(data[field], (int, float, Decimal)):

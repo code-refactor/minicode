@@ -313,8 +313,8 @@ class VirtualMachine(VMBase):
     def load_program(self, program) -> None:
         """Load a program (either CommonProgram or list of bytes)."""
         if isinstance(program, list):
-            # Legacy: list of bytes
-            self.load_program_bytes(program, 0)
+            # Legacy: list of bytes - use None to get default entry point
+            self.load_program_bytes(program, None)
         elif hasattr(program, 'instructions'):
             # CommonProgram object
             self.current_program = program

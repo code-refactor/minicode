@@ -253,7 +253,7 @@ class EnvironmentService(BaseService[EnvironmentSnapshot]):
         if git_branch is not None:
             update_data["git_branch"] = git_branch
         
-        snapshot = snapshot.update_fields(**update_data)
+        snapshot.update(**update_data)
         return self._storage.update_environment(snapshot)
         
     def update_environment(
@@ -469,7 +469,7 @@ class EnvironmentService(BaseService[EnvironmentSnapshot]):
             custom_metadata=custom_metadata,
         )
         
-        return snapshot.id
+        return str(snapshot.id) if not isinstance(snapshot.id, str) else snapshot.id
     
     def capture_current_environment(
         self, 
@@ -648,7 +648,7 @@ class EnvironmentService(BaseService[EnvironmentSnapshot]):
             custom_metadata=custom_metadata,
         )
         
-        return snapshot.id
+        return str(snapshot.id) if not isinstance(snapshot.id, str) else snapshot.id
     
     def add_package(
         self, 
@@ -1197,7 +1197,7 @@ class EnvironmentService(BaseService[EnvironmentSnapshot]):
         if actual_execution_time is not None:
             update_data["actual_execution_time"] = actual_execution_time
             
-        link = link.update_fields(**update_data)
+        link.update(**update_data)
         return self._storage.update_task_environment_link(link)
     
     def add_note_to_link(self, link_id: str, note: str) -> bool:

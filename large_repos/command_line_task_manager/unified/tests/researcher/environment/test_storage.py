@@ -68,7 +68,7 @@ class TestInMemoryEnvironmentStorage:
         retrieved_env = self.storage.get_environment(env_id)
         
         assert retrieved_env is not None
-        assert retrieved_env.id == env_id
+        assert str(retrieved_env.id) == env_id
         assert retrieved_env.name == "Python Development Environment"
         assert retrieved_env.type == EnvironmentType.VENV
         assert retrieved_env.python_version == "3.10.4"
@@ -193,7 +193,7 @@ class TestInMemoryEnvironmentStorage:
         retrieved_link = self.storage.get_task_environment_link(link_id1)
         
         assert retrieved_link is not None
-        assert retrieved_link.id == link_id1
+        assert str(retrieved_link.id) == link_id1
         assert retrieved_link.task_id == self.task_id1
         assert retrieved_link.environment_id == env_id1
         assert retrieved_link.description == "Link 1 description"
@@ -209,11 +209,11 @@ class TestInMemoryEnvironmentStorage:
         # Test querying links
         task1_environments = self.storage.get_environments_by_task(self.task_id1)
         assert len(task1_environments) == 2
-        assert {env.id for env in task1_environments} == {env_id1, env_id2}
+        assert {str(env.id) for env in task1_environments} == {env_id1, env_id2}
         
         task1_links = self.storage.get_links_by_task(self.task_id1)
         assert len(task1_links) == 2
-        assert {link.id for link in task1_links} == {link_id1, link_id2}
+        assert {str(link.id) for link in task1_links} == {link_id1, link_id2}
         
         env1_tasks = self.storage.get_tasks_by_environment(env_id1)
         assert len(env1_tasks) == 2
@@ -228,7 +228,7 @@ class TestInMemoryEnvironmentStorage:
         # Verify the updated queries
         updated_task1_environments = self.storage.get_environments_by_task(self.task_id1)
         assert len(updated_task1_environments) == 1
-        assert updated_task1_environments[0].id == env_id2
+        assert str(updated_task1_environments[0].id) == env_id2
         
         updated_env1_tasks = self.storage.get_tasks_by_environment(env_id1)
         assert len(updated_env1_tasks) == 1

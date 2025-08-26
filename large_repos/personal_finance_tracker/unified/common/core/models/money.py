@@ -135,8 +135,12 @@ class Money:
             return Money(Decimal(str(other)) + self.amount, self.currency)
         return self.__add__(other)
     
-    def __sub__(self, other: 'Money') -> 'Money':
-        """Subtract two Money objects (must have same currency)."""
+    def __sub__(self, other: Union['Money', int, float]) -> 'Money':
+        """Subtract Money or numeric value from Money."""
+        if isinstance(other, (int, float)):
+            # Support subtracting numeric values for backward compatibility
+            return Money(self.amount - Decimal(str(other)), self.currency)
+        
         if not isinstance(other, Money):
             raise TypeError(f"Cannot subtract {type(other)} from Money")
         
@@ -144,6 +148,13 @@ class Money:
             raise ValueError(f"Cannot subtract {other.currency.value} from {self.currency.value}")
         
         return Money(self.amount - other.amount, self.currency)
+    
+    def __rsub__(self, other: Union[int, float]) -> 'Money':
+        """Support reverse subtraction (number - Money)."""
+        if isinstance(other, (int, float)):
+            return Money(Decimal(str(other)) - self.amount, self.currency)
+        # For Money - Money, delegate to __sub__
+        return other.__sub__(self)
     
     def __mul__(self, multiplier: Union[int, float, Decimal]) -> 'Money':
         """Multiply Money by a scalar."""

@@ -91,14 +91,13 @@ class Dataset(BaseEntity):
         if not self.location:
             raise ValueError("Dataset location cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'Dataset':
-        """Update dataset fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'Dataset':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update dataset fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_tag(self, tag: str) -> None:
         """Add a tag to the dataset."""
@@ -165,14 +164,13 @@ class DatasetVersion(BaseEntity):
         if not self.location:
             raise ValueError("Version location cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'DatasetVersion':
-        """Update version fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'DatasetVersion':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update version fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def update_custom_metadata(self, key: str, value: Union[str, int, float, bool, list, dict]) -> None:
         """Update a custom metadata field."""
@@ -226,14 +224,13 @@ class DataTransformation(BaseEntity):
         if not self.output_dataset_version_id:
             raise ValueError("Output dataset version ID cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'DataTransformation':
-        """Update transformation fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'DataTransformation':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update transformation fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_tag(self, tag: str) -> None:
         """Add a tag to the transformation."""
@@ -287,14 +284,13 @@ class TaskDatasetLink(BaseEntity):
         if not self.dataset_version_id:
             raise ValueError("Dataset version ID cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'TaskDatasetLink':
-        """Update link fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'TaskDatasetLink':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update link fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_note(self, note: str) -> None:
         """Add a note to the link."""

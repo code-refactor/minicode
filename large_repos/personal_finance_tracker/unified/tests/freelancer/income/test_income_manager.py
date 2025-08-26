@@ -291,8 +291,9 @@ class TestIncomeManager:
             # Verify the method produces reasonable smoothing
             if len(smoothed) > 0:
                 # Check that the smoothed income is more regular
-                actual_values = [s.actual_income for s in smoothed]
-                smoothed_values = [s.smoothed_income for s in smoothed]
+                # Convert Money to float for NumPy operations
+                actual_values = [float(s.actual_income.amount) for s in smoothed]
+                smoothed_values = [float(s.smoothed_income.amount) for s in smoothed]
 
                 # Standard deviation of smoothed values should be less than actuals
                 if any(actual_values):

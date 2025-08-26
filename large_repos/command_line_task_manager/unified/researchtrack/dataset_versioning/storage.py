@@ -375,7 +375,9 @@ class InMemoryDatasetStorage(DatasetStorageInterface):
         self._task_link_storage = InMemoryStorage(TaskDatasetLink)
     
     def create_dataset(self, dataset: Dataset) -> str:
-        return self._dataset_storage.create(dataset)
+        self._dataset_storage.create(dataset)
+        # Return the dataset's ID (convert UUID to string if needed)
+        return dataset.id if isinstance(dataset.id, str) else str(dataset.id)
     
     def get_dataset(self, dataset_id: str) -> Optional[Dataset]:
         return self._dataset_storage.get(dataset_id)
@@ -416,7 +418,9 @@ class InMemoryDatasetStorage(DatasetStorageInterface):
         return datasets
     
     def create_dataset_version(self, version: DatasetVersion) -> str:
-        return self._version_storage.create(version)
+        self._version_storage.create(version)
+        # Return the version's ID (convert UUID to string if needed)
+        return version.id if isinstance(version.id, str) else str(version.id)
     
     def get_dataset_version(self, version_id: str) -> Optional[DatasetVersion]:
         return self._version_storage.get(version_id)
@@ -426,6 +430,9 @@ class InMemoryDatasetStorage(DatasetStorageInterface):
         return updated is not None
     
     def delete_dataset_version(self, version_id: str) -> bool:
+        # Ensure version_id is a string
+        version_id = str(version_id) if not isinstance(version_id, str) else version_id
+        
         if not self._version_storage.exists(version_id):
             return False
         
@@ -486,7 +493,9 @@ class InMemoryDatasetStorage(DatasetStorageInterface):
         return versions
     
     def create_data_transformation(self, transformation: DataTransformation) -> str:
-        return self._transformation_storage.create(transformation)
+        self._transformation_storage.create(transformation)
+        # Return the transformation's ID (convert UUID to string if needed)
+        return transformation.id if isinstance(transformation.id, str) else str(transformation.id)
     
     def get_data_transformation(
         self, transformation_id: str
@@ -653,6 +662,8 @@ class InMemoryDatasetStorage(DatasetStorageInterface):
         Returns:
             List[DataTransformation]: List of transformations with this version as input
         """
+        # Ensure version_id is a string for filtering
+        version_id = str(version_id) if not isinstance(version_id, str) else version_id
         return self._transformation_storage.list({"input_dataset_version_id": version_id})
     
     def find_transformations_by_output_version(self, version_id: str) -> List[DataTransformation]:
@@ -665,10 +676,14 @@ class InMemoryDatasetStorage(DatasetStorageInterface):
         Returns:
             List[DataTransformation]: List of transformations with this version as output
         """
+        # Ensure version_id is a string for filtering
+        version_id = str(version_id) if not isinstance(version_id, str) else version_id
         return self._transformation_storage.list({"output_dataset_version_id": version_id})
     
     def create_task_dataset_link(self, link: TaskDatasetLink) -> str:
-        return self._task_link_storage.create(link)
+        self._task_link_storage.create(link)
+        # Return the link's ID (convert UUID to string if needed)
+        return link.id if isinstance(link.id, str) else str(link.id)
     
     def get_task_dataset_link(self, link_id: str) -> Optional[TaskDatasetLink]:
         return self._task_link_storage.get(link_id)

@@ -60,17 +60,19 @@ class TestYearOverYearComparison:
         total_2022 = sum(t.amount for t in income_2022)
         total_2023 = sum(t.amount for t in income_2023)
         
-        # Calculate year-over-year growth
-        growth_2021_2022 = (total_2022 - total_2021) / total_2021 * 100
-        growth_2022_2023 = (total_2023 - total_2022) / total_2022 * 100
+        # Calculate year-over-year growth - convert Money to float for division
+        growth_2021_2022 = float((total_2022 - total_2021).amount) / float(total_2021.amount) * 100
+        growth_2022_2023 = float((total_2023 - total_2022).amount) / float(total_2022.amount) * 100
         
         # Calculate income stability (standard deviation as percentage of mean)
         def income_stability(transactions):
             amounts = [t.amount for t in transactions]
             mean = sum(amounts) / len(amounts)
-            variance = sum((x - mean) ** 2 for x in amounts) / len(amounts)
+            # Convert Money to float for calculations
+            mean_float = float(mean.amount)
+            variance = sum((float(x.amount) - mean_float) ** 2 for x in amounts) / len(amounts)
             std_dev = variance ** 0.5
-            return (std_dev / mean) * 100  # Lower is more stable
+            return (std_dev / mean_float) * 100  # Lower is more stable
         
         stability_2021 = income_stability(income_2021)
         stability_2022 = income_stability(income_2022)
@@ -208,7 +210,8 @@ class TestYearOverYearComparison:
                 if t.transaction_type == TransactionType.EXPENSE
             )
             
-            return (business_expenses / total_expenses) * 100 if total_expenses > 0 else 0
+            # Convert Money to float for division
+            return (float(business_expenses.amount) / float(total_expenses.amount)) * 100 if total_expenses > 0 else 0
         
         ratio_2021 = calculate_ratio(expenses_2021)
         ratio_2022 = calculate_ratio(expenses_2022)
@@ -338,9 +341,10 @@ class TestYearOverYearComparison:
         taxable_2022 = income_2022 - expenses_2022
         taxable_2023 = income_2023 - expenses_2023
         
-        rate_2021 = tax_2021 / taxable_2021 * 100 if taxable_2021 > 0 else 0
-        rate_2022 = tax_2022 / taxable_2022 * 100 if taxable_2022 > 0 else 0
-        rate_2023 = tax_2023 / taxable_2023 * 100 if taxable_2023 > 0 else 0
+        # Convert Money to float for division
+        rate_2021 = float(tax_2021.amount) / float(taxable_2021.amount) * 100 if taxable_2021 > 0 else 0
+        rate_2022 = float(tax_2022.amount) / float(taxable_2022.amount) * 100 if taxable_2022 > 0 else 0
+        rate_2023 = float(tax_2023.amount) / float(taxable_2023.amount) * 100 if taxable_2023 > 0 else 0
         
         # Verify tax liability increases with income
         assert tax_2022 > tax_2021
@@ -541,7 +545,8 @@ class TestYearOverYearComparison:
             )
             
             profit = income - expenses
-            margin = (profit / income) * 100 if income > 0 else 0
+            # Convert Money to float for division
+            margin = (float(profit.amount) / float(income.amount)) * 100 if income > 0 else 0
             
             return margin
         

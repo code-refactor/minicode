@@ -132,14 +132,13 @@ class EnvironmentSnapshot(BaseEntity):
         if not self.name:
             raise ValueError("Environment name cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'EnvironmentSnapshot':
-        """Update environment snapshot fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'EnvironmentSnapshot':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update environment snapshot fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_package(self, package: PackageInfo) -> None:
         """Add a package to the environment."""
@@ -293,14 +292,13 @@ class TaskEnvironmentLink(BaseEntity):
         if not self.environment_id:
             raise ValueError("Environment ID cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'TaskEnvironmentLink':
-        """Update link fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'TaskEnvironmentLink':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update link fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_note(self, note: str) -> None:
         """Add a note to the link."""

@@ -280,7 +280,7 @@ class ValuesAlignedBudgeting:
                 high_impact_misaligned.append({
                     "category_id": cat_id,
                     "name": self.categories[cat_id].name,
-                    "amount": amount,
+                    "amount": float(amount.amount),
                     "percentage": float(amount.amount) / float(total_spending.amount) if total_spending > 0 else 0,
                     "impact_level": self.categories[cat_id].impact_level
                 })
@@ -319,7 +319,7 @@ class ValuesAlignedBudgeting:
                     "type": "increase_aligned",
                     "category_id": category.id,
                     "category_name": category.name,
-                    "current_amount": cat_amount,
+                    "current_amount": float(cat_amount.amount),
                     "suggested_actions": [
                         f"Allocate more to {category.name} activities",
                         f"Explore new {category.name} opportunities"
@@ -352,9 +352,9 @@ class ValuesAlignedBudgeting:
             analysis_date=date.today(),
             period_start=start_date,
             period_end=end_date,
-            total_spending=total_spending,
-            spending_by_category=category_spending,
-            spending_by_alignment=alignment_spending,
+            total_spending=float(total_spending.amount),
+            spending_by_category={k: float(v.amount) for k, v in category_spending.items()},
+            spending_by_alignment={k: float(v.amount) for k, v in alignment_spending.items()},
             high_impact_areas=high_impact_misaligned[:5],  # Top 5
             improvement_opportunities=improvement_opportunities[:5],  # Top 5
             aligned_percentage=aligned_percentage,

@@ -108,6 +108,14 @@ class Section(BaseEntity):
         """Validate required fields."""
         if not self.title:
             raise ValueError("Title cannot be empty")
+    
+    def update(self, **kwargs) -> 'Section':
+        """Update fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
 
 
 @dataclass
@@ -126,6 +134,14 @@ class Document(BaseEntity):
         """Validate required fields."""
         if not self.title:
             raise ValueError("Title cannot be empty")
+    
+    def update(self, **kwargs) -> 'Document':
+        """Update fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
 
     def add_run(self, parameters: List[Any]) -> Any:
         """Add a new run to this experiment."""

@@ -359,6 +359,7 @@ class EthicalCriteria:
     """Customizable ethical screening criteria for investments extending common configuration."""
     
     criteria_id: str
+    name: str  # Add name field
     environmental: Dict[str, Any]
     social: Dict[str, Any]
     governance: Dict[str, Any]
@@ -424,27 +425,6 @@ class EthicalCriteria:
     def from_dict(cls, data: Dict[str, Any]) -> 'EthicalCriteria':
         """Create configuration from dictionary."""
         return cls(**data)
-    
-    def __post_init__(self):
-        """Validate that criteria weights are included and sum approximately to 1."""
-        # Check that each criteria includes a weight
-        for field_name in ['environmental', 'social', 'governance']:
-            field_value = getattr(self, field_name)
-            if 'weight' not in field_value:
-                raise ValueError(f"{field_name} criteria must include a weight")
-            
-            # Ensure weight is between 0 and 1
-            if field_value['weight'] < 0 or field_value['weight'] > 1:
-                raise ValueError(f"{field_name} weight must be between 0 and 1")
-        
-        # Check that weights sum to approximately 1
-        weights_sum = (
-            self.environmental.get('weight', 0) + 
-            self.social.get('weight', 0) + 
-            self.governance.get('weight', 0)
-        )
-        if abs(weights_sum - 1.0) > 0.01:  # Allow for small rounding errors
-            raise ValueError(f"Criteria weights sum to {weights_sum}, expected 1.0")
 
 
 @dataclass

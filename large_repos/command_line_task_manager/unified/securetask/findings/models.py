@@ -38,11 +38,15 @@ class Finding(BaseEntity, StatusMixin, TaggedMixin):
     notes: List[Dict[str, Any]] = field(default_factory=list)
     evidence_ids: List[str] = field(default_factory=list)
     compliance_controls: List[str] = field(default_factory=list)
+    status: Optional[str] = None  # Provided by StatusMixin but allow setting in __init__
     
     def __post_init__(self):
         """Initialize mixins and set up status transitions."""
         # Call parent __post_init__ for BaseEntity UUID handling
         super().__post_init__()
+        
+        # Save the initial status value before mixin initialization
+        initial_status = self.status
         
         # Initialize mixins only if not already initialized
         if not hasattr(self, 'valid_transitions'):
@@ -50,8 +54,10 @@ class Finding(BaseEntity, StatusMixin, TaggedMixin):
         if not hasattr(self, 'tags'):
             TaggedMixin.__init__(self)
         
-        # Set initial status only if not set
-        if not hasattr(self, 'status') or self.status is None:
+        # Set status - use provided value if given, otherwise default to "open"
+        if initial_status is not None:
+            self.status = initial_status
+        elif self.status is None:
             self.status = "open"
         
         # Define valid status transitions

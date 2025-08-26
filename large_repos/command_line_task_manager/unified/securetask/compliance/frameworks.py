@@ -313,6 +313,10 @@ class ComplianceFramework(BaseEntity, TaggedMixin):
         
         return data
     
+    def model_dump(self) -> Dict[str, Any]:
+        """Pydantic-compatible alias for to_dict."""
+        return self.to_dict()
+    
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'ComplianceFramework':
         """Create compliance framework from dictionary representation."""

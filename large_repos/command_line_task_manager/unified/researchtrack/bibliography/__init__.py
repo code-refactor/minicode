@@ -1,5 +1,8 @@
 from .formatter import ReferenceFormatter
-from .importer import BibliographyImporter
+try:
+    from .importer import BibliographyImporter
+except ImportError:
+    BibliographyImporter = None
 from .models import (
     Author,
     AuthorType,
@@ -14,7 +17,6 @@ from .storage import BibliographyStorageInterface, InMemoryBibliographyStorage
 __all__ = [
     "Author",
     "AuthorType",
-    "BibliographyImporter",
     "BibliographyService",
     "BibliographyStorageInterface",
     "CitationStyle",
@@ -24,3 +26,7 @@ __all__ = [
     "ReferenceType",
     "TaskReferenceLink",
 ]
+
+# Add BibliographyImporter only if it was successfully imported
+if BibliographyImporter is not None:
+    __all__.append("BibliographyImporter")

@@ -194,18 +194,24 @@ class Processor(ProcessorBase):
                     increment_pc = False
                     
             elif instruction.opcode == "JGT":
-                # Jump if greater than
+                # Jump if greater than (signed comparison)
                 condition_reg = instruction.operands[0]
                 target = self._get_operand_value(instruction.operands[1])
-                if self.registers.get_register(condition_reg) > 0:
+                # Convert to signed 32-bit for comparison
+                value = self.registers.get_register(condition_reg)
+                signed_value = value if value < 0x80000000 else value - 0x100000000
+                if signed_value > 0:
                     self.pc = target
                     increment_pc = False
                     
             elif instruction.opcode == "JLT":
-                # Jump if less than
+                # Jump if less than (signed comparison)
                 condition_reg = instruction.operands[0]
                 target = self._get_operand_value(instruction.operands[1])
-                if self.registers.get_register(condition_reg) < 0:
+                # Convert to signed 32-bit for comparison
+                value = self.registers.get_register(condition_reg)
+                signed_value = value if value < 0x80000000 else value - 0x100000000
+                if signed_value < 0:
                     self.pc = target
                     increment_pc = False
         

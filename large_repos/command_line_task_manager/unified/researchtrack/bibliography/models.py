@@ -121,14 +121,13 @@ class Reference(BaseEntity):
         if not self.title:
             raise ValueError("Reference title cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'Reference':
-        """Update reference fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'Reference':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update reference fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_author(self, author: Author) -> None:
         """Add an author to the reference."""
@@ -228,14 +227,13 @@ class TaskReferenceLink(BaseEntity):
         if not self.reference_id:
             raise ValueError("Reference ID cannot be empty")
     
-    def update_fields(self, **kwargs) -> 'TaskReferenceLink':
-        """Update link fields."""
-        # Call parent update method which handles updated_at
-        return super().update(**kwargs)
-    
     def update(self, **kwargs) -> 'TaskReferenceLink':
-        """Backward-compatible update method."""
-        return self.update_fields(**kwargs)
+        """Update link fields in place."""
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        self.updated_at = datetime.now()
+        return self
     
     def add_note(self, note: str) -> None:
         """Add a note to the link."""

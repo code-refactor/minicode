@@ -151,7 +151,17 @@ class EncryptedComplianceStorage(StorageInterface[ComplianceFramework]):
         # Apply filters if provided
         if filters:
             for key, value in filters.items():
-                frameworks = [f for f in frameworks if getattr(f, key, None) == value]
+                filtered = []
+                for f in frameworks:
+                    field_value = getattr(f, key, None)
+                    # Handle set membership check
+                    if isinstance(field_value, set):
+                        if value in field_value:
+                            filtered.append(f)
+                    # Simple equality check for other types
+                    elif field_value == value:
+                        filtered.append(f)
+                frameworks = filtered
         
         # Sort if requested
         if sort_by:
@@ -358,6 +368,9 @@ class ComplianceRepository(BaseService[ComplianceFramework]):
             
             return updated
             
+        except FileNotFoundError:
+            # Re-raise FileNotFoundError as-is
+            raise
         except Exception as e:
             raise SecureValidationError(str(e))
     
@@ -562,7 +575,7 @@ class ComplianceRepository(BaseService[ComplianceFramework]):
         # Convert sort direction to storage format
         storage_sort_by = f"-{sort_by}" if reverse else sort_by
         
-        return self.list(
+        return super().list(
             filters=filters,
             sort_by=storage_sort_by,
             limit=limit,
@@ -579,7 +592,7 @@ class ComplianceRepository(BaseService[ComplianceFramework]):
         Returns:
             Number of frameworks matching criteria
         """
-        return self.count(filters)
+        return super().count(filters)
     
     def map_finding_to_control(
         self, 

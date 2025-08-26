@@ -742,11 +742,11 @@ class TestEnvironmentService:
         # Query operations
         task1_environments = self.service.get_environments_by_task(self.task_id1)
         assert len(task1_environments) == 2
-        assert {env.id for env in task1_environments} == {env_id1, env_id2}
+        assert {str(env.id) for env in task1_environments} == {env_id1, env_id2}
         
         task1_links = self.service.get_links_by_task(self.task_id1)
         assert len(task1_links) == 2
-        assert {link.id for link in task1_links} == {link_id1, link_id3}
+        assert {str(link.id) for link in task1_links} == {link_id1, link_id3}
         
         env1_tasks = self.service.get_tasks_by_environment(env_id1)
         assert len(env1_tasks) == 2
@@ -761,7 +761,7 @@ class TestEnvironmentService:
         # Verify the updated queries
         updated_task1_environments = self.service.get_environments_by_task(self.task_id1)
         assert len(updated_task1_environments) == 1
-        assert updated_task1_environments[0].id == env_id2
+        assert str(updated_task1_environments[0].id) == env_id2
         
         updated_env1_tasks = self.service.get_tasks_by_environment(env_id1)
         assert len(updated_env1_tasks) == 1

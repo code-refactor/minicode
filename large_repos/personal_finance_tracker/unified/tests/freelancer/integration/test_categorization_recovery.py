@@ -120,6 +120,7 @@ class TestCategorizationRecovery:
         tax_manager.load_default_brackets()
         
         # Calculate initial tax (with error)
+        # Convert Money to float for tax calculations
         initial_income = sum(t.amount for t in updated_categorized_transactions 
                              if t.transaction_type == TransactionType.INCOME)
         initial_expenses = sum(
@@ -128,7 +129,8 @@ class TestCategorizationRecovery:
             if t.transaction_type == TransactionType.EXPENSE 
             and t.business_use_percentage is not None
         )
-        initial_taxable_income = initial_income - initial_expenses
+        # Convert Money to float for tax calculation
+        initial_taxable_income = float((initial_income - initial_expenses).amount)
         
         # Calculate tax with the TaxManager
         initial_tax = tax_manager.calculate_quarterly_tax_payment(
@@ -185,7 +187,8 @@ class TestCategorizationRecovery:
             if t.transaction_type == TransactionType.EXPENSE 
             and t.business_use_percentage is not None
         )
-        corrected_taxable_income = corrected_income - corrected_expenses
+        # Convert Money to float for tax calculation
+        corrected_taxable_income = float((corrected_income - corrected_expenses).amount)
         
         # Calculate tax with the TaxManager
         corrected_tax = tax_manager.calculate_quarterly_tax_payment(
@@ -413,7 +416,8 @@ class TestCategorizationRecovery:
             and hasattr(t, 'business_use_percentage')
         )
         
-        corrected_taxable_income = corrected_income - corrected_business_expenses
+        # Convert Money to float for tax calculation
+        corrected_taxable_income = float((corrected_income - corrected_business_expenses).amount)
         
         # Calculate tax with the TaxManager
         corrected_tax = tax_manager.calculate_quarterly_tax_payment(

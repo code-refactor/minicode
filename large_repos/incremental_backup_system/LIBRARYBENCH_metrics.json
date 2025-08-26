@@ -1,21 +1,151 @@
 {
-    "total_logprobs": -26344.154175955115,
+    "total_logprobs": -26316.90781540581,
     "total_tokens": 73194,
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/deduplication.py": {
-        "logprobs": -760.8634965031245,
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/__init__.py": {
+        "logprobs": -293.5395260662576,
         "metrics": {
-            "loc": 317,
-            "sloc": 142,
-            "lloc": 140,
-            "comments": 22,
-            "multi": 84,
+            "loc": 37,
+            "sloc": 29,
+            "lloc": 6,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/analysis.py": {
+        "logprobs": -1092.7374805000427,
+        "metrics": {
+            "loc": 339,
+            "sloc": 187,
+            "lloc": 118,
+            "comments": 26,
+            "multi": 66,
+            "blank": 61,
+            "cyclomatic": 53,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/engine.py": {
+        "logprobs": -1173.5416677445255,
+        "metrics": {
+            "loc": 393,
+            "sloc": 190,
+            "lloc": 144,
+            "comments": 36,
+            "multi": 91,
+            "blank": 76,
+            "cyclomatic": 44,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/manager.py": {
+        "logprobs": -825.2542234836832,
+        "metrics": {
+            "loc": 399,
+            "sloc": 171,
+            "lloc": 108,
+            "comments": 13,
+            "multi": 146,
             "blank": 69,
-            "cyclomatic": 49,
+            "cyclomatic": 44,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/visual_diff/diff_generator.py": {
+        "logprobs": -1083.7984238975466,
+        "metrics": {
+            "loc": 441,
+            "sloc": 232,
+            "lloc": 193,
+            "comments": 50,
+            "multi": 76,
+            "blank": 86,
+            "cyclomatic": 57,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/milestone_management/__init__.py": {
+        "logprobs": -190.8476701982639,
+        "metrics": {
+            "loc": 12,
+            "sloc": 4,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/workspace_capture/environment_capture.py": {
+        "logprobs": -1304.9318993481904,
+        "metrics": {
+            "loc": 640,
+            "sloc": 417,
+            "lloc": 260,
+            "comments": 60,
+            "multi": 67,
+            "blank": 99,
+            "cyclomatic": 77,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/version_tracker.py": {
+        "logprobs": -738.4604620091106,
+        "metrics": {
+            "loc": 371,
+            "sloc": 159,
+            "lloc": 151,
+            "comments": 21,
+            "multi": 111,
+            "blank": 80,
+            "cyclomatic": 46,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/interfaces.py": {
+        "logprobs": -752.3904661886792,
+        "metrics": {
+            "loc": 367,
+            "sloc": 125,
+            "lloc": 105,
+            "comments": 0,
+            "multi": 157,
+            "blank": 79,
+            "cyclomatic": 34,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/__main__.py": {
+        "logprobs": -1092.0776366891262,
+        "metrics": {
+            "loc": 343,
+            "sloc": 194,
+            "lloc": 145,
+            "comments": 21,
+            "multi": 55,
+            "blank": 72,
+            "cyclomatic": 30,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/milestone_management/manager.py": {
+        "logprobs": -1074.9224133611026,
+        "metrics": {
+            "loc": 462,
+            "sloc": 252,
+            "lloc": 153,
+            "comments": 31,
+            "multi": 101,
+            "blank": 78,
+            "cyclomatic": 56,
             "internal_imports": []
         }
     },
     "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/chunker.py": {
-        "logprobs": -665.5178187028215,
+        "logprobs": -660.0159969445485,
         "metrics": {
             "loc": 220,
             "sloc": 78,
@@ -28,7 +158,7 @@
         }
     },
     "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/__init__.py": {
-        "logprobs": -252.71901178539275,
+        "logprobs": -251.25410269079302,
         "metrics": {
             "loc": 23,
             "sloc": 15,
@@ -40,177 +170,8 @@
             "internal_imports": []
         }
     },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/visual_diff/diff_generator.py": {
-        "logprobs": -1078.0401910970559,
-        "metrics": {
-            "loc": 441,
-            "sloc": 232,
-            "lloc": 193,
-            "comments": 50,
-            "multi": 76,
-            "blank": 86,
-            "cyclomatic": 57,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/workspace_capture/environment_capture.py": {
-        "logprobs": -1299.4535895707224,
-        "metrics": {
-            "loc": 640,
-            "sloc": 417,
-            "lloc": 260,
-            "comments": 60,
-            "multi": 67,
-            "blank": 99,
-            "cyclomatic": 77,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/__init__.py": {
-        "logprobs": -292.788415424312,
-        "metrics": {
-            "loc": 37,
-            "sloc": 29,
-            "lloc": 6,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/utils.py": {
-        "logprobs": -833.0893960964303,
-        "metrics": {
-            "loc": 321,
-            "sloc": 150,
-            "lloc": 158,
-            "comments": 13,
-            "multi": 84,
-            "blank": 72,
-            "cyclomatic": 45,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/milestone_management/manager.py": {
-        "logprobs": -1075.0772214895767,
-        "metrics": {
-            "loc": 462,
-            "sloc": 252,
-            "lloc": 153,
-            "comments": 31,
-            "multi": 101,
-            "blank": 78,
-            "cyclomatic": 56,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/manager.py": {
-        "logprobs": -1269.7931745559383,
-        "metrics": {
-            "loc": 330,
-            "sloc": 168,
-            "lloc": 116,
-            "comments": 43,
-            "multi": 64,
-            "blank": 59,
-            "cyclomatic": 36,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/interfaces.py": {
-        "logprobs": -742.6499450205409,
-        "metrics": {
-            "loc": 367,
-            "sloc": 125,
-            "lloc": 105,
-            "comments": 0,
-            "multi": 157,
-            "blank": 79,
-            "cyclomatic": 34,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/engine.py": {
-        "logprobs": -1178.8056776679944,
-        "metrics": {
-            "loc": 393,
-            "sloc": 190,
-            "lloc": 144,
-            "comments": 36,
-            "multi": 91,
-            "blank": 76,
-            "cyclomatic": 44,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/setup.py": {
-        "logprobs": -242.5151441131413,
-        "metrics": {
-            "loc": 19,
-            "sloc": 18,
-            "lloc": 2,
-            "comments": 7,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/element_extraction/extractor.py": {
-        "logprobs": -1099.9151258971501,
-        "metrics": {
-            "loc": 620,
-            "sloc": 346,
-            "lloc": 266,
-            "comments": 75,
-            "multi": 78,
-            "blank": 119,
-            "cyclomatic": 108,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/database.py": {
-        "logprobs": -879.6752504350143,
-        "metrics": {
-            "loc": 538,
-            "sloc": 304,
-            "lloc": 201,
-            "comments": 43,
-            "multi": 93,
-            "blank": 98,
-            "cyclomatic": 66,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/analysis.py": {
-        "logprobs": -1089.3297110068165,
-        "metrics": {
-            "loc": 339,
-            "sloc": 187,
-            "lloc": 118,
-            "comments": 26,
-            "multi": 66,
-            "blank": 61,
-            "cyclomatic": 53,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/__init__.py": {
-        "logprobs": -208.16953477215108,
-        "metrics": {
-            "loc": 16,
-            "sloc": 8,
-            "lloc": 5,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
     "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/timeline/timeline_manager.py": {
-        "logprobs": -1620.380942472443,
+        "logprobs": -1623.2643610132657,
         "metrics": {
             "loc": 535,
             "sloc": 268,
@@ -222,125 +183,8 @@
             "internal_imports": []
         }
     },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/version_tracker.py": {
-        "logprobs": -739.7586313972581,
-        "metrics": {
-            "loc": 371,
-            "sloc": 159,
-            "lloc": 151,
-            "comments": 21,
-            "multi": 111,
-            "blank": 80,
-            "cyclomatic": 46,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/manager.py": {
-        "logprobs": -833.3563733648417,
-        "metrics": {
-            "loc": 399,
-            "sloc": 171,
-            "lloc": 108,
-            "comments": 13,
-            "multi": 146,
-            "blank": 69,
-            "cyclomatic": 44,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/milestone_management/__init__.py": {
-        "logprobs": -191.31793073737902,
-        "metrics": {
-            "loc": 12,
-            "sloc": 4,
-            "lloc": 3,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/backup_engine/incremental_backup.py": {
-        "logprobs": -1044.6723760835896,
-        "metrics": {
-            "loc": 374,
-            "sloc": 196,
-            "lloc": 198,
-            "comments": 36,
-            "multi": 59,
-            "blank": 81,
-            "cyclomatic": 54,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/config.py": {
-        "logprobs": -599.1952297705977,
-        "metrics": {
-            "loc": 114,
-            "sloc": 65,
-            "lloc": 31,
-            "comments": 23,
-            "multi": 16,
-            "blank": 23,
-            "cyclomatic": 3,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/models.py": {
-        "logprobs": -707.6006914589644,
-        "metrics": {
-            "loc": 107,
-            "sloc": 72,
-            "lloc": 121,
-            "comments": 0,
-            "multi": 4,
-            "blank": 24,
-            "cyclomatic": 7,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/setup.py": {
-        "logprobs": -234.32308012254,
-        "metrics": {
-            "loc": 20,
-            "sloc": 19,
-            "lloc": 2,
-            "comments": 3,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/platform_config/__init__.py": {
-        "logprobs": -203.343766073625,
-        "metrics": {
-            "loc": 12,
-            "sloc": 4,
-            "lloc": 3,
-            "comments": 0,
-            "multi": 5,
-            "blank": 3,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/compressor.py": {
-        "logprobs": -570.2398031574686,
-        "metrics": {
-            "loc": 240,
-            "sloc": 49,
-            "lloc": 69,
-            "comments": 11,
-            "multi": 118,
-            "blank": 62,
-            "cyclomatic": 31,
-            "internal_imports": []
-        }
-    },
     "incremental_backup_system/incremental_backup_system_game_developer/gamevault/__init__.py": {
-        "logprobs": -184.30391918102,
+        "logprobs": -179.86961916703999,
         "metrics": {
             "loc": 8,
             "sloc": 1,
@@ -352,60 +196,47 @@
             "internal_imports": []
         }
     },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/__main__.py": {
-        "logprobs": -1085.6562516494605,
+    "incremental_backup_system/incremental_backup_system_digital_artist/setup.py": {
+        "logprobs": -244.8351136015446,
         "metrics": {
-            "loc": 343,
-            "sloc": 194,
-            "lloc": 145,
-            "comments": 21,
-            "multi": 55,
-            "blank": 72,
-            "cyclomatic": 30,
+            "loc": 19,
+            "sloc": 18,
+            "lloc": 2,
+            "comments": 7,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/chunking.py": {
-        "logprobs": -990.2500095552433,
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/__init__.py": {
+        "logprobs": -207.4702146570281,
         "metrics": {
-            "loc": 392,
-            "sloc": 140,
-            "lloc": 167,
-            "comments": 35,
-            "multi": 126,
-            "blank": 95,
-            "cyclomatic": 68,
+            "loc": 16,
+            "sloc": 8,
+            "lloc": 5,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },
-    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/platform_config/manager.py": {
-        "logprobs": -1522.5060504169057,
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/element_extraction/extractor.py": {
+        "logprobs": -1105.558395960657,
         "metrics": {
-            "loc": 805,
-            "sloc": 518,
-            "lloc": 290,
-            "comments": 38,
-            "multi": 126,
-            "blank": 123,
-            "cyclomatic": 113,
-            "internal_imports": []
-        }
-    },
-    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/asset_tracker/reference_tracker.py": {
-        "logprobs": -1666.178725896328,
-        "metrics": {
-            "loc": 673,
-            "sloc": 333,
-            "lloc": 297,
-            "comments": 73,
-            "multi": 118,
-            "blank": 146,
-            "cyclomatic": 98,
+            "loc": 620,
+            "sloc": 346,
+            "lloc": 266,
+            "comments": 75,
+            "multi": 78,
+            "blank": 119,
+            "cyclomatic": 108,
             "internal_imports": []
         }
     },
     "incremental_backup_system/incremental_backup_system_game_developer/gamevault/utils.py": {
-        "logprobs": -429.78370536039404,
+        "logprobs": -432.771470920902,
         "metrics": {
             "loc": 205,
             "sloc": 74,
@@ -417,8 +248,73 @@
             "internal_imports": []
         }
     },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/deduplication.py": {
+        "logprobs": -744.2733042241592,
+        "metrics": {
+            "loc": 317,
+            "sloc": 142,
+            "lloc": 140,
+            "comments": 22,
+            "multi": 84,
+            "blank": 69,
+            "cyclomatic": 49,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/chunking.py": {
+        "logprobs": -986.4187397868253,
+        "metrics": {
+            "loc": 392,
+            "sloc": 140,
+            "lloc": 167,
+            "comments": 35,
+            "multi": 126,
+            "blank": 95,
+            "cyclomatic": 68,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/models.py": {
+        "logprobs": -706.611026485547,
+        "metrics": {
+            "loc": 107,
+            "sloc": 72,
+            "lloc": 121,
+            "comments": 0,
+            "multi": 4,
+            "blank": 24,
+            "cyclomatic": 7,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/platform_config/manager.py": {
+        "logprobs": -1521.2659108977837,
+        "metrics": {
+            "loc": 805,
+            "sloc": 518,
+            "lloc": 290,
+            "comments": 38,
+            "multi": 126,
+            "blank": 123,
+            "cyclomatic": 113,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/setup.py": {
+        "logprobs": -233.484937505612,
+        "metrics": {
+            "loc": 20,
+            "sloc": 19,
+            "lloc": 2,
+            "comments": 3,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
     "incremental_backup_system/incremental_backup_system_game_developer/gamevault/backup_engine/storage.py": {
-        "logprobs": -752.8839851188767,
+        "logprobs": -752.7249615733027,
         "metrics": {
             "loc": 289,
             "sloc": 95,
@@ -427,6 +323,110 @@
             "multi": 110,
             "blank": 67,
             "cyclomatic": 31,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/feedback_system/database.py": {
+        "logprobs": -879.5030056894733,
+        "metrics": {
+            "loc": 538,
+            "sloc": 304,
+            "lloc": 201,
+            "comments": 43,
+            "multi": 93,
+            "blank": 98,
+            "cyclomatic": 66,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/config.py": {
+        "logprobs": -594.5286966348104,
+        "metrics": {
+            "loc": 114,
+            "sloc": 65,
+            "lloc": 31,
+            "comments": 23,
+            "multi": 16,
+            "blank": 23,
+            "cyclomatic": 3,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/asset_tracker/reference_tracker.py": {
+        "logprobs": -1664.192808684791,
+        "metrics": {
+            "loc": 673,
+            "sloc": 333,
+            "lloc": 297,
+            "comments": 73,
+            "multi": 118,
+            "blank": 146,
+            "cyclomatic": 98,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/utils.py": {
+        "logprobs": -831.0535305376185,
+        "metrics": {
+            "loc": 321,
+            "sloc": 150,
+            "lloc": 158,
+            "comments": 13,
+            "multi": 84,
+            "blank": 72,
+            "cyclomatic": 45,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/compressor.py": {
+        "logprobs": -565.7078116849509,
+        "metrics": {
+            "loc": 240,
+            "sloc": 49,
+            "lloc": 69,
+            "comments": 11,
+            "multi": 118,
+            "blank": 62,
+            "cyclomatic": 31,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/platform_config/__init__.py": {
+        "logprobs": -204.177837494341,
+        "metrics": {
+            "loc": 12,
+            "sloc": 4,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 5,
+            "blank": 3,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_game_developer/gamevault/asset_optimization/manager.py": {
+        "logprobs": -1270.9787175932688,
+        "metrics": {
+            "loc": 330,
+            "sloc": 168,
+            "lloc": 116,
+            "comments": 43,
+            "multi": 64,
+            "blank": 59,
+            "cyclomatic": 36,
+            "internal_imports": []
+        }
+    },
+    "incremental_backup_system/incremental_backup_system_digital_artist/creative_vault/backup_engine/incremental_backup.py": {
+        "logprobs": -1034.4453821710154,
+        "metrics": {
+            "loc": 374,
+            "sloc": 196,
+            "lloc": 198,
+            "comments": 36,
+            "multi": 59,
+            "blank": 81,
+            "cyclomatic": 54,
             "internal_imports": []
         }
     },

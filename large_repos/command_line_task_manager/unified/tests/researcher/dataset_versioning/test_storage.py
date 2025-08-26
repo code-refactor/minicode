@@ -48,7 +48,7 @@ class TestInMemoryDatasetStorage:
         retrieved_dataset = self.storage.get_dataset(dataset_id)
         
         assert retrieved_dataset is not None
-        assert retrieved_dataset.id == dataset_id
+        assert str(retrieved_dataset.id) == dataset_id
         assert retrieved_dataset.name == "Climate Data 2010-2020"
         assert retrieved_dataset.format == DatasetFormat.CSV
         assert retrieved_dataset.storage_type == DatasetStorageType.S3
@@ -184,7 +184,7 @@ class TestInMemoryDatasetStorage:
         retrieved_version1 = self.storage.get_dataset_version(version_id1)
         
         assert retrieved_version1 is not None
-        assert retrieved_version1.id == version_id1
+        assert str(retrieved_version1.id) == version_id1
         assert retrieved_version1.dataset_id == dataset_id
         assert retrieved_version1.version_number == "1.0.0"
         assert retrieved_version1.creator == "Researcher A"
@@ -208,7 +208,7 @@ class TestInMemoryDatasetStorage:
         
         # The latest should be determined by created_at timestamp
         # In this test they're created very close together, so either might be latest
-        assert latest_version.id in {version_id1, version_id2}
+        assert str(latest_version.id) in {version_id1, version_id2}
         
         # Test deleting a version
         delete_result = self.storage.delete_dataset_version(version_id1)
@@ -219,7 +219,7 @@ class TestInMemoryDatasetStorage:
         # Test the remaining version
         remaining_versions = self.storage.list_dataset_versions(dataset_id)
         assert len(remaining_versions) == 1
-        assert remaining_versions[0].id == version_id2
+        assert str(remaining_versions[0].id) == version_id2
     
     def test_version_lineage_operations(self):
         # Test version lineage with parent references
@@ -300,7 +300,7 @@ class TestInMemoryDatasetStorage:
         retrieved_transformation = self.storage.get_data_transformation(transformation_id)
         
         assert retrieved_transformation is not None
-        assert retrieved_transformation.id == transformation_id
+        assert str(retrieved_transformation.id) == transformation_id
         assert retrieved_transformation.type == DataTransformationType.CLEANING
         assert retrieved_transformation.name == "Data Cleaning Step"
         assert retrieved_transformation.input_dataset_version_id == input_version_id
@@ -322,19 +322,19 @@ class TestInMemoryDatasetStorage:
             input_dataset_version_id=input_version_id
         )
         assert len(transformations_by_input) == 1
-        assert transformations_by_input[0].id == transformation_id
+        assert str(transformations_by_input[0].id) == transformation_id
         
         transformations_by_output = self.storage.list_data_transformations(
             output_dataset_version_id=output_version_id
         )
         assert len(transformations_by_output) == 1
-        assert transformations_by_output[0].id == transformation_id
+        assert str(transformations_by_output[0].id) == transformation_id
         
         transformations_by_type = self.storage.list_data_transformations(
             transformation_type=DataTransformationType.CLEANING
         )
         assert len(transformations_by_type) == 1
-        assert transformations_by_type[0].id == transformation_id
+        assert str(transformations_by_type[0].id) == transformation_id
         
         # Test deleting transformation
         delete_result = self.storage.delete_data_transformation(transformation_id)
@@ -376,7 +376,7 @@ class TestInMemoryDatasetStorage:
         retrieved_link = self.storage.get_task_dataset_link(link_id1)
         
         assert retrieved_link is not None
-        assert retrieved_link.id == link_id1
+        assert str(retrieved_link.id) == link_id1
         assert retrieved_link.task_id == self.task_id1
         assert retrieved_link.dataset_version_id == version_id
         assert retrieved_link.usage_type == "input"
@@ -392,11 +392,11 @@ class TestInMemoryDatasetStorage:
         # Test querying links
         task1_versions = self.storage.get_dataset_versions_by_task(self.task_id1)
         assert len(task1_versions) == 1
-        assert task1_versions[0].id == version_id
+        assert str(task1_versions[0].id) == version_id
         
         task1_links = self.storage.get_links_by_task(self.task_id1)
         assert len(task1_links) == 1
-        assert task1_links[0].id == link_id1
+        assert str(task1_links[0].id) == link_id1
         
         version_tasks = self.storage.get_tasks_by_dataset_version(version_id)
         assert len(version_tasks) == 2
@@ -466,21 +466,21 @@ class TestInMemoryDatasetStorage:
         
         # Check v3 entry
         v3_entry = lineage[str(v3_id)]
-        assert v3_entry["version"].id == v3_id
+        assert str(v3_entry["version"].id) == v3_id
         assert len(v3_entry["input_transformations"]) == 1  # t2 has v3 as output
-        assert v3_entry["input_transformations"][0].id == t2_id
+        assert str(v3_entry["input_transformations"][0].id) == t2_id
         
         # Check v2 entry
         v2_entry = lineage[str(v2_id)]
-        assert v2_entry["version"].id == v2_id
+        assert str(v2_entry["version"].id) == v2_id
         assert len(v2_entry["input_transformations"]) == 1  # t1 has v2 as output
-        assert v2_entry["input_transformations"][0].id == t1_id
+        assert str(v2_entry["input_transformations"][0].id) == t1_id
         assert len(v2_entry["output_transformations"]) == 1  # t2 has v2 as input
-        assert v2_entry["output_transformations"][0].id == t2_id
+        assert str(v2_entry["output_transformations"][0].id) == t2_id
         
         # Check v1 entry
         v1_entry = lineage[str(v1_id)]
-        assert v1_entry["version"].id == v1_id
+        assert str(v1_entry["version"].id) == v1_id
         assert len(v1_entry["input_transformations"]) == 0  # No transformation with v1 as output
         assert len(v1_entry["output_transformations"]) == 1  # t1 has v1 as input
-        assert v1_entry["output_transformations"][0].id == t1_id
+        assert str(v1_entry["output_transformations"][0].id) == t1_id
