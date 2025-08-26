@@ -3,6 +3,7 @@ import ast
 import math
 import sys
 import argparse
+import asyncio
 
 import json
 from pathlib import Path
@@ -11,31 +12,29 @@ from radon.complexity import cc_visit
 from radon.raw import analyze
 import tiktoken
 
-# TODO calls to LLM are slow and can be parallelized
-# from tqdm.asyncio import tqdm
-# from tenacity import retry, stop_after_attempt, wait_exponential
+from tqdm.asyncio import tqdm
+from tenacity import retry, stop_after_attempt, wait_exponential
 
 # ---- Logprobs ----
 
-# from together import AsyncTogether
-# client = AsyncTogether(api_key=os.getenv("TOGETHER_API_KEY"))
-# semaphore = asyncio.Semaphore(16)
-from together import Together
+from together import AsyncTogether
 
-client = Together(api_key=os.getenv("TOGETHER_API_KEY"))
+client = AsyncTogether(api_key=os.getenv("TOGETHER_API_KEY"))
+semaphore = asyncio.Semaphore(16)  # Limit concurrent API calls
 
 
-# @retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=4, max=10))
-def compute_logprob_together(text, model, enable_logprobs):
+@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=4, max=10))
+async def compute_logprob_together(text, model, enable_logprobs):
     if not enable_logprobs:
         return [], []
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": text}],
-        max_tokens=1,
-        echo=True,
-        logprobs=1,
-    )
+    async with semaphore:
+        response = await client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": text}],
+            max_tokens=1,
+            echo=True,
+            logprobs=1,
+        )
     logprobs = response.prompt[0].logprobs.token_logprobs[1:]
     tokens = response.prompt[0].logprobs.tokens[1:]
     return logprobs, tokens
@@ -147,8 +146,12 @@ def get_imported_code(file_path, directory):
     return imported_code_segments
 
 
-def compute_metrics(
-    directory: str, model: str, enable_logprobs: bool, condition_on_codebank: bool, skip_unified: bool,
+async def compute_metrics(
+    directory: str,
+    model: str,
+    enable_logprobs: bool,
+    condition_on_codebank: bool,
+    skip_unified: bool,
 ):
     enc = tiktoken.get_encoding("cl100k_base")  # hacky, for qwen2.5 models
     directory = Path(directory)
@@ -159,9 +162,11 @@ def compute_metrics(
     for file in directory.rglob("*.py"):
         if file.name.startswith("test_"):
             continue
+        if "test" in str(file):
+            continue
         if skip_unified and "unified" in str(file):
             continue
-        if ".venv" in str(file):
+        if "venv" in str(file):
             continue
         program_name = str(file.relative_to(directory.parent))
         program_names.append(program_name)
@@ -175,8 +180,12 @@ def compute_metrics(
     logprobs_dict = {}
     metrics_dict = {}
 
-    # adjust to your model’s max context length
-    MAX_CONTEXT = 32_768
+    # adjust to your model's max context length
+    MAX_CONTEXT = 128_000
+
+    # Collect all chunks to process in parallel
+    all_chunks = []
+    chunk_metadata = []  # Store metadata for each chunk
 
     for prog in program_names:
         imported_segments, code = codes[prog]
@@ -222,35 +231,53 @@ def compute_metrics(
             chunk_text = enc.decode(chunk)
             window_text = prefix_text + chunk_text
 
-            # call your logprob function
-            logprobs, tokens = compute_logprob_together(
-                window_text, model, enable_logprobs
+            # Collect chunk for parallel processing
+            all_chunks.append(window_text)
+            chunk_metadata.append(
+                {
+                    "prog": prog,
+                    "prefix_len": len(codebank_tokens)
+                    + len(previous_code_tokens_context),
+                    "chunk": chunk,
+                }
             )
-
-            # re-tokenize prefix to know where new chunk starts
-            prefix_len = len(codebank_tokens) + len(previous_code_tokens_context)
-
-            # sum only the logprobs for the new chunk
-            new_lp = sum(logprobs[prefix_len:])
-            new_toks = len(tokens) - prefix_len
-
-            # accumulate
-            total_logprob += new_lp
-            total_tokens += new_toks
-            logprobs_dict[prog] = logprobs_dict.get(prog, 0.0) + new_lp
 
             # advance
             previous_tokens.extend(chunk)
             start = end
 
-        print(
-            f"Processed {prog}: logprob={logprobs_dict[prog]:.2f}, tokens={total_tokens}"
-        )
-
         # your existing metrics collection
         metrics_dict[prog] = compute_code_metrics(code) | {
             "internal_imports": imported_segments
         }
+
+    # Process all chunks in parallel
+    print(f"Processing {len(all_chunks)} chunks in parallel...")
+    results = await asyncio.gather(
+        *[
+            compute_logprob_together(chunk, model, enable_logprobs)
+            for chunk in tqdm(all_chunks, desc="Preparing API calls")
+        ]
+    )
+
+    # Process results and accumulate
+    for (logprobs, tokens), metadata in zip(results, chunk_metadata):
+        prog = metadata["prog"]
+        prefix_len = metadata["prefix_len"]
+
+        # sum only the logprobs for the new chunk
+        new_lp = sum(logprobs[prefix_len:])
+        new_toks = len(tokens) - prefix_len
+
+        # accumulate
+        total_logprob += new_lp
+        total_tokens += new_toks
+        logprobs_dict[prog] = logprobs_dict.get(prog, 0.0) + new_lp
+
+    # Print per-program results
+    for prog in program_names:
+        if prog in logprobs_dict:
+            print(f"Processed {prog}: logprob={logprobs_dict[prog]:.2f}")
 
     print("\n=== Summary ===")
     print(f"Full Repo Log Probability: {total_logprob:.2f}")
@@ -337,12 +364,12 @@ def package_all_metrics(logprobs, total_lp, metrics, total_tokens):
     return result
 
 
-def main(args):
+async def main(args):
     output_file = os.path.join(
         args.directory,
         f"LIBRARYBENCH_metrics{'_nolp' if not args.enable_logprobs else ''}.json",
     )
-    logprobs_dict, total_logprob, metrics_dict, total_tokens = compute_metrics(
+    logprobs_dict, total_logprob, metrics_dict, total_tokens = await compute_metrics(
         args.directory,
         args.model,
         enable_logprobs=args.enable_logprobs,
@@ -365,7 +392,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model",
         type=str,
-        default="Qwen/Qwen2.5-7B-Instruct-Turbo",
+        # default="Qwen/Qwen2.5-7B-Instruct-Turbo",
+        default="deepseek-ai/DeepSeek-V3",
         help="Name of the model hosted on vLLM",
     )
     parser.add_argument(
@@ -388,7 +416,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    main(args)
+    asyncio.run(main(args))
 
 # ---- Example usage ----
 # python score.py --directory large_repos/workflow_orchestration/unified --enable_logprobs
