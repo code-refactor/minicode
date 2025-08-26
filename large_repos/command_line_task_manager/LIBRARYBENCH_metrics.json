@@ -1,177 +1,8 @@
 {
-    "total_logprobs": -36697.97727558686,
+    "total_logprobs": -36732.60898875959,
     "total_tokens": 136144,
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/formatter.py": {
-        "logprobs": -1478.3742496185387,
-        "metrics": {
-            "loc": 953,
-            "sloc": 656,
-            "lloc": 692,
-            "comments": 57,
-            "multi": 40,
-            "blank": 178,
-            "cyclomatic": 361,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/evidence/vault.py": {
-        "logprobs": -1483.7366444250133,
-        "metrics": {
-            "loc": 597,
-            "sloc": 281,
-            "lloc": 235,
-            "comments": 57,
-            "multi": 127,
-            "blank": 133,
-            "cyclomatic": 78,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/compliance/frameworks.py": {
-        "logprobs": -842.1874513021651,
-        "metrics": {
-            "loc": 502,
-            "sloc": 213,
-            "lloc": 238,
-            "comments": 29,
-            "multi": 138,
-            "blank": 118,
-            "cyclomatic": 88,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/utils/validation.py": {
-        "logprobs": -297.8560241041762,
-        "metrics": {
-            "loc": 71,
-            "sloc": 27,
-            "lloc": 26,
-            "comments": 0,
-            "multi": 22,
-            "blank": 20,
-            "cyclomatic": 10,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/evidence/__init__.py": {
-        "logprobs": -105.754061577,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/compliance/repository.py": {
-        "logprobs": -1272.0860323867716,
-        "metrics": {
-            "loc": 718,
-            "sloc": 290,
-            "lloc": 257,
-            "comments": 66,
-            "multi": 201,
-            "blank": 166,
-            "cyclomatic": 79,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/__init__.py": {
-        "logprobs": -171.544267222416,
-        "metrics": {
-            "loc": 26,
-            "sloc": 25,
-            "lloc": 6,
-            "comments": 0,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/storage.py": {
-        "logprobs": -555.8785344138288,
-        "metrics": {
-            "loc": 429,
-            "sloc": 175,
-            "lloc": 178,
-            "comments": 18,
-            "multi": 134,
-            "blank": 100,
-            "cyclomatic": 74,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/service.py": {
-        "logprobs": -467.51037090850076,
-        "metrics": {
-            "loc": 160,
-            "sloc": 118,
-            "lloc": 83,
-            "comments": 1,
-            "multi": 0,
-            "blank": 26,
-            "cyclomatic": 32,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/service.py": {
-        "logprobs": -1392.5101169537593,
-        "metrics": {
-            "loc": 1382,
-            "sloc": 456,
-            "lloc": 395,
-            "comments": 71,
-            "multi": 570,
-            "blank": 288,
-            "cyclomatic": 155,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/cvss/calculator.py": {
-        "logprobs": -1087.3553210781138,
-        "metrics": {
-            "loc": 642,
-            "sloc": 372,
-            "lloc": 296,
-            "comments": 74,
-            "multi": 89,
-            "blank": 122,
-            "cyclomatic": 126,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/models.py": {
-        "logprobs": -408.5012000584324,
-        "metrics": {
-            "loc": 182,
-            "sloc": 121,
-            "lloc": 172,
-            "comments": 4,
-            "multi": 5,
-            "blank": 40,
-            "cyclomatic": 43,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/__init__.py": {
-        "logprobs": -195.084120126387,
-        "metrics": {
-            "loc": 26,
-            "sloc": 25,
-            "lloc": 4,
-            "comments": 0,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
     "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/service.py": {
-        "logprobs": -1768.1949111432273,
+        "logprobs": -1760.4583540680565,
         "metrics": {
             "loc": 1242,
             "sloc": 499,
@@ -183,190 +14,8 @@
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/reporting/redaction.py": {
-        "logprobs": -1252.5243185584127,
-        "metrics": {
-            "loc": 433,
-            "sloc": 246,
-            "lloc": 129,
-            "comments": 44,
-            "multi": 74,
-            "blank": 69,
-            "cyclomatic": 47,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/reporting/__init__.py": {
-        "logprobs": -104.3530464933,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/service.py": {
-        "logprobs": -1383.5122723773502,
-        "metrics": {
-            "loc": 956,
-            "sloc": 424,
-            "lloc": 268,
-            "comments": 30,
-            "multi": 338,
-            "blank": 163,
-            "cyclomatic": 101,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/remediation/tracker.py": {
-        "logprobs": -1588.4346384852481,
-        "metrics": {
-            "loc": 658,
-            "sloc": 322,
-            "lloc": 280,
-            "comments": 66,
-            "multi": 133,
-            "blank": 140,
-            "cyclomatic": 109,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/findings/models.py": {
-        "logprobs": -670.2118584745883,
-        "metrics": {
-            "loc": 211,
-            "sloc": 104,
-            "lloc": 126,
-            "comments": 7,
-            "multi": 61,
-            "blank": 37,
-            "cyclomatic": 28,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/setup.py": {
-        "logprobs": -154.1368182594607,
-        "metrics": {
-            "loc": 18,
-            "sloc": 17,
-            "lloc": 2,
-            "comments": 0,
-            "multi": 0,
-            "blank": 1,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/models.py": {
-        "logprobs": -454.5584195224923,
-        "metrics": {
-            "loc": 105,
-            "sloc": 65,
-            "lloc": 113,
-            "comments": 6,
-            "multi": 0,
-            "blank": 29,
-            "cyclomatic": 11,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/importer.py": {
-        "logprobs": -1231.2767531126372,
-        "metrics": {
-            "loc": 784,
-            "sloc": 537,
-            "lloc": 310,
-            "comments": 53,
-            "multi": 69,
-            "blank": 122,
-            "cyclomatic": 138,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/service.py": {
-        "logprobs": -1441.8707979182411,
-        "metrics": {
-            "loc": 847,
-            "sloc": 345,
-            "lloc": 286,
-            "comments": 46,
-            "multi": 288,
-            "blank": 173,
-            "cyclomatic": 120,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/__init__.py": {
-        "logprobs": -223.55053344076,
-        "metrics": {
-            "loc": 11,
-            "sloc": 3,
-            "lloc": 4,
-            "comments": 0,
-            "multi": 6,
-            "blank": 2,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/models.py": {
-        "logprobs": -706.3819016468251,
-        "metrics": {
-            "loc": 266,
-            "sloc": 162,
-            "lloc": 231,
-            "comments": 31,
-            "multi": 21,
-            "blank": 53,
-            "cyclomatic": 43,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/__init__.py": {
-        "logprobs": -191.412391485932,
-        "metrics": {
-            "loc": 9,
-            "sloc": 1,
-            "lloc": 2,
-            "comments": 0,
-            "multi": 6,
-            "blank": 2,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/remediation/workflow.py": {
-        "logprobs": -1101.5555478791157,
-        "metrics": {
-            "loc": 395,
-            "sloc": 237,
-            "lloc": 201,
-            "comments": 38,
-            "multi": 59,
-            "blank": 71,
-            "cyclomatic": 67,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/formatter.py": {
-        "logprobs": -545.3264477838695,
-        "metrics": {
-            "loc": 232,
-            "sloc": 99,
-            "lloc": 97,
-            "comments": 15,
-            "multi": 63,
-            "blank": 54,
-            "cyclomatic": 36,
-            "internal_imports": []
-        }
-    },
     "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/models.py": {
-        "logprobs": -523.7452679148585,
+        "logprobs": -521.3219967310889,
         "metrics": {
             "loc": 186,
             "sloc": 118,
@@ -378,216 +27,60 @@
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/storage.py": {
-        "logprobs": -425.32170647826086,
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/reporting/redaction.py": {
+        "logprobs": -1245.6134224285713,
         "metrics": {
-            "loc": 338,
-            "sloc": 137,
-            "lloc": 132,
-            "comments": 1,
-            "multi": 121,
-            "blank": 77,
-            "cyclomatic": 61,
+            "loc": 433,
+            "sloc": 246,
+            "lloc": 129,
+            "comments": 44,
+            "multi": 74,
+            "blank": 69,
+            "cyclomatic": 47,
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/utils/crypto.py": {
-        "logprobs": -346.61736515695276,
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/compliance/frameworks.py": {
+        "logprobs": -838.2646383738858,
         "metrics": {
-            "loc": 116,
-            "sloc": 42,
-            "lloc": 42,
-            "comments": 0,
-            "multi": 47,
-            "blank": 26,
-            "cyclomatic": 11,
+            "loc": 502,
+            "sloc": 213,
+            "lloc": 238,
+            "comments": 29,
+            "multi": 138,
+            "blank": 118,
+            "cyclomatic": 88,
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/utils/__init__.py": {
-        "logprobs": -97.94138484017,
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/compliance/repository.py": {
+        "logprobs": -1285.5254459020207,
         "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
+            "loc": 718,
+            "sloc": 290,
+            "lloc": 257,
+            "comments": 66,
+            "multi": 201,
+            "blank": 166,
+            "cyclomatic": 79,
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/storage.py": {
-        "logprobs": -252.92260043127564,
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/storage.py": {
+        "logprobs": -553.0124555886204,
         "metrics": {
-            "loc": 110,
-            "sloc": 50,
-            "lloc": 48,
-            "comments": 0,
-            "multi": 33,
-            "blank": 25,
-            "cyclomatic": 17,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/__init__.py": {
-        "logprobs": -704.8592707488776,
-        "metrics": {
-            "loc": 208,
-            "sloc": 82,
-            "lloc": 41,
-            "comments": 5,
-            "multi": 85,
-            "blank": 36,
-            "cyclomatic": 12,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/storage.py": {
-        "logprobs": -428.97503898262755,
-        "metrics": {
-            "loc": 281,
-            "sloc": 124,
-            "lloc": 114,
-            "comments": 7,
-            "multi": 85,
-            "blank": 63,
-            "cyclomatic": 53,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/compliance/__init__.py": {
-        "logprobs": -106.02208575,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/findings/__init__.py": {
-        "logprobs": -107.2002771397,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/__init__.py": {
-        "logprobs": -308.2188361825342,
-        "metrics": {
-            "loc": 30,
-            "sloc": 19,
-            "lloc": 6,
-            "comments": 4,
-            "multi": 5,
-            "blank": 6,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/reporting/generator.py": {
-        "logprobs": -2416.693312419097,
-        "metrics": {
-            "loc": 1532,
-            "sloc": 1028,
-            "lloc": 306,
-            "comments": 53,
-            "multi": 169,
-            "blank": 279,
-            "cyclomatic": 81,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/storage.py": {
-        "logprobs": -1012.5873674107231,
-        "metrics": {
-            "loc": 776,
-            "sloc": 340,
-            "lloc": 304,
-            "comments": 31,
-            "multi": 236,
-            "blank": 168,
-            "cyclomatic": 142,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/models.py": {
-        "logprobs": -512.7901751990755,
-        "metrics": {
-            "loc": 233,
-            "sloc": 136,
-            "lloc": 195,
-            "comments": 19,
-            "multi": 24,
-            "blank": 50,
-            "cyclomatic": 48,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/remediation/__init__.py": {
-        "logprobs": -101.0314611708,
-        "metrics": {
-            "loc": 1,
-            "sloc": 0,
-            "lloc": 1,
-            "comments": 0,
-            "multi": 0,
-            "blank": 0,
-            "cyclomatic": 0,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/evidence/models.py": {
-        "logprobs": -606.9012905936806,
-        "metrics": {
-            "loc": 148,
-            "sloc": 85,
-            "lloc": 102,
-            "comments": 9,
-            "multi": 25,
-            "blank": 31,
-            "cyclomatic": 27,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/visualizer.py": {
-        "logprobs": -1480.6859821164296,
-        "metrics": {
-            "loc": 666,
-            "sloc": 398,
-            "lloc": 316,
-            "comments": 46,
-            "multi": 81,
-            "blank": 140,
-            "cyclomatic": 116,
-            "internal_imports": []
-        }
-    },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/__init__.py": {
-        "logprobs": -247.99983038879316,
-        "metrics": {
-            "loc": 31,
-            "sloc": 20,
-            "lloc": 6,
-            "comments": 4,
-            "multi": 5,
-            "blank": 6,
-            "cyclomatic": 0,
+            "loc": 429,
+            "sloc": 175,
+            "lloc": 178,
+            "comments": 18,
+            "multi": 134,
+            "blank": 100,
+            "cyclomatic": 74,
             "internal_imports": []
         }
     },
     "command_line_task_manager/command_line_task_manager_security_analyst/securetask/findings/repository.py": {
-        "logprobs": -833.6433142688825,
+        "logprobs": -822.6296659385965,
         "metrics": {
             "loc": 317,
             "sloc": 138,
@@ -599,12 +92,25 @@
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_researcher/setup.py": {
-        "logprobs": -251.8326858477601,
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/service.py": {
+        "logprobs": -469.96102540502335,
         "metrics": {
-            "loc": 34,
-            "sloc": 33,
-            "lloc": 3,
+            "loc": 160,
+            "sloc": 118,
+            "lloc": 83,
+            "comments": 1,
+            "multi": 0,
+            "blank": 26,
+            "cyclomatic": 32,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/__init__.py": {
+        "logprobs": -198.856264770286,
+        "metrics": {
+            "loc": 26,
+            "sloc": 25,
+            "lloc": 4,
             "comments": 0,
             "multi": 0,
             "blank": 1,
@@ -612,34 +118,34 @@
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/service.py": {
-        "logprobs": -2191.9912800907837,
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/storage.py": {
+        "logprobs": -477.42725582994075,
         "metrics": {
-            "loc": 1644,
-            "sloc": 849,
-            "lloc": 514,
-            "comments": 69,
-            "multi": 477,
-            "blank": 248,
-            "cyclomatic": 228,
+            "loc": 307,
+            "sloc": 143,
+            "lloc": 127,
+            "comments": 9,
+            "multi": 88,
+            "blank": 65,
+            "cyclomatic": 65,
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/models.py": {
-        "logprobs": -604.3484067874517,
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/__init__.py": {
+        "logprobs": -220.20305633677,
         "metrics": {
-            "loc": 294,
-            "sloc": 159,
-            "lloc": 222,
-            "comments": 15,
-            "multi": 43,
-            "blank": 64,
-            "cyclomatic": 39,
+            "loc": 11,
+            "sloc": 3,
+            "lloc": 4,
+            "comments": 0,
+            "multi": 6,
+            "blank": 2,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/cvss/__init__.py": {
-        "logprobs": -85.2591724466,
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/compliance/__init__.py": {
+        "logprobs": -107.546043094,
         "metrics": {
             "loc": 1,
             "sloc": 0,
@@ -651,16 +157,510 @@
             "internal_imports": []
         }
     },
-    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/storage.py": {
-        "logprobs": -474.7101124649665,
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/utils/__init__.py": {
+        "logprobs": -98.4292864403,
         "metrics": {
-            "loc": 307,
-            "sloc": 143,
-            "lloc": 127,
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/setup.py": {
+        "logprobs": -153.2303460076508,
+        "metrics": {
+            "loc": 18,
+            "sloc": 17,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/utils/crypto.py": {
+        "logprobs": -349.47603205493556,
+        "metrics": {
+            "loc": 116,
+            "sloc": 42,
+            "lloc": 42,
+            "comments": 0,
+            "multi": 47,
+            "blank": 26,
+            "cyclomatic": 11,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/findings/models.py": {
+        "logprobs": -675.7369155140419,
+        "metrics": {
+            "loc": 211,
+            "sloc": 104,
+            "lloc": 126,
+            "comments": 7,
+            "multi": 61,
+            "blank": 37,
+            "cyclomatic": 28,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/storage.py": {
+        "logprobs": -1008.7015230760954,
+        "metrics": {
+            "loc": 776,
+            "sloc": 340,
+            "lloc": 304,
+            "comments": 31,
+            "multi": 236,
+            "blank": 168,
+            "cyclomatic": 142,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/importer.py": {
+        "logprobs": -1229.1678812087544,
+        "metrics": {
+            "loc": 784,
+            "sloc": 537,
+            "lloc": 310,
+            "comments": 53,
+            "multi": 69,
+            "blank": 122,
+            "cyclomatic": 138,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/remediation/workflow.py": {
+        "logprobs": -1101.4511331117922,
+        "metrics": {
+            "loc": 395,
+            "sloc": 237,
+            "lloc": 201,
+            "comments": 38,
+            "multi": 59,
+            "blank": 71,
+            "cyclomatic": 67,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/cvss/__init__.py": {
+        "logprobs": -85.319788413,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/formatter.py": {
+        "logprobs": -1489.006541171786,
+        "metrics": {
+            "loc": 953,
+            "sloc": 656,
+            "lloc": 692,
+            "comments": 57,
+            "multi": 40,
+            "blank": 178,
+            "cyclomatic": 361,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/models.py": {
+        "logprobs": -617.0941122849827,
+        "metrics": {
+            "loc": 294,
+            "sloc": 159,
+            "lloc": 222,
+            "comments": 15,
+            "multi": 43,
+            "blank": 64,
+            "cyclomatic": 39,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/utils/validation.py": {
+        "logprobs": -301.69892751173137,
+        "metrics": {
+            "loc": 71,
+            "sloc": 27,
+            "lloc": 26,
+            "comments": 0,
+            "multi": 22,
+            "blank": 20,
+            "cyclomatic": 10,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/formatter.py": {
+        "logprobs": -549.1321862089991,
+        "metrics": {
+            "loc": 232,
+            "sloc": 99,
+            "lloc": 97,
+            "comments": 15,
+            "multi": 63,
+            "blank": 54,
+            "cyclomatic": 36,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/findings/__init__.py": {
+        "logprobs": -106.6727262405,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/setup.py": {
+        "logprobs": -253.576337842722,
+        "metrics": {
+            "loc": 34,
+            "sloc": 33,
+            "lloc": 3,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/models.py": {
+        "logprobs": -410.74967242955273,
+        "metrics": {
+            "loc": 182,
+            "sloc": 121,
+            "lloc": 172,
+            "comments": 4,
+            "multi": 5,
+            "blank": 40,
+            "cyclomatic": 43,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/remediation/__init__.py": {
+        "logprobs": -100.464164216,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/reporting/__init__.py": {
+        "logprobs": -105.1232341275,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/models.py": {
+        "logprobs": -512.9773414401265,
+        "metrics": {
+            "loc": 233,
+            "sloc": 136,
+            "lloc": 195,
+            "comments": 19,
+            "multi": 24,
+            "blank": 50,
+            "cyclomatic": 48,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/remediation/tracker.py": {
+        "logprobs": -1583.7442055577646,
+        "metrics": {
+            "loc": 658,
+            "sloc": 322,
+            "lloc": 280,
+            "comments": 66,
+            "multi": 133,
+            "blank": 140,
+            "cyclomatic": 109,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/storage.py": {
+        "logprobs": -426.5125151084245,
+        "metrics": {
+            "loc": 281,
+            "sloc": 124,
+            "lloc": 114,
+            "comments": 7,
+            "multi": 85,
+            "blank": 63,
+            "cyclomatic": 53,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/evidence/models.py": {
+        "logprobs": -606.7976443326254,
+        "metrics": {
+            "loc": 148,
+            "sloc": 85,
+            "lloc": 102,
             "comments": 9,
-            "multi": 88,
-            "blank": 65,
-            "cyclomatic": 65,
+            "multi": 25,
+            "blank": 31,
+            "cyclomatic": 27,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/reporting/generator.py": {
+        "logprobs": -2411.5401674128148,
+        "metrics": {
+            "loc": 1532,
+            "sloc": 1028,
+            "lloc": 306,
+            "comments": 53,
+            "multi": 169,
+            "blank": 279,
+            "cyclomatic": 81,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/task_management/service.py": {
+        "logprobs": -1399.5834412607505,
+        "metrics": {
+            "loc": 1382,
+            "sloc": 456,
+            "lloc": 395,
+            "comments": 71,
+            "multi": 570,
+            "blank": 288,
+            "cyclomatic": 155,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/storage.py": {
+        "logprobs": -252.19350270872096,
+        "metrics": {
+            "loc": 110,
+            "sloc": 50,
+            "lloc": 48,
+            "comments": 0,
+            "multi": 33,
+            "blank": 25,
+            "cyclomatic": 17,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/service.py": {
+        "logprobs": -1396.2416274807981,
+        "metrics": {
+            "loc": 956,
+            "sloc": 424,
+            "lloc": 268,
+            "comments": 30,
+            "multi": 338,
+            "blank": 163,
+            "cyclomatic": 101,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/__init__.py": {
+        "logprobs": -194.522811458571,
+        "metrics": {
+            "loc": 9,
+            "sloc": 1,
+            "lloc": 2,
+            "comments": 0,
+            "multi": 6,
+            "blank": 2,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/cvss/calculator.py": {
+        "logprobs": -1096.2124515400944,
+        "metrics": {
+            "loc": 642,
+            "sloc": 372,
+            "lloc": 296,
+            "comments": 74,
+            "multi": 89,
+            "blank": 122,
+            "cyclomatic": 126,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/__init__.py": {
+        "logprobs": -171.057506782852,
+        "metrics": {
+            "loc": 26,
+            "sloc": 25,
+            "lloc": 6,
+            "comments": 0,
+            "multi": 0,
+            "blank": 1,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/evidence/vault.py": {
+        "logprobs": -1487.1566859419079,
+        "metrics": {
+            "loc": 597,
+            "sloc": 281,
+            "lloc": 235,
+            "comments": 57,
+            "multi": 127,
+            "blank": 133,
+            "cyclomatic": 78,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/__init__.py": {
+        "logprobs": -705.4580992654267,
+        "metrics": {
+            "loc": 208,
+            "sloc": 82,
+            "lloc": 41,
+            "comments": 5,
+            "multi": 85,
+            "blank": 36,
+            "cyclomatic": 12,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/environment/service.py": {
+        "logprobs": -2193.344829728368,
+        "metrics": {
+            "loc": 1644,
+            "sloc": 849,
+            "lloc": 514,
+            "comments": 69,
+            "multi": 477,
+            "blank": 248,
+            "cyclomatic": 228,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/visualizer.py": {
+        "logprobs": -1482.9310887235463,
+        "metrics": {
+            "loc": 666,
+            "sloc": 398,
+            "lloc": 316,
+            "comments": 46,
+            "multi": 81,
+            "blank": 140,
+            "cyclomatic": 116,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/service.py": {
+        "logprobs": -1442.4427794526046,
+        "metrics": {
+            "loc": 847,
+            "sloc": 345,
+            "lloc": 286,
+            "comments": 46,
+            "multi": 288,
+            "blank": 173,
+            "cyclomatic": 120,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/dataset_versioning/models.py": {
+        "logprobs": -700.9636088962343,
+        "metrics": {
+            "loc": 266,
+            "sloc": 162,
+            "lloc": 231,
+            "comments": 31,
+            "multi": 21,
+            "blank": 53,
+            "cyclomatic": 43,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_security_analyst/securetask/evidence/__init__.py": {
+        "logprobs": -105.254482718,
+        "metrics": {
+            "loc": 1,
+            "sloc": 0,
+            "lloc": 1,
+            "comments": 0,
+            "multi": 0,
+            "blank": 0,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/bibliography/storage.py": {
+        "logprobs": -423.7526552285286,
+        "metrics": {
+            "loc": 338,
+            "sloc": 137,
+            "lloc": 132,
+            "comments": 1,
+            "multi": 121,
+            "blank": 77,
+            "cyclomatic": 61,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/experiment_tracking/__init__.py": {
+        "logprobs": -247.7417864780798,
+        "metrics": {
+            "loc": 31,
+            "sloc": 20,
+            "lloc": 6,
+            "comments": 4,
+            "multi": 5,
+            "blank": 6,
+            "cyclomatic": 0,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/models.py": {
+        "logprobs": -448.25711301434836,
+        "metrics": {
+            "loc": 105,
+            "sloc": 65,
+            "lloc": 113,
+            "comments": 6,
+            "multi": 0,
+            "blank": 29,
+            "cyclomatic": 11,
+            "internal_imports": []
+        }
+    },
+    "command_line_task_manager/command_line_task_manager_researcher/researchtrack/export/__init__.py": {
+        "logprobs": -308.0722119017863,
+        "metrics": {
+            "loc": 30,
+            "sloc": 19,
+            "lloc": 6,
+            "comments": 4,
+            "multi": 5,
+            "blank": 6,
+            "cyclomatic": 0,
             "internal_imports": []
         }
     },
